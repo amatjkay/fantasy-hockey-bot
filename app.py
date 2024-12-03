@@ -65,49 +65,93 @@ def calculate_scoring_period_id(current_date, season_start_date, season_start_sc
 
 def fetch_player_data(scoring_period_id, league_id):
     """
-    Выполняет запрос к API ESPN и возвращает данные о игроках.
-    Реализует механизм повторных попыток при сбоях.
+    Выполняет запросы к API ESPN и возвращает данные о игроках.
+    Делает отдельные запросы для полевых игроков и вратарей.
     """
-    headers = {
+    base_headers = {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0',
-        'x-fantasy-filter': json.dumps({
-            "players": {
-                "filterSlotIds": {"value": [0,6,1,2,4]},
-                "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
-                "sortAppliedStatTotal": None,
-                "sortAppliedStatTotalForScoringPeriodId": {
-                    "sortAsc": False,
-                    "sortPriority": 2,
-                    "value": scoring_period_id
-                },
-                "sortStatId": None,
-                "sortStatIdForScoringPeriodId": None,
-                "sortPercOwned": {
-                    "sortPriority": 3,
-                    "sortAsc": False
-                },
-                "limit": 50
-            }
-        })
+    }
+
+    # Фильтр для полевых игроков (C, LW, RW, D)
+    skaters_filter = {
+        "players": {
+            "filterSlotIds": {"value": [0,6,1,2,4]},  # Позиции полевых игроков
+            "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
+            "sortAppliedStatTotal": None,
+            "sortAppliedStatTotalForScoringPeriodId": {
+                "sortAsc": False,
+                "sortPriority": 2,
+                "value": scoring_period_id
+            },
+            "sortStatId": None,
+            "sortStatIdForScoringPeriodId": None,
+            "sortPercOwned": {
+                "sortPriority": 3,
+                "sortAsc": False
+            },
+            "limit": 50
+        }
+    }
+
+    # Фильтр для вратарей
+    goalies_filter = {
+        "players": {
+            "filterSlotIds": {"value": [5]},  # Позиция вратаря
+            "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
+            "sortPercOwned": {"sortPriority": 3, "sortAsc": False},
+            "limit": 50,
+            "sortAppliedStatTotalForScoringPeriodId": {
+                "sortAsc": False,
+                "sortPriority": 1,
+                "value": scoring_period_id
+            },
+            "filterRanksForScoringPeriodIds": {"value": [scoring_period_id]},
+            "filterRanksForRankTypes": {"value": ["STANDARD"]}
+        }
     }
 
     url = API_URL_TEMPLATE.format(league_id=league_id)
+    all_data = None
 
+    # Запрос для полевых игроков
     for attempt in range(1, MAX_RETRIES + 1):
         try:
+            headers = base_headers.copy()
+            headers['x-fantasy-filter'] = json.dumps(skaters_filter)
             response = requests.get(url, headers=headers, timeout=10)
             response.raise_for_status()
-            logging.info(f"Успешный запрос для scoringPeriodId {scoring_period_id}")
-            return response.json()
+            all_data = response.json()
+            break
         except requests.exceptions.RequestException as e:
-            logging.warning(f"Попытка {attempt} для scoringPeriodId {scoring_period_id} не удалась: {e}")
+            logging.warning(f"Попытка {attempt} для полевых игроков не удалась: {e}")
             if attempt < MAX_RETRIES:
-                logging.info(f"Повторная попытка через {RETRY_DELAY} секунд...")
                 time.sleep(RETRY_DELAY)
             else:
-                logging.error(f"Все {MAX_RETRIES} попыток для scoringPeriodId {scoring_period_id} не удались.")
+                logging.error("Все попытки получить данные полевых игроков не удались")
                 return None
+
+    # Запрос для вратарей
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            headers = base_headers.copy()
+            headers['x-fantasy-filter'] = json.dumps(goalies_filter)
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            goalies_data = response.json()
+            
+            # Добавляем вратарей к общим данным
+            if all_data and 'players' in all_data and 'players' in goalies_data:
+                all_data['players'].extend(goalies_data['players'])
+            break
+        except requests.exceptions.RequestException as e:
+            logging.warning(f"Попытка {attempt} для вратарей не удалась: {e}")
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_DELAY)
+            else:
+                logging.error("Все попытки получить данные вратарей не удались")
+
+    return all_data
 
 def parse_player_data(data, scoring_period_id):
     """
