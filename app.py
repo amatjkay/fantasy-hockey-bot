@@ -40,18 +40,6 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
 
 bot = Bot(token=TELEGRAM_TOKEN)
 
-# Проверка, была ли задача выполнена за последние 24 часа
-# def was_task_executed_recently():
-#     if os.path.exists(LOG_FILE):
-#         last_run_time = os.path.getmtime(LOG_FILE)
-#         if time.time() - last_run_time < 86400:  # 24 часа
-#             return True
-#     return False
-
-# if was_task_executed_recently():
-#     logging.info("Задача уже была выполнена в последние 24 часа. Завершаем.")
-#     exit(0)
-
 # Логируем выполнение задачи
 with open(LOG_FILE, "w") as log_file:
     log_file.write("Task executed at: " + time.ctime())
@@ -139,52 +127,46 @@ def assemble_team(positions):
     }
 
 # Формирование сообщения
-async def display_team(team):
+async def display_team_table(team):
     """
-    Формирует сообщение о "команде дня" с улучшенным дизайном и отправляет его в Telegram.
+    Формирует сообщение о "команде дня" с табличным оформлением и количеством очков ftps.
     """
-    message = "<b>🏒 Команда дня:</b>\n\n"
+    message = (
+        "<b>🏒 Команда дня:</b>\n\n"
+        "<pre>"
+        "╔═════════════╦══════════════════════╦══════════╗\n"
+        "║ Позиция     ║ Игрок                ║ Очки     ║\n"
+        "╠═════════════╬══════════════════════╬══════════╣\n"
+    )
 
     # Нападающие
-    message += "🎯 <b>Нападающие:</b>\n"
     center = team['C'][0] if team['C'] else None
     lw = team['LW'][0] if team['LW'] else None
     rw = team['RW'][0] if team['RW'] else None
 
-    if center:
-        message += f"  C: {center['name']} - <i>{center['appliedTotal']} ftps</i>\n"
-    else:
-        message += "  C: Нет данных\n"
-
-    if lw:
-        message += f"  LW: {lw['name']} - <i>{lw['appliedTotal']} ftps</i>\n"
-    else:
-        message += "  LW: Нет данных\n"
-
-    if rw:
-        message += f"  RW: {rw['name']} - <i>{rw['appliedTotal']} ftps</i>\n"
-    else:
-        message += "  RW: Нет данных\n"
+    message += (
+        f"║ C           ║ {center['name'] if center else 'Нет данных':<20} ║ {center['appliedTotal'] if center else '---':<8} ║\n"
+        f"║ LW          ║ {lw['name'] if lw else 'Нет данных':<20} ║ {lw['appliedTotal'] if lw else '---':<8} ║\n"
+        f"║ RW          ║ {rw['name'] if rw else 'Нет данных':<20} ║ {rw['appliedTotal'] if rw else '---':<8} ║\n"
+    )
 
     # Защитники
-    message += "\n🛡 <b>Защитники:</b>\n"
     if team['D']:
         for idx, d_player in enumerate(team['D'], 1):
-            message += f"  D{idx}: {d_player['name']} - <i>{d_player['appliedTotal']} ftps</i>\n"
+            message += f"║ D{idx:<10} ║ {d_player['name']:<20} ║ {d_player['appliedTotal']:<8} ║\n"
     else:
-        message += "  D: Нет данных\n"
+        message += "║ D           ║ Нет данных           ║ ---      ║\n"
 
     # Вратарь
-    message += "\n🥅 <b>Вратарь:</b>\n"
     goalie = team['G'][0] if team['G'] else None
-    if goalie:
-        message += f"  G: {goalie['name']} - <i>{goalie['appliedTotal']} ftps</i>\n"
-    else:
-        message += "  G: Нет данных\n"
+    message += (
+        f"║ G           ║ {goalie['name'] if goalie else 'Нет данных':<20} ║ {goalie['appliedTotal'] if goalie else '---':<8} ║\n"
+        "╚═════════════╩══════════════════════╩══════════╝\n"
+        "</pre>"
+    )
 
     # Отправка сообщения
     await send_telegram_message(message)
-
 
 # Основная логика
 async def main():
@@ -203,7 +185,7 @@ async def main():
     positions = parse_player_data(data, scoring_period_id - 1)
     team = assemble_team(positions)
 
-    await display_team(team)
+    await display_team_table(team)
 
 if __name__ == "__main__":
     try:
