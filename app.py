@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from PIL import Image, ImageDraw, ImageFont
 import os
 import asyncio
+import time
 
 # Конфигурация
 LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/last_run.log"
@@ -14,6 +15,23 @@ SEASON_START_DATE = datetime(2024, 10, 4)
 SEASON_START_SCORING_PERIOD_ID = 1
 LEAGUE_ID = 484910394
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
+
+def was_task_executed_recently():
+    # Проверяем, существует ли файл логирования
+    if os.path.exists(LOG_FILE):
+        last_run_time = os.path.getmtime(LOG_FILE)
+        # Если с момента последнего запуска прошло меньше 24 часов
+        if time.time() - last_run_time < 86400:
+            return True
+    return False
+
+if was_task_executed_recently():
+    print("Задача уже была выполнена в последние 24 часа. Завершаем.")
+    exit(0)
+
+# Логируем выполнение задачи
+with open(LOG_FILE, "w") as log_file:
+    log_file.write("Task executed at: " + time.ctime())
 
 # Карта позиций
 POSITION_MAP = {
