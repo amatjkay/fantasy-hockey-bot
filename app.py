@@ -8,16 +8,11 @@ from dotenv import load_dotenv
 import os
 import asyncio
 
-# Настройка логирования
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-
-# Загрузка переменных из .env файла
-load_dotenv()
-
-# Конфигурация
-SEASON_START_DATE = datetime(2024, 10, 4)  # Обновите при необходимости
-SEASON_START_SCORING_PERIOD_ID = 1  # Обновите при необходимости
-LEAGUE_ID = 484910394  # Обновите на ваш League ID
+# Константы
+LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/last_run.log"
+SEASON_START_DATE = datetime(2024, 10, 4)  # Дата начала сезона
+SEASON_START_SCORING_PERIOD_ID = 1  # ScoringPeriodId для начала сезона
+LEAGUE_ID = 484910394  # League ID
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
 
 # Соответствие defaultPositionId и позиций
@@ -29,6 +24,12 @@ POSITION_MAP = {
     5: 'G'     # Вратарь
 }
 
+# Настройка логирования
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Загрузка переменных окружения
+load_dotenv('/home/lex/dev/bot/fantasy-hockey-bot/.env')
+
 # Telegram Bot Configuration
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
@@ -39,10 +40,23 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
 
 bot = Bot(token=TELEGRAM_TOKEN)
 
-# Константы для повторных попыток
-MAX_RETRIES = 3
-RETRY_DELAY = 5  # секунд
+# Проверка, была ли задача выполнена за последние 24 часа
+# def was_task_executed_recently():
+#     if os.path.exists(LOG_FILE):
+#         last_run_time = os.path.getmtime(LOG_FILE)
+#         if time.time() - last_run_time < 86400:  # 24 часа
+#             return True
+#     return False
 
+# if was_task_executed_recently():
+#     logging.info("Задача уже была выполнена в последние 24 часа. Завершаем.")
+#     exit(0)
+
+# Логируем выполнение задачи
+with open(LOG_FILE, "w") as log_file:
+    log_file.write("Task executed at: " + time.ctime())
+
+# Отправка сообщения в Telegram
 async def send_telegram_message(message: str):
     try:
         await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode='HTML')
@@ -50,11 +64,8 @@ async def send_telegram_message(message: str):
     except Exception as e:
         logging.error(f"Ошибка при отправке сообщения в Telegram: {e}")
 
+# Вычисление scoringPeriodId
 def calculate_scoring_period_id(current_date, season_start_date, season_start_scoring_period_id=1):
-    """
-    Вычисляет текущий scoringPeriodId на основе даты начала сезона и текущей даты.
-    Предполагается, что scoringPeriodId увеличивается на 1 каждый день.
-    """
     if current_date < season_start_date:
         logging.error("Текущая дата раньше даты начала сезона.")
         return None
@@ -63,108 +74,42 @@ def calculate_scoring_period_id(current_date, season_start_date, season_start_sc
     logging.info(f"Вычислен current_scoring_period_id: {current_scoring_period_id}")
     return current_scoring_period_id
 
+# Получение данных игроков
 def fetch_player_data(scoring_period_id, league_id):
-    """
-    Выполняет запросы к API ESPN и возвращает данные о игроках.
-    Делает отдельные запросы для полевых игроков и вратарей.
-    """
     base_headers = {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0',
     }
 
-    # Фильтр для полевых игроков (C, LW, RW, D)
-    skaters_filter = {
+    filters = {
         "players": {
-            "filterSlotIds": {"value": [0,6,1,2,4]},  # Позиции полевых игроков
+            "filterSlotIds": {"value": [0, 6, 1, 2, 4, 5]},  # Все позиции
             "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
-            "sortAppliedStatTotal": None,
-            "sortAppliedStatTotalForScoringPeriodId": {
-                "sortAsc": False,
-                "sortPriority": 2,
-                "value": scoring_period_id
-            },
-            "sortStatId": None,
-            "sortStatIdForScoringPeriodId": None,
-            "sortPercOwned": {
-                "sortPriority": 3,
-                "sortAsc": False
-            },
+            "sortAppliedStatTotalForScoringPeriodId": {"sortAsc": False, "sortPriority": 2, "value": scoring_period_id},
             "limit": 50
         }
     }
 
-    # Фильтр для вратарей
-    goalies_filter = {
-        "players": {
-            "filterSlotIds": {"value": [5]},  # Позиция вратаря
-            "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
-            "sortPercOwned": {"sortPriority": 3, "sortAsc": False},
-            "limit": 50,
-            "sortAppliedStatTotalForScoringPeriodId": {
-                "sortAsc": False,
-                "sortPriority": 1,
-                "value": scoring_period_id
-            },
-            "filterRanksForScoringPeriodIds": {"value": [scoring_period_id]},
-            "filterRanksForRankTypes": {"value": ["STANDARD"]}
-        }
-    }
-
     url = API_URL_TEMPLATE.format(league_id=league_id)
-    all_data = None
 
-    # Запрос для полевых игроков
-    for attempt in range(1, MAX_RETRIES + 1):
+    for attempt in range(3):
         try:
             headers = base_headers.copy()
-            headers['x-fantasy-filter'] = json.dumps(skaters_filter)
+            headers['x-fantasy-filter'] = json.dumps(filters)
             response = requests.get(url, headers=headers, timeout=10)
             response.raise_for_status()
-            all_data = response.json()
-            break
+            return response.json()
         except requests.exceptions.RequestException as e:
-            logging.warning(f"Попытка {attempt} для полевых игроков не удалась: {e}")
-            if attempt < MAX_RETRIES:
-                time.sleep(RETRY_DELAY)
-            else:
-                logging.error("Все попытки получить данные полевых игроков не удались")
-                return None
+            logging.warning(f"Попытка {attempt + 1} не удалась: {e}")
+            time.sleep(5)
 
-    # Запрос для вратарей
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            headers = base_headers.copy()
-            headers['x-fantasy-filter'] = json.dumps(goalies_filter)
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            goalies_data = response.json()
-            
-            # Добавляем вратарей к общим данным
-            if all_data and 'players' in all_data and 'players' in goalies_data:
-                all_data['players'].extend(goalies_data['players'])
-            break
-        except requests.exceptions.RequestException as e:
-            logging.warning(f"Попытка {attempt} для вратарей не удалась: {e}")
-            if attempt < MAX_RETRIES:
-                time.sleep(RETRY_DELAY)
-            else:
-                logging.error("Все попытки получить данные вратарей не удались")
+    logging.error("Не удалось получить данные игроков после 3 попыток.")
+    return None
 
-    return all_data
-
+# Парсинг данных игроков
 def parse_player_data(data, scoring_period_id):
-    """
-    Парсит данные о игроках и распределяет их по позициям.
-    """
     players_data = data.get('players', [])
-
-    # Инициализируем списки для каждой позиции
-    centers = []
-    left_wings = []
-    right_wings = []
-    defensemen = []
-    goalies = []
+    positions = {'C': [], 'LW': [], 'RW': [], 'D': [], 'G': []}
 
     for player_entry in players_data:
         player = player_entry.get('player', {})
@@ -172,163 +117,96 @@ def parse_player_data(data, scoring_period_id):
         position_id = player.get('defaultPositionId', -1)
         position = POSITION_MAP.get(position_id, 'Unknown')
 
-        # Получаем очки appliedTotal за нужный период
-        stats = player.get('stats', [])
         applied_total = 0
-        for stat in stats:
+        for stat in player.get('stats', []):
             if stat.get('scoringPeriodId') == scoring_period_id:
-                # Логируем содержимое stat для диагностики
-                logging.debug(f"Player: {name}, Stat: {stat}")
-                # Попробуем извлечь 'appliedTotal' или аналогичное поле
                 applied_total = round(stat.get('appliedTotal', 0), 2)
-                # Если 'appliedTotal' отсутствует, попробуем другие ключи
-                if not applied_total:
-                    applied_total = round(stat.get('value', 0), 2)
-                if not applied_total:
-                    applied_total = round(stat.get('total', 0), 2)
                 break
 
-        player_info = {
-            'name': name,
-            'position': position,
-            'appliedTotal': applied_total
-        }
+        if position in positions:
+            positions[position].append({'name': name, 'appliedTotal': applied_total})
 
-        # Добавляем игрока в соответствующий список
-        if position == 'C':
-            centers.append(player_info)
-        elif position == 'LW':
-            left_wings.append(player_info)
-        elif position == 'RW':
-            right_wings.append(player_info)
-        elif position == 'D':
-            defensemen.append(player_info)
-        elif position == 'G':
-            goalies.append(player_info)
+    return positions
 
-    logging.info(f"Парсинг данных завершён для scoringPeriodId {scoring_period_id}")
-    return centers, left_wings, right_wings, defensemen, goalies
-
-def select_top_players(players_list, top_n=1):
-    """
-    Выбирает топ N игроков из списка по appliedTotal.
-    """
-    return sorted(players_list, key=lambda x: x['appliedTotal'], reverse=True)[:top_n]
-
-def assemble_team(centers, left_wings, right_wings, defensemen, goalies):
-    """
-    Составляет "команду дня" с уникальными позициями для нападающих.
-    """
-    top_center = select_top_players(centers, 1)
-    top_lw = select_top_players(left_wings, 1)
-    top_rw = select_top_players(right_wings, 1)
-    top_defensemen = select_top_players(defensemen, 2)
-    top_goalie = select_top_players(goalies, 1)
-
-    team_of_the_day = {
-        'C': top_center,
-        'LW': top_lw,
-        'RW': top_rw,
-        'D': top_defensemen,
-        'G': top_goalie
+# Составление команды дня
+def assemble_team(positions):
+    return {
+        'C': sorted(positions['C'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
+        'LW': sorted(positions['LW'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
+        'RW': sorted(positions['RW'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
+        'D': sorted(positions['D'], key=lambda x: x['appliedTotal'], reverse=True)[:2],
+        'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
     }
 
-    logging.info("Команда дня успешно собрана.")
-    return team_of_the_day
-
-async def display_team(team_of_the_day):
+# Формирование сообщения
+async def display_team(team):
     """
-    Формирует сообщение о "команде дня" и отправляет его в Telegram.
+    Формирует сообщение о "команде дня" с улучшенным дизайном и отправляет его в Telegram.
     """
-    def get_player(position_players):
-        return position_players[0] if position_players else None
-
-    message = "<b>Команда дня:</b>\n\n<b>Нападающие:</b>\n"
+    message = "<b>🏒 Команда дня:</b>\n\n"
 
     # Нападающие
-    center = get_player(team_of_the_day['C'])
-    lw = get_player(team_of_the_day['LW'])
-    rw = get_player(team_of_the_day['RW'])
+    message += "🎯 <b>Нападающие:</b>\n"
+    center = team['C'][0] if team['C'] else None
+    lw = team['LW'][0] if team['LW'] else None
+    rw = team['RW'][0] if team['RW'] else None
 
     if center:
-        message += f"{center['name']} (C): {center['appliedTotal']} ftps\n"
+        message += f"  C: {center['name']} - <i>{center['appliedTotal']} ftps</i>\n"
     else:
-        message += "Нет данных для Центра (C)\n"
+        message += "  C: Нет данных\n"
 
     if lw:
-        message += f"{lw['name']} (LW): {lw['appliedTotal']} ftps\n"
+        message += f"  LW: {lw['name']} - <i>{lw['appliedTotal']} ftps</i>\n"
     else:
-        message += "Нет данных для Левого нападающего (LW)\n"
+        message += "  LW: Нет данных\n"
 
     if rw:
-        message += f"{rw['name']} (RW): {rw['appliedTotal']} ftps\n"
+        message += f"  RW: {rw['name']} - <i>{rw['appliedTotal']} ftps</i>\n"
     else:
-        message += "Нет данных для Правого нападающего (RW)\n"
+        message += "  RW: Нет данных\n"
 
     # Защитники
-    message += "\n<b>Защитники:</b>\n"
-    if team_of_the_day['D']:
-        for d_player in team_of_the_day['D']:
-            message += f"{d_player['name']} (D): {d_player['appliedTotal']} ftps\n"
+    message += "\n🛡 <b>Защитники:</b>\n"
+    if team['D']:
+        for idx, d_player in enumerate(team['D'], 1):
+            message += f"  D{idx}: {d_player['name']} - <i>{d_player['appliedTotal']} ftps</i>\n"
     else:
-        message += "Нет данных для Защитников (D)\n"
+        message += "  D: Нет данных\n"
 
     # Вратарь
-    message += "\n<b>Вратарь:</b>\n"
-    goalie = get_player(team_of_the_day['G'])
+    message += "\n🥅 <b>Вратарь:</b>\n"
+    goalie = team['G'][0] if team['G'] else None
     if goalie:
-        message += f"{goalie['name']} (G): {goalie['appliedTotal']} ftps\n"
+        message += f"  G: {goalie['name']} - <i>{goalie['appliedTotal']} ftps</i>\n"
     else:
-        message += "Нет данных для Вратаря (G)\n"
+        message += "  G: Нет данных\n"
 
-    # Отправка сообщения в Telegram
+    # Отправка сообщения
     await send_telegram_message(message)
 
-async def main():
-    # Текущая дата
-    current_date = datetime.now()
-    logging.info(f"Текущая дата: {current_date.strftime('%Y-%m-%d')}")
 
-    # Вычисляем scoringPeriodId
-    current_scoring_period_id = calculate_scoring_period_id(
-        current_date, SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
-    if current_scoring_period_id is None:
-        logging.error("Невозможно вычислить current_scoring_period_id.")
+# Основная логика
+async def main():
+    current_date = datetime.now()
+    logging.info(f"Текущая дата: {current_date}")
+
+    scoring_period_id = calculate_scoring_period_id(current_date, SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
+    if not scoring_period_id:
         return
 
-    # Начинаем с предыдущего периода
-    scoring_period_id = current_scoring_period_id - 1
-    max_attempts = 5  # Максимальное число попыток для поиска данных
-    attempts = 0
-    team_of_the_day = None
+    data = fetch_player_data(scoring_period_id - 1, LEAGUE_ID)
+    if not data:
+        await send_telegram_message("Не удалось получить данные о команде дня.")
+        return
 
-    while attempts < max_attempts and team_of_the_day is None:
-        logging.info(f"Попытка получить данные для scoringPeriodId {scoring_period_id}")
-        data = fetch_player_data(scoring_period_id, LEAGUE_ID)
+    positions = parse_player_data(data, scoring_period_id - 1)
+    team = assemble_team(positions)
 
-        if data:
-            centers, left_wings, right_wings, defensemen, goalies = parse_player_data(
-                data, scoring_period_id)
-
-            # Проверяем, есть ли данные для хотя бы одной позиции
-            if centers or left_wings or right_wings or defensemen or goalies:
-                team_of_the_day = assemble_team(
-                    centers, left_wings, right_wings, defensemen, goalies)
-                logging.info(f"Данные найдены для scoringPeriodId {scoring_period_id}")
-            else:
-                logging.warning(f"Нет данных для scoringPeriodId {scoring_period_id}. Переходим к предыдущему периоду.")
-                scoring_period_id -= 1
-        else:
-            logging.warning(f"Нет данных для scoringPeriodId {scoring_period_id}. Переходим к предыдущему периоду.")
-            scoring_period_id -= 1
-
-        attempts += 1
-
-    if team_of_the_day:
-        await display_team(team_of_the_day)
-    else:
-        logging.error(f"Не удалось получить данные после {max_attempts} попыток.")
-        await send_telegram_message("Команда дня не может быть сформирована из-за отсутствия данных.")
+    await display_team(team)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except Exception as e:
+        logging.error(f"Произошла ошибка: {e}")
