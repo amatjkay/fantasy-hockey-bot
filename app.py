@@ -1,36 +1,36 @@
 import requests
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 import logging
-import time
 from telegram import Bot
 from dotenv import load_dotenv
+from PIL import Image, ImageDraw, ImageFont
 import os
 import asyncio
 
-# Константы
+# Конфигурация
 LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/last_run.log"
-SEASON_START_DATE = datetime(2024, 10, 4)  # Дата начала сезона
-SEASON_START_SCORING_PERIOD_ID = 1  # ScoringPeriodId для начала сезона
-LEAGUE_ID = 484910394  # League ID
+SEASON_START_DATE = datetime(2024, 10, 4)
+SEASON_START_SCORING_PERIOD_ID = 1
+LEAGUE_ID = 484910394
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
 
-# Соответствие defaultPositionId и позиций
+# Карта позиций
 POSITION_MAP = {
-    1: 'C',    # Центр
-    2: 'LW',   # Левый нападающий
-    3: 'RW',   # Правый нападающий
-    4: 'D',    # Защитник
-    5: 'G'     # Вратарь
+    1: 'C',   # Центр
+    2: 'LW',  # Левый нападающий
+    3: 'RW',  # Правый нападающий
+    4: 'D',   # Защитник
+    5: 'G'    # Вратарь
 }
 
-# Настройка логирования
+# Логирование
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Загрузка переменных окружения
 load_dotenv('/home/lex/dev/bot/fantasy-hockey-bot/.env')
 
-# Telegram Bot Configuration
+# Telegram Bot
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
 
@@ -40,30 +40,22 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
 
 bot = Bot(token=TELEGRAM_TOKEN)
 
-# Логируем выполнение задачи
-with open(LOG_FILE, "w") as log_file:
-    log_file.write("Task executed at: " + time.ctime())
 
-# Отправка сообщения в Telegram
-async def send_telegram_message(message: str):
-    try:
-        await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode='HTML')
-        logging.info("Сообщение успешно отправлено в Telegram.")
-    except Exception as e:
-        logging.error(f"Ошибка при отправке сообщения в Telegram: {e}")
-
-# Вычисление scoringPeriodId
 def calculate_scoring_period_id(current_date, season_start_date, season_start_scoring_period_id=1):
+    """
+    Вычисляет текущий scoringPeriodId.
+    """
     if current_date < season_start_date:
         logging.error("Текущая дата раньше даты начала сезона.")
         return None
     days_since_start = (current_date.date() - season_start_date.date()).days
-    current_scoring_period_id = season_start_scoring_period_id + days_since_start
-    logging.info(f"Вычислен current_scoring_period_id: {current_scoring_period_id}")
-    return current_scoring_period_id
+    return season_start_scoring_period_id + days_since_start
 
-# Получение данных игроков
+
 def fetch_player_data(scoring_period_id, league_id):
+    """
+    Запрашивает данные о игроках.
+    """
     base_headers = {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0',
@@ -71,7 +63,7 @@ def fetch_player_data(scoring_period_id, league_id):
 
     filters = {
         "players": {
-            "filterSlotIds": {"value": [0, 6, 1, 2, 4, 5]},  # Все позиции
+            "filterSlotIds": {"value": [0, 6, 1, 2, 4, 5]},
             "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
             "sortAppliedStatTotalForScoringPeriodId": {"sortAsc": False, "sortPriority": 2, "value": scoring_period_id},
             "limit": 50
@@ -80,22 +72,21 @@ def fetch_player_data(scoring_period_id, league_id):
 
     url = API_URL_TEMPLATE.format(league_id=league_id)
 
-    for attempt in range(3):
-        try:
-            headers = base_headers.copy()
-            headers['x-fantasy-filter'] = json.dumps(filters)
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            return response.json()
-        except requests.exceptions.RequestException as e:
-            logging.warning(f"Попытка {attempt + 1} не удалась: {e}")
-            time.sleep(5)
+    try:
+        headers = base_headers.copy()
+        headers['x-fantasy-filter'] = json.dumps(filters)
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Ошибка при запросе данных игроков: {e}")
+        return None
 
-    logging.error("Не удалось получить данные игроков после 3 попыток.")
-    return None
 
-# Парсинг данных игроков
 def parse_player_data(data, scoring_period_id):
+    """
+    Парсит данные игроков и распределяет их по позициям.
+    """
     players_data = data.get('players', [])
     positions = {'C': [], 'LW': [], 'RW': [], 'D': [], 'G': []}
 
@@ -104,6 +95,7 @@ def parse_player_data(data, scoring_period_id):
         name = player.get('fullName', 'Unknown')
         position_id = player.get('defaultPositionId', -1)
         position = POSITION_MAP.get(position_id, 'Unknown')
+        image_url = f"https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/{player.get('id', 'unknown')}.png&w=130&h=100"
 
         applied_total = 0
         for stat in player.get('stats', []):
@@ -112,12 +104,19 @@ def parse_player_data(data, scoring_period_id):
                 break
 
         if position in positions:
-            positions[position].append({'name': name, 'appliedTotal': applied_total})
+            positions[position].append({
+                'name': name,
+                'appliedTotal': applied_total,
+                'image_url': image_url
+            })
 
     return positions
 
-# Составление команды дня
+
 def assemble_team(positions):
+    """
+    Составляет команду дня.
+    """
     return {
         'C': sorted(positions['C'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
         'LW': sorted(positions['LW'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
@@ -126,69 +125,95 @@ def assemble_team(positions):
         'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
     }
 
-# Формирование сообщения
-async def display_team_table(team):
+
+def create_collage(team):
     """
-    Формирует сообщение о "команде дня" с табличным оформлением и количеством очков ftps.
+    Создает изображение с коллажем команды с улучшенным текстовым отображением.
     """
-    message = (
-        "<b>🏒 Команда дня:</b>\n\n"
-        "<pre>"
-        "╔═════════════╦══════════════════════╦══════════╗\n"
-        "║ Позиция     ║ Игрок                ║ Очки     ║\n"
-        "╠═════════════╬══════════════════════╬══════════╣\n"
-    )
+    player_img_width, player_img_height = 130, 100
+    padding = 20
+    text_padding = 10  # Отступ между изображением и текстом
+    line_height = player_img_height + text_padding + 30 + padding  # Учитываем текстовый блок высотой ~30px
 
-    # Нападающие
-    center = team['C'][0] if team['C'] else None
-    lw = team['LW'][0] if team['LW'] else None
-    rw = team['RW'][0] if team['RW'] else None
+    total_players = sum(len(players) for players in team.values())
+    height = total_players * line_height + padding * 2
 
-    message += (
-        f"║ C           ║ {center['name'] if center else 'Нет данных':<20} ║ {center['appliedTotal'] if center else '---':<8} ║\n"
-        f"║ LW          ║ {lw['name'] if lw else 'Нет данных':<20} ║ {lw['appliedTotal'] if lw else '---':<8} ║\n"
-        f"║ RW          ║ {rw['name'] if rw else 'Нет данных':<20} ║ {rw['appliedTotal'] if rw else '---':<8} ║\n"
-    )
+    width = 500
+    image = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(image)
 
-    # Защитники
-    if team['D']:
-        for idx, d_player in enumerate(team['D'], 1):
-            message += f"║ D{idx:<10} ║ {d_player['name']:<20} ║ {d_player['appliedTotal']:<8} ║\n"
-    else:
-        message += "║ D           ║ Нет данных           ║ ---      ║\n"
+    font_path = "/usr/share/fonts/ttf/dejavu/DejaVuSans.ttf"
+    font = ImageFont.truetype(font_path, size=20)
 
-    # Вратарь
-    goalie = team['G'][0] if team['G'] else None
-    message += (
-        f"║ G           ║ {goalie['name'] if goalie else 'Нет данных':<20} ║ {goalie['appliedTotal'] if goalie else '---':<8} ║\n"
-        "╚═════════════╩══════════════════════╩══════════╝\n"
-        "</pre>"
-    )
+    y_offset = padding
+    for position, players in team.items():
+        for player in players:
+            name = player['name']
+            points = player['appliedTotal']
+            image_url = player['image_url']
 
-    # Отправка сообщения
-    await send_telegram_message(message)
+            try:
+                response = requests.get(image_url, stream=True, timeout=10)
+                response.raise_for_status()
+                player_image = Image.open(response.raw).convert("RGBA")
 
-# Основная логика
+                # Создаем белый фон и накладываем изображение поверх
+                bg = Image.new("RGB", player_image.size, (255, 255, 255))
+                player_image = Image.alpha_composite(bg.convert("RGBA"), player_image).convert("RGB")
+
+                # Ресайз изображения
+                player_image = player_image.resize((player_img_width, player_img_height), Image.LANCZOS)
+
+                # Вычисляем X-координату для центрального выравнивания изображения
+                image_x = (width - player_img_width) // 2
+                image.paste(player_image, (image_x, y_offset))
+            except Exception as e:
+                logging.warning(f"Ошибка загрузки изображения для {name}: {e}")
+                empty_img = Image.new("RGB", (player_img_width, player_img_height), "gray")
+                image_x = (width - player_img_width) // 2
+                image.paste(empty_img, (image_x, y_offset))
+
+            # Вычисляем X-координату для текста
+            text = f"{position}: {name} ({points} ftps)"
+            text_width = draw.textlength(text, font=font)
+            text_x = (width - text_width) // 2  # Центральное выравнивание текста
+
+            # Рисуем текст ниже изображения
+            draw.text((text_x, y_offset + player_img_height + text_padding), text, fill="black", font=font)
+
+            y_offset += line_height
+
+    file_path = "/home/lex/dev/bot/fantasy-hockey-bot/team_collage.jpg"
+    image.save(file_path)
+    return file_path
+
+
+async def send_collage(team):
+    """
+    Отправляет коллаж с командой в Telegram.
+    """
+    file_path = create_collage(team)
+    try:
+        with open(file_path, "rb") as photo:
+            await bot.send_photo(chat_id=CHAT_ID, photo=photo, caption="🏒 <b>Команда дня</b>", parse_mode="HTML")
+    except Exception as e:
+        logging.error(f"Ошибка при отправке изображения: {e}")
+
+
 async def main():
     current_date = datetime.now()
-    logging.info(f"Текущая дата: {current_date}")
-
     scoring_period_id = calculate_scoring_period_id(current_date, SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
     if not scoring_period_id:
         return
 
     data = fetch_player_data(scoring_period_id - 1, LEAGUE_ID)
     if not data:
-        await send_telegram_message("Не удалось получить данные о команде дня.")
         return
 
     positions = parse_player_data(data, scoring_period_id - 1)
     team = assemble_team(positions)
+    await send_collage(team)
 
-    await display_team_table(team)
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except Exception as e:
-        logging.error(f"Произошла ошибка: {e}")
+    asyncio.run(main())
