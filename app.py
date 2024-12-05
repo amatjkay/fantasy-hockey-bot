@@ -8,34 +8,15 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 import asyncio
 import time
+import pytz
 
 # Конфигурация
 LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/last_run.log"
+MOSCOW_TIMEZONE = pytz.timezone('Europe/Moscow')
 SEASON_START_DATE = datetime(2024, 10, 4)
 SEASON_START_SCORING_PERIOD_ID = 1
 LEAGUE_ID = 484910394
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
-
-def was_task_executed_recently():
-    """
-    Проверяет, была ли задача выполнена за последние 4 часа.
-    """
-    # Проверяем, существует ли файл логирования
-    if os.path.exists(LOG_FILE):
-        last_run_time = os.path.getmtime(LOG_FILE)
-        # Если с момента последнего запуска прошло меньше 4 часов (4 * 60 * 60 = 14400 секунд)
-        if time.time() - last_run_time < 14400:
-            return True
-    return False
-
-if was_task_executed_recently():
-    print("Задача уже была выполнена в последние 4 часа. Завершаем.")
-    exit(0)
-
-
-# Логируем выполнение задачи
-with open(LOG_FILE, "w") as log_file:
-    log_file.write("Task executed at: " + time.ctime())
 
 # Карта позиций
 POSITION_MAP = {
@@ -47,7 +28,11 @@ POSITION_MAP = {
 }
 
 # Логирование
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    filename="/home/lex/dev/bot/fantasy-hockey-bot/log.txt",
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 # Загрузка переменных окружения
 load_dotenv('/home/lex/dev/bot/fantasy-hockey-bot/.env')
@@ -61,6 +46,36 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
     exit(1)
 
 bot = Bot(token=TELEGRAM_TOKEN)
+
+
+def was_task_executed_today_at_nine():
+    """
+    Проверяет, была ли задача выполнена сегодня в 9:00 по Москве.
+    """
+    if os.path.exists(LOG_FILE):
+        with open(LOG_FILE, "r") as log_file:
+            last_run_timestamp = log_file.read().strip()
+
+        try:
+            last_run_time = datetime.fromtimestamp(float(last_run_timestamp), tz=MOSCOW_TIMEZONE)
+            current_time = datetime.now(tz=MOSCOW_TIMEZONE)
+
+            if (
+                last_run_time.date() == current_time.date() and
+                last_run_time.hour == 9
+            ):
+                return True
+        except ValueError:
+            logging.warning("Ошибка чтения времени выполнения из лог-файла.")
+    return False
+
+
+def log_task_execution():
+    """
+    Логирует текущее время выполнения задачи.
+    """
+    with open(LOG_FILE, "w") as log_file:
+        log_file.write(str(time.time()))
 
 
 def calculate_scoring_period_id(current_date, season_start_date, season_start_scoring_period_id=1):
@@ -150,12 +165,12 @@ def assemble_team(positions):
 
 def create_collage(team):
     """
-    Создает изображение с коллажем команды с улучшенным текстовым отображением.
+    Создает изображение с коллажем команды.
     """
     player_img_width, player_img_height = 130, 100
     padding = 20
-    text_padding = 10  # Отступ между изображением и текстом
-    line_height = player_img_height + text_padding + 30 + padding  # Учитываем текстовый блок высотой ~30px
+    text_padding = 10
+    line_height = player_img_height + text_padding + 30 + padding
 
     total_players = sum(len(players) for players in team.values())
     height = total_players * line_height + padding * 2
@@ -178,15 +193,10 @@ def create_collage(team):
                 response = requests.get(image_url, stream=True, timeout=10)
                 response.raise_for_status()
                 player_image = Image.open(response.raw).convert("RGBA")
-
-                # Создаем белый фон и накладываем изображение поверх
                 bg = Image.new("RGB", player_image.size, (255, 255, 255))
                 player_image = Image.alpha_composite(bg.convert("RGBA"), player_image).convert("RGB")
-
-                # Ресайз изображения
                 player_image = player_image.resize((player_img_width, player_img_height), Image.LANCZOS)
 
-                # Вычисляем X-координату для центрального выравнивания изображения
                 image_x = (width - player_img_width) // 2
                 image.paste(player_image, (image_x, y_offset))
             except Exception as e:
@@ -195,12 +205,9 @@ def create_collage(team):
                 image_x = (width - player_img_width) // 2
                 image.paste(empty_img, (image_x, y_offset))
 
-            # Вычисляем X-координату для текста
             text = f"{position}: {name} ({points} ftps)"
             text_width = draw.textlength(text, font=font)
-            text_x = (width - text_width) // 2  # Центральное выравнивание текста
-
-            # Рисуем текст ниже изображения
+            text_x = (width - text_width) // 2
             draw.text((text_x, y_offset + player_img_height + text_padding), text, fill="black", font=font)
 
             y_offset += line_height
@@ -238,4 +245,9 @@ async def main():
 
 
 if __name__ == "__main__":
+    if was_task_executed_today_at_nine():
+        print("Задача уже была выполнена сегодня в 9:00 по Москве. Завершаем.")
+        exit(0)
+    log_task_execution()
     asyncio.run(main())
+

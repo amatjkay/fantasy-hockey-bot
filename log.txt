@@ -358,3 +358,15 @@
 2024-12-05 22:04:02,442 - DEBUG - response_closed.complete
 2024-12-05 22:04:02,442 - DEBUG - Call to Bot API endpoint `sendMessage` finished with return value `{'message_id': 48, 'from': {'id': 7384303864, 'is_bot': True, 'first_name': 'fantasyhockey_bot', 'username': 'shadow_hockeybot'}, 'chat': {'id': -1002440320281, 'title': 'test', 'is_forum': True, 'type': 'supergroup'}, 'date': 1733425442, 'text': 'Команда дня:\n\nНападающие:\nAuston Matthews (C): 14.45 ftps\nBrad Marchand (LW): 14.45 ftps\nMitch Marner (RW): 11.95 ftps\n\nЗащитники:\nShea Theodore (D): 16.35 ftps\nJordan Oesterle (D): 11.0 ftps\n\nВратарь:\nDavid Rittich (G): 9.5 ftps', 'entities': [{'offset': 0, 'length': 12, 'type': 'bold'}, {'offset': 14, 'length': 11, 'type': 'bold'}, {'offset': 120, 'length': 10, 'type': 'bold'}, {'offset': 193, 'length': 8, 'type': 'bold'}]}`
 2024-12-05 22:04:02,443 - INFO - Сообщение успешно отправлено в Telegram.
+2024-12-06 00:25:52,943 - WARNING - Ошибка чтения времени выполнения из лог-файла.
+2024-12-06 00:25:54,670 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:26:05,644 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:27:06,988 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:27:28,794 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:30:46,151 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:31:19,182 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:31:28,129 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:31:32,581 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:31:35,581 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:31:47,748 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 00:32:06,337 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
