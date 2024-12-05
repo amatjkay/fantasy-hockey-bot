@@ -17,17 +17,21 @@ LEAGUE_ID = 484910394
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
 
 def was_task_executed_recently():
+    """
+    Проверяет, была ли задача выполнена за последние 4 часа.
+    """
     # Проверяем, существует ли файл логирования
     if os.path.exists(LOG_FILE):
         last_run_time = os.path.getmtime(LOG_FILE)
-        # Если с момента последнего запуска прошло меньше 24 часов
-        if time.time() - last_run_time < 86400:
+        # Если с момента последнего запуска прошло меньше 4 часов (4 * 60 * 60 = 14400 секунд)
+        if time.time() - last_run_time < 14400:
             return True
     return False
 
 if was_task_executed_recently():
-    print("Задача уже была выполнена в последние 24 часа. Завершаем.")
+    print("Задача уже была выполнена в последние 4 часа. Завершаем.")
     exit(0)
+
 
 # Логируем выполнение задачи
 with open(LOG_FILE, "w") as log_file:
