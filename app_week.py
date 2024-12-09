@@ -1,17 +1,16 @@
 import requests
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 from telegram import Bot
 from dotenv import load_dotenv
-from PIL import Image, ImageDraw, ImageFont
 import os
 import asyncio
-import time
 import pytz
+from PIL import Image, ImageDraw, ImageFont
 
 # Конфигурация
-LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/last_run.log"
+LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/log.txt"
 MOSCOW_TIMEZONE = pytz.timezone('Europe/Moscow')
 SEASON_START_DATE = datetime(2024, 10, 4)
 SEASON_START_SCORING_PERIOD_ID = 1
@@ -29,7 +28,7 @@ POSITION_MAP = {
 
 # Логирование
 logging.basicConfig(
-    filename="/home/lex/dev/bot/fantasy-hockey-bot/log.txt",
+    filename=LOG_FILE,
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -37,7 +36,6 @@ logging.basicConfig(
 # Загрузка переменных окружения
 load_dotenv('/home/lex/dev/bot/fantasy-hockey-bot/.env')
 
-# Telegram Bot
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
 
@@ -48,40 +46,9 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
 bot = Bot(token=TELEGRAM_TOKEN)
 
 
-# def was_task_executed_today_at_nine():
-#     """
-#     Проверяет, была ли задача выполнена сегодня в 9:00 по Москве.
-#     """
-#     if os.path.exists(LOG_FILE):
-#         with open(LOG_FILE, "r") as log_file:
-#             last_run_timestamp = log_file.read().strip()
-
-#         try:
-#             last_run_time = datetime.fromtimestamp(float(last_run_timestamp), tz=MOSCOW_TIMEZONE)
-#             current_time = datetime.now(tz=MOSCOW_TIMEZONE)
-
-#             if (
-#                 last_run_time.date() == current_time.date() and
-#                 last_run_time.hour == 9
-#             ):
-#                 return True
-#         except ValueError:
-#             logging.warning("Ошибка чтения времени выполнения из лог-файла.")
-#     return False
-
-
-def log_task_execution():
-    """
-    Логирует текущее время выполнения задачи.
-    """
-    with open(LOG_FILE, "w") as log_file:
-        log_file.write(str(time.time()))
-
-
 def calculate_scoring_period_id(current_date, season_start_date, season_start_scoring_period_id=1):
-    """
-    Вычисляет текущий scoringPeriodId.
-    """
+    current_date = current_date.astimezone(MOSCOW_TIMEZONE)
+    season_start_date = season_start_date.replace(tzinfo=MOSCOW_TIMEZONE)
     if current_date < season_start_date:
         logging.error("Текущая дата раньше даты начала сезона.")
         return None
@@ -90,9 +57,6 @@ def calculate_scoring_period_id(current_date, season_start_date, season_start_sc
 
 
 def fetch_player_data(scoring_period_id, league_id):
-    """
-    Запрашивает данные о игроках.
-    """
     base_headers = {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0',
@@ -114,6 +78,7 @@ def fetch_player_data(scoring_period_id, league_id):
         headers['x-fantasy-filter'] = json.dumps(filters)
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
+        logging.info(f"Успешно получены данные для scoringPeriodId: {scoring_period_id}")
         return response.json()
     except requests.exceptions.RequestException as e:
         logging.error(f"Ошибка при запросе данных игроков: {e}")
@@ -121,9 +86,6 @@ def fetch_player_data(scoring_period_id, league_id):
 
 
 def parse_player_data(data, scoring_period_id):
-    """
-    Парсит данные игроков и распределяет их по позициям.
-    """
     players_data = data.get('players', [])
     positions = {'C': [], 'LW': [], 'RW': [], 'D': [], 'G': []}
 
@@ -147,26 +109,11 @@ def parse_player_data(data, scoring_period_id):
                 'image_url': image_url
             })
 
+    logging.info(f"Успешно обработаны данные игроков для scoringPeriodId: {scoring_period_id}")
     return positions
 
 
-def assemble_team(positions):
-    """
-    Составляет команду дня.
-    """
-    return {
-        'C': sorted(positions['C'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
-        'LW': sorted(positions['LW'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
-        'RW': sorted(positions['RW'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
-        'D': sorted(positions['D'], key=lambda x: x['appliedTotal'], reverse=True)[:2],
-        'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
-    }
-
-
 def create_collage(team):
-    """
-    Создает изображение с коллажем команды.
-    """
     player_img_width, player_img_height = 130, 100
     padding = 20
     text_padding = 10
@@ -205,49 +152,77 @@ def create_collage(team):
                 image_x = (width - player_img_width) // 2
                 image.paste(empty_img, (image_x, y_offset))
 
-            text = f"{position}: {name} ({points} ftps)"
+            text = f"{position}: {name} ({points:.2f} ftps)"
             text_width = draw.textlength(text, font=font)
             text_x = (width - text_width) // 2
             draw.text((text_x, y_offset + player_img_height + text_padding), text, fill="black", font=font)
 
             y_offset += line_height
 
-    file_path = "/home/lex/dev/bot/fantasy-hockey-bot/team_collage.jpg"
+    file_path = "/home/lex/dev/bot/fantasy-hockey-bot/team_week_collage.jpg"
     image.save(file_path)
+    logging.info(f"Коллаж сохранён: {file_path}")
     return file_path
 
 
 async def send_collage(team):
-    """
-    Отправляет коллаж с командой в Telegram.
-    """
     file_path = create_collage(team)
     try:
         with open(file_path, "rb") as photo:
-            await bot.send_photo(chat_id=CHAT_ID, photo=photo, caption="🏒 <b>Команда дня</b>", parse_mode="HTML")
+            await bot.send_photo(chat_id=CHAT_ID, photo=photo, caption="🏒 <b>Команда недели</b>", parse_mode="HTML")
+            logging.info("Коллаж успешно отправлен в Telegram.")
     except Exception as e:
         logging.error(f"Ошибка при отправке изображения: {e}")
 
 
 async def main():
-    current_date = datetime.now()
-    scoring_period_id = calculate_scoring_period_id(current_date, SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
-    if not scoring_period_id:
-        return
+    current_date = datetime.now(tz=MOSCOW_TIMEZONE)
+    last_monday = current_date - timedelta(days=current_date.weekday() + 7)
+    last_sunday = last_monday + timedelta(days=6)
 
-    data = fetch_player_data(scoring_period_id - 1, LEAGUE_ID)
-    if not data:
-        return
+    scoring_period_ids = [
+        calculate_scoring_period_id(last_monday + timedelta(days=i), SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
+        for i in range(7)
+    ]
 
-    positions = parse_player_data(data, scoring_period_id - 1)
-    team = assemble_team(positions)
-    await send_collage(team)
+    team_positions = {'C': {}, 'LW': {}, 'RW': {}, 'D': {}, 'G': {}}
+
+    for scoring_period_id in scoring_period_ids:
+        if scoring_period_id:
+            data = fetch_player_data(scoring_period_id, LEAGUE_ID)
+            if data:
+                positions = parse_player_data(data, scoring_period_id)
+                for position, players in positions.items():
+                    for player in players:
+                        name = player['name']
+                        applied_total = player['appliedTotal']
+                        image_url = player['image_url']
+
+                        if name not in team_positions[position]:
+                            team_positions[position][name] = {
+                                'appliedTotal': 0,
+                                'image_url': image_url
+                            }
+
+                        team_positions[position][name]['appliedTotal'] += applied_total
+
+    final_team = {
+        'C': [max(team_positions['C'].items(), key=lambda x: x[1]['appliedTotal'], default=(None, {'appliedTotal': 0}))],
+        'LW': [max(team_positions['LW'].items(), key=lambda x: x[1]['appliedTotal'], default=(None, {'appliedTotal': 0}))],
+        'RW': [max(team_positions['RW'].items(), key=lambda x: x[1]['appliedTotal'], default=(None, {'appliedTotal': 0}))],
+        'D': sorted(team_positions['D'].items(), key=lambda x: x[1]['appliedTotal'], reverse=True)[:2],
+        'G': [max(team_positions['G'].items(), key=lambda x: x[1]['appliedTotal'], default=(None, {'appliedTotal': 0}))]
+    }
+
+    for position in final_team:
+        final_team[position] = [
+            {'name': name or "Unknown", 'appliedTotal': round(data['appliedTotal'], 2), 'image_url': data['image_url']}
+            for name, data in final_team[position]
+        ]
+
+    await send_collage(final_team)
 
 
 if __name__ == "__main__":
-    # if was_task_executed_today_at_nine():
-    #     print("Задача уже была выполнена сегодня в 9:00 по Москве. Завершаем.")
-    #     exit(0)
-    log_task_execution()
+    logging.info("Запуск команды недели.")
     asyncio.run(main())
-

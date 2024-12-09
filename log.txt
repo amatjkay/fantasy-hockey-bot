@@ -370,3 +370,133 @@
 2024-12-06 00:31:35,581 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
 2024-12-06 00:31:47,748 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
 2024-12-06 00:32:06,337 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-06 09:00:06,817 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-07 09:00:07,702 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-08 09:00:08,106 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+Traceback (most recent call last):
+  File "/home/lex/dev/bot/fantasy-hockey-bot/app.py", line 5, in <module>
+    from telegram import Bot
+ModuleNotFoundError: No module named 'telegram'
+2024-12-09 09:00:07,838 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+Traceback (most recent call last):
+  File "/home/lex/dev/bot/fantasy-hockey-bot/app.py", line 5, in <module>
+    from telegram import Bot
+ModuleNotFoundError: No module named 'telegram'
+2024-12-09 22:28:52,898 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:29:49,954 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:31:15,342 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:31:22,426 - ERROR - Ошибка при отправке изображения: expected str, bytes or os.PathLike object, not NoneType
+2024-12-09 22:36:37,052 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:36:50,301 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:37:57,863 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:38:05,804 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:39:51,298 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:40:06,769 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:40:12,426 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:42:10,504 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:42:20,515 - ERROR - Ошибка при запросе данных игроков: HTTPSConnectionPool(host='lm-api-reads.fantasy.espn.com', port=443): Max retries exceeded with url: /apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f08e3f65f40>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2024-12-09 22:43:07,812 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:45:27,483 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:46:51,013 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:47:31,179 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:47:41,165 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:47:41,165 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:47:41,165 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:47:41,165 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:47:41,165 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:47:41,165 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:48:16,725 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:48:21,260 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:48:21,260 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:48:21,260 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:48:21,260 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:48:21,260 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:48:21,260 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:48:21,260 - WARNING - Ошибка загрузки изображения для Charlie McAvoy: Invalid URL 'default_image_url.png': No schema supplied. Perhaps you meant http://default_image_url.png?
+2024-12-09 22:48:21,261 - WARNING - Ошибка загрузки изображения для Quinn Hughes: Invalid URL 'default_image_url.png': No schema supplied. Perhaps you meant http://default_image_url.png?
+2024-12-09 22:48:21,261 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:48:21,261 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:48:21,676 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:49:26,714 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:49:32,706 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:49:32,706 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:49:32,706 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:49:32,706 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:49:32,706 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:49:32,706 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:49:32,707 - WARNING - Ошибка загрузки изображения для Charlie McAvoy: Invalid URL 'default_image_url.png': No schema supplied. Perhaps you meant http://default_image_url.png?
+2024-12-09 22:49:32,707 - WARNING - Ошибка загрузки изображения для Quinn Hughes: Invalid URL 'default_image_url.png': No schema supplied. Perhaps you meant http://default_image_url.png?
+2024-12-09 22:49:32,708 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:49:32,708 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:49:32,973 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:50:14,224 - INFO - Запуск сбора команды за предыдущую неделю.
+2024-12-09 22:50:19,302 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:50:19,302 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:50:19,302 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:50:19,302 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:50:19,302 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:50:19,302 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:50:19,302 - WARNING - Изображение отсутствует для игрока: Charlie McAvoy
+2024-12-09 22:50:19,302 - WARNING - Ошибка загрузки изображения для Charlie McAvoy: Invalid URL 'default_image_url.png': No schema supplied. Perhaps you meant http://default_image_url.png?
+2024-12-09 22:50:19,303 - WARNING - Изображение отсутствует для игрока: Quinn Hughes
+2024-12-09 22:50:19,303 - WARNING - Ошибка загрузки изображения для Quinn Hughes: Invalid URL 'default_image_url.png': No schema supplied. Perhaps you meant http://default_image_url.png?
+2024-12-09 22:50:19,304 - ERROR - Ожидался словарь, но получена строка: name
+2024-12-09 22:50:19,304 - ERROR - Ожидался словарь, но получена строка: appliedTotal
+2024-12-09 22:50:19,548 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:51:00,512 - ERROR - Ошибка при отправке изображения: Timed out
+2024-12-09 22:51:09,780 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 22:54:30,399 - INFO - Запуск команды недели.
+2024-12-09 22:57:27,557 - INFO - Запуск команды недели.
+2024-12-09 22:59:24,606 - INFO - Запуск команды недели.
+2024-12-09 22:59:34,100 - WARNING - Ошибка загрузки изображения для Brayden Point: images do not match
+2024-12-09 22:59:34,100 - WARNING - Ошибка загрузки изображения для Andrei Svechnikov: images do not match
+2024-12-09 22:59:34,101 - WARNING - Ошибка загрузки изображения для Matthew Tkachuk: images do not match
+2024-12-09 22:59:34,101 - WARNING - Ошибка загрузки изображения для Shea Theodore: images do not match
+2024-12-09 22:59:34,102 - WARNING - Ошибка загрузки изображения для Nick Seeler: images do not match
+2024-12-09 22:59:34,102 - WARNING - Ошибка загрузки изображения для Adin Hill: images do not match
+2024-12-09 22:59:34,535 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 23:02:25,082 - INFO - Запуск команды недели.
+2024-12-09 23:02:30,956 - WARNING - Ошибка загрузки изображения для Brayden Point: Отсутствует URL изображения
+2024-12-09 23:02:30,956 - WARNING - Ошибка загрузки изображения для Andrei Svechnikov: Отсутствует URL изображения
+2024-12-09 23:02:30,957 - WARNING - Ошибка загрузки изображения для Matthew Tkachuk: Отсутствует URL изображения
+2024-12-09 23:02:30,957 - WARNING - Ошибка загрузки изображения для Shea Theodore: Отсутствует URL изображения
+2024-12-09 23:02:30,958 - WARNING - Ошибка загрузки изображения для Nick Seeler: Отсутствует URL изображения
+2024-12-09 23:02:30,958 - WARNING - Ошибка загрузки изображения для Adin Hill: Отсутствует URL изображения
+2024-12-09 23:02:31,360 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 23:05:05,977 - INFO - Запуск команды недели.
+2024-12-09 23:05:15,988 - ERROR - Ошибка при запросе данных игроков: HTTPSConnectionPool(host='lm-api-reads.fantasy.espn.com', port=443): Max retries exceeded with url: /apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb8feb47970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2024-12-09 23:05:20,255 - WARNING - Ошибка загрузки изображения для Brayden Point: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:05:20,435 - WARNING - Ошибка загрузки изображения для Andrei Svechnikov: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:05:20,539 - WARNING - Ошибка загрузки изображения для Matthew Tkachuk: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:05:20,633 - WARNING - Ошибка загрузки изображения для Shea Theodore: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:05:20,740 - WARNING - Ошибка загрузки изображения для Nick Seeler: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:05:20,856 - WARNING - Ошибка загрузки изображения для Adin Hill: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:05:21,189 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 23:05:52,700 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 23:09:02,448 - INFO - Запуск команды недели.
+2024-12-09 23:09:06,397 - WARNING - Ошибка загрузки изображения для Brayden Point: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:09:06,539 - WARNING - Ошибка загрузки изображения для Andrei Svechnikov: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:09:06,636 - WARNING - Ошибка загрузки изображения для Matthew Tkachuk: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:09:06,779 - WARNING - Ошибка загрузки изображения для Shea Theodore: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:09:06,870 - WARNING - Ошибка загрузки изображения для Nick Seeler: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:09:06,963 - WARNING - Ошибка загрузки изображения для Adin Hill: 404 Client Error: Not Found for url: https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/unknown.png&w=130&h=100
+2024-12-09 23:09:07,302 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 23:13:45,622 - INFO - Запуск команды недели.
+2024-12-09 23:13:51,548 - INFO - Успешно получены данные для scoringPeriodId: 60
+2024-12-09 23:13:51,549 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 60
+2024-12-09 23:13:52,467 - INFO - Успешно получены данные для scoringPeriodId: 61
+2024-12-09 23:13:52,469 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 61
+2024-12-09 23:13:53,293 - INFO - Успешно получены данные для scoringPeriodId: 62
+2024-12-09 23:13:53,296 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 62
+2024-12-09 23:13:53,974 - INFO - Успешно получены данные для scoringPeriodId: 63
+2024-12-09 23:13:53,976 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 63
+2024-12-09 23:13:54,479 - INFO - Успешно получены данные для scoringPeriodId: 64
+2024-12-09 23:13:54,481 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 64
+2024-12-09 23:13:55,326 - INFO - Успешно получены данные для scoringPeriodId: 65
+2024-12-09 23:13:55,328 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 65
+2024-12-09 23:13:56,205 - INFO - Успешно получены данные для scoringPeriodId: 66
+2024-12-09 23:13:56,208 - INFO - Успешно обработаны данные игроков для scoringPeriodId: 66
+2024-12-09 23:13:59,738 - INFO - Коллаж сохранён: /home/lex/dev/bot/fantasy-hockey-bot/team_week_collage.jpg
+2024-12-09 23:14:00,095 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-09 23:14:00,096 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-09 23:14:46,941 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
