@@ -7,32 +7,50 @@
         "3942905": {
             "name": "Troy Terry",
             "team_of_the_day_count": 1,
-            "grade": "common"
+            "grade": "common",
+            "dates_in_team_of_the_day": [
+                "2024-12-11"
+            ]
         },
         "2593315": {
             "name": "Jason Zucker",
             "team_of_the_day_count": 1,
-            "grade": "common"
+            "grade": "common",
+            "dates_in_team_of_the_day": [
+                "2024-12-11"
+            ]
         },
         "4024820": {
             "name": "Patrik Laine",
             "team_of_the_day_count": 1,
-            "grade": "common"
+            "grade": "common",
+            "dates_in_team_of_the_day": [
+                "2024-12-11"
+            ]
         },
         "4565227": {
             "name": "Moritz Seider",
             "team_of_the_day_count": 1,
-            "grade": "common"
+            "grade": "common",
+            "dates_in_team_of_the_day": [
+                "2024-12-11"
+            ]
         },
         "4781556": {
             "name": "Owen Power",
             "team_of_the_day_count": 1,
-            "grade": "common"
+            "grade": "common",
+            "dates_in_team_of_the_day": [
+                "2024-12-11"
+            ]
         },
         "4894729": {
             "name": "Arvid Soderblom",
             "team_of_the_day_count": 1,
-            "grade": "common"
+            "grade": "common",
+            "dates_in_team_of_the_day": [
+                "2024-12-11"
+            ]
         }
     }
 }
