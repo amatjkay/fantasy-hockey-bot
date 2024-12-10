@@ -1,0 +1,38 @@
+{
+    "current_week": {
+        "start_date": "2024-12-09",
+        "end_date": "2024-12-15"
+    },
+    "players": {
+        "3942905": {
+            "name": "Troy Terry",
+            "team_of_the_day_count": 1,
+            "grade": "common"
+        },
+        "2593315": {
+            "name": "Jason Zucker",
+            "team_of_the_day_count": 1,
+            "grade": "common"
+        },
+        "4024820": {
+            "name": "Patrik Laine",
+            "team_of_the_day_count": 1,
+            "grade": "common"
+        },
+        "4565227": {
+            "name": "Moritz Seider",
+            "team_of_the_day_count": 1,
+            "grade": "common"
+        },
+        "4781556": {
+            "name": "Owen Power",
+            "team_of_the_day_count": 1,
+            "grade": "common"
+        },
+        "4894729": {
+            "name": "Arvid Soderblom",
+            "team_of_the_day_count": 1,
+            "grade": "common"
+        }
+    }
+}
