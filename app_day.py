@@ -13,7 +13,7 @@ import pytz
 LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/log.txt"
 MOSCOW_TIMEZONE = pytz.timezone('Europe/Moscow')
 SEASON_START_DATE = datetime(2024, 10, 4)
-SEASON_START_SCORING_PERIOD_ID = 0
+SEASON_START_SCORING_PERIOD_ID = 1
 LEAGUE_ID = 484910394
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
 PLAYER_STATS_FILE = "player_stats.json"
@@ -114,23 +114,19 @@ def update_player_stats(player_id, name, team_of_the_day=False):
         player_stats["players"][player_id] = {
             "name": name,
             "team_of_the_day_count": 0,
-            "grade": "common",
-            "dates_in_team_of_the_day": []  # Новый список для хранения дат
+            "grade": "common"
         }
 
-    # Обновление данных только если игрок в команде дня и не добавлен сегодня
-    stats = player_stats["players"][player_id]
-    today = datetime.now(MOSCOW_TIMEZONE).strftime('%Y-%m-%d')
-    if team_of_the_day and today not in stats["dates_in_team_of_the_day"]:
+    # Обновление данных только если игрок в команде дня
+    if team_of_the_day:
+        stats = player_stats["players"][player_id]
         stats["name"] = name
         stats["team_of_the_day_count"] += 1
         stats["grade"] = calculate_grade(stats["team_of_the_day_count"])  # Градация
-        stats["dates_in_team_of_the_day"].append(today)  # Добавляем дату
 
     # Сохранение изменений в JSON
     with open(PLAYER_STATS_FILE, 'w') as f:
         json.dump(player_stats, f, indent=4)
-
 
 # Получение данных игроков
 def fetch_player_data(scoring_period_id, league_id):
@@ -149,22 +145,16 @@ def fetch_player_data(scoring_period_id, league_id):
     }
 
     url = API_URL_TEMPLATE.format(league_id=league_id)
-    retries = 3  # Число повторных попыток
 
-    for attempt in range(retries):
-        try:
-            headers = base_headers.copy()
-            headers['x-fantasy-filter'] = json.dumps(filters)
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            return response.json()
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Попытка {attempt + 1}/{retries} - Ошибка при запросе данных игроков: {e}")
-            if attempt < retries - 1:
-                continue  # Повторить попытку
-            else:
-                return None  # Вернуть None после истечения всех попыток
-
+    try:
+        headers = base_headers.copy()
+        headers['x-fantasy-filter'] = json.dumps(filters)
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Ошибка при запросе данных игроков: {e}")
+        return None
 
 # Разбор данных игроков
 def parse_player_data(data, scoring_period_id):
