@@ -10,7 +10,7 @@ import asyncio
 import pytz
 
 # Конфигурация
-LOG_FILE = "/home/lex/dev/bot/fantasy-hockey-bot/log.txt"
+LOG_FILE = "C:\\dev\\fantasy-hockey-bot\\log.txt"
 MOSCOW_TIMEZONE = pytz.timezone('Europe/Moscow')
 SEASON_START_DATE = datetime(2024, 10, 4)
 SEASON_START_SCORING_PERIOD_ID = 1
@@ -42,7 +42,7 @@ logging.basicConfig(
 )
 
 # Загрузка переменных окружения
-load_dotenv('/home/lex/dev/bot/fantasy-hockey-bot/.env')
+load_dotenv('C:\\dev\\fantasy-hockey-bot\\.env')
 
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
@@ -55,7 +55,8 @@ bot = Bot(token=TELEGRAM_TOKEN)
 
 # Функция для расчета ID текущего периода
 def calculate_scoring_period_id(current_date, season_start_date, season_start_scoring_period_id=1):
-    current_date = current_date.astimezone(MOSCOW_TIMEZONE)
+    if not isinstance(current_date, datetime):
+        current_date = datetime.combine(current_date, datetime.min.time())
     season_start_date = season_start_date.replace(tzinfo=MOSCOW_TIMEZONE)
     if current_date < season_start_date:
         logging.error("Текущая дата раньше даты начала сезона.")
@@ -101,32 +102,33 @@ def calculate_grade(team_of_the_day_count):
         return "common"
 
 # Обновление статистики игроков, только для тех, кто попал в команду дня
-def update_player_stats(player_id, name, team_of_the_day=False):
-    # Загрузка текущих данных из JSON
+def update_player_stats(player_id, name, date, team_of_the_day=False):
     if os.path.exists(PLAYER_STATS_FILE):
         with open(PLAYER_STATS_FILE, 'r') as f:
             player_stats = json.load(f)
     else:
         player_stats = {"players": {}, "current_week": {}}
 
-    # Инициализация данных для нового игрока
     if player_id not in player_stats["players"]:
         player_stats["players"][player_id] = {
             "name": name,
             "team_of_the_day_count": 0,
-            "grade": "common"
+            "grade": "common",
+            "team_of_the_day_dates": []
         }
 
-    # Обновление данных только если игрок в команде дня
-    if team_of_the_day:
-        stats = player_stats["players"][player_id]
-        stats["name"] = name
-        stats["team_of_the_day_count"] += 1
-        stats["grade"] = calculate_grade(stats["team_of_the_day_count"])  # Градация
+    stats = player_stats["players"][player_id]
+    stats.setdefault("team_of_the_day_dates", [])  # Убедиться, что поле существует
+    stats["name"] = name
 
-    # Сохранение изменений в JSON
+    if team_of_the_day and date not in stats["team_of_the_day_dates"]:
+        stats["team_of_the_day_dates"].append(date)
+        stats["team_of_the_day_count"] += 1
+        stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
+
     with open(PLAYER_STATS_FILE, 'w') as f:
         json.dump(player_stats, f, indent=4)
+
 
 # Получение данных игроков
 def fetch_player_data(scoring_period_id, league_id):
@@ -208,7 +210,7 @@ def create_collage(team):
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
 
-    font_path = "/usr/share/fonts/ttf/dejavu/DejaVuSans.ttf"
+    font_path = "C:\\Windows\\Fonts\\arial.ttf"  # Используем стандартный шрифт Arial
     font = ImageFont.truetype(font_path, size=20)
 
     y_offset = padding
@@ -241,7 +243,7 @@ def create_collage(team):
             draw.text((text_x, y_offset + player_img_height + text_padding), text, fill=color, font=font)
             y_offset += line_height
 
-    file_path = "/home/lex/dev/bot/fantasy-hockey-bot/team_day_collage.jpg"
+    file_path = "C:\\dev\\fantasy-hockey-bot\\team_day_collage.jpg"
     image.save(file_path)
     return file_path
 
@@ -262,7 +264,7 @@ async def send_collage(team):
 async def main():
     week_start, week_end = update_week_period()
 
-    current_date = datetime.now(tz=MOSCOW_TIMEZONE)
+    current_date = datetime.now(MOSCOW_TIMEZONE)
     scoring_period_id = calculate_scoring_period_id(current_date, SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
 
     if not scoring_period_id:
@@ -281,13 +283,11 @@ async def main():
         'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
     }
 
-    # Обновление статистики игроков
     for position, players in team.items():
         for player in players:
-            update_player_stats(player_id=player['id'], name=player['name'], team_of_the_day=True)
+            update_player_stats(player_id=player['id'], name=player['name'], date=str(current_date.date()), team_of_the_day=True)
 
     await send_collage(team)
-
     logging.info(f"Сформирована команда дня: {team}")
 
 # Запуск программы

@@ -4,141 +4,52 @@
         "end_date": "2024-12-15"
     },
     "players": {
-        "3942905": {
-            "name": "Troy Terry",
+        "2976848": {
+            "name": "Scott Laughton",
             "team_of_the_day_count": 1,
             "grade": "common",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
+            "team_of_the_day_dates": [
+                "2024-12-14"
             ]
         },
-        "2593315": {
-            "name": "Jason Zucker",
+        "3042083": {
+            "name": "Jake Guentzel",
             "team_of_the_day_count": 1,
             "grade": "common",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
+            "team_of_the_day_dates": [
+                "2024-12-14"
             ]
         },
-        "4024820": {
-            "name": "Patrik Laine",
+        "2591155": {
+            "name": "Bryan Rust",
             "team_of_the_day_count": 1,
             "grade": "common",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
+            "team_of_the_day_dates": [
+                "2024-12-14"
             ]
         },
-        "4565227": {
-            "name": "Moritz Seider",
+        "3151136": {
+            "name": "Jake Walman",
             "team_of_the_day_count": 1,
             "grade": "common",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
+            "team_of_the_day_dates": [
+                "2024-12-14"
             ]
         },
-        "4781556": {
-            "name": "Owen Power",
-            "team_of_the_day_count": 3,
-            "grade": "rare",
-            "dates_in_team_of_the_day": [
-                "2024-12-11",
-                "2024-12-12"
-            ]
-        },
-        "4894729": {
-            "name": "Arvid Soderblom",
+        "3042016": {
+            "name": "Josh Morrissey",
             "team_of_the_day_count": 1,
             "grade": "common",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
+            "team_of_the_day_dates": [
+                "2024-12-14"
             ]
         },
-        "3041969": {
-            "name": "Nathan MacKinnon",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
-            ]
-        },
-        "3899952": {
-            "name": "Kyle Connor",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
-            ]
-        },
-        "3899938": {
-            "name": "Mikko Rantanen",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
-            ]
-        },
-        "2300": {
-            "name": "Brent Burns",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
-            ]
-        },
-        "3988847": {
-            "name": "Neal Pionk",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
-            ]
-        },
-        "3067313": {
-            "name": "Anthony Stolarz",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-11"
-            ]
-        },
-        "2562637": {
-            "name": "Mika Zibanejad",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-12"
-            ]
-        },
-        "4319858": {
-            "name": "Brady Tkachuk",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-12"
-            ]
-        },
-        "4271734": {
-            "name": "Drake Batherson",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-12"
-            ]
-        },
-        "4197146": {
-            "name": "Adam Fox",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-12"
-            ]
-        },
-        "3069285": {
-            "name": "Linus Ullmark",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "dates_in_team_of_the_day": [
-                "2024-12-12"
+        "4341584": {
+            "name": "Kevin Lankinen",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-14"
             ]
         }
     }
