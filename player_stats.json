@@ -51,6 +51,56 @@
             "team_of_the_day_dates": [
                 "2024-12-14"
             ]
+        },
+        "4565255": {
+            "name": "Shane Pinto",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-14"
+            ]
+        },
+        "4319858": {
+            "name": "Brady Tkachuk",
+            "team_of_the_day_count": 2,
+            "grade": "uncommon",
+            "team_of_the_day_dates": [
+                "2024-12-11",
+                "2024-12-14"
+            ]
+        },
+        "3149829": {
+            "name": "Michael Amadio",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-14"
+            ]
+        },
+        "3025608": {
+            "name": "Nick Jensen",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-14"
+            ]
+        },
+        "3900219": {
+            "name": "Thomas Chabot",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-14"
+            ]
+        },
+        "3069285": {
+            "name": "Linus Ullmark",
+            "team_of_the_day_count": 2,
+            "grade": "uncommon",
+            "team_of_the_day_dates": [
+                "2024-12-11",
+                "2024-12-14"
+            ]
         }
     }
 }
