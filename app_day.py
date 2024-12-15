@@ -59,19 +59,20 @@ def get_current_week_dates():
     """Получение дат текущей недели по времени ESPN"""
     espn_now = datetime.now(ESPN_TIMEZONE)
     
-    # Находим понедельник текущей недели
-    monday = espn_now - timedelta(days=espn_now.weekday())
-    monday = monday.replace(hour=0, minute=0, second=0, microsecond=0)
+    # Находим вторник текущей недели
+    days_since_tuesday = (espn_now.weekday() - 1) % 7
+    tuesday = espn_now - timedelta(days=days_since_tuesday)
+    tuesday = tuesday.replace(hour=0, minute=0, second=0, microsecond=0)
     
-    # Находим воскресенье
-    sunday = monday + timedelta(days=6)
-    sunday = sunday.replace(hour=23, minute=59, second=59, microsecond=999999)
+    # Находим следующий понедельник
+    next_monday = tuesday + timedelta(days=6)
+    next_monday = next_monday.replace(hour=23, minute=59, second=59, microsecond=999999)
     
-    return monday, sunday
+    return tuesday, next_monday
 
 def update_week_period():
     """Обновление периода недели и проверка на новую неделю"""
-    monday, sunday = get_current_week_dates()
+    tuesday, next_monday = get_current_week_dates()
     
     if os.path.exists(PLAYER_STATS_FILE):
         with open(PLAYER_STATS_FILE, 'r') as f:
@@ -80,22 +81,22 @@ def update_week_period():
         data = {"current_week": {}, "players": {}}
 
     # Проверяем, началась ли новая неделя
-    if data.get("current_week", {}).get("start_date") != monday.strftime("%Y-%m-%d"):
+    if data.get("current_week", {}).get("start_date") != tuesday.strftime("%Y-%m-%d"):
         # Обнуляем статистику только если началась новая неделя
         for player in data.get("players", {}).values():
-            player["team_of_the_day_count"] = 0
+            player["team_of_the_day_count"] = 1
             player["grade"] = "common"
             player["team_of_the_day_dates"] = []
 
         data["current_week"] = {
-            "start_date": monday.strftime("%Y-%m-%d"),
-            "end_date": sunday.strftime("%Y-%m-%d")
+            "start_date": tuesday.strftime("%Y-%m-%d"),
+            "end_date": next_monday.strftime("%Y-%m-%d")
         }
         
         with open(PLAYER_STATS_FILE, 'w') as f:
             json.dump(data, f, indent=4)
 
-    return monday, sunday
+    return tuesday, next_monday
 
 def calculate_grade(team_of_the_day_count):
     """Определение грейда игрока на основе количества попаданий в команду недели"""
@@ -285,12 +286,12 @@ async def send_collage(team, date_str):
         logging.error("Не удалось создать коллаж.")
 
 async def main():
-    monday, sunday = update_week_period()
+    tuesday, next_monday = update_week_period()
     espn_now = datetime.now(ESPN_TIMEZONE)
     
     # Определяем, какие даты нужно обработать
-    current_date = monday
-    while current_date <= min(espn_now, sunday):
+    current_date = tuesday
+    while current_date <= min(espn_now, next_monday):
         logging.info(f"Обработка данных для даты: {current_date.strftime('%Y-%m-%d')} (ESPN)")
 
         scoring_period_id = (current_date.date() - SEASON_START_DATE.date()).days + SEASON_START_SCORING_PERIOD_ID

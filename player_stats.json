@@ -1,57 +1,9 @@
 {
     "current_week": {
-        "start_date": "2024-12-09",
-        "end_date": "2024-12-15"
+        "start_date": "2024-12-10",
+        "end_date": "2024-12-16"
     },
     "players": {
-        "3151187": {
-            "name": "Brayden Point",
-            "team_of_the_day_count": 1,
-            "grade": "common",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "4233720": {
-            "name": "Eeli Tolvanen",
-            "team_of_the_day_count": 1,
-            "grade": "common",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "3042095": {
-            "name": "Oliver Bjorkstrand",
-            "team_of_the_day_count": 1,
-            "grade": "common",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "4565239": {
-            "name": "Thomas Harley",
-            "team_of_the_day_count": 1,
-            "grade": "common",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "4352770": {
-            "name": "K'Andre Miller",
-            "team_of_the_day_count": 1,
-            "grade": "common",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "5622": {
-            "name": "Scott Wedgewood",
-            "team_of_the_day_count": 1,
-            "grade": "common",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
         "3942905": {
             "name": "Troy Terry",
             "team_of_the_day_count": 1,
