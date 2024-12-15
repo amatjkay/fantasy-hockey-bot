@@ -13,6 +13,7 @@ import asyncio
 import pytz
 import time
 import sys
+import traceback
 
 # Конфигурация
 LOG_FILE = "C:\\dev\\fantasy-hockey-bot\\log.txt"
@@ -143,60 +144,106 @@ def calculate_grade(team_of_the_day_count):
     else:
         return "common"
 
-def update_player_stats(player_id, name, date_str, applied_total, team_of_the_day=False):
+def update_player_stats(player_id, name, date_str, applied_total, position, team_of_the_day=False):
     """Обновление статистики игрока с учетом недельной статистики"""
-    if os.path.exists(PLAYER_STATS_FILE):
-        with open(PLAYER_STATS_FILE, 'r') as f:
-            player_stats = json.load(f)
-    else:
-        player_stats = {"current_week": {}, "weeks": {}}
+    try:
+        logging.info(f"Обновление статистики для игрока {name} (ID: {player_id})")
+        logging.info(f"Дата: {date_str}, Позиция: {position}, Очки: {applied_total}")
+        
+        if os.path.exists(PLAYER_STATS_FILE):
+            with open(PLAYER_STATS_FILE, 'r') as f:
+                player_stats = json.load(f)
+        else:
+            player_stats = {"current_week": {}, "weeks": {}}
 
-    # Определяем к какой неделе относится дата
-    date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ESPN_TIMEZONE)
-    days_since_tuesday = (date.weekday() - 1) % 7
-    week_start = date - timedelta(days=days_since_tuesday)
-    week_end = week_start + timedelta(days=6)
-    week_key = f"{week_start.strftime('%Y-%m-%d')}_{week_end.strftime('%Y-%m-%d')}"
+        # Определяем к какой неделе относится дата
+        date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ESPN_TIMEZONE)
+        days_since_tuesday = (date.weekday() - 1) % 7
+        week_start = date - timedelta(days=days_since_tuesday)
+        week_end = week_start + timedelta(days=6)
+        week_key = f"{week_start.strftime('%Y-%m-%d')}_{week_end.strftime('%Y-%m-%d')}"
+        
+        logging.info(f"Неделя: {week_key}")
 
-    # Создаем структуру для недели, если её нет
-    if week_key not in player_stats["weeks"]:
-        player_stats["weeks"][week_key] = {"players": {}}
+        # Создаем структуру для недели, если её нет
+        if week_key not in player_stats["weeks"]:
+            player_stats["weeks"][week_key] = {"players": {}}
 
-    week_stats = player_stats["weeks"][week_key]["players"]
-    
-    if str(player_id) not in week_stats:
-        week_stats[str(player_id)] = {
-            "name": name,
-            "team_of_the_day_count": 0,
-            "grade": "common",
-            "team_of_the_day_dates": []
+        week_stats = player_stats["weeks"][week_key]["players"]
+        
+        if str(player_id) not in week_stats:
+            logging.info(f"Создание новой записи для игрока {name}")
+            week_stats[str(player_id)] = {
+                "name": name,
+                "team_of_the_day_count": 0,
+                "grade": "common",
+                "team_of_the_day_dates": [],
+                "positions": [],
+                "daily_stats": {},
+                "total_points": 0,
+                "position_appearances": {}
+            }
+
+        stats = week_stats[str(player_id)]
+        stats["name"] = name
+
+        # Проверяем, не обрабатывали ли мы уже эту дату для этого игрока
+        date_position_key = f"{position}:{date_str}"
+        if date_str in stats["daily_stats"]:
+            logging.info(f"Статистика за {date_str} уже существует, пропускаем обновление")
+            return stats["grade"]
+        
+        # Добавляем позицию, если её еще нет
+        if position not in stats["positions"]:
+            logging.info(f"Добавление новой позиции {position} для игрока {name}")
+            stats["positions"].append(position)
+        
+        # Обновляем счетчик появлений для позиции
+        if position not in stats["position_appearances"]:
+            stats["position_appearances"][position] = 0
+        stats["position_appearances"][position] += 1
+        logging.info(f"Появлений на позиции {position}: {stats['position_appearances'][position]}")
+
+        # Сохраняем статистику за день
+        stats["daily_stats"][date_str] = {
+            "points": applied_total,
+            "position": position,
+            "team_of_the_day": team_of_the_day
+        }
+        logging.info(f"Сохранена статистика за {date_str}: {applied_total} очков")
+
+        # Обновляем общее количество очков
+        stats["total_points"] = sum(day["points"] for day in stats["daily_stats"].values())
+        logging.info(f"Общее количество очков: {stats['total_points']}")
+
+        # Проверяем уникальность даты перед добавлением
+        if team_of_the_day and date_position_key not in stats["team_of_the_day_dates"]:
+            stats["team_of_the_day_dates"].append(date_position_key)
+            stats["team_of_the_day_count"] = len(stats["team_of_the_day_dates"])
+            stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
+            logging.info(f"Обновление грейда для игрока {name}: {stats['grade']} ({stats['team_of_the_day_count']} раз)")
+
+        # Обновляем информацию о текущей неделе
+        current_date = datetime.now(ESPN_TIMEZONE)
+        current_days_since_tuesday = (current_date.weekday() - 1) % 7
+        current_week_start = current_date - timedelta(days=current_days_since_tuesday)
+        current_week_end = current_week_start + timedelta(days=6)
+        
+        player_stats["current_week"] = {
+            "start_date": current_week_start.strftime("%Y-%m-%d"),
+            "end_date": current_week_end.strftime("%Y-%m-%d")
         }
 
-    stats = week_stats[str(player_id)]
-    stats["name"] = name
-
-    # Проверяем уникальность даты перед добавлением
-    if team_of_the_day and date_str not in stats["team_of_the_day_dates"]:
-        stats["team_of_the_day_dates"].append(date_str)
-        stats["team_of_the_day_count"] = len(stats["team_of_the_day_dates"])
-        stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
-        logging.info(f"Обновление грейда для игрока {name}: {stats['grade']} ({stats['team_of_the_day_count']} раз)")
-
-    # Обновляем информацию о текущей неделе
-    current_date = datetime.now(ESPN_TIMEZONE)
-    current_days_since_tuesday = (current_date.weekday() - 1) % 7
-    current_week_start = current_date - timedelta(days=current_days_since_tuesday)
-    current_week_end = current_week_start + timedelta(days=6)
-    
-    player_stats["current_week"] = {
-        "start_date": current_week_start.strftime("%Y-%m-%d"),
-        "end_date": current_week_end.strftime("%Y-%m-%d")
-    }
-
-    with open(PLAYER_STATS_FILE, 'w') as f:
-        json.dump(player_stats, f, indent=4)
-    
-    return stats["grade"]
+        # Сохраняем обновленные данные
+        with open(PLAYER_STATS_FILE, 'w') as f:
+            json.dump(player_stats, f, indent=4)
+        logging.info(f"Данные успешно сохранены в {PLAYER_STATS_FILE}")
+        
+        return stats["grade"]
+    except Exception as e:
+        logging.error(f"Ошибка при обновлении статистики игрока {name}: {str(e)}")
+        traceback.print_exc()
+        return "common"
 
 def fetch_player_data(scoring_period_id, league_id, max_retries=3, timeout=10):
     """Получение данных игроков из API ESPN с поддержкой повторных попыток"""
@@ -246,6 +293,17 @@ def fetch_player_data(scoring_period_id, league_id, max_retries=3, timeout=10):
         except ValueError as e:
             logging.error(f"Ошибка в данных: {str(e)}")
             return None
+        except requests.exceptions.ConnectionError as e:
+            if "NameResolutionError" in str(e):
+                retry_count += 1
+                wait_time = min(8, 2 ** (retry_count - 1))  # 2, 4, 8 секунд
+                logging.warning(f"Ошибка разрешения имени при запросе данных (попытка {retry_count}/3). Ожидание {wait_time} сек...")
+                if retry_count == 3:
+                    logging.error("Превышено максимальное количество ��опыток из-за ошибки разрешения имени")
+                    return None
+                time.sleep(wait_time)
+            else:
+                raise e
         except Exception as e:
             logging.error(f"Неожиданная ошибка: {str(e)}")
             return None
@@ -349,7 +407,7 @@ def create_collage(team, date_str):
             draw.text((text_x, y_offset + player_img_height + text_padding), text, fill=color, font=font)
             y_offset += line_height
 
-    file_path = "C:\\dev\\fantasy-hockey-bot\\team_day_collage.jpg"
+    file_path = f"C:\\dev\\fantasy-hockey-bot\\team_day_collage_{date_str}.jpg"
     image.save(file_path)
     return file_path
 
@@ -357,25 +415,14 @@ async def send_collage(team, date_str):
     """Отправка коллажа команды дня в Telegram"""
     try:
         # Создание коллажа
-        image = create_collage(team)
-        
-        # Сохранение коллажа во временный файл
-        temp_file = f"collage_{date_str}.jpg"
-        image.save(temp_file)
-        
-        # Формирование текста сообщения
-        message = f"Команда дня {date_str}:\n\n"
-        for position, players in team.items():
-            for player in players:
-                grade_emoji = GRADE_EMOJI.get(player['grade'], '')
-                message += f"{position}: {player['name']} ({player['appliedTotal']:.2f} ftps) {grade_emoji}\n"
+        file_path = create_collage(team, date_str)
         
         # Отправка коллажа
         max_attempts = 3
         for attempt in range(1, max_attempts + 1):
             try:
-                with open(temp_file, 'rb') as photo:
-                    await bot.send_photo(chat_id=CHAT_ID, photo=photo, caption=message, parse_mode=ParseMode.HTML)
+                with open(file_path, 'rb') as photo:
+                    await bot.send_photo(chat_id=CHAT_ID, photo=photo, parse_mode=ParseMode.HTML)
                 logging.info(f"Коллаж успешно отправлен для даты {date_str}")
                 break
             except Exception as e:
@@ -383,18 +430,14 @@ async def send_collage(team, date_str):
                     logging.warning(f"Попытка {attempt} из {max_attempts} не удалась: {str(e)}")
                     await asyncio.sleep(1)
                 else:
-                    logging.error(f"Ошибка при отправке коллажа после {max_attempts} попыток: {str(e)}")
-                    # Отправляем только текст, если не удалось отправить коллаж
-                    await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode=ParseMode.HTML)
+                    logging.error(f"Не удалось отправить коллаж после {max_attempts} попыток: {str(e)}")
         
         # Удаление временного файла
-        if os.path.exists(temp_file):
-            os.remove(temp_file)
+        if os.path.exists(file_path):
+            os.remove(file_path)
             
     except Exception as e:
         logging.error(f"Ошибка при создании/отправке коллажа: {str(e)}")
-        # В случае ошибки отправляем только текст
-        await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode=ParseMode.HTML)
 
 async def send_text_message(team, date_str):
     """Отправка текстового сообщения при ошибке с коллажем"""
@@ -425,6 +468,12 @@ async def process_dates_range(start_date, end_date):
                 continue
 
             positions = parse_player_data(data, scoring_period_id - 1, current_date)
+            
+            # Проверяем наличие игроков на каждой позиции
+            empty_positions = [pos for pos, players in positions.items() if not players]
+            if empty_positions:
+                logging.warning(f"Нет игроков на позициях: {empty_positions}")
+            
             team = {
                 'C': sorted(positions['C'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
                 'LW': sorted(positions['LW'], key=lambda x: x['appliedTotal'], reverse=True)[:1],
@@ -440,19 +489,19 @@ async def process_dates_range(start_date, end_date):
             for position, players in team.items():
                 for player in players:
                     logging.info(f"{position}: {player['name']} ({player['appliedTotal']:.2f} ftps)")
+                    # Обновляем статистику игрока
+                    grade = update_player_stats(
+                        player_id=player['id'],
+                        name=player['name'],
+                        date_str=date_str,
+                        applied_total=player['appliedTotal'],
+                        position=position,
+                        team_of_the_day=True
+                    )
+                    player['grade'] = grade
 
-            for position, players in team.items():
-                for player in players:
-                    if player['appliedTotal'] > 0:
-                        grade = update_player_stats(
-                            player_id=player['id'],
-                            name=player['name'],
-                            date_str=date_str,
-                            applied_total=player['appliedTotal'],
-                            team_of_the_day=True
-                        )
-                        player['grade'] = grade
-
+            # Отправляем коллаж
+            logging.info(f"Отправка коллажа для даты {date_str} (попытка 1/3)")
             await send_collage(team, date_str)
             logging.info(f"=== Завершена обработка даты: {date_str} ===\n")
 
@@ -463,6 +512,7 @@ async def process_dates_range(start_date, end_date):
             current_date = current_date.replace(hour=0, minute=0, second=0, microsecond=0)
         except Exception as e:
             logging.error(f"Критическая ошибка при обработке даты {current_date.strftime('%Y-%m-%d')}: {str(e)}")
+            traceback.print_exc()
             current_date += timedelta(days=1)
             continue
 

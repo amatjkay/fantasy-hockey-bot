@@ -1,0 +1,604 @@
+{
+    "weeks": {
+        "2024-12-03_2024-12-09": {
+            "C": [
+                {
+                    "id": "3041969",
+                    "name": "Nathan MacKinnon",
+                    "total_points": 1,
+                    "weekly_points": 19.0,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4352683",
+                    "name": "Andrei Svechnikov",
+                    "total_points": 1,
+                    "weekly_points": 16.9,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "RW": [
+                {
+                    "id": "4024854",
+                    "name": "Matthew Tkachuk",
+                    "total_points": 3,
+                    "weekly_points": 58.55,
+                    "grade": "rare",
+                    "grade_priority": 3
+                }
+            ],
+            "D": [
+                {
+                    "id": "3904189",
+                    "name": "Vince Dunn",
+                    "total_points": 1,
+                    "weekly_points": 17.95,
+                    "grade": "common",
+                    "grade_priority": 1
+                },
+                {
+                    "id": "2562610",
+                    "name": "Adam Larsson",
+                    "total_points": 1,
+                    "weekly_points": 17.55,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "3939714",
+                    "name": "Adin Hill",
+                    "total_points": 2,
+                    "weekly_points": 35.5,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ]
+        },
+        "2024-12-10_2024-12-16": {
+            "C": [
+                {
+                    "id": "3041969",
+                    "name": "Nathan MacKinnon",
+                    "total_points": 2,
+                    "weekly_points": 39.95,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4319858",
+                    "name": "Brady Tkachuk",
+                    "total_points": 2,
+                    "weekly_points": 14.05,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3899938",
+                    "name": "Mikko Rantanen",
+                    "total_points": 1,
+                    "weekly_points": 31.25,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "4781556",
+                    "name": "Owen Power",
+                    "total_points": 2,
+                    "weekly_points": 19.2,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "4197146",
+                    "name": "Adam Fox",
+                    "total_points": 1,
+                    "weekly_points": 18.85,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "3069285",
+                    "name": "Linus Ullmark",
+                    "total_points": 2,
+                    "weekly_points": 36.25,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ]
+        },
+        "2024-10-08_2024-10-14": {
+            "C": [
+                {
+                    "id": "3183",
+                    "name": "Anze Kopitar",
+                    "total_points": 1,
+                    "weekly_points": 24.55,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "3114985",
+                    "name": "Ivan Barbashev",
+                    "total_points": 2,
+                    "weekly_points": 33.25,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "RW": [
+                {
+                    "id": "2563060",
+                    "name": "Nikita Kucherov",
+                    "total_points": 1,
+                    "weekly_points": 28.7,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "3904186",
+                    "name": "Rasmus Andersson",
+                    "total_points": 2,
+                    "weekly_points": 34.25,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "3041992",
+                    "name": "Seth Jones",
+                    "total_points": 1,
+                    "weekly_points": 17.0,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "3942714",
+                    "name": "Sam Montembeault",
+                    "total_points": 1,
+                    "weekly_points": 28.8,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
+        },
+        "2024-10-15_2024-10-21": {
+            "C": [
+                {
+                    "id": "2976848",
+                    "name": "Scott Laughton",
+                    "total_points": 1,
+                    "weekly_points": 19.85,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "3891952",
+                    "name": "Artemi Panarin",
+                    "total_points": 1,
+                    "weekly_points": 24.5,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "RW": [
+                {
+                    "id": "2970615",
+                    "name": "Tom Wilson",
+                    "total_points": 1,
+                    "weekly_points": 21.05,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "3042016",
+                    "name": "Josh Morrissey",
+                    "total_points": 2,
+                    "weekly_points": 21.5,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "3988847",
+                    "name": "Neal Pionk",
+                    "total_points": 1,
+                    "weekly_points": 21.55,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "4587909",
+                    "name": "Joel Hofer",
+                    "total_points": 1,
+                    "weekly_points": 23.9,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
+        },
+        "2024-10-22_2024-10-28": {
+            "C": [
+                {
+                    "id": "2562601",
+                    "name": "Sean Couturier",
+                    "total_points": 1,
+                    "weekly_points": 33.55,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4065019",
+                    "name": "Brandon Hagel",
+                    "total_points": 1,
+                    "weekly_points": 25.85,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3900169",
+                    "name": "Travis Konecny",
+                    "total_points": 1,
+                    "weekly_points": 24.35,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "5157",
+                    "name": "Victor Hedman",
+                    "total_points": 2,
+                    "weekly_points": 27.9,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "4874929",
+                    "name": "Janis Moser",
+                    "total_points": 1,
+                    "weekly_points": 18.9,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "3042109",
+                    "name": "Juuse Saros",
+                    "total_points": 1,
+                    "weekly_points": 23.55,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
+        },
+        "2024-10-29_2024-11-04": {
+            "C": [
+                {
+                    "id": "3114727",
+                    "name": "Leon Draisaitl",
+                    "total_points": 2,
+                    "weekly_points": 32.05,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "LW": [
+                {
+                    "id": "3899952",
+                    "name": "Kyle Connor",
+                    "total_points": 2,
+                    "weekly_points": 34.85,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "RW": [
+                {
+                    "id": "4233586",
+                    "name": "Martin Necas",
+                    "total_points": 2,
+                    "weekly_points": 33.25,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "D": [
+                {
+                    "id": "3151136",
+                    "name": "Jake Walman",
+                    "total_points": 2,
+                    "weekly_points": 31.3,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "3042016",
+                    "name": "Josh Morrissey",
+                    "total_points": 2,
+                    "weekly_points": 27.75,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "G": [
+                {
+                    "id": "3151038",
+                    "name": "Elvis Merzlikins",
+                    "total_points": 1,
+                    "weekly_points": 21.1,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
+        },
+        "2024-11-05_2024-11-11": {
+            "C": [
+                {
+                    "id": "3041969",
+                    "name": "Nathan MacKinnon",
+                    "total_points": 2,
+                    "weekly_points": 40.95,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4319858",
+                    "name": "Brady Tkachuk",
+                    "total_points": 1,
+                    "weekly_points": 16.95,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3899938",
+                    "name": "Mikko Rantanen",
+                    "total_points": 1,
+                    "weekly_points": 18.6,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "4320548",
+                    "name": "Quinn Hughes",
+                    "total_points": 2,
+                    "weekly_points": 29.2,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "2562605",
+                    "name": "Dougie Hamilton",
+                    "total_points": 2,
+                    "weekly_points": 21.75,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "G": [
+                {
+                    "id": "3904177",
+                    "name": "Mackenzie Blackwood",
+                    "total_points": 1,
+                    "weekly_points": 27.4,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
+        },
+        "2024-11-12_2024-11-18": {
+            "C": [
+                {
+                    "id": "4233594",
+                    "name": "Nick Suzuki",
+                    "total_points": 1,
+                    "weekly_points": 20.1,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4272192",
+                    "name": "Mason Marchment",
+                    "total_points": 2,
+                    "weekly_points": 36.85,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3899938",
+                    "name": "Mikko Rantanen",
+                    "total_points": 1,
+                    "weekly_points": 28.7,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "3114757",
+                    "name": "Travis Sanheim",
+                    "total_points": 2,
+                    "weekly_points": 32.45,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "3041997",
+                    "name": "Darnell Nurse",
+                    "total_points": 1,
+                    "weekly_points": 21.75,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "4587952",
+                    "name": "Dustin Wolf",
+                    "total_points": 2,
+                    "weekly_points": 34.15,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ]
+        },
+        "2024-11-19_2024-11-25": {
+            "C": [
+                {
+                    "id": "2562632",
+                    "name": "Mark Scheifele",
+                    "total_points": 1,
+                    "weekly_points": 25.85,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4391255",
+                    "name": "Kiefer Sherwood",
+                    "total_points": 1,
+                    "weekly_points": 16.35,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3899938",
+                    "name": "Mikko Rantanen",
+                    "total_points": 1,
+                    "weekly_points": 20.55,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "3899972",
+                    "name": "Zach Werenski",
+                    "total_points": 1,
+                    "weekly_points": 30.05,
+                    "grade": "common",
+                    "grade_priority": 1
+                },
+                {
+                    "id": "4352722",
+                    "name": "Evan Bouchard",
+                    "total_points": 1,
+                    "weekly_points": 17.4,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "G": [
+                {
+                    "id": "4271575",
+                    "name": "Joseph Woll",
+                    "total_points": 2,
+                    "weekly_points": 31.650000000000002,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ]
+        },
+        "2024-11-26_2024-12-02": {
+            "C": [
+                {
+                    "id": "4233555",
+                    "name": "Nico Hischier",
+                    "total_points": 1,
+                    "weekly_points": 25.0,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "5428",
+                    "name": "Taylor Hall",
+                    "total_points": 1,
+                    "weekly_points": 22.8,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3900240",
+                    "name": "Jake DeBrusk",
+                    "total_points": 1,
+                    "weekly_points": 27.7,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "D": [
+                {
+                    "id": "5079",
+                    "name": "Jared Spurgeon",
+                    "total_points": 2,
+                    "weekly_points": 29.200000000000003,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "3539",
+                    "name": "Kris Letang",
+                    "total_points": 2,
+                    "weekly_points": 17.1,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "G": [
+                {
+                    "id": "4272674",
+                    "name": "Filip Gustavsson",
+                    "total_points": 1,
+                    "weekly_points": 25.65,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
+        }
+    }
+}
