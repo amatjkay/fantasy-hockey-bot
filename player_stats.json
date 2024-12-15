@@ -4,151 +4,101 @@
         "end_date": "2024-12-15"
     },
     "players": {
-        "2593131": {
-            "name": "Jean-Gabriel Pageau",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "4024997": {
-            "name": "Trent Frederic",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "4024854": {
-            "name": "Matthew Tkachuk",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "3539": {
-            "name": "Kris Letang",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "3025662": {
-            "name": "Shayne Gostisbehere",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
-            "team_of_the_day_dates": [
-                "2024-12-09"
-            ]
-        },
-        "3069285": {
-            "name": "Linus Ullmark",
-            "team_of_the_day_count": 4,
-            "grade": "epic",
-            "team_of_the_day_dates": [
-                "2024-12-09",
-                "2024-12-13",
-                "2024-12-15"
-            ]
-        },
         "3151187": {
             "name": "Brayden Point",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-10"
+                "2024-12-09"
             ]
         },
         "4233720": {
             "name": "Eeli Tolvanen",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-10"
+                "2024-12-09"
             ]
         },
         "3042095": {
             "name": "Oliver Bjorkstrand",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-10"
+                "2024-12-09"
             ]
         },
         "4565239": {
             "name": "Thomas Harley",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-10"
+                "2024-12-09"
             ]
         },
         "4352770": {
             "name": "K'Andre Miller",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-10"
+                "2024-12-09"
             ]
         },
         "5622": {
             "name": "Scott Wedgewood",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-10"
+                "2024-12-09"
             ]
         },
         "3942905": {
             "name": "Troy Terry",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-11"
+                "2024-12-10"
             ]
         },
         "2593315": {
             "name": "Jason Zucker",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-11"
+                "2024-12-10"
             ]
         },
         "4024820": {
             "name": "Patrik Laine",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-11"
+                "2024-12-10"
             ]
         },
         "4565227": {
             "name": "Moritz Seider",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-11"
+                "2024-12-10"
             ]
         },
         "4781556": {
             "name": "Owen Power",
-            "team_of_the_day_count": 3,
-            "grade": "rare",
+            "team_of_the_day_count": 2,
+            "grade": "uncommon",
             "team_of_the_day_dates": [
-                "2024-12-11",
-                "2024-12-13"
+                "2024-12-10",
+                "2024-12-12"
             ]
         },
         "4894729": {
             "name": "Arvid Soderblom",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-11"
+                "2024-12-10"
             ]
         },
         "3041969": {
@@ -156,158 +106,208 @@
             "team_of_the_day_count": 2,
             "grade": "uncommon",
             "team_of_the_day_dates": [
-                "2024-12-12"
+                "2024-12-11",
+                "2024-12-15"
             ]
         },
         "3899952": {
             "name": "Kyle Connor",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-12"
+                "2024-12-11"
             ]
         },
         "3899938": {
             "name": "Mikko Rantanen",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-12"
+                "2024-12-11"
             ]
         },
         "2300": {
             "name": "Brent Burns",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-12"
+                "2024-12-11"
             ]
         },
         "3988847": {
             "name": "Neal Pionk",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-12"
+                "2024-12-11"
             ]
         },
         "3067313": {
             "name": "Anthony Stolarz",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-12"
+                "2024-12-11"
             ]
         },
         "2562637": {
             "name": "Mika Zibanejad",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-13"
+                "2024-12-12"
             ]
         },
         "4319858": {
             "name": "Brady Tkachuk",
-            "team_of_the_day_count": 3,
-            "grade": "rare",
+            "team_of_the_day_count": 2,
+            "grade": "uncommon",
             "team_of_the_day_dates": [
-                "2024-12-13",
-                "2024-12-15"
+                "2024-12-12",
+                "2024-12-14"
             ]
         },
         "4271734": {
             "name": "Drake Batherson",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-13"
+                "2024-12-12"
             ]
         },
         "4197146": {
             "name": "Adam Fox",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-12"
+            ]
+        },
+        "3069285": {
+            "name": "Linus Ullmark",
             "team_of_the_day_count": 2,
             "grade": "uncommon",
             "team_of_the_day_dates": [
-                "2024-12-13"
+                "2024-12-12",
+                "2024-12-14"
             ]
         },
         "2976848": {
             "name": "Scott Laughton",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-14"
+                "2024-12-13"
             ]
         },
         "3042083": {
             "name": "Jake Guentzel",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-14"
+                "2024-12-13"
             ]
         },
         "2591155": {
             "name": "Bryan Rust",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-14"
+                "2024-12-13"
             ]
         },
         "3151136": {
             "name": "Jake Walman",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-14"
+                "2024-12-13"
             ]
         },
         "3042016": {
             "name": "Josh Morrissey",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-14"
+                "2024-12-13"
             ]
         },
         "4341584": {
             "name": "Kevin Lankinen",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-14"
+                "2024-12-13"
             ]
         },
         "4565255": {
             "name": "Shane Pinto",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-15"
+                "2024-12-14"
             ]
         },
         "3149829": {
             "name": "Michael Amadio",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-15"
+                "2024-12-14"
             ]
         },
         "3025608": {
             "name": "Nick Jensen",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
-                "2024-12-15"
+                "2024-12-14"
             ]
         },
         "3900219": {
             "name": "Thomas Chabot",
-            "team_of_the_day_count": 2,
-            "grade": "uncommon",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-14"
+            ]
+        },
+        "3042050": {
+            "name": "Artturi Lehkonen",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-15"
+            ]
+        },
+        "4968": {
+            "name": "Alex Killorn",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-15"
+            ]
+        },
+        "5407": {
+            "name": "Jeff Petry",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-15"
+            ]
+        },
+        "4024950": {
+            "name": "Jakob Chychrun",
+            "team_of_the_day_count": 1,
+            "grade": "common",
+            "team_of_the_day_dates": [
+                "2024-12-15"
+            ]
+        },
+        "4587952": {
+            "name": "Dustin Wolf",
+            "team_of_the_day_count": 1,
+            "grade": "common",
             "team_of_the_day_dates": [
                 "2024-12-15"
             ]

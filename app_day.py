@@ -3,6 +3,7 @@ import json
 from datetime import datetime, timedelta
 import logging
 from telegram import Bot
+from telegram.constants import ParseMode
 from dotenv import load_dotenv
 from PIL import Image, ImageDraw, ImageFont
 import os
@@ -11,9 +12,9 @@ import pytz
 
 # Конфигурация
 LOG_FILE = "C:\\dev\\fantasy-hockey-bot\\log.txt"
-MOSCOW_TIMEZONE = pytz.timezone('Europe/Moscow')
-SEASON_START_DATE = datetime(2024, 10, 4)
-SEASON_START_SCORING_PERIOD_ID = 0
+ESPN_TIMEZONE = pytz.timezone('US/Eastern')  # Используем только время ESPN
+SEASON_START_DATE = datetime(2024, 10, 4, tzinfo=ESPN_TIMEZONE)
+SEASON_START_SCORING_PERIOD_ID = 1
 LEAGUE_ID = 484910394
 API_URL_TEMPLATE = 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/{league_id}?view=kona_player_info'
 PLAYER_STATS_FILE = "player_stats.json"
@@ -39,7 +40,7 @@ logging.basicConfig(
     filename=LOG_FILE,
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    encoding='utf-8'  # Установите кодировку UTF-8
+    encoding='utf-8'
 )
 
 # Загрузка переменных окружения
@@ -54,52 +55,50 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
 
 bot = Bot(token=TELEGRAM_TOKEN)
 
-# Функция для расчета ID текущего периода
-def calculate_scoring_period_id(current_date, season_start_date, season_start_scoring_period_id=1):
-    if not isinstance(current_date, datetime):
-        current_date = datetime.combine(current_date, datetime.min.time())
+def get_current_week_dates():
+    """Получение дат текущей недели по времени ESPN"""
+    espn_now = datetime.now(ESPN_TIMEZONE)
     
-    # Убедитесь, что current_date имеет временную зону
-    current_date = current_date.replace(tzinfo=MOSCOW_TIMEZONE)
-
-    season_start_date = season_start_date.replace(tzinfo=MOSCOW_TIMEZONE)
-    if current_date < season_start_date:
-        logging.error("Текущая дата раньше даты начала сезона.")
-        return None
+    # Находим понедельник текущей недели
+    monday = espn_now - timedelta(days=espn_now.weekday())
+    monday = monday.replace(hour=0, minute=0, second=0, microsecond=0)
     
-    days_since_start = (current_date.date() - season_start_date.date()).days
-    return season_start_scoring_period_id + days_since_start
+    # Находим воскресенье
+    sunday = monday + timedelta(days=6)
+    sunday = sunday.replace(hour=23, minute=59, second=59, microsecond=999999)
+    
+    return monday, sunday
 
-# Обновление текущей недели
 def update_week_period():
-    today = datetime.now(MOSCOW_TIMEZONE).date()
-    week_start = today - timedelta(days=today.weekday())  # Начало недели (понедельник)
-    week_end = week_start + timedelta(days=6)  # Конец недели (воскресенье)
-
+    """Обновление периода недели и проверка на новую неделю"""
+    monday, sunday = get_current_week_dates()
+    
     if os.path.exists(PLAYER_STATS_FILE):
         with open(PLAYER_STATS_FILE, 'r') as f:
             data = json.load(f)
     else:
         data = {"current_week": {}, "players": {}}
 
-    # Обнуление грейдов в начале новой недели
-    if data.get("current_week", {}).get("start_date") != str(week_start):
+    # Проверяем, началась ли новая неделя
+    if data.get("current_week", {}).get("start_date") != monday.strftime("%Y-%m-%d"):
+        # Обнуляем статистику только если началась новая неделя
         for player in data.get("players", {}).values():
             player["team_of_the_day_count"] = 0
-            player["grade"] = "common"  # Обнуляем грейд
-            player["team_of_the_day_dates"] = []  # Обнуляем даты
+            player["grade"] = "common"
+            player["team_of_the_day_dates"] = []
 
         data["current_week"] = {
-            "start_date": str(week_start),
-            "end_date": str(week_end)
+            "start_date": monday.strftime("%Y-%m-%d"),
+            "end_date": sunday.strftime("%Y-%m-%d")
         }
+        
         with open(PLAYER_STATS_FILE, 'w') as f:
             json.dump(data, f, indent=4)
 
-    return week_start, week_end
+    return monday, sunday
 
-# Определение грейда игрока на основе статистики
 def calculate_grade(team_of_the_day_count):
+    """Определение грейда игрока на основе количества попаданий в команду недели"""
     if team_of_the_day_count >= 5:
         return "legend"
     elif team_of_the_day_count >= 4:
@@ -111,8 +110,8 @@ def calculate_grade(team_of_the_day_count):
     else:
         return "common"
 
-# Обновление статистики игроков, только для тех, кто попал в команду дня
-def update_player_stats(player_id, name, date, applied_total, team_of_the_day=False):
+def update_player_stats(player_id, name, date_str, applied_total, team_of_the_day=False):
+    """Обновление статистики игрока с проверкой уникальности дат"""
     if os.path.exists(PLAYER_STATS_FILE):
         with open(PLAYER_STATS_FILE, 'r') as f:
             player_stats = json.load(f)
@@ -130,18 +129,20 @@ def update_player_stats(player_id, name, date, applied_total, team_of_the_day=Fa
     stats = player_stats["players"][player_id]
     stats["name"] = name
 
-    if team_of_the_day and date not in stats["team_of_the_day_dates"]:
-        stats["team_of_the_day_dates"].append(date)
-        stats["team_of_the_day_count"] += 1
-        stats["grade"] = calculate_grade(stats["team_of_the_day_count"])  # Обновляем грейд
-        logging.info(f"Обновление грейда для игрока {name}: {stats['grade']}")  # Логирование обновления грейда
+    # Проверяем уникальность даты перед добавлением
+    if team_of_the_day and date_str not in stats["team_of_the_day_dates"]:
+        stats["team_of_the_day_dates"].append(date_str)
+        stats["team_of_the_day_count"] = len(stats["team_of_the_day_dates"])
+        stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
+        logging.info(f"Обновление грейда для игрока {name}: {stats['grade']} ({stats['team_of_the_day_count']} раз)")
 
     with open(PLAYER_STATS_FILE, 'w') as f:
         json.dump(player_stats, f, indent=4)
+    
+    return stats["grade"]
 
-
-# Получение данных игроков
 def fetch_player_data(scoring_period_id, league_id):
+    """Получение данных игроков из API ESPN"""
     base_headers = {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0',
@@ -152,7 +153,7 @@ def fetch_player_data(scoring_period_id, league_id):
             "filterSlotIds": {"value": [0, 6, 1, 2, 4, 5]},
             "filterStatsForCurrentSeasonScoringPeriodId": {"value": [scoring_period_id]},
             "sortAppliedStatTotalForScoringPeriodId": {"sortAsc": False, "sortPriority": 2, "value": scoring_period_id},
-            "limit": 50
+            "limit": 100
         }
     }
 
@@ -168,8 +169,8 @@ def fetch_player_data(scoring_period_id, league_id):
         logging.error(f"Ошибка при запросе данных игроков: {e}")
         return None
 
-# Разбор данных игроков
 def parse_player_data(data, scoring_period_id):
+    """Разбор данных игроков"""
     players_data = data.get('players', [])
     positions = {'C': [], 'LW': [], 'RW': [], 'D': [], 'G': []}
 
@@ -206,8 +207,8 @@ def parse_player_data(data, scoring_period_id):
 
     return positions
 
-# Создание коллажа
-def create_collage(team):
+def create_collage(team, date_str):
+    """Создание коллажа с учетом грейдов игроков"""
     player_img_width, player_img_height = 130, 100
     padding = 20
     text_padding = 10
@@ -220,17 +221,24 @@ def create_collage(team):
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
 
-    font_path = "C:\\Windows\\Fonts\\arial.ttf"  # Используем стандартный шрифт Arial
+    font_path = "C:\\Windows\\Fonts\\arial.ttf"
     font = ImageFont.truetype(font_path, size=20)
 
     y_offset = padding
+    
+    # Добавляем заголовок с датой
+    title = f"Команда дня {date_str}"
+    title_width = draw.textlength(title, font=font)
+    draw.text(((width - title_width) // 2, y_offset), title, fill="black", font=font)
+    y_offset += 40
+
     for position, players in team.items():
         for player in players:
             name = player['name']
             points = player['appliedTotal']
             image_url = player['image_url']
             grade = player['grade']
-            color = GRADE_COLORS.get(grade, 'black')
+            color = GRADE_COLORS.get(grade, "black")
 
             try:
                 response = requests.get(image_url, stream=True, timeout=10)
@@ -257,33 +265,35 @@ def create_collage(team):
     image.save(file_path)
     return file_path
 
-# Отправка коллажа в Telegram
-async def send_collage(team):
-    file_path = create_collage(team)
+async def send_collage(team, date_str):
+    """Отправка коллажа в Telegram"""
+    file_path = create_collage(team, date_str)
     if file_path:
         try:
             with open(file_path, "rb") as photo:
-                await bot.send_photo(chat_id=CHAT_ID, photo=photo, caption="\U0001F3D2 Команда дня", parse_mode="HTML")
+                await bot.send_photo(chat_id=CHAT_ID, photo=photo)
                 logging.info("Коллаж успешно отправлен в Telegram.")
         except Exception as e:
             logging.error(f"Ошибка при отправке коллажа: {e}")
+            # Если не удалось отправить коллаж, отправляем текстовое сообщение
+            message = f"\U0001F3D2 Команда дня {date_str}\n\n"
+            for position, players in team.items():
+                for player in players:
+                    message += f"{position}: {player['name']} ({player['appliedTotal']:.2f} ftps)\n"
+            await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode=ParseMode.HTML)
     else:
-        await bot.send_message(chat_id=CHAT_ID, text="Не удалось создать коллаж.")
+        logging.error("Не удалось создать коллаж.")
 
-# Основная функция
 async def main():
-    week_start, week_end = update_week_period()
+    monday, sunday = update_week_period()
+    espn_now = datetime.now(ESPN_TIMEZONE)
+    
+    # Определяем, какие даты нужно обработать
+    current_date = monday
+    while current_date <= min(espn_now, sunday):
+        logging.info(f"Обработка данных для даты: {current_date.strftime('%Y-%m-%d')} (ESPN)")
 
-    current_date = week_start
-    while current_date <= week_end:
-        logging.info(f"Обработка данных для даты: {current_date}")
-
-        scoring_period_id = calculate_scoring_period_id(current_date, SEASON_START_DATE, SEASON_START_SCORING_PERIOD_ID)
-
-        if not scoring_period_id:
-            logging.error(f"Не удалось рассчитать ID периода для даты: {current_date}")
-            current_date += timedelta(days=1)
-            continue
+        scoring_period_id = (current_date.date() - SEASON_START_DATE.date()).days + SEASON_START_SCORING_PERIOD_ID
 
         data = fetch_player_data(scoring_period_id - 1, LEAGUE_ID)
         if not data:
@@ -300,19 +310,27 @@ async def main():
             'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
         }
 
+        date_str = current_date.strftime("%Y-%m-%d")
         for position, players in team.items():
             for player in players:
-                if player['appliedTotal'] > 0:  # Проверка на 0 очков
+                if player['appliedTotal'] > 0:
                     logging.info(f"Обновление статистики для игрока: {player['name']} (ID: {player['id']}, Очки: {player['appliedTotal']})")
-                    update_player_stats(player_id=player['id'], name=player['name'], date=str(current_date), applied_total=player['appliedTotal'], team_of_the_day=True)
+                    grade = update_player_stats(
+                        player_id=player['id'],
+                        name=player['name'],
+                        date_str=date_str,
+                        applied_total=player['appliedTotal'],
+                        team_of_the_day=True
+                    )
+                    player['grade'] = grade
                 else:
                     logging.info(f"Игрок {player['name']} (ID: {player['id']}) пропущен из-за 0 очков.")
 
-        await send_collage(team)
-        logging.info(f"Сформирована команда дня для даты: {current_date}: {team}")
+        await send_collage(team, date_str)
+        logging.info(f"Сформирована команда дня для даты: {date_str}")
 
         current_date += timedelta(days=1)
+        current_date = current_date.replace(hour=0, minute=0, second=0, microsecond=0)
 
-# Запуск программы
 if __name__ == "__main__":
     asyncio.run(main())

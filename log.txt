@@ -1,112 +1,112 @@
-2024-12-14 14:23:43,447 - INFO - Обработка данных для даты: 2024-12-09
-2024-12-14 14:23:44,277 - INFO - Обновление статистики для игрока: Jean-Gabriel Pageau (ID: 2593131, Очки: 17.1)
-2024-12-14 14:23:44,277 - INFO - Обновление грейда для игрока Jean-Gabriel Pageau: uncommon
-2024-12-14 14:23:44,278 - INFO - Обновление статистики для игрока: Trent Frederic (ID: 4024997, Очки: 16.7)
-2024-12-14 14:23:44,278 - INFO - Обновление грейда для игрока Trent Frederic: uncommon
-2024-12-14 14:23:44,278 - INFO - Обновление статистики для игрока: Matthew Tkachuk (ID: 4024854, Очки: 16.15)
-2024-12-14 14:23:44,279 - INFO - Обновление грейда для игрока Matthew Tkachuk: uncommon
-2024-12-14 14:23:44,279 - INFO - Обновление статистики для игрока: Kris Letang (ID: 3539, Очки: 14.35)
-2024-12-14 14:23:44,279 - INFO - Обновление грейда для игрока Kris Letang: uncommon
-2024-12-14 14:23:44,279 - INFO - Обновление статистики для игрока: Shayne Gostisbehere (ID: 3025662, Очки: 11.1)
-2024-12-14 14:23:44,280 - INFO - Обновление грейда для игрока Shayne Gostisbehere: uncommon
-2024-12-14 14:23:44,280 - INFO - Обновление статистики для игрока: Linus Ullmark (ID: 3069285, Очки: 14.8)
-2024-12-14 14:23:44,280 - INFO - Обновление грейда для игрока Linus Ullmark: uncommon
-2024-12-14 14:23:46,430 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:23:46,431 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:23:46,431 - INFO - Сформирована команда дня для даты: 2024-12-09: {'C': [{'id': '2593131', 'name': 'Jean-Gabriel Pageau', 'appliedTotal': 17.1, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/2593131.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '4024997', 'name': 'Trent Frederic', 'appliedTotal': 16.7, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4024997.png&w=130&h=100', 'grade': 'common'}], 'RW': [{'id': '4024854', 'name': 'Matthew Tkachuk', 'appliedTotal': 16.15, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4024854.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '3539', 'name': 'Kris Letang', 'appliedTotal': 14.35, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3539.png&w=130&h=100', 'grade': 'common'}, {'id': '3025662', 'name': 'Shayne Gostisbehere', 'appliedTotal': 11.1, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3025662.png&w=130&h=100', 'grade': 'common'}], 'G': [{'id': '3069285', 'name': 'Linus Ullmark', 'appliedTotal': 14.8, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3069285.png&w=130&h=100', 'grade': 'common'}]}
-2024-12-14 14:23:46,431 - INFO - Обработка данных для даты: 2024-12-10
-2024-12-14 14:23:47,184 - INFO - Обновление статистики для игрока: Brayden Point (ID: 3151187, Очки: 19.0)
-2024-12-14 14:23:47,184 - INFO - Обновление грейда для игрока Brayden Point: uncommon
-2024-12-14 14:23:47,184 - INFO - Обновление статистики для игрока: Eeli Tolvanen (ID: 4233720, Очки: 15.95)
-2024-12-14 14:23:47,185 - INFO - Обновление грейда для игрока Eeli Tolvanen: uncommon
-2024-12-14 14:23:47,185 - INFO - Обновление статистики для игрока: Oliver Bjorkstrand (ID: 3042095, Очки: 20.4)
-2024-12-14 14:23:47,185 - INFO - Обновление грейда для игрока Oliver Bjorkstrand: uncommon
-2024-12-14 14:23:47,185 - INFO - Обновление статистики для игрока: Thomas Harley (ID: 4565239, Очки: 14.3)
-2024-12-14 14:23:47,186 - INFO - Обновление грейда для игрока Thomas Harley: uncommon
-2024-12-14 14:23:47,186 - INFO - Обновление статистики для игрока: K'Andre Miller (ID: 4352770, Очки: 12.05)
-2024-12-14 14:23:47,186 - INFO - Обновление грейда для игрока K'Andre Miller: uncommon
-2024-12-14 14:23:47,187 - INFO - Обновление статистики для игрока: Scott Wedgewood (ID: 5622, Очки: 20.75)
-2024-12-14 14:23:47,187 - INFO - Обновление грейда для игрока Scott Wedgewood: uncommon
-2024-12-14 14:23:49,613 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:23:49,614 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:23:49,614 - INFO - Сформирована команда дня для даты: 2024-12-10: {'C': [{'id': '3151187', 'name': 'Brayden Point', 'appliedTotal': 19.0, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3151187.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '4233720', 'name': 'Eeli Tolvanen', 'appliedTotal': 15.95, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4233720.png&w=130&h=100', 'grade': 'common'}], 'RW': [{'id': '3042095', 'name': 'Oliver Bjorkstrand', 'appliedTotal': 20.4, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3042095.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '4565239', 'name': 'Thomas Harley', 'appliedTotal': 14.3, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4565239.png&w=130&h=100', 'grade': 'common'}, {'id': '4352770', 'name': "K'Andre Miller", 'appliedTotal': 12.05, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4352770.png&w=130&h=100', 'grade': 'common'}], 'G': [{'id': '5622', 'name': 'Scott Wedgewood', 'appliedTotal': 20.75, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/5622.png&w=130&h=100', 'grade': 'common'}]}
-2024-12-14 14:23:49,614 - INFO - Обработка данных для даты: 2024-12-11
-2024-12-14 14:23:50,159 - INFO - Обновление статистики для игрока: Troy Terry (ID: 3942905, Очки: 13.4)
-2024-12-14 14:23:50,159 - INFO - Обновление грейда для игрока Troy Terry: uncommon
-2024-12-14 14:23:50,159 - INFO - Обновление статистики для игрока: Jason Zucker (ID: 2593315, Очки: 16.25)
-2024-12-14 14:23:50,160 - INFO - Обновление грейда для игрока Jason Zucker: uncommon
-2024-12-14 14:23:50,160 - INFO - Обновление статистики для игрока: Patrik Laine (ID: 4024820, Очки: 9.05)
-2024-12-14 14:23:50,160 - INFO - Обновление грейда для игрока Patrik Laine: uncommon
-2024-12-14 14:23:50,161 - INFO - Обновление статистики для игрока: Moritz Seider (ID: 4565227, Очки: 13.25)
-2024-12-14 14:23:50,161 - INFO - Обновление грейда для игрока Moritz Seider: uncommon
-2024-12-14 14:23:50,161 - INFO - Обновление статистики для игрока: Owen Power (ID: 4781556, Очки: 7.45)
-2024-12-14 14:23:50,162 - INFO - Обновление грейда для игрока Owen Power: uncommon
-2024-12-14 14:23:50,162 - INFO - Обновление статистики для игрока: Arvid Soderblom (ID: 4894729, Очки: 12.35)
-2024-12-14 14:23:50,162 - INFO - Обновление грейда для игрока Arvid Soderblom: uncommon
-2024-12-14 14:23:53,375 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:23:53,375 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:23:53,375 - INFO - Сформирована команда дня для даты: 2024-12-11: {'C': [{'id': '3942905', 'name': 'Troy Terry', 'appliedTotal': 13.4, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3942905.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '2593315', 'name': 'Jason Zucker', 'appliedTotal': 16.25, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/2593315.png&w=130&h=100', 'grade': 'common'}], 'RW': [{'id': '4024820', 'name': 'Patrik Laine', 'appliedTotal': 9.05, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4024820.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '4565227', 'name': 'Moritz Seider', 'appliedTotal': 13.25, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4565227.png&w=130&h=100', 'grade': 'common'}, {'id': '4781556', 'name': 'Owen Power', 'appliedTotal': 7.45, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4781556.png&w=130&h=100', 'grade': 'common'}], 'G': [{'id': '4894729', 'name': 'Arvid Soderblom', 'appliedTotal': 12.35, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4894729.png&w=130&h=100', 'grade': 'common'}]}
-2024-12-14 14:23:53,376 - INFO - Обработка данных для даты: 2024-12-12
-2024-12-14 14:23:53,950 - INFO - Обновление статистики для игрока: Nathan MacKinnon (ID: 3041969, Очки: 22.1)
-2024-12-14 14:23:53,950 - INFO - Обновление грейда для игрока Nathan MacKinnon: uncommon
-2024-12-14 14:23:53,950 - INFO - Обновление статистики для игрока: Kyle Connor (ID: 3899952, Очки: 15.7)
-2024-12-14 14:23:53,951 - INFO - Обновление грейда для игрока Kyle Connor: uncommon
-2024-12-14 14:23:53,951 - INFO - Обновление статистики для игрока: Mikko Rantanen (ID: 3899938, Очки: 31.25)
-2024-12-14 14:23:53,951 - INFO - Обновление грейда для игрока Mikko Rantanen: uncommon
-2024-12-14 14:23:53,952 - INFO - Обновление статистики для игрока: Brent Burns (ID: 2300, Очки: 10.85)
-2024-12-14 14:23:53,952 - INFO - Обновление грейда для игрока Brent Burns: uncommon
-2024-12-14 14:23:53,953 - INFO - Обновление статистики для игрока: Neal Pionk (ID: 3988847, Очки: 10.8)
-2024-12-14 14:23:53,953 - INFO - Обновление грейда для игрока Neal Pionk: uncommon
-2024-12-14 14:23:53,953 - INFO - Обновление статистики для игрока: Anthony Stolarz (ID: 3067313, Очки: 15.5)
-2024-12-14 14:23:53,954 - INFO - Обновление грейда для игрока Anthony Stolarz: uncommon
-2024-12-14 14:23:56,317 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:23:56,318 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:23:56,318 - INFO - Сформирована команда дня для даты: 2024-12-12: {'C': [{'id': '3041969', 'name': 'Nathan MacKinnon', 'appliedTotal': 22.1, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3041969.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '3899952', 'name': 'Kyle Connor', 'appliedTotal': 15.7, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3899952.png&w=130&h=100', 'grade': 'common'}], 'RW': [{'id': '3899938', 'name': 'Mikko Rantanen', 'appliedTotal': 31.25, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3899938.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '2300', 'name': 'Brent Burns', 'appliedTotal': 10.85, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/2300.png&w=130&h=100', 'grade': 'common'}, {'id': '3988847', 'name': 'Neal Pionk', 'appliedTotal': 10.8, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3988847.png&w=130&h=100', 'grade': 'common'}], 'G': [{'id': '3067313', 'name': 'Anthony Stolarz', 'appliedTotal': 15.5, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3067313.png&w=130&h=100', 'grade': 'common'}]}
-2024-12-14 14:23:56,318 - INFO - Обработка данных для даты: 2024-12-13
-2024-12-14 14:23:57,084 - INFO - Обновление статистики для игрока: Mika Zibanejad (ID: 2562637, Очки: 8.8)
-2024-12-14 14:23:57,084 - INFO - Обновление грейда для игрока Mika Zibanejad: uncommon
-2024-12-14 14:23:57,085 - INFO - Обновление статистики для игрока: Brady Tkachuk (ID: 4319858, Очки: 10.85)
-2024-12-14 14:23:57,085 - INFO - Обновление грейда для игрока Brady Tkachuk: uncommon
-2024-12-14 14:23:57,086 - INFO - Обновление статистики для игрока: Drake Batherson (ID: 4271734, Очки: 26.9)
-2024-12-14 14:23:57,086 - INFO - Обновление грейда для игрока Drake Batherson: uncommon
-2024-12-14 14:23:57,087 - INFO - Обновление статистики для игрока: Adam Fox (ID: 4197146, Очки: 18.85)
-2024-12-14 14:23:57,087 - INFO - Обновление грейда для игрока Adam Fox: uncommon
-2024-12-14 14:23:57,087 - INFO - Обновление статистики для игрока: Owen Power (ID: 4781556, Очки: 11.75)
-2024-12-14 14:23:57,088 - INFO - Обновление грейда для игрока Owen Power: rare
-2024-12-14 14:23:57,088 - INFO - Обновление статистики для игрока: Linus Ullmark (ID: 3069285, Очки: 13.05)
-2024-12-14 14:23:57,088 - INFO - Обновление грейда для игрока Linus Ullmark: rare
-2024-12-14 14:23:59,366 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:23:59,366 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:23:59,366 - INFO - Сформирована команда дня для даты: 2024-12-13: {'C': [{'id': '2562637', 'name': 'Mika Zibanejad', 'appliedTotal': 8.8, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/2562637.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '4319858', 'name': 'Brady Tkachuk', 'appliedTotal': 10.85, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4319858.png&w=130&h=100', 'grade': 'common'}], 'RW': [{'id': '4271734', 'name': 'Drake Batherson', 'appliedTotal': 26.9, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4271734.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '4197146', 'name': 'Adam Fox', 'appliedTotal': 18.85, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4197146.png&w=130&h=100', 'grade': 'common'}, {'id': '4781556', 'name': 'Owen Power', 'appliedTotal': 11.75, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4781556.png&w=130&h=100', 'grade': 'uncommon'}], 'G': [{'id': '3069285', 'name': 'Linus Ullmark', 'appliedTotal': 13.05, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3069285.png&w=130&h=100', 'grade': 'uncommon'}]}
-2024-12-14 14:23:59,366 - INFO - Обработка данных для даты: 2024-12-14
-2024-12-14 14:24:00,140 - INFO - Обновление статистики для игрока: Scott Laughton (ID: 2976848, Очки: 34.25)
-2024-12-14 14:24:00,140 - INFO - Обновление грейда для игрока Scott Laughton: uncommon
-2024-12-14 14:24:00,141 - INFO - Обновление статистики для игрока: Jake Guentzel (ID: 3042083, Очки: 21.75)
-2024-12-14 14:24:00,141 - INFO - Обновление грейда для игрока Jake Guentzel: uncommon
-2024-12-14 14:24:00,141 - INFO - Обновление статистики для игрока: Bryan Rust (ID: 2591155, Очки: 28.35)
-2024-12-14 14:24:00,142 - INFO - Обновление грейда для игрока Bryan Rust: uncommon
-2024-12-14 14:24:00,142 - INFO - Обновление статистики для игрока: Jake Walman (ID: 3151136, Очки: 14.45)
-2024-12-14 14:24:00,142 - INFO - Обновление грейда для игрока Jake Walman: uncommon
-2024-12-14 14:24:00,143 - INFO - Обновление статистики для игрока: Josh Morrissey (ID: 3042016, Очки: 12.95)
-2024-12-14 14:24:00,143 - INFO - Обновление грейда для игрока Josh Morrissey: uncommon
-2024-12-14 14:24:00,144 - INFO - Обновление статистики для игрока: Kevin Lankinen (ID: 4341584, Очки: 21.45)
-2024-12-14 14:24:00,144 - INFO - Обновление грейда для игрока Kevin Lankinen: uncommon
-2024-12-14 14:24:02,290 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:24:02,290 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:24:02,290 - INFO - Сформирована команда дня для даты: 2024-12-14: {'C': [{'id': '2976848', 'name': 'Scott Laughton', 'appliedTotal': 34.25, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/2976848.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '3042083', 'name': 'Jake Guentzel', 'appliedTotal': 21.75, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3042083.png&w=130&h=100', 'grade': 'common'}], 'RW': [{'id': '2591155', 'name': 'Bryan Rust', 'appliedTotal': 28.35, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/2591155.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '3151136', 'name': 'Jake Walman', 'appliedTotal': 14.45, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3151136.png&w=130&h=100', 'grade': 'common'}, {'id': '3042016', 'name': 'Josh Morrissey', 'appliedTotal': 12.95, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3042016.png&w=130&h=100', 'grade': 'common'}], 'G': [{'id': '4341584', 'name': 'Kevin Lankinen', 'appliedTotal': 21.45, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4341584.png&w=130&h=100', 'grade': 'common'}]}
-2024-12-14 14:24:02,290 - INFO - Обработка данных для даты: 2024-12-15
-2024-12-14 14:24:02,760 - INFO - Обновление статистики для игрока: Shane Pinto (ID: 4565255, Очки: 18.25)
-2024-12-14 14:24:02,760 - INFO - Обновление грейда для игрока Shane Pinto: uncommon
-2024-12-14 14:24:02,761 - INFO - Обновление статистики для игрока: Brady Tkachuk (ID: 4319858, Очки: 3.2)
-2024-12-14 14:24:02,761 - INFO - Обновление грейда для игрока Brady Tkachuk: rare
-2024-12-14 14:24:02,762 - INFO - Обновление статистики для игрока: Michael Amadio (ID: 3149829, Очки: 10.95)
-2024-12-14 14:24:02,762 - INFO - Обновление грейда для игрока Michael Amadio: uncommon
-2024-12-14 14:24:02,763 - INFO - Обновление статистики для игрока: Nick Jensen (ID: 3025608, Очки: 13.45)
-2024-12-14 14:24:02,763 - INFO - Обновление грейда для игрока Nick Jensen: uncommon
-2024-12-14 14:24:02,764 - INFO - Обновление статистики для игрока: Thomas Chabot (ID: 3900219, Очки: 5.2)
-2024-12-14 14:24:02,764 - INFO - Обновление грейда для игрока Thomas Chabot: uncommon
-2024-12-14 14:24:02,765 - INFO - Обновление статистики для игрока: Linus Ullmark (ID: 3069285, Очки: 23.2)
-2024-12-14 14:24:02,765 - INFO - Обновление грейда для игрока Linus Ullmark: epic
-2024-12-14 14:24:06,043 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
-2024-12-14 14:24:06,044 - INFO - Коллаж успешно отправлен в Telegram.
-2024-12-14 14:24:06,044 - INFO - Сформирована команда дня для даты: 2024-12-15: {'C': [{'id': '4565255', 'name': 'Shane Pinto', 'appliedTotal': 18.25, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4565255.png&w=130&h=100', 'grade': 'common'}], 'LW': [{'id': '4319858', 'name': 'Brady Tkachuk', 'appliedTotal': 3.2, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4319858.png&w=130&h=100', 'grade': 'uncommon'}], 'RW': [{'id': '3149829', 'name': 'Michael Amadio', 'appliedTotal': 10.95, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3149829.png&w=130&h=100', 'grade': 'common'}], 'D': [{'id': '3025608', 'name': 'Nick Jensen', 'appliedTotal': 13.45, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3025608.png&w=130&h=100', 'grade': 'common'}, {'id': '3900219', 'name': 'Thomas Chabot', 'appliedTotal': 5.2, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3900219.png&w=130&h=100', 'grade': 'common'}], 'G': [{'id': '3069285', 'name': 'Linus Ullmark', 'appliedTotal': 23.2, 'image_url': 'https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3069285.png&w=130&h=100', 'grade': 'rare'}]}
+2024-12-15 14:46:39,200 - INFO - Обработка данных для даты: 2024-12-09 (ESPN)
+2024-12-15 14:46:40,783 - INFO - Обновление статистики для игрока: Brayden Point (ID: 3151187, Очки: 19.0)
+2024-12-15 14:46:40,783 - INFO - Обновление грейда для игрока Brayden Point: common (1 раз)
+2024-12-15 14:46:40,784 - INFO - Обновление статистики для игрока: Eeli Tolvanen (ID: 4233720, Очки: 15.95)
+2024-12-15 14:46:40,784 - INFO - Обновление грейда для игрока Eeli Tolvanen: common (1 раз)
+2024-12-15 14:46:40,784 - INFO - Обновление статистики для игрока: Oliver Bjorkstrand (ID: 3042095, Очки: 20.4)
+2024-12-15 14:46:40,784 - INFO - Обновление грейда для игрока Oliver Bjorkstrand: common (1 раз)
+2024-12-15 14:46:40,785 - INFO - Обновление статистики для игрока: Thomas Harley (ID: 4565239, Очки: 14.3)
+2024-12-15 14:46:40,785 - INFO - Обновление грейда для игрока Thomas Harley: common (1 раз)
+2024-12-15 14:46:40,785 - INFO - Обновление статистики для игрока: K'Andre Miller (ID: 4352770, Очки: 12.05)
+2024-12-15 14:46:40,785 - INFO - Обновление грейда для игрока K'Andre Miller: common (1 раз)
+2024-12-15 14:46:40,786 - INFO - Обновление статистики для игрока: Scott Wedgewood (ID: 5622, Очки: 20.75)
+2024-12-15 14:46:40,786 - INFO - Обновление грейда для игрока Scott Wedgewood: common (1 раз)
+2024-12-15 14:46:45,129 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:46:45,130 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:46:45,130 - INFO - Сформирована команда дня для даты: 2024-12-09
+2024-12-15 14:46:45,130 - INFO - Обработка данных для даты: 2024-12-10 (ESPN)
+2024-12-15 14:46:45,788 - INFO - Обновление статистики для игрока: Troy Terry (ID: 3942905, Очки: 13.4)
+2024-12-15 14:46:45,788 - INFO - Обновление грейда для игрока Troy Terry: common (1 раз)
+2024-12-15 14:46:45,788 - INFO - Обновление статистики для игрока: Jason Zucker (ID: 2593315, Очки: 16.25)
+2024-12-15 14:46:45,788 - INFO - Обновление грейда для игрока Jason Zucker: common (1 раз)
+2024-12-15 14:46:45,789 - INFO - Обновление статистики для игрока: Patrik Laine (ID: 4024820, Очки: 9.05)
+2024-12-15 14:46:45,789 - INFO - Обновление грейда для игрока Patrik Laine: common (1 раз)
+2024-12-15 14:46:45,789 - INFO - Обновление статистики для игрока: Moritz Seider (ID: 4565227, Очки: 13.25)
+2024-12-15 14:46:45,789 - INFO - Обновление грейда для игрока Moritz Seider: common (1 раз)
+2024-12-15 14:46:45,790 - INFO - Обновление статистики для игрока: Owen Power (ID: 4781556, Очки: 7.45)
+2024-12-15 14:46:45,790 - INFO - Обновление грейда для игрока Owen Power: common (1 раз)
+2024-12-15 14:46:45,790 - INFO - Обновление статистики для игрока: Arvid Soderblom (ID: 4894729, Очки: 12.35)
+2024-12-15 14:46:45,790 - INFO - Обновление грейда для игрока Arvid Soderblom: common (1 раз)
+2024-12-15 14:46:48,391 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:46:48,392 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:46:48,392 - INFO - Сформирована команда дня для даты: 2024-12-10
+2024-12-15 14:46:48,392 - INFO - Обработка данных для даты: 2024-12-11 (ESPN)
+2024-12-15 14:46:49,058 - INFO - Обновление статистики для игрока: Nathan MacKinnon (ID: 3041969, Очки: 22.1)
+2024-12-15 14:46:49,058 - INFO - Обновление грейда для игрока Nathan MacKinnon: common (1 раз)
+2024-12-15 14:46:49,058 - INFO - Обновление статистики для игрока: Kyle Connor (ID: 3899952, Очки: 15.7)
+2024-12-15 14:46:49,058 - INFO - Обновление грейда для игрока Kyle Connor: common (1 раз)
+2024-12-15 14:46:49,059 - INFO - Обновление статистики для игрока: Mikko Rantanen (ID: 3899938, Очки: 31.25)
+2024-12-15 14:46:49,059 - INFO - Обновление грейда для игрока Mikko Rantanen: common (1 раз)
+2024-12-15 14:46:49,060 - INFO - Обновление статистики для игрока: Brent Burns (ID: 2300, Очки: 10.85)
+2024-12-15 14:46:49,060 - INFO - Обновление грейда для игрока Brent Burns: common (1 раз)
+2024-12-15 14:46:49,060 - INFO - Обновление статистики для игрока: Neal Pionk (ID: 3988847, Очки: 10.8)
+2024-12-15 14:46:49,060 - INFO - Обновление грейда для игрока Neal Pionk: common (1 раз)
+2024-12-15 14:46:49,061 - INFO - Обновление статистики для игрока: Anthony Stolarz (ID: 3067313, Очки: 15.5)
+2024-12-15 14:46:49,061 - INFO - Обновление грейда для игрока Anthony Stolarz: common (1 раз)
+2024-12-15 14:46:52,249 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:46:52,250 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:46:52,250 - INFO - Сформирована команда дня для даты: 2024-12-11
+2024-12-15 14:46:52,250 - INFO - Обработка данных для даты: 2024-12-12 (ESPN)
+2024-12-15 14:46:52,902 - INFO - Обновление статистики для игрока: Mika Zibanejad (ID: 2562637, Очки: 8.8)
+2024-12-15 14:46:52,902 - INFO - Обновление грейда для игрока Mika Zibanejad: common (1 раз)
+2024-12-15 14:46:52,903 - INFO - Обновление статистики для игрока: Brady Tkachuk (ID: 4319858, Очки: 10.85)
+2024-12-15 14:46:52,903 - INFO - Обновление грейда для игрока Brady Tkachuk: common (1 раз)
+2024-12-15 14:46:52,903 - INFO - Обновление статистики для игрока: Drake Batherson (ID: 4271734, Очки: 26.9)
+2024-12-15 14:46:52,904 - INFO - Обновление грейда для игрока Drake Batherson: common (1 раз)
+2024-12-15 14:46:52,904 - INFO - Обновление статистики для игрока: Adam Fox (ID: 4197146, Очки: 18.85)
+2024-12-15 14:46:52,904 - INFO - Обновление грейда для игрока Adam Fox: common (1 раз)
+2024-12-15 14:46:52,905 - INFO - Обновление статистики для игрока: Owen Power (ID: 4781556, Очки: 11.75)
+2024-12-15 14:46:52,905 - INFO - Обновление грейда для игрока Owen Power: uncommon (2 раз)
+2024-12-15 14:46:52,905 - INFO - Обновление статистики для игрока: Linus Ullmark (ID: 3069285, Очки: 13.05)
+2024-12-15 14:46:52,905 - INFO - Обновление грейда для игрока Linus Ullmark: common (1 раз)
+2024-12-15 14:46:57,240 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:46:57,240 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:46:57,241 - INFO - Сформирована команда дня для даты: 2024-12-12
+2024-12-15 14:46:57,241 - INFO - Обработка данных для даты: 2024-12-13 (ESPN)
+2024-12-15 14:46:58,641 - INFO - Обновление статистики для игрока: Scott Laughton (ID: 2976848, Очки: 34.25)
+2024-12-15 14:46:58,642 - INFO - Обновление грейда для игрока Scott Laughton: common (1 раз)
+2024-12-15 14:46:58,642 - INFO - Обновление статистики для игрока: Jake Guentzel (ID: 3042083, Очки: 21.75)
+2024-12-15 14:46:58,642 - INFO - Обновление грейда для игрока Jake Guentzel: common (1 раз)
+2024-12-15 14:46:58,643 - INFO - Обновление статистики для игрока: Bryan Rust (ID: 2591155, Очки: 28.35)
+2024-12-15 14:46:58,643 - INFO - Обновление грейда для игрока Bryan Rust: common (1 раз)
+2024-12-15 14:46:58,644 - INFO - Обновление статистики для игрока: Jake Walman (ID: 3151136, Очки: 14.45)
+2024-12-15 14:46:58,644 - INFO - Обновление грейда для игрока Jake Walman: common (1 раз)
+2024-12-15 14:46:58,645 - INFO - Обновление статистики для игрока: Josh Morrissey (ID: 3042016, Очки: 12.95)
+2024-12-15 14:46:58,645 - INFO - Обновление грейда для игрока Josh Morrissey: common (1 раз)
+2024-12-15 14:46:58,645 - INFO - Обновление статистики для игрока: Kevin Lankinen (ID: 4341584, Очки: 21.45)
+2024-12-15 14:46:58,646 - INFO - Обновление грейда для игрока Kevin Lankinen: common (1 раз)
+2024-12-15 14:47:01,389 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:47:01,389 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:47:01,389 - INFO - Сформирована команда дня для даты: 2024-12-13
+2024-12-15 14:47:01,389 - INFO - Обработка данных для даты: 2024-12-14 (ESPN)
+2024-12-15 14:47:02,068 - INFO - Обновление статистики для игрока: Shane Pinto (ID: 4565255, Очки: 18.25)
+2024-12-15 14:47:02,068 - INFO - Обновление грейда для игрока Shane Pinto: common (1 раз)
+2024-12-15 14:47:02,069 - INFO - Обновление статистики для игрока: Brady Tkachuk (ID: 4319858, Очки: 3.2)
+2024-12-15 14:47:02,069 - INFO - Обновление грейда для игрока Brady Tkachuk: uncommon (2 раз)
+2024-12-15 14:47:02,069 - INFO - Обновление статистики для игрока: Michael Amadio (ID: 3149829, Очки: 10.95)
+2024-12-15 14:47:02,069 - INFO - Обновление грейда для игрока Michael Amadio: common (1 раз)
+2024-12-15 14:47:02,070 - INFO - Обновление статистики для игрока: Nick Jensen (ID: 3025608, Очки: 13.45)
+2024-12-15 14:47:02,070 - INFO - Обновление грейда для игрока Nick Jensen: common (1 раз)
+2024-12-15 14:47:02,071 - INFO - Обновление статистики для игрока: Thomas Chabot (ID: 3900219, Очки: 5.2)
+2024-12-15 14:47:02,071 - INFO - Обновление грейда для игрока Thomas Chabot: common (1 раз)
+2024-12-15 14:47:02,072 - INFO - Обновление статистики для игрока: Linus Ullmark (ID: 3069285, Очки: 23.2)
+2024-12-15 14:47:02,072 - INFO - Обновление грейда для игрока Linus Ullmark: uncommon (2 раз)
+2024-12-15 14:47:04,663 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:47:04,663 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:47:04,664 - INFO - Сформирована команда дня для даты: 2024-12-14
+2024-12-15 14:47:04,664 - INFO - Обработка данных для даты: 2024-12-15 (ESPN)
+2024-12-15 14:47:05,910 - INFO - Обновление статистики для игрока: Nathan MacKinnon (ID: 3041969, Очки: 17.85)
+2024-12-15 14:47:05,910 - INFO - Обновление грейда для игрока Nathan MacKinnon: uncommon (2 раз)
+2024-12-15 14:47:05,911 - INFO - Обновление статистики для игрока: Artturi Lehkonen (ID: 3042050, Очки: 17.4)
+2024-12-15 14:47:05,911 - INFO - Обновление грейда для игрока Artturi Lehkonen: common (1 раз)
+2024-12-15 14:47:05,912 - INFO - Обновление статистики для игрока: Alex Killorn (ID: 4968, Очки: 18.25)
+2024-12-15 14:47:05,912 - INFO - Обновление грейда для игрока Alex Killorn: common (1 раз)
+2024-12-15 14:47:05,912 - INFO - Обновление статистики для игрока: Jeff Petry (ID: 5407, Очки: 18.7)
+2024-12-15 14:47:05,913 - INFO - Обновление грейда для игрока Jeff Petry: common (1 раз)
+2024-12-15 14:47:05,913 - INFO - Обновление статистики для игрока: Jakob Chychrun (ID: 4024950, Очки: 14.75)
+2024-12-15 14:47:05,914 - INFO - Обновление грейда для игрока Jakob Chychrun: common (1 раз)
+2024-12-15 14:47:05,914 - INFO - Обновление статистики для игрока: Dustin Wolf (ID: 4587952, Очки: 23.2)
+2024-12-15 14:47:05,915 - INFO - Обновление грейда для игрока Dustin Wolf: common (1 раз)
+2024-12-15 14:47:08,461 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-15 14:47:08,462 - INFO - Коллаж успешно отправлен в Telegram.
+2024-12-15 14:47:08,462 - INFO - Сформирована команда дня для даты: 2024-12-15
