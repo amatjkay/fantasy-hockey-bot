@@ -8916,10 +8916,11 @@
                 },
                 "3114722": {
                     "name": "Sam Reinhart",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
+                    "team_of_the_day_count": 2,
+                    "grade": "uncommon",
                     "team_of_the_day_dates": [
-                        "RW:2024-12-17"
+                        "RW:2024-12-17",
+                        "RW:2024-12-23"
                     ],
                     "positions": [
                         "RW"
@@ -8929,11 +8930,16 @@
                             "points": 14.2,
                             "position": "RW",
                             "team_of_the_day": true
+                        },
+                        "2024-12-23": {
+                            "points": 14.0,
+                            "position": "RW",
+                            "team_of_the_day": true
                         }
                     },
-                    "total_points": 14.2,
+                    "total_points": 28.2,
                     "position_appearances": {
-                        "RW": 1
+                        "RW": 2
                     }
                 },
                 "3942354": {
@@ -9274,10 +9280,11 @@
                 },
                 "4587910": {
                     "name": "Joel Kiviranta",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
+                    "team_of_the_day_count": 2,
+                    "grade": "uncommon",
                     "team_of_the_day_dates": [
-                        "LW:2024-12-20"
+                        "LW:2024-12-20",
+                        "LW:2024-12-23"
                     ],
                     "positions": [
                         "LW"
@@ -9287,11 +9294,16 @@
                             "points": 15.2,
                             "position": "LW",
                             "team_of_the_day": true
+                        },
+                        "2024-12-23": {
+                            "points": 25.15,
+                            "position": "LW",
+                            "team_of_the_day": true
                         }
                     },
-                    "total_points": 15.2,
+                    "total_points": 40.349999999999994,
                     "position_appearances": {
-                        "LW": 1
+                        "LW": 2
                     }
                 },
                 "2591155": {
@@ -9450,10 +9462,11 @@
                 },
                 "4233563": {
                     "name": "Cale Makar",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
+                    "team_of_the_day_count": 2,
+                    "grade": "uncommon",
                     "team_of_the_day_dates": [
-                        "D:2024-12-21"
+                        "D:2024-12-21",
+                        "D:2024-12-23"
                     ],
                     "positions": [
                         "D"
@@ -9463,11 +9476,16 @@
                             "points": 18.1,
                             "position": "D",
                             "team_of_the_day": true
+                        },
+                        "2024-12-23": {
+                            "points": 18.65,
+                            "position": "D",
+                            "team_of_the_day": true
                         }
                     },
-                    "total_points": 18.1,
+                    "total_points": 36.75,
                     "position_appearances": {
-                        "D": 1
+                        "D": 2
                     }
                 },
                 "4781556": {
@@ -9642,6 +9660,72 @@
                         }
                     },
                     "total_points": 18.65,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                },
+                "4587943": {
+                    "name": "Aliaksei Protas",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "C:2024-12-23"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 13.2,
+                            "position": "C",
+                            "team_of_the_day": true
+                        }
+                    },
+                    "total_points": 13.2,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "4024868": {
+                    "name": "Mikhail Sergachev",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "D:2024-12-23"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 12.2,
+                            "position": "D",
+                            "team_of_the_day": true
+                        }
+                    },
+                    "total_points": 12.2,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4272888": {
+                    "name": "Logan Thompson",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "G:2024-12-23"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 10.95,
+                            "position": "G",
+                            "team_of_the_day": true
+                        }
+                    },
+                    "total_points": 10.95,
                     "position_appearances": {
                         "G": 1
                     }

@@ -599,6 +599,66 @@
                     "grade_priority": 1
                 }
             ]
+        },
+        "2024-12-17_2024-12-23": {
+            "C": [
+                {
+                    "id": "3114",
+                    "name": "Sidney Crosby",
+                    "total_points": 1,
+                    "weekly_points": 19.75,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ],
+            "LW": [
+                {
+                    "id": "4587910",
+                    "name": "Joel Kiviranta",
+                    "total_points": 2,
+                    "weekly_points": 40.349999999999994,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "RW": [
+                {
+                    "id": "3114722",
+                    "name": "Sam Reinhart",
+                    "total_points": 2,
+                    "weekly_points": 28.2,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "D": [
+                {
+                    "id": "4233563",
+                    "name": "Cale Makar",
+                    "total_points": 2,
+                    "weekly_points": 36.75,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                },
+                {
+                    "id": "3942354",
+                    "name": "Niko Mikkola",
+                    "total_points": 2,
+                    "weekly_points": 24.1,
+                    "grade": "uncommon",
+                    "grade_priority": 2
+                }
+            ],
+            "G": [
+                {
+                    "id": "4565259",
+                    "name": "Pyotr Kochetkov",
+                    "total_points": 1,
+                    "weekly_points": 23.2,
+                    "grade": "common",
+                    "grade_priority": 1
+                }
+            ]
         }
     }
 }

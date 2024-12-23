@@ -3208,3 +3208,487 @@
 2024-12-16 10:42:10,274 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 16, 7, 42, 9, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=929, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA3MAAzYE', file_size=931, file_unique_id='AQADT-IxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA20AAzYE', file_size=9111, file_unique_id='AQADT-IxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA3gAAzYE', file_size=35403, file_unique_id='AQADT-IxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA3kAAzYE', file_size=37788, file_unique_id='AQADT-IxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
 2024-12-16 10:42:10,275 - DEBUG - Exiting: send_photo
 2024-12-16 10:42:12,278 - INFO - З��вершено формирование команд недели
+2024-12-23 11:51:42,483 - INFO - Начало работы скрипта
+2024-12-23 11:51:42,484 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-23 11:51:42,486 - DEBUG - load_verify_locations cafile='C:\\dev\\fantasy-hockey-bot\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-12-23 11:51:42,845 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-23 11:51:42,846 - DEBUG - load_verify_locations cafile='C:\\dev\\fantasy-hockey-bot\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-12-23 11:51:43,204 - DEBUG - Using proactor: IocpProactor
+2024-12-23 11:51:43,205 - INFO - Начало формирования команд недели
+2024-12-23 11:51:43,232 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:44,368 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3183.png&w=130&h=100 HTTP/11" 200 17598
+2024-12-23 11:51:44,377 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:44,377 - DEBUG - STREAM b'IDAT' 41 17541
+2024-12-23 11:51:44,380 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:45,220 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3114985.png&w=130&h=100 HTTP/11" 200 19804
+2024-12-23 11:51:45,270 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:45,270 - DEBUG - STREAM b'IDAT' 41 19747
+2024-12-23 11:51:45,272 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:46,345 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2563060.png&w=130&h=100 HTTP/11" 200 16254
+2024-12-23 11:51:46,392 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:46,392 - DEBUG - STREAM b'IDAT' 41 16197
+2024-12-23 11:51:46,394 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:47,412 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3904186.png&w=130&h=100 HTTP/11" 200 16367
+2024-12-23 11:51:47,458 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:47,458 - DEBUG - STREAM b'IDAT' 41 16310
+2024-12-23 11:51:47,460 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:48,353 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3041992.png&w=130&h=100 HTTP/11" 200 16693
+2024-12-23 11:51:48,393 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:48,393 - DEBUG - STREAM b'IDAT' 41 16636
+2024-12-23 11:51:48,395 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:49,396 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3942714.png&w=130&h=100 HTTP/11" 200 15657
+2024-12-23 11:51:49,403 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:49,403 - DEBUG - STREAM b'IDAT' 41 15600
+2024-12-23 11:51:49,407 - DEBUG - Entering: send_photo
+2024-12-23 11:51:49,428 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:51:49,430 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6ADF0E0>
+2024-12-23 11:51:49,430 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:51:49,535 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E695FD90>
+2024-12-23 11:51:49,536 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:51:49,536 - DEBUG - send_request_headers.complete
+2024-12-23 11:51:49,537 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:51:49,538 - DEBUG - send_request_body.complete
+2024-12-23 11:51:49,538 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:51:49,733 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:51:48 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'997'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:51:49,734 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:51:49,734 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:51:49,734 - DEBUG - receive_response_body.complete
+2024-12-23 11:51:49,734 - DEBUG - response_closed.started
+2024-12-23 11:51:49,735 - DEBUG - response_closed.complete
+2024-12-23 11:51:49,735 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 51, 48, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=975, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDh2dfWvyAKWz-WiPMPxb90H8e1-0TAAJG4jEbar4AAUuQj1YUqLOplgEAAwIAA3MAAzYE', file_size=959, file_unique_id='AQADRuIxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDh2dfWvyAKWz-WiPMPxb90H8e1-0TAAJG4jEbar4AAUuQj1YUqLOplgEAAwIAA20AAzYE', file_size=9234, file_unique_id='AQADRuIxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDh2dfWvyAKWz-WiPMPxb90H8e1-0TAAJG4jEbar4AAUuQj1YUqLOplgEAAwIAA3gAAzYE', file_size=35724, file_unique_id='AQADRuIxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDh2dfWvyAKWz-WiPMPxb90H8e1-0TAAJG4jEbar4AAUuQj1YUqLOplgEAAwIAA3kAAzYE', file_size=38161, file_unique_id='AQADRuIxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:51:49,737 - DEBUG - Exiting: send_photo
+2024-12-23 11:51:51,757 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:52,444 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2976848.png&w=130&h=100 HTTP/11" 200 15896
+2024-12-23 11:51:52,445 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:52,445 - DEBUG - STREAM b'IDAT' 41 15839
+2024-12-23 11:51:52,447 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:53,525 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3891952.png&w=130&h=100 HTTP/11" 200 19181
+2024-12-23 11:51:53,566 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:53,566 - DEBUG - STREAM b'IDAT' 41 19124
+2024-12-23 11:51:53,568 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:54,606 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2970615.png&w=130&h=100 HTTP/11" 200 18412
+2024-12-23 11:51:54,608 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:54,608 - DEBUG - STREAM b'IDAT' 41 18355
+2024-12-23 11:51:54,610 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:55,385 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3042016.png&w=130&h=100 HTTP/11" 200 17046
+2024-12-23 11:51:55,387 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:55,387 - DEBUG - STREAM b'IDAT' 41 16989
+2024-12-23 11:51:55,389 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:56,265 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3988847.png&w=130&h=100 HTTP/11" 200 16488
+2024-12-23 11:51:56,266 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:56,267 - DEBUG - STREAM b'IDAT' 41 16431
+2024-12-23 11:51:56,268 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:51:57,402 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587909.png&w=130&h=100 HTTP/11" 200 18267
+2024-12-23 11:51:57,404 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:51:57,404 - DEBUG - STREAM b'IDAT' 41 18210
+2024-12-23 11:51:57,408 - DEBUG - Entering: send_photo
+2024-12-23 11:51:57,409 - DEBUG - close.started
+2024-12-23 11:51:57,409 - DEBUG - close.complete
+2024-12-23 11:51:57,409 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:51:57,411 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6ABAD50>
+2024-12-23 11:51:57,411 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:51:57,512 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6A8C2B0>
+2024-12-23 11:51:57,513 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:51:57,513 - DEBUG - send_request_headers.complete
+2024-12-23 11:51:57,513 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:51:57,514 - DEBUG - send_request_body.complete
+2024-12-23 11:51:57,514 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:51:57,714 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:51:56 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'997'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:51:57,715 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:51:57,715 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:51:57,715 - DEBUG - receive_response_body.complete
+2024-12-23 11:51:57,715 - DEBUG - response_closed.started
+2024-12-23 11:51:57,716 - DEBUG - response_closed.complete
+2024-12-23 11:51:57,716 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 51, 56, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=976, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiGdfWwLwD8Nvb0LF-CHmjfTQ31aOAAJH4jEbar4AAUsDCCvdCIu06QEAAwIAA3MAAzYE', file_size=936, file_unique_id='AQADR-IxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiGdfWwLwD8Nvb0LF-CHmjfTQ31aOAAJH4jEbar4AAUsDCCvdCIu06QEAAwIAA20AAzYE', file_size=8850, file_unique_id='AQADR-IxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiGdfWwLwD8Nvb0LF-CHmjfTQ31aOAAJH4jEbar4AAUsDCCvdCIu06QEAAwIAA3gAAzYE', file_size=33668, file_unique_id='AQADR-IxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiGdfWwLwD8Nvb0LF-CHmjfTQ31aOAAJH4jEbar4AAUsDCCvdCIu06QEAAwIAA3kAAzYE', file_size=36370, file_unique_id='AQADR-IxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:51:57,717 - DEBUG - Exiting: send_photo
+2024-12-23 11:51:59,736 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:00,728 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562601.png&w=130&h=100 HTTP/11" 200 15223
+2024-12-23 11:52:00,733 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:00,734 - DEBUG - STREAM b'IDAT' 41 15166
+2024-12-23 11:52:00,735 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:01,827 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4065019.png&w=130&h=100 HTTP/11" 200 17335
+2024-12-23 11:52:01,873 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:01,873 - DEBUG - STREAM b'IDAT' 41 17278
+2024-12-23 11:52:01,875 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:02,640 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3900169.png&w=130&h=100 HTTP/11" 200 15942
+2024-12-23 11:52:02,652 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:02,652 - DEBUG - STREAM b'IDAT' 41 15885
+2024-12-23 11:52:02,654 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:03,725 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/5157.png&w=130&h=100 HTTP/11" 200 15865
+2024-12-23 11:52:03,765 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:03,765 - DEBUG - STREAM b'IDAT' 41 15808
+2024-12-23 11:52:03,767 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:04,582 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4874929.png&w=130&h=100 HTTP/11" 200 16487
+2024-12-23 11:52:04,623 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:04,624 - DEBUG - STREAM b'IDAT' 41 16430
+2024-12-23 11:52:04,625 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:05,630 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3042109.png&w=130&h=100 HTTP/11" 200 15419
+2024-12-23 11:52:05,639 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:05,639 - DEBUG - STREAM b'IDAT' 41 15362
+2024-12-23 11:52:05,643 - DEBUG - Entering: send_photo
+2024-12-23 11:52:05,644 - DEBUG - close.started
+2024-12-23 11:52:05,644 - DEBUG - close.complete
+2024-12-23 11:52:05,644 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:52:05,646 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6A8FBB0>
+2024-12-23 11:52:05,646 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:52:05,746 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E30B90>
+2024-12-23 11:52:05,746 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:05,746 - DEBUG - send_request_headers.complete
+2024-12-23 11:52:05,747 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:52:05,748 - DEBUG - send_request_body.complete
+2024-12-23 11:52:05,748 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:05,908 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:52:04 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'997'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:52:05,908 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:52:05,909 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:52:05,909 - DEBUG - receive_response_body.complete
+2024-12-23 11:52:05,909 - DEBUG - response_closed.started
+2024-12-23 11:52:05,909 - DEBUG - response_closed.complete
+2024-12-23 11:52:05,910 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 52, 4, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=977, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiWdfWwiYg6Y4uctvMe1HxNyjtFkIAAJI4jEbar4AAUuxnU-Yv1JligEAAwIAA3MAAzYE', file_size=931, file_unique_id='AQADSOIxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiWdfWwiYg6Y4uctvMe1HxNyjtFkIAAJI4jEbar4AAUuxnU-Yv1JligEAAwIAA20AAzYE', file_size=8748, file_unique_id='AQADSOIxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiWdfWwiYg6Y4uctvMe1HxNyjtFkIAAJI4jEbar4AAUuxnU-Yv1JligEAAwIAA3gAAzYE', file_size=33510, file_unique_id='AQADSOIxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDiWdfWwiYg6Y4uctvMe1HxNyjtFkIAAJI4jEbar4AAUuxnU-Yv1JligEAAwIAA3kAAzYE', file_size=36246, file_unique_id='AQADSOIxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:52:05,911 - DEBUG - Exiting: send_photo
+2024-12-23 11:52:07,931 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:08,988 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3114727.png&w=130&h=100 HTTP/11" 200 18519
+2024-12-23 11:52:08,995 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:08,995 - DEBUG - STREAM b'IDAT' 41 18462
+2024-12-23 11:52:08,997 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:09,613 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3899952.png&w=130&h=100 HTTP/11" 200 14944
+2024-12-23 11:52:09,615 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:09,615 - DEBUG - STREAM b'IDAT' 41 14887
+2024-12-23 11:52:09,617 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:10,383 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233586.png&w=130&h=100 HTTP/11" 200 16700
+2024-12-23 11:52:10,430 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:10,431 - DEBUG - STREAM b'IDAT' 41 16643
+2024-12-23 11:52:10,432 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:11,841 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3151136.png&w=130&h=100 HTTP/11" 200 17454
+2024-12-23 11:52:11,843 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:11,843 - DEBUG - STREAM b'IDAT' 41 17397
+2024-12-23 11:52:11,844 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:12,746 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3042016.png&w=130&h=100 HTTP/11" 200 17046
+2024-12-23 11:52:12,792 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:12,792 - DEBUG - STREAM b'IDAT' 41 16989
+2024-12-23 11:52:12,794 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:13,389 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3151038.png&w=130&h=100 HTTP/11" 200 16010
+2024-12-23 11:52:13,396 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:13,396 - DEBUG - STREAM b'IDAT' 41 15953
+2024-12-23 11:52:13,400 - DEBUG - Entering: send_photo
+2024-12-23 11:52:13,401 - DEBUG - close.started
+2024-12-23 11:52:13,402 - DEBUG - close.complete
+2024-12-23 11:52:13,402 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:52:13,403 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6DF2690>
+2024-12-23 11:52:13,403 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:52:13,506 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6DF27A0>
+2024-12-23 11:52:13,506 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:13,507 - DEBUG - send_request_headers.complete
+2024-12-23 11:52:13,507 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:52:13,508 - DEBUG - send_request_body.complete
+2024-12-23 11:52:13,508 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:13,714 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:52:12 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'1005'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:52:13,714 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:52:13,715 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:52:13,715 - DEBUG - receive_response_body.complete
+2024-12-23 11:52:13,715 - DEBUG - response_closed.started
+2024-12-23 11:52:13,715 - DEBUG - response_closed.complete
+2024-12-23 11:52:13,716 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 52, 12, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=978, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDimdfWw0oAuHBlkycKrlnO5Ja_sBtAAJJ4jEbar4AAUsAAQa-OsilI0MBAAMCAANzAAM2BA', file_size=919, file_unique_id='AQADSeIxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDimdfWw0oAuHBlkycKrlnO5Ja_sBtAAJJ4jEbar4AAUsAAQa-OsilI0MBAAMCAANtAAM2BA', file_size=9048, file_unique_id='AQADSeIxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDimdfWw0oAuHBlkycKrlnO5Ja_sBtAAJJ4jEbar4AAUsAAQa-OsilI0MBAAMCAAN4AAM2BA', file_size=35531, file_unique_id='AQADSeIxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDimdfWw0oAuHBlkycKrlnO5Ja_sBtAAJJ4jEbar4AAUsAAQa-OsilI0MBAAMCAAN5AAM2BA', file_size=37771, file_unique_id='AQADSeIxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:52:13,717 - DEBUG - Exiting: send_photo
+2024-12-23 11:52:15,737 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:16,293 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3041969.png&w=130&h=100 HTTP/11" 200 16982
+2024-12-23 11:52:16,293 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:16,293 - DEBUG - STREAM b'IDAT' 41 16925
+2024-12-23 11:52:16,295 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:16,884 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4319858.png&w=130&h=100 HTTP/11" 200 14953
+2024-12-23 11:52:16,885 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:16,885 - DEBUG - STREAM b'IDAT' 41 14896
+2024-12-23 11:52:16,887 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:17,618 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3899938.png&w=130&h=100 HTTP/11" 200 18110
+2024-12-23 11:52:17,620 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:17,620 - DEBUG - STREAM b'IDAT' 41 18053
+2024-12-23 11:52:17,622 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:18,266 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4320548.png&w=130&h=100 HTTP/11" 200 20644
+2024-12-23 11:52:18,267 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:18,267 - DEBUG - STREAM b'IDAT' 41 20587
+2024-12-23 11:52:18,269 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:19,265 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562605.png&w=130&h=100 HTTP/11" 200 15337
+2024-12-23 11:52:19,273 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:19,273 - DEBUG - STREAM b'IDAT' 41 15280
+2024-12-23 11:52:19,274 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:20,036 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3904177.png&w=130&h=100 HTTP/11" 200 17794
+2024-12-23 11:52:20,049 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:20,049 - DEBUG - STREAM b'IDAT' 41 17737
+2024-12-23 11:52:20,054 - DEBUG - Entering: send_photo
+2024-12-23 11:52:20,054 - DEBUG - close.started
+2024-12-23 11:52:20,055 - DEBUG - close.complete
+2024-12-23 11:52:20,055 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:52:20,056 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6AC0F50>
+2024-12-23 11:52:20,056 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:52:20,162 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6AC3E50>
+2024-12-23 11:52:20,162 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:20,163 - DEBUG - send_request_headers.complete
+2024-12-23 11:52:20,163 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:52:20,164 - DEBUG - send_request_body.complete
+2024-12-23 11:52:20,164 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:20,296 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:52:19 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'997'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:52:20,297 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:52:20,297 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:52:20,297 - DEBUG - receive_response_body.complete
+2024-12-23 11:52:20,297 - DEBUG - response_closed.started
+2024-12-23 11:52:20,298 - DEBUG - response_closed.complete
+2024-12-23 11:52:20,298 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 52, 19, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=979, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDi2dfWxJryzBSNrHpk9BhVhw2vG44AAJK4jEbar4AAUszk6A2-iqTRwEAAwIAA3MAAzYE', file_size=950, file_unique_id='AQADSuIxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDi2dfWxJryzBSNrHpk9BhVhw2vG44AAJK4jEbar4AAUszk6A2-iqTRwEAAwIAA20AAzYE', file_size=9382, file_unique_id='AQADSuIxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDi2dfWxJryzBSNrHpk9BhVhw2vG44AAJK4jEbar4AAUszk6A2-iqTRwEAAwIAA3gAAzYE', file_size=36737, file_unique_id='AQADSuIxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDi2dfWxJryzBSNrHpk9BhVhw2vG44AAJK4jEbar4AAUszk6A2-iqTRwEAAwIAA3kAAzYE', file_size=39230, file_unique_id='AQADSuIxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:52:20,299 - DEBUG - Exiting: send_photo
+2024-12-23 11:52:22,319 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:23,321 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233594.png&w=130&h=100 HTTP/11" 200 16486
+2024-12-23 11:52:23,373 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:23,373 - DEBUG - STREAM b'IDAT' 41 16429
+2024-12-23 11:52:23,375 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:24,401 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4272192.png&w=130&h=100 HTTP/11" 200 17203
+2024-12-23 11:52:24,448 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:24,449 - DEBUG - STREAM b'IDAT' 41 17146
+2024-12-23 11:52:24,450 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:24,970 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3899938.png&w=130&h=100 HTTP/11" 200 18110
+2024-12-23 11:52:25,056 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:25,056 - DEBUG - STREAM b'IDAT' 41 18053
+2024-12-23 11:52:25,058 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:35,419 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:36,422 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3041997.png&w=130&h=100 HTTP/11" 200 14724
+2024-12-23 11:52:36,424 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:36,424 - DEBUG - STREAM b'IDAT' 41 14667
+2024-12-23 11:52:36,426 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:36,968 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587952.png&w=130&h=100 HTTP/11" 200 15255
+2024-12-23 11:52:36,987 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:36,987 - DEBUG - STREAM b'IDAT' 41 15198
+2024-12-23 11:52:36,990 - DEBUG - Entering: send_photo
+2024-12-23 11:52:36,990 - DEBUG - close.started
+2024-12-23 11:52:36,991 - DEBUG - close.complete
+2024-12-23 11:52:36,991 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:52:36,992 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E62C60>
+2024-12-23 11:52:36,992 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:52:37,135 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E632F0>
+2024-12-23 11:52:37,136 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:37,136 - DEBUG - send_request_headers.complete
+2024-12-23 11:52:37,136 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:52:37,140 - DEBUG - send_request_body.complete
+2024-12-23 11:52:37,140 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:37,336 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:52:36 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'985'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:52:37,337 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:52:37,338 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:52:37,338 - DEBUG - receive_response_body.complete
+2024-12-23 11:52:37,338 - DEBUG - response_closed.started
+2024-12-23 11:52:37,338 - DEBUG - response_closed.complete
+2024-12-23 11:52:37,339 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 52, 36, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=980, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID1GdpJNTf4-CLHvqnvFPMHDHKKw-zAAKq5zEb4W9IS5-ZpMwCZkUxAQADAgADcwADNgQ', file_size=889, file_unique_id='AQADqucxG-FvSEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID1GdpJNTf4-CLHvqnvFPMHDHKKw-zAAKq5zEb4W9IS5-ZpMwCZkUxAQADAgADbQADNgQ', file_size=8748, file_unique_id='AQADqucxG-FvSEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID1GdpJNTf4-CLHvqnvFPMHDHKKw-zAAKq5zEb4W9IS5-ZpMwCZkUxAQADAgADeAADNgQ', file_size=33462, file_unique_id='AQADqucxG-FvSEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID1GdpJNTf4-CLHvqnvFPMHDHKKw-zAAKq5zEb4W9IS5-ZpMwCZkUxAQADAgADeQADNgQ', file_size=36686, file_unique_id='AQADqucxG-FvSEt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:52:37,340 - DEBUG - Exiting: send_photo
+2024-12-23 11:52:39,359 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:40,396 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562632.png&w=130&h=100 HTTP/11" 200 17880
+2024-12-23 11:52:40,404 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:40,404 - DEBUG - STREAM b'IDAT' 41 17823
+2024-12-23 11:52:40,406 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:40,942 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4391255.png&w=130&h=100 HTTP/11" 200 18859
+2024-12-23 11:52:41,029 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:41,029 - DEBUG - STREAM b'IDAT' 41 18802
+2024-12-23 11:52:41,031 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:41,598 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3899938.png&w=130&h=100 HTTP/11" 200 18110
+2024-12-23 11:52:41,600 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:41,600 - DEBUG - STREAM b'IDAT' 41 18053
+2024-12-23 11:52:41,602 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:42,444 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3899972.png&w=130&h=100 HTTP/11" 200 15714
+2024-12-23 11:52:42,484 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:42,484 - DEBUG - STREAM b'IDAT' 41 15657
+2024-12-23 11:52:42,486 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:43,479 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4352722.png&w=130&h=100 HTTP/11" 200 17107
+2024-12-23 11:52:43,527 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:43,527 - DEBUG - STREAM b'IDAT' 41 17050
+2024-12-23 11:52:43,529 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:44,505 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4271575.png&w=130&h=100 HTTP/11" 200 15940
+2024-12-23 11:52:44,514 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:44,514 - DEBUG - STREAM b'IDAT' 41 15883
+2024-12-23 11:52:44,518 - DEBUG - Entering: send_photo
+2024-12-23 11:52:44,518 - DEBUG - close.started
+2024-12-23 11:52:44,519 - DEBUG - close.complete
+2024-12-23 11:52:44,519 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:52:44,520 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E7E270>
+2024-12-23 11:52:44,520 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:52:44,622 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E7DFD0>
+2024-12-23 11:52:44,623 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:44,623 - DEBUG - send_request_headers.complete
+2024-12-23 11:52:44,623 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:52:44,625 - DEBUG - send_request_body.complete
+2024-12-23 11:52:44,625 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:44,761 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:52:43 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'997'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:52:44,761 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:52:44,762 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:52:44,762 - DEBUG - receive_response_body.complete
+2024-12-23 11:52:44,762 - DEBUG - response_closed.started
+2024-12-23 11:52:44,762 - DEBUG - response_closed.complete
+2024-12-23 11:52:44,763 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 52, 43, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=981, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjWdfWx6RHGmqBUyxs4yWzdYilBq2AAJM4jEbar4AAUsJHa79SvZXmAEAAwIAA3MAAzYE', file_size=957, file_unique_id='AQADTOIxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjWdfWx6RHGmqBUyxs4yWzdYilBq2AAJM4jEbar4AAUsJHa79SvZXmAEAAwIAA20AAzYE', file_size=8858, file_unique_id='AQADTOIxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjWdfWx6RHGmqBUyxs4yWzdYilBq2AAJM4jEbar4AAUsJHa79SvZXmAEAAwIAA3gAAzYE', file_size=34592, file_unique_id='AQADTOIxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjWdfWx6RHGmqBUyxs4yWzdYilBq2AAJM4jEbar4AAUsJHa79SvZXmAEAAwIAA3kAAzYE', file_size=37784, file_unique_id='AQADTOIxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:52:44,764 - DEBUG - Exiting: send_photo
+2024-12-23 11:52:46,783 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:47,373 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233555.png&w=130&h=100 HTTP/11" 200 16964
+2024-12-23 11:52:47,414 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:47,414 - DEBUG - STREAM b'IDAT' 41 16907
+2024-12-23 11:52:47,416 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:48,442 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/5428.png&w=130&h=100 HTTP/11" 200 17388
+2024-12-23 11:52:48,486 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:48,487 - DEBUG - STREAM b'IDAT' 41 17331
+2024-12-23 11:52:48,488 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:49,554 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3900240.png&w=130&h=100 HTTP/11" 200 19186
+2024-12-23 11:52:49,595 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:49,595 - DEBUG - STREAM b'IDAT' 41 19129
+2024-12-23 11:52:49,597 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:50,626 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/5079.png&w=130&h=100 HTTP/11" 200 16932
+2024-12-23 11:52:50,676 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:50,676 - DEBUG - STREAM b'IDAT' 41 16875
+2024-12-23 11:52:50,678 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:51,478 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3539.png&w=130&h=100 HTTP/11" 200 15262
+2024-12-23 11:52:51,479 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:51,480 - DEBUG - STREAM b'IDAT' 41 15205
+2024-12-23 11:52:51,481 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:52,482 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4272674.png&w=130&h=100 HTTP/11" 200 16506
+2024-12-23 11:52:52,522 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:52,522 - DEBUG - STREAM b'IDAT' 41 16449
+2024-12-23 11:52:52,526 - DEBUG - Entering: send_photo
+2024-12-23 11:52:52,527 - DEBUG - close.started
+2024-12-23 11:52:52,527 - DEBUG - close.complete
+2024-12-23 11:52:52,527 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:52:52,529 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6A81F30>
+2024-12-23 11:52:52,529 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:52:52,630 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6ABC710>
+2024-12-23 11:52:52,630 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:52,631 - DEBUG - send_request_headers.complete
+2024-12-23 11:52:52,631 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:52:52,632 - DEBUG - send_request_body.complete
+2024-12-23 11:52:52,632 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:52:52,815 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:52:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'1005'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:52:52,816 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:52:52,816 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:52:52,816 - DEBUG - receive_response_body.complete
+2024-12-23 11:52:52,816 - DEBUG - response_closed.started
+2024-12-23 11:52:52,817 - DEBUG - response_closed.complete
+2024-12-23 11:52:52,817 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 52, 51, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=982, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjmdfWyPZcPhmoXDxlNPNkevSPrImAAJN4jEbar4AAUsYzQABGYvkmCgBAAMCAANzAAM2BA', file_size=952, file_unique_id='AQADTeIxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjmdfWyPZcPhmoXDxlNPNkevSPrImAAJN4jEbar4AAUsYzQABGYvkmCgBAAMCAANtAAM2BA', file_size=8867, file_unique_id='AQADTeIxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjmdfWyPZcPhmoXDxlNPNkevSPrImAAJN4jEbar4AAUsYzQABGYvkmCgBAAMCAAN4AAM2BA', file_size=34178, file_unique_id='AQADTeIxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDjmdfWyPZcPhmoXDxlNPNkevSPrImAAJN4jEbar4AAUsYzQABGYvkmCgBAAMCAAN5AAM2BA', file_size=37023, file_unique_id='AQADTeIxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:52:52,818 - DEBUG - Exiting: send_photo
+2024-12-23 11:52:54,838 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:55,492 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3041969.png&w=130&h=100 HTTP/11" 200 16982
+2024-12-23 11:52:55,492 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:55,492 - DEBUG - STREAM b'IDAT' 41 16925
+2024-12-23 11:52:55,494 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:56,502 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4352683.png&w=130&h=100 HTTP/11" 200 17354
+2024-12-23 11:52:56,549 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:56,549 - DEBUG - STREAM b'IDAT' 41 17297
+2024-12-23 11:52:56,551 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:57,377 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4024854.png&w=130&h=100 HTTP/11" 200 16609
+2024-12-23 11:52:57,417 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:57,418 - DEBUG - STREAM b'IDAT' 41 16552
+2024-12-23 11:52:57,420 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:52:58,314 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3904189.png&w=130&h=100 HTTP/11" 200 17848
+2024-12-23 11:52:58,322 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:52:58,322 - DEBUG - STREAM b'IDAT' 41 17791
+2024-12-23 11:52:58,324 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:08,683 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:09,453 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3939714.png&w=130&h=100 HTTP/11" 200 20360
+2024-12-23 11:53:09,504 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:09,505 - DEBUG - STREAM b'IDAT' 41 20303
+2024-12-23 11:53:09,507 - DEBUG - Entering: send_photo
+2024-12-23 11:53:09,508 - DEBUG - close.started
+2024-12-23 11:53:09,508 - DEBUG - close.complete
+2024-12-23 11:53:09,508 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:53:09,509 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6ABC890>
+2024-12-23 11:53:09,510 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:53:09,610 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E10050>
+2024-12-23 11:53:09,610 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:53:09,610 - DEBUG - send_request_headers.complete
+2024-12-23 11:53:09,611 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:53:09,612 - DEBUG - send_request_body.complete
+2024-12-23 11:53:09,612 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:53:09,932 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:53:08 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'985'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:53:09,933 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:53:09,933 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:53:09,933 - DEBUG - receive_response_body.complete
+2024-12-23 11:53:09,933 - DEBUG - response_closed.started
+2024-12-23 11:53:09,934 - DEBUG - response_closed.complete
+2024-12-23 11:53:09,934 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 53, 8, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=983, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID12dpJPQIJ1pTlxrLjhl7-h2v17V5AAKs5zEb4W9IS3fZtPs3WsxEAQADAgADcwADNgQ', file_size=915, file_unique_id='AQADrOcxG-FvSEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID12dpJPQIJ1pTlxrLjhl7-h2v17V5AAKs5zEb4W9IS3fZtPs3WsxEAQADAgADbQADNgQ', file_size=8849, file_unique_id='AQADrOcxG-FvSEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID12dpJPQIJ1pTlxrLjhl7-h2v17V5AAKs5zEb4W9IS3fZtPs3WsxEAQADAgADeAADNgQ', file_size=33719, file_unique_id='AQADrOcxG-FvSEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID12dpJPQIJ1pTlxrLjhl7-h2v17V5AAKs5zEb4W9IS3fZtPs3WsxEAQADAgADeQADNgQ', file_size=37072, file_unique_id='AQADrOcxG-FvSEt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:53:09,935 - DEBUG - Exiting: send_photo
+2024-12-23 11:53:11,953 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:12,593 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3041969.png&w=130&h=100 HTTP/11" 200 16982
+2024-12-23 11:53:12,594 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:12,594 - DEBUG - STREAM b'IDAT' 41 16925
+2024-12-23 11:53:12,596 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:13,145 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4319858.png&w=130&h=100 HTTP/11" 200 14953
+2024-12-23 11:53:13,147 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:13,147 - DEBUG - STREAM b'IDAT' 41 14896
+2024-12-23 11:53:13,149 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:13,752 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3899938.png&w=130&h=100 HTTP/11" 200 18110
+2024-12-23 11:53:13,753 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:13,753 - DEBUG - STREAM b'IDAT' 41 18053
+2024-12-23 11:53:13,755 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:14,358 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4781556.png&w=130&h=100 HTTP/11" 200 18624
+2024-12-23 11:53:14,359 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:14,359 - DEBUG - STREAM b'IDAT' 41 18567
+2024-12-23 11:53:14,362 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:14,938 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4197146.png&w=130&h=100 HTTP/11" 200 17240
+2024-12-23 11:53:14,940 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:14,940 - DEBUG - STREAM b'IDAT' 41 17183
+2024-12-23 11:53:14,942 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:15,560 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3069285.png&w=130&h=100 HTTP/11" 200 14556
+2024-12-23 11:53:15,561 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:15,562 - DEBUG - STREAM b'IDAT' 41 14499
+2024-12-23 11:53:15,566 - DEBUG - Entering: send_photo
+2024-12-23 11:53:15,566 - DEBUG - close.started
+2024-12-23 11:53:15,567 - DEBUG - close.complete
+2024-12-23 11:53:15,567 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:53:15,568 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E120A0>
+2024-12-23 11:53:15,568 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:53:15,671 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E85A90>
+2024-12-23 11:53:15,672 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:53:15,672 - DEBUG - send_request_headers.complete
+2024-12-23 11:53:15,672 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:53:15,674 - DEBUG - send_request_body.complete
+2024-12-23 11:53:15,674 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:53:15,863 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:53:14 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'997'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:53:15,864 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:53:15,864 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:53:15,864 - DEBUG - receive_response_body.complete
+2024-12-23 11:53:15,864 - DEBUG - response_closed.started
+2024-12-23 11:53:15,865 - DEBUG - response_closed.complete
+2024-12-23 11:53:15,865 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 53, 14, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=984, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA3MAAzYE', file_size=931, file_unique_id='AQADT-IxG2q-AAFLeA', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA20AAzYE', file_size=9111, file_unique_id='AQADT-IxG2q-AAFLcg', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA3gAAzYE', file_size=35403, file_unique_id='AQADT-IxG2q-AAFLfQ', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIDkGdfWy4d9gybgQOClcOZCjfnswzQAAJP4jEbar4AAUuiS1eQq27NSQEAAwIAA3kAAzYE', file_size=37788, file_unique_id='AQADT-IxG2q-AAFLfg', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:53:15,866 - DEBUG - Exiting: send_photo
+2024-12-23 11:53:17,886 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:18,554 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3114.png&w=130&h=100 HTTP/11" 200 15905
+2024-12-23 11:53:18,555 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:18,555 - DEBUG - STREAM b'IDAT' 41 15848
+2024-12-23 11:53:18,558 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:19,215 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587910.png&w=130&h=100 HTTP/11" 200 17643
+2024-12-23 11:53:19,222 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:19,222 - DEBUG - STREAM b'IDAT' 41 17586
+2024-12-23 11:53:19,224 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:19,796 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3114722.png&w=130&h=100 HTTP/11" 200 17047
+2024-12-23 11:53:19,836 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:19,836 - DEBUG - STREAM b'IDAT' 41 16990
+2024-12-23 11:53:19,838 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:20,549 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233563.png&w=130&h=100 HTTP/11" 200 19472
+2024-12-23 11:53:20,590 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:20,590 - DEBUG - STREAM b'IDAT' 41 19415
+2024-12-23 11:53:20,592 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:21,911 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3942354.png&w=130&h=100 HTTP/11" 200 15913
+2024-12-23 11:53:21,912 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:21,913 - DEBUG - STREAM b'IDAT' 41 15856
+2024-12-23 11:53:21,914 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-23 11:53:22,549 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4565259.png&w=130&h=100 HTTP/11" 200 16707
+2024-12-23 11:53:22,598 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-23 11:53:22,598 - DEBUG - STREAM b'IDAT' 41 16650
+2024-12-23 11:53:22,602 - DEBUG - Entering: send_photo
+2024-12-23 11:53:22,602 - DEBUG - close.started
+2024-12-23 11:53:22,603 - DEBUG - close.complete
+2024-12-23 11:53:22,603 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-23 11:53:22,604 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6E85310>
+2024-12-23 11:53:22,604 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194E6942DE0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-23 11:53:22,709 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000194E6EB9640>
+2024-12-23 11:53:22,709 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-23 11:53:22,710 - DEBUG - send_request_headers.complete
+2024-12-23 11:53:22,710 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-23 11:53:22,711 - DEBUG - send_request_body.complete
+2024-12-23 11:53:22,711 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-23 11:53:23,026 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Mon, 23 Dec 2024 08:53:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'985'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-23 11:53:23,027 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-23 11:53:23,027 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-23 11:53:23,027 - DEBUG - receive_response_body.complete
+2024-12-23 11:53:23,028 - DEBUG - response_closed.started
+2024-12-23 11:53:23,028 - DEBUG - response_closed.complete
+2024-12-23 11:53:23,028 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 53, 21, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=985, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADcwADNgQ', file_size=941, file_unique_id='AQADrecxG-FvSEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADbQADNgQ', file_size=9137, file_unique_id='AQADrecxG-FvSEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADeAADNgQ', file_size=35922, file_unique_id='AQADrecxG-FvSEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADeQADNgQ', file_size=38339, file_unique_id='AQADrecxG-FvSEt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-23 11:53:23,029 - DEBUG - Exiting: send_photo
+2024-12-23 11:53:25,032 - INFO - З��вершено формирование команд недели
