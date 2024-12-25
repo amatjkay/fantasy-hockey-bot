@@ -16,7 +16,7 @@ import sys
 import traceback
 
 # Конфигурация
-LOG_FILE = "C:\\dev\\fantasy-hockey-bot\\log.txt"
+LOG_FILE = "log.txt"
 ESPN_TIMEZONE = pytz.timezone('US/Eastern')  # Используем только время ESPN
 SEASON_START_DATE = datetime(2024, 10, 4, tzinfo=ESPN_TIMEZONE)
 SEASON_START_SCORING_PERIOD_ID = 1
@@ -62,7 +62,7 @@ logging.basicConfig(
 )
 
 # Загрузка переменных окружения
-load_dotenv('C:\\dev\\fantasy-hockey-bot\\.env')
+load_dotenv('.env')
 
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
@@ -273,7 +273,7 @@ def fetch_player_data(scoring_period_id, league_id, max_retries=3, timeout=10):
             response.raise_for_status()
             data = response.json()
             if not data.get('players'):
-                raise ValueError("Получен пустой список игроков")
+                raise ValueError("Получен пуст��й список игроков")
             logging.info(f"Успешно получены данные для scoring_period_id={scoring_period_id}")
             return data
         except requests.exceptions.Timeout:
@@ -299,7 +299,7 @@ def fetch_player_data(scoring_period_id, league_id, max_retries=3, timeout=10):
                 wait_time = min(8, 2 ** (retry_count - 1))  # 2, 4, 8 секунд
                 logging.warning(f"Ошибка разрешения имени при запросе данных (попытка {retry_count}/3). Ожидание {wait_time} сек...")
                 if retry_count == 3:
-                    logging.error("Превышено максимальное количество ��опыток из-за ошибки разрешения имени")
+                    logging.error("Превышено максимальное количество попыток из-за ошибки разрешения имени")
                     return None
                 time.sleep(wait_time)
             else:
@@ -367,14 +367,40 @@ def create_collage(team, date_str):
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
 
-    font_path = "C:\\Windows\\Fonts\\arial.ttf"
-    font = ImageFont.truetype(font_path, size=20)
+    # Поиск доступного шрифта в системе
+    try:
+        # Пробуем разные пути к шрифтам в Linux
+        font_paths = [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+            "/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf",
+            "/usr/share/fonts/TTF/DejaVuSans.ttf"
+        ]
+        
+        font = None
+        for font_path in font_paths:
+            if os.path.exists(font_path):
+                font = ImageFont.truetype(font_path, size=20)
+                logging.info(f"Используется шрифт: {font_path}")
+                break
+        
+        if font is None:
+            # Если не нашли ни один шрифт, используем дефолтный
+            font = ImageFont.load_default()
+            logging.warning("Используется дефолтный шрифт, так как не найдены системные шрифты")
+    except Exception as e:
+        logging.error(f"Ошибка при загрузке шрифта: {str(e)}")
+        font = ImageFont.load_default()
 
     y_offset = padding
     
     # Добавляем заголовок с датой
     title = f"Команда дня {date_str}"
-    title_width = draw.textlength(title, font=font)
+    try:
+        title_width = draw.textlength(title, font=font)
+    except AttributeError:
+        # Для старых версий Pillow
+        title_width = font.getlength(title)
     draw.text(((width - title_width) // 2, y_offset), title, fill="black", font=font)
     y_offset += 40
 
@@ -402,12 +428,16 @@ def create_collage(team, date_str):
                 image.paste(empty_img, (image_x, y_offset))
 
             text = f"{position}: {name} ({points:.2f} ftps)"
-            text_width = draw.textlength(text, font=font)
+            try:
+                text_width = draw.textlength(text, font=font)
+            except AttributeError:
+                # Для старых версий Pillow
+                text_width = font.getlength(text)
             text_x = (width - text_width) // 2
             draw.text((text_x, y_offset + player_img_height + text_padding), text, fill=color, font=font)
             y_offset += line_height
 
-    file_path = f"C:\\dev\\fantasy-hockey-bot\\team_day_collage_{date_str}.jpg"
+    file_path = f"team_day_collage_{date_str}.jpg"
     image.save(file_path)
     return file_path
 

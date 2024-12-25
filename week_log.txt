@@ -3692,3 +3692,18 @@
 2024-12-23 11:53:23,028 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 23, 8, 53, 21, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=985, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADcwADNgQ', file_size=941, file_unique_id='AQADrecxG-FvSEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADbQADNgQ', file_size=9137, file_unique_id='AQADrecxG-FvSEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADeAADNgQ', file_size=35922, file_unique_id='AQADrecxG-FvSEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAID2WdpJQG61r8eY_IJv_-R-0-64zcfAAKt5zEb4W9IS6aNqB67Amx2AQADAgADeQADNgQ', file_size=38339, file_unique_id='AQADrecxG-FvSEt-', height=1000, width=500)), supergroup_chat_created=False)
 2024-12-23 11:53:23,029 - DEBUG - Exiting: send_photo
 2024-12-23 11:53:25,032 - INFO - З��вершено формирование команд недели
+2024-12-25 09:23:49,796 - INFO - Начало работы скрипта
+2024-12-25 09:23:49,880 - DEBUG - Using selector: EpollSelector
+2024-12-25 09:23:49,882 - INFO - Начало формирования команд недели
+2024-12-25 09:23:49,919 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:23:51,934 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:23:53,944 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:23:55,959 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:23:57,980 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:00,009 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:02,017 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:04,027 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:06,036 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:08,048 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:10,061 - ERROR - Ошибка при отправке команды недели: cannot open resource
+2024-12-25 09:24:12,068 - INFO - З��вершено формирование команд недели

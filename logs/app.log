@@ -1,0 +1,10 @@
+2024-12-25 09:39:49 - INFO - Логирование настроено
+2024-12-25 09:39:49 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:39:49 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:39:49 - ERROR - Файл статистики не найден: /home/tiki/dev/fantasy-hockey-bot/data/player_stats.json
+2024-12-25 09:39:49 - ERROR - Не удалось получить команду недели
+2024-12-25 09:40:02 - INFO - Логирование настроено
+2024-12-25 09:40:02 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:40:02 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:40:03 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 09:40:03 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/team_week_collage_2024-12-17_2024-12-23.jpg
