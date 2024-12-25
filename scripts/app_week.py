@@ -13,16 +13,29 @@ from src.utils.logger import setup_logging
 from src.utils.helpers import get_previous_week_dates, get_week_key
 from src.services.image_service import ImageService
 from src.telegram.bot import TelegramService
-from src.config.settings import PLAYER_STATS_FILE, POSITION_MAP
+from src.config.settings import (
+    PLAYER_STATS_FILE,
+    POSITION_MAP,
+    TEMP_DIR,
+    ESPN_API,
+    load_env_vars
+)
 from dotenv import load_dotenv
 
 # Загружаем переменные окружения
 load_dotenv()
 
 def get_week_team(week_key):
-    """Получение лучшей команды за неделю"""
+    """Получение лучшей команды за неделю
+    
+    Args:
+        week_key (str): Ключ недели в формате 'YYYY-MM-DD_YYYY-MM-DD'
+        
+    Returns:
+        dict: Словарь с лучшими игроками по позициям или None в случае ошибки
+    """
     try:
-        with open(PLAYER_STATS_FILE, 'r') as f:
+        with open(PLAYER_STATS_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
         week_data = data.get("weeks", {}).get(week_key, {}).get("players", {})
@@ -30,7 +43,7 @@ def get_week_team(week_key):
             logging.error(f"Нет данных для недели {week_key}")
             return None
             
-        positions = {'C': [], 'LW': [], 'RW': [], 'D': [], 'G': []}
+        positions = {pos: [] for pos in POSITION_MAP.keys()}
         
         for player_id, player_info in week_data.items():
             total_points = player_info.get("total_points", 0)
@@ -49,13 +62,17 @@ def get_week_team(week_key):
         
         # Сортируем игроков по очкам и выбираем лучших для каждой позиции
         team = {}
+        empty_positions = []
         for position, count in POSITION_MAP.items():
-            if positions[position]:  # Проверяем, есть ли игроки на позиции
+            if positions[position]:
                 sorted_players = sorted(positions[position], key=lambda x: x['total_points'], reverse=True)
                 team[position] = sorted_players[:count]
             else:
-                logging.warning(f"Нет игроков на позиции {position}")
+                empty_positions.append(position)
                 team[position] = []
+        
+        if empty_positions:
+            logging.warning(f"Нет игроков на позициях: {', '.join(empty_positions)}")
             
         return team
     except FileNotFoundError:
@@ -71,6 +88,9 @@ def get_week_team(week_key):
 async def main():
     """Основная функция скрипта"""
     try:
+        # Проверяем переменные окружения
+        env_vars = load_env_vars()
+        
         # Инициализация сервисов
         image_service = ImageService()
         telegram_service = TelegramService()
@@ -92,13 +112,17 @@ async def main():
             logging.error("В команде недели нет игроков")
             return
             
-        # Создаем и отправляем коллаж
-        photo_path = image_service.create_week_collage(team, week_key)
-        await telegram_service.send_week_results(team, week_key, photo_path)
+        # Создаем временный файл для коллажа
+        temp_file = TEMP_DIR / f"team_week_collage_{week_key}.jpg"
         
-        # Удаляем временный файл
-        if os.path.exists(photo_path):
-            os.remove(photo_path)
+        try:
+            # Создаем и отправляем коллаж
+            photo_path = image_service.create_week_collage(team, week_key, temp_file)
+            await telegram_service.send_week_results(team, week_key, photo_path)
+        finally:
+            # Удаляем временный файл
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
             
     except Exception as e:
         logging.error(f"Ошибка при выполнении скрипта: {str(e)}")

@@ -1,4 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 .env
-.log
-.jpg
-.png
+venv/
+.venv/
+
+# Logs
+logs/
+*.log
+
+# Data
+data/
+*.json
+
+# IDE
+.idea/
+.vscode/
+
+# Temp files
+*.jpg
+*.png
+*.gif

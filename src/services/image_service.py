@@ -2,24 +2,25 @@ import logging
 import requests
 from PIL import Image, ImageDraw
 from src.config.fonts import get_system_font
-from src.config.settings import GRADE_COLORS, BASE_DIR
+from src.config.settings import GRADE_COLORS, IMAGE_SETTINGS
 
 class ImageService:
     def __init__(self):
-        self.player_img_width = 130
-        self.player_img_height = 100
-        self.padding = 20
-        self.text_padding = 10
+        self.player_img_width = IMAGE_SETTINGS['PLAYER']['WIDTH']
+        self.player_img_height = IMAGE_SETTINGS['PLAYER']['HEIGHT']
+        self.padding = IMAGE_SETTINGS['PADDING']
+        self.text_padding = IMAGE_SETTINGS['TEXT_PADDING']
         self.line_height = self.player_img_height + self.text_padding + 30 + self.padding
-        self.width = 500
+        self.width = IMAGE_SETTINGS['COLLAGE_WIDTH']
         self.font = get_system_font()
 
-    def create_week_collage(self, team, week_key):
+    def create_week_collage(self, team, week_key, output_path):
         """Создание коллажа команды недели
         
         Args:
             team (dict): Словарь с игроками по позициям
             week_key (str): Ключ недели в формате 'YYYY-MM-DD_YYYY-MM-DD'
+            output_path (Path): Путь для сохранения коллажа
             
         Returns:
             Path: Путь к созданному файлу коллажа
@@ -42,15 +43,17 @@ class ImageService:
         draw.text(((self.width - title_width) // 2, y_offset), title, fill="black", font=self.font)
         y_offset += 40
 
+        # Добавляем игроков по позициям
         for position, players in team.items():
             for player in players:
                 y_offset = self._add_player_to_collage(
                     draw, image, player, position, y_offset
                 )
 
-        file_path = BASE_DIR / "data" / f"team_week_collage_{week_key}.jpg"
-        image.save(str(file_path))
-        return file_path
+        # Сохраняем коллаж
+        image.save(str(output_path))
+        logging.info(f"Коллаж сохранен: {output_path}")
+        return output_path
 
     def _add_player_to_collage(self, draw, image, player, position, y_offset):
         """Добавление игрока в коллаж
@@ -83,6 +86,7 @@ class ImageService:
             )
             image_x = (self.width - self.player_img_width) // 2
             image.paste(player_image, (image_x, y_offset))
+            logging.info(f"Изображение игрока {name} успешно добавлено в коллаж")
         except Exception as e:
             logging.warning(f"Ошибка загрузки изображения для {name}: {e}")
             empty_img = Image.new("RGB", (self.player_img_width, self.player_img_height), "gray")

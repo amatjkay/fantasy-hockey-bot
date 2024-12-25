@@ -8,3 +8,926 @@
 2024-12-25 09:40:02 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
 2024-12-25 09:40:03 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
 2024-12-25 09:40:03 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:50:35 - INFO - Логирование настроено
+2024-12-25 09:50:35 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:50:35 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:50:37 - INFO - Изображение игрока Sidney Crosby успешно добавлено в коллаж
+2024-12-25 09:50:37 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-25 09:50:37 - INFO - Изображение игрока Sam Reinhart успешно добавлено в коллаж
+2024-12-25 09:50:38 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-25 09:50:38 - INFO - Изображение игрока Niko Mikkola успешно добавлено в коллаж
+2024-12-25 09:50:38 - INFO - Изображение игрока Pyotr Kochetkov успешно добавлено в коллаж
+2024-12-25 09:50:38 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:50:38 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 09:50:38 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:53:40 - INFO - Логирование настроено
+2024-12-25 09:53:40 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:53:40 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:53:40 - INFO - Изображение игрока Sidney Crosby успешно добавлено в коллаж
+2024-12-25 09:53:40 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-25 09:53:40 - INFO - Изображение игрока Sam Reinhart успешно добавлено в коллаж
+2024-12-25 09:53:40 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-25 09:53:40 - INFO - Изображение игрока Niko Mikkola успешно добавлено в коллаж
+2024-12-25 09:53:40 - INFO - Изображение игрока Pyotr Kochetkov успешно добавлено в коллаж
+2024-12-25 09:53:40 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:53:41 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 09:53:41 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:55:00 - INFO - Логирование настроено
+2024-12-25 09:55:00 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:55:00 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:55:00 - INFO - Изображение игрока Sidney Crosby успешно добавлено в коллаж
+2024-12-25 09:55:00 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-25 09:55:00 - INFO - Изображение игрока Sam Reinhart успешно добавлено в коллаж
+2024-12-25 09:55:00 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-25 09:55:00 - INFO - Изображение игрока Niko Mikkola успешно добавлено в коллаж
+2024-12-25 09:55:00 - INFO - Изображение игрока Pyotr Kochetkov успешно добавлено в коллаж
+2024-12-25 09:55:00 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:55:01 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 09:55:01 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 09:55:25 - INFO - Логирование настроено
+2024-12-25 09:55:25 - ERROR - Ошибка при выполнении скрипта: name 'API_URL_TEMPLATE' is not defined
+2024-12-25 09:55:43 - INFO - Логирование настроено
+2024-12-25 09:55:43 - INFO - Обработано 50 игроков
+2024-12-25 09:55:43 - INFO - Файл статистики успешно обновлен: /home/tiki/dev/fantasy-hockey-bot/data/player_stats.json
+2024-12-25 09:55:43 - INFO - Сбор статистики успешно завершен
+2024-12-25 09:57:03 - INFO - Логирование настроено
+2024-12-25 09:57:03 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:57:03 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:57:03 - ERROR - Нет данных для недели 2024-12-17_2024-12-23
+2024-12-25 09:57:03 - ERROR - Не удалось получить команду недели
+2024-12-25 09:57:08 - INFO - Логирование настроено
+2024-12-25 09:57:09 - INFO - Обработано 50 игроков
+2024-12-25 09:57:09 - INFO - Файл статистики успешно обновлен: /home/tiki/dev/fantasy-hockey-bot/data/processed/player_stats.json
+2024-12-25 09:57:09 - INFO - Сбор статистики успешно завершен
+2024-12-25 09:57:14 - INFO - Логирование настроено
+2024-12-25 09:57:14 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 09:57:14 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 09:57:14 - WARNING - Нет игроков на позициях: C, LW, RW, D, G
+2024-12-25 09:57:14 - ERROR - В команде недели нет игроков
+2024-12-25 09:58:09 - INFO - Логирование настроено
+2024-12-25 09:58:10 - INFO - Обработано 0 игроков
+2024-12-25 09:58:10 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 09:58:30 - INFO - Логирование настроено
+2024-12-25 09:58:30 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info
+2024-12-25 09:58:31 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 09:58:31 - INFO - Данные успешно получены и распарсены
+2024-12-25 09:58:31 - INFO - Обработано 0 игроков
+2024-12-25 09:58:31 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 09:58:55 - INFO - Логирование настроено
+2024-12-25 09:58:55 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info
+2024-12-25 09:58:56 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 09:58:56 - INFO - Данные успешно получены и распарсены
+2024-12-25 09:58:56 - INFO - Начинаю обработку данных игроков
+2024-12-25 09:58:56 - INFO - Найдено 50 игроков в данных
+2024-12-25 09:58:56 - INFO - Обработано 0 игроков
+2024-12-25 09:58:56 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 09:59:19 - INFO - Логирование настроено
+2024-12-25 09:59:19 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info
+2024-12-25 09:59:23 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 09:59:23 - INFO - Данные успешно получены и распарсены
+2024-12-25 09:59:24 - INFO - Начинаю обработку данных игроков
+2024-12-25 09:59:24 - INFO - Найдено 50 игроков в данных
+2024-12-25 09:59:24 - INFO - Обработано 0 игроков
+2024-12-25 09:59:24 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 09:59:44 - INFO - Логирование настроено
+2024-12-25 09:59:44 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info
+2024-12-25 09:59:47 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 09:59:47 - INFO - Данные успешно получены и распарсены
+2024-12-25 09:59:47 - INFO - Структура данных:
+2024-12-25 09:59:47 - INFO - - players: список из 50 элементов
+2024-12-25 09:59:47 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 09:59:47 - INFO - Начинаю обработку данных игроков
+2024-12-25 09:59:47 - INFO - Найдено 50 игроков в данных
+2024-12-25 09:59:47 - INFO - Обработано 0 игроков
+2024-12-25 09:59:47 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 10:00:12 - INFO - Логирование настроено
+2024-12-25 10:00:12 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info
+2024-12-25 10:00:13 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 10:00:13 - INFO - Данные успешно получены и распарсены
+2024-12-25 10:00:13 - INFO - Структура данных:
+2024-12-25 10:00:13 - INFO - - players: список из 50 элементов
+2024-12-25 10:00:13 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 10:00:13 - INFO - Начинаю обработку данных игроков
+2024-12-25 10:00:13 - INFO - Найдено 50 игроков в данных
+2024-12-25 10:00:13 - INFO - Обработано 25 игроков
+2024-12-25 10:00:13 - INFO - Файл статистики успешно обновлен: /home/tiki/dev/fantasy-hockey-bot/data/processed/player_stats.json
+2024-12-25 10:00:13 - INFO - Сбор статистики успешно завершен
+2024-12-25 10:00:19 - INFO - Логирование настроено
+2024-12-25 10:00:19 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 10:00:19 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 10:00:20 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:00:20 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:00:20 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:00:21 - INFO - Изображение игрока Andreas Athanasiou успешно добавлено в коллаж
+2024-12-25 10:00:22 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-25 10:00:22 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 10:00:22 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 10:00:22 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 10:02:46 - INFO - Логирование настроено
+2024-12-25 10:02:46 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info
+2024-12-25 10:02:49 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 10:02:49 - INFO - Данные успешно получены и распарсены
+2024-12-25 10:02:49 - INFO - Структура данных:
+2024-12-25 10:02:49 - INFO - - players: список из 50 элементов
+2024-12-25 10:02:49 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 10:02:49 - INFO - Начинаю обработку данных игроков
+2024-12-25 10:02:49 - INFO - Найдено 50 игроков в данных
+2024-12-25 10:02:49 - ERROR - Не найден текущий период подсчета очков
+2024-12-25 10:02:49 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 10:03:21 - INFO - Логирование настроено
+2024-12-25 10:03:21 - ERROR - Ошибка при выполнении скрипта: name 'ESPN_TIMEZONE' is not defined
+2024-12-25 10:03:35 - INFO - Логирование настроено
+2024-12-25 10:03:35 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83
+2024-12-25 10:03:37 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 10:03:37 - INFO - Данные успешно получены и распарсены
+2024-12-25 10:03:37 - INFO - Структура данных:
+2024-12-25 10:03:37 - INFO - - players: список из 50 элементов
+2024-12-25 10:03:37 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 10:03:37 - INFO - Начинаю обработку данных игроков
+2024-12-25 10:03:37 - INFO - Найдено 50 игроков в данных
+2024-12-25 10:03:37 - ERROR - Не найден текущий период подсчета очков
+2024-12-25 10:03:37 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 10:04:12 - INFO - Логирование настроено
+2024-12-25 10:04:12 - INFO - Текущий период подсчета очков: 83
+2024-12-25 10:04:12 - INFO - Отправляю ��апрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83
+2024-12-25 10:04:12 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 10:04:12 - INFO - Данные успешно получены и распарсены
+2024-12-25 10:04:12 - INFO - Структура данных:
+2024-12-25 10:04:12 - INFO - - players: список из 50 элементов
+2024-12-25 10:04:12 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 10:04:12 - INFO - Начинаю обработку данных игроков
+2024-12-25 10:04:12 - INFO - Найдено 50 игроков в данных
+2024-12-25 10:04:12 - INFO - Обрабатываю статистику за период: 83
+2024-12-25 10:04:12 - INFO - Обработано 15 игроков
+2024-12-25 10:04:12 - INFO - Файл статистики успешно обновлен: /home/tiki/dev/fantasy-hockey-bot/data/processed/player_stats.json
+2024-12-25 10:04:12 - INFO - Сбор статистики успешно завершен
+2024-12-25 10:04:18 - INFO - Логирование настроено
+2024-12-25 10:04:18 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 10:04:19 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 10:04:20 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:04:20 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:04:20 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:04:20 - INFO - Изображение игрока Andreas Athanasiou успешно добавлено в коллаж
+2024-12-25 10:04:20 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-25 10:04:20 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 10:04:21 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 10:04:21 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 10:04:50 - INFO - Логирование настроено
+2024-12-25 10:04:50 - INFO - Текущий период подсчета очков: 83
+2024-12-25 10:04:50 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83
+2024-12-25 10:04:53 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 10:04:53 - INFO - Данные успешно получены и распарсены
+2024-12-25 10:04:53 - INFO - Структура данных:
+2024-12-25 10:04:53 - INFO - - players: список из 50 элементов
+2024-12-25 10:04:53 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 10:04:53 - INFO - Начинаю обработку данных игроков
+2024-12-25 10:04:53 - INFO - Найдено 50 игроков в данных
+2024-12-25 10:04:53 - INFO - Обрабатываю статистику за период: 83
+2024-12-25 10:04:53 - INFO - Обработано 0 игроков
+2024-12-25 10:04:53 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 10:04:53 - INFO - Логирование настроено
+2024-12-25 10:04:53 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 10:04:53 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 10:04:53 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:04:53 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:04:54 - INFO - Изображение игрока Sebastian Aho успешно добавлено в коллаж
+2024-12-25 10:04:54 - INFO - Изображение игрока Andreas Athanasiou успешно добавлено в коллаж
+2024-12-25 10:04:54 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-25 10:04:54 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 10:04:54 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 10:04:54 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 15:47:25 - INFO - Текущий период подсчета очков: 83
+2024-12-25 15:47:25 - INFO - Отправляю запрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83
+2024-12-25 15:47:25 - DEBUG - Cookies: {'SWID': '{B34B4369-3A53-4976-81B5-0D46AEFB7E14}', 'espn_s2': 'AEBxvJwo0HwYqwE%2BL%2FZ8HVNBpLuqY%2Bw9x3MhPFEbJ5wPWElBrwPViTfKFZ%2FgXGqHC3lYYXk9xz6SVN6X4YKKPJYpQiKRYKhQxnMHSHFhh0KtWHE%2BUHoqw%2BXuZvzY3o%2BXr0l4iLOrPIZC7cVE1SsXr4p4XcYG8EqQ7THPbAdxvJwo0HwYqwE%2BL%2FZ8HVNBpLuqY%2Bw9x3MhPFEbJ5wPWElBrwPViTfKFZ%2FgXGqHC3lYYXk9xz6SVN6X4YKKPJYpQiKRYKhQxnMHSHFhh0KtWHE%2BUHoqw%2BXuZvzY3o%2BXr0l4iLOrPIZC7cVE1SsXr4p4XcYG8EqQ7THPbA'}
+2024-12-25 15:47:25 - DEBUG - Starting new HTTPS connection (1): lm-api-reads.fantasy.espn.com:443
+2024-12-25 15:47:27 - DEBUG - https://lm-api-reads.fantasy.espn.com:443 "GET /apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83 HTTP/1.1" 200 None
+2024-12-25 15:47:27 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 15:47:27 - DEBUG - Заголовки ответа: {'Content-Type': 'application/json;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Date': 'Wed, 25 Dec 2024 12:47:26 GMT', 'X-Frame-Options': 'DENY', 'ETag': '"0aa611cd653d7ffb541ad929285fa80a5"', 'X-Fantasy-Filter-Player-Count': '1601', 'X-Fantasy-Server-Time': 'Wed, 25 Dec 2024 12:47:26 GMT', 'X-Fantasy-Role': 'NONE', 'Cache-Control': 'must-revalidate', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS,HEAD', 'Access-Control-Allow-Credentials': 'true', 'Vary': 'Origin', 'Access-Control-Expose-Headers': 'location,content-length,X-Fantasy-Filter-Player-Count,X-Fantasy-Filter-Communication-Count,X-Fantasy-Filter-Schedule-Count,X-Fantasy-Filter-Transaction-Count,X-Fantasy-Role,X-Fantasy-Last-Update-League,X-Fantasy-Server-Time,X-Fantasy-Filter-TopicType-NOTE-Count,X-Fantasy-Filter-TopicType-POLL-Count,X-Fantasy-Filter-TopicType-MSG_BOARD-Count,X-Fantasy-Filter-TopicType-CHAT-Count,X-Fantasy-Filter-TopicType-EMAIL-Count,X-Fantasy-Filter-TopicType-OTHER-Count,X-Fantasy-Filter-TopicType-ACTIVITY_TRANSACTIONS-Count,X-Fantasy-Filter-TopicType-ACTIVITY_SETTINGS-Count,X-Fantasy-Filter-TopicType-ACTIVITY_STATUS-Count,X-Fantasy-Filter-TopicType-ACTIVITY_SCHEDULE-Count,X-Fantasy-Filter-TopicType-MSG_BOARD_GROUP-Count,X-Fantasy-Filter-TopicType-MSG_BOARD_MATCHUP-Count,X-Fantasy-Filter-TopicType-REMINDER_ACTIVATE-Count,X-Fantasy-Filter-TopicType-REMINDER_SCHEDULE-Count,X-Fantasy-Filter-TopicType-CHAT_ALL_MEMBERS-Count,X-Fantasy-Filter-TopicType-CHAT_DIRECT_MESSAGE-Count,Polling-Interval', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 732d3ca1627bbec3dcfe750ff23e18bc.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'HEL51-P1', 'X-Amz-Cf-Id': 'SyB8AHul2rXDzdEHZ1m7YwQrUPhL--H-3urY9wRlPRdLhhsVpUl45w=='}
+2024-12-25 15:47:27 - INFO - Данные успешно получены и распарсены
+2024-12-25 15:47:27 - INFO - Структура данных:
+2024-12-25 15:47:27 - INFO - - players: список из 50 элементов
+2024-12-25 15:47:27 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 15:47:27 - INFO - Начинаю обработку данных игроков
+2024-12-25 15:47:27 - INFO - Найдено 50 игроков в данных
+2024-12-25 15:47:27 - INFO - Обрабатываю статистику за период: 83
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Nick Abruzzese (4588746)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Nick Abruzzese: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Nick Abruzzese - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Noel Acciari (3096237)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Noel Acciari: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Noel Acciari - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Calen Addison (4378684)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Calen Addison: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Calen Addison - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Egor Afanasyev (4565268)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Egor Afanasyev: defaultPositionId=2, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Позиция игрока Egor Afanasyev: D
+2024-12-25 15:47:27 - DEBUG - Статистика игрока Egor Afanasyev: [{'appliedAverage': 2.45, 'appliedTotal': 4.9, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': -1.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 37.0, '26': 1559.0, '27': 779.5, '29': 5.0, '30': 2.0, '31': 6.0, '32': 2.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 4.9
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Egor Afanasyev - нет очков
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Andrew Agozzino (5393)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Andrew Agozzino: defaultPositionId=2, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Позиция игрока Andrew Agozzino: D
+2024-12-25 15:47:27 - DEBUG - Статистика игрока Andrew Agozzino: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Andrew Agozzino - нет очков
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Jack Ahcan (4316979)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Jack Ahcan: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Jack Ahcan - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Sebastian Aho (4272688)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Sebastian Aho: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Sebastian Aho - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Sebastian Aho (3904173)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Sebastian Aho: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Sebastian Aho - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Beau Akey (5149243)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Beau Akey: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Beau Akey - не определена позиция
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Jett Alexander (4908881)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Jett Alexander: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:27 - DEBUG - Позиция игрока Jett Alexander: G
+2024-12-25 15:47:27 - DEBUG - Статистика игрока Jett Alexander: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:27 - DEBUG - Пропускаю игрока Jett Alexander - нет очков
+2024-12-25 15:47:27 - DEBUG - Обрабатываю игрока Nikita Alexandrov (4565284)
+2024-12-25 15:47:27 - DEBUG - Позиции игрока Nikita Alexandrov: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Nikita Alexandrov - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Alexander Alexeyev (4352805)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Alexander Alexeyev: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Alexander Alexeyev - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Nolan Allan (4874749)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Nolan Allan: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Nolan Allan - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Frederic Allard (4063399)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Frederic Allard: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Frederic Allard - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Jake Allen (5111)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Jake Allen: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Jake Allen: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Jake Allen: [{'appliedAverage': 5.8249999999999975, 'appliedTotal': 198.05, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 33.0, '1': 12.0, '2': 18.0, '3': 1087.0, '4': 114.0, '6': 973.0, '7': 0.0, '8': 119213.0, '9': 4.0, '10': 3.44257757, '11': 0.8951242, '12': 0.35294118, '30': 34.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 7.027272727272728, 'appliedTotal': 77.3, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 11.0, '1': 5.0, '2': 5.0, '3': 289.0, '4': 30.0, '6': 260.0, '7': 2.0, '8': 38733.0, '9': 1.0, '10': 2.78832004, '11': 0.89965398, '12': 0.45454545, '30': 11.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.6999999999999993, 'appliedTotal': 0.7, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 1.0, '1': 0.0, '2': 1.0, '3': 19.0, '4': 3.0, '6': 16.0, '7': 0.0, '8': 3276.0, '9': 0.0, '10': 3.2967033, '11': 0.84210526, '12': 0.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.5333333333333327, 'appliedTotal': 1.6, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 3.0, '1': 0.0, '2': 3.0, '3': 74.0, '4': 12.0, '6': 62.0, '7': 0.0, '8': 10096.0, '9': 0.0, '10': 4.27892235, '11': 0.83783784, '12': 0.0, '30': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.6999999999999993, 'appliedTotal': 0.7, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 1.0, '1': 0.0, '2': 1.0, '3': 19.0, '4': 3.0, '6': 16.0, '7': 0.0, '8': 3276.0, '9': 0.0, '10': 3.2967033, '11': 0.84210526, '12': 0.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 198.05
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 77.3
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.7
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 1.6
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.7
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Jake Allen - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Wade Allison (4392158)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Wade Allison: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Wade Allison - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Hugo Alnefelt (4894857)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Hugo Alnefelt: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Hugo Alnefelt: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Hugo Alnefelt: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Hugo Alnefelt - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Olle Alsing (4832877)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Olle Alsing: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Olle Alsing - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Michael Amadio (3149829)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Michael Amadio: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Michael Amadio - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Nils Aman (4697579)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Nils Aman: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Nils Aman - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Frederik Andersen (2517899)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Frederik Andersen: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Frederik Andersen: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Frederik Andersen: [{'appliedAverage': 10.112499999999999, 'appliedTotal': 161.8, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 16.0, '1': 13.0, '2': 2.0, '3': 410.0, '4': 28.0, '6': 382.0, '7': 3.0, '8': 54773.0, '9': 0.0, '10': 1.84032279, '11': 0.93170732, '12': 0.86666667, '30': 16.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 8.7375, 'appliedTotal': 34.95, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 4.0, '1': 3.0, '2': 1.0, '3': 101.0, '4': 6.0, '6': 95.0, '7': 0.0, '8': 14546.0, '9': 0.0, '10': 1.48494431, '11': 0.94059406, '12': 0.75, '30': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1}, {'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3}, {'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2}, {'appliedAverage': 9.103191489361702, 'appliedTotal': 427.85, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'0': 47.0, '1': 29.0, '2': 11.0, '3': 1487.0, '4': 118.0, '6': 1369.0, '7': 3.0, '8': 167292.0, '9': 7.0, '10': 2.539272649, '11': 0.920645595, '12': 0.617021277, '14': 1.0, '16': 1.0, '30': 47.0}}, {'appliedAverage': 7.37613636363636, 'appliedTotal': 324.55, 'externalId': '2024', 'id': '102024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'0': 44.0, '1': 27.0, '2': 14.0, '3': 1145.0, '4': 104.0, '6': 1041.0, '7': 3.0, '8': 156614.0, '9': 3.0, '10': 2.39, '11': 0.909, '12': 0.61, '14': 1.0, '16': 1.0, '30': 44.0}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 161.8
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 34.95
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 427.85
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 324.55
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Frederik Andersen - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Craig Anderson (1929)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Craig Anderson: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Craig Anderson: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Craig Anderson: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Craig Anderson - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Joey Anderson (4197161)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Joey Anderson: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Joey Anderson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Josh Anderson (3069687)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Josh Anderson: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Josh Anderson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Mikey Anderson (4588178)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Mikey Anderson: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Mikey Anderson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Jaret Anderson-Dolan (4232871)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Jaret Anderson-Dolan: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Jaret Anderson-Dolan - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Lias Andersson (4232875)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Lias Andersson: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Lias Andersson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Rasmus Andersson (3904186)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Rasmus Andersson: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Rasmus Andersson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Emil Andrae (4697457)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Emil Andrae: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Emil Andrae - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Andy Andreoff (2563016)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Andy Andreoff: defaultPositionId=2, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Andy Andreoff: D
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Andy Andreoff: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Andy Andreoff - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Tyler Angle (4589526)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Tyler Angle: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Tyler Angle - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Justus Annunen (4393408)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Justus Annunen: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Justus Annunen: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Justus Annunen: [{'appliedAverage': 9.335714285714285, 'appliedTotal': 130.7, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 12.0, '1': 8.0, '2': 4.0, '3': 414.0, '4': 30.0, '6': 384.0, '7': 2.0, '8': 48065.0, '9': 1.0, '10': 2.24695725, '11': 0.92753623, '12': 0.61538462, '30': 14.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 4.964285714285713, 'appliedTotal': 69.5, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 12.0, '1': 8.0, '2': 5.0, '3': 307.0, '4': 33.0, '6': 274.0, '7': 0.0, '8': 41997.0, '9': 0.0, '10': 2.82877348, '11': 0.89250814, '12': 0.61538462, '30': 14.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 8.1, 'appliedTotal': 8.1, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 24.0, '4': 2.0, '6': 22.0, '7': 0.0, '8': 3663.0, '9': 0.0, '10': 1.96560197, '11': 0.91666667, '12': 1.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.0625, 'appliedTotal': 24.25, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 4.0, '1': 2.0, '2': 2.0, '3': 105.0, '4': 10.0, '6': 95.0, '7': 0.0, '8': 12550.0, '9': 0.0, '10': 2.8685259, '11': 0.9047619, '12': 0.5, '30': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 11.274999999999999, 'appliedTotal': 22.55, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 2.0, '1': 2.0, '2': 0.0, '3': 60.0, '4': 3.0, '6': 57.0, '7': 0.0, '8': 7263.0, '9': 0.0, '10': 1.48698885, '11': 0.95, '12': 1.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 130.7
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 69.5
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 8.1
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 24.25
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 22.55
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Justus Annunen - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Victor Antipin (4227208)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Victor Antipin: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Victor Antipin - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Kenneth Appleby (3942747)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Kenneth Appleby: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Kenneth Appleby: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Kenneth Appleby: [{'appliedAverage': -1.5000000000000004, 'appliedTotal': -1.5, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 0.0, '1': 0.0, '2': 0.0, '3': 8.0, '4': 2.0, '6': 6.0, '7': 0.0, '8': 1200.0, '9': 0.0, '10': 6.0, '11': 0.75, '12': 0.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: -1.5
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Kenneth Appleby - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Mason Appleton (3942043)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Mason Appleton: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Mason Appleton - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Darren Archibald (2486993)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Darren Archibald: defaultPositionId=2, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Darren Archibald: D
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Darren Archibald: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Darren Archibald - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Josh Archibald (2591154)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Josh Archibald: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Josh Archibald - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Joel Armia (2562596)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Joel Armia: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Joel Armia - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Nikita Artamonov (5216925)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Nikita Artamonov: defaultPositionId=2, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Nikita Artamonov: D
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Nikita Artamonov: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Nikita Artamonov - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Viktor Arvidsson (3120307)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Viktor Arvidsson: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Viktor Arvidsson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Yaroslav Askarov (4697394)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Yaroslav Askarov: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Yaroslav Askarov: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Yaroslav Askarov: [{'appliedAverage': 5.975, 'appliedTotal': 11.95, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 35.0, '4': 2.0, '6': 33.0, '7': 0.0, '8': 4900.0, '9': 0.0, '10': 1.46938776, '11': 0.94285714, '12': 1.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.7, 'appliedTotal': 26.8, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 4.0, '1': 1.0, '2': 1.0, '3': 121.0, '4': 11.0, '6': 110.0, '7': 0.0, '8': 14406.0, '9': 2.0, '10': 2.74885464, '11': 0.90909091, '12': 0.25, '30': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 5.175, 'appliedTotal': 10.35, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 2.0, '1': 0.0, '2': 1.0, '3': 66.0, '4': 7.0, '6': 59.0, '7': 0.0, '8': 7065.0, '9': 1.0, '10': 3.56687898, '11': 0.89393939, '12': 0.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.149999999999998, 'appliedTotal': 18.45, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 3.0, '1': 1.0, '2': 1.0, '3': 90.0, '4': 9.0, '6': 81.0, '7': 0.0, '8': 10665.0, '9': 1.0, '10': 3.03797468, '11': 0.9, '12': 0.33333333, '30': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 5.175, 'appliedTotal': 10.35, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 2.0, '1': 0.0, '2': 1.0, '3': 66.0, '4': 7.0, '6': 59.0, '7': 0.0, '8': 7065.0, '9': 1.0, '10': 3.56687898, '11': 0.89393939, '12': 0.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 9.3325, 'appliedTotal': 373.3, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'0': 40.0, '1': 15.0, '2': 20.0, '3': 1605.0, '4': 143.0, '6': 1462.0, '7': 5.0, '8': 142320.0, '9': 5.0, '10': 3.617200675, '11': 0.910903427, '12': 0.375, '30': 40.0}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 11.95
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 26.8
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 10.35
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 18.45
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 10.35
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 373.3
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Yaroslav Askarov - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Rasmus Asplund (4027020)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Rasmus Asplund: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Rasmus Asplund - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Zachary Aston-Reese (3988830)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Zachary Aston-Reese: defaultPositionId=1, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Zachary Aston-Reese - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Andreas Athanasiou (3068035)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Andreas Athanasiou: defaultPositionId=2, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Andreas Athanasiou: D
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Andreas Athanasiou: [{'appliedAverage': 1.9785714285714284, 'appliedTotal': 55.4, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 2.0, '14': 7.0, '15': -7.0, '16': 9.0, '17': 7.0, '18': 0.0, '19': 2.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 76.0, '24': 88.0, '25': 456.0, '26': 22004.0, '27': 785.85714286, '29': 44.0, '30': 28.0, '31': 9.0, '32': 21.0, '34': 28.0, '35': 0.0, '36': 2.0, '37': 2.0, '38': 2.0, '39': 0.0}}, {'appliedAverage': 1.32, 'appliedTotal': 6.6, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': -1.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 18.0, '24': 19.0, '25': 67.0, '26': 2878.0, '27': 575.6, '29': 6.0, '30': 5.0, '31': 5.0, '32': 4.0, '34': 5.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1}, {'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3}, {'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 55.4
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 6.6
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Andreas Athanasiou - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Cam Atkinson (2501107)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Cam Atkinson: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Cam Atkinson - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Ronnie Attard (4996077)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Ronnie Attard: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Ronnie Attard - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Nicolas Aube-Kubel (3115014)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Nicolas Aube-Kubel: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Nicolas Aube-Kubel - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Trey Augustine (5149228)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Trey Augustine: defaultPositionId=5, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Позиция игрока Trey Augustine: G
+2024-12-25 15:47:28 - DEBUG - Статистика игрока Trey Augustine: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Trey Augustine - нет очков
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Yohann Auvitu (4018583)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Yohann Auvitu: defaultPositionId=4, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Yohann Auvitu - не определена позиция
+2024-12-25 15:47:28 - DEBUG - Обрабатываю игрока Oskar Back (4894398)
+2024-12-25 15:47:28 - DEBUG - Позиции игрока Oskar Back: defaultPositionId=3, eligibleSlots=[]
+2024-12-25 15:47:28 - DEBUG - Пропускаю игрока Oskar Back - не определена позиция
+2024-12-25 15:47:28 - INFO - Обработано 0 игроков
+2024-12-25 15:47:28 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 15:48:24 - INFO - Текущий период подсчета очков: 83
+2024-12-25 15:48:24 - INFO - Отправляю ��апрос к ESPN API: https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83
+2024-12-25 15:48:24 - DEBUG - Cookies: {'SWID': '{B34B4369-3A53-4976-81B5-0D46AEFB7E14}', 'espn_s2': 'AEBxvJwo0HwYqwE%2BL%2FZ8HVNBpLuqY%2Bw9x3MhPFEbJ5wPWElBrwPViTfKFZ%2FgXGqHC3lYYXk9xz6SVN6X4YKKPJYpQiKRYKhQxnMHSHFhh0KtWHE%2BUHoqw%2BXuZvzY3o%2BXr0l4iLOrPIZC7cVE1SsXr4p4XcYG8EqQ7THPbAdxvJwo0HwYqwE%2BL%2FZ8HVNBpLuqY%2Bw9x3MhPFEbJ5wPWElBrwPViTfKFZ%2FgXGqHC3lYYXk9xz6SVN6X4YKKPJYpQiKRYKhQxnMHSHFhh0KtWHE%2BUHoqw%2BXuZvzY3o%2BXr0l4iLOrPIZC7cVE1SsXr4p4XcYG8EqQ7THPbA'}
+2024-12-25 15:48:24 - DEBUG - Starting new HTTPS connection (1): lm-api-reads.fantasy.espn.com:443
+2024-12-25 15:48:24 - DEBUG - https://lm-api-reads.fantasy.espn.com:443 "GET /apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394?view=kona_player_info&scoringPeriodId=83 HTTP/1.1" 200 None
+2024-12-25 15:48:24 - INFO - Получен ответ от ESPN API. Статус: 200
+2024-12-25 15:48:24 - DEBUG - Заголовки ответа: {'Content-Type': 'application/json;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Date': 'Wed, 25 Dec 2024 12:48:23 GMT', 'X-Frame-Options': 'DENY', 'ETag': '"0742e2aedd3b9a350a79484d973e11f79"', 'X-Fantasy-Filter-Player-Count': '1601', 'X-Fantasy-Server-Time': 'Wed, 25 Dec 2024 12:48:23 GMT', 'X-Fantasy-Role': 'NONE', 'Cache-Control': 'must-revalidate', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS,HEAD', 'Access-Control-Allow-Credentials': 'true', 'Vary': 'Origin', 'Access-Control-Expose-Headers': 'location,content-length,X-Fantasy-Filter-Player-Count,X-Fantasy-Filter-Communication-Count,X-Fantasy-Filter-Schedule-Count,X-Fantasy-Filter-Transaction-Count,X-Fantasy-Role,X-Fantasy-Last-Update-League,X-Fantasy-Server-Time,X-Fantasy-Filter-TopicType-NOTE-Count,X-Fantasy-Filter-TopicType-POLL-Count,X-Fantasy-Filter-TopicType-MSG_BOARD-Count,X-Fantasy-Filter-TopicType-CHAT-Count,X-Fantasy-Filter-TopicType-EMAIL-Count,X-Fantasy-Filter-TopicType-OTHER-Count,X-Fantasy-Filter-TopicType-ACTIVITY_TRANSACTIONS-Count,X-Fantasy-Filter-TopicType-ACTIVITY_SETTINGS-Count,X-Fantasy-Filter-TopicType-ACTIVITY_STATUS-Count,X-Fantasy-Filter-TopicType-ACTIVITY_SCHEDULE-Count,X-Fantasy-Filter-TopicType-MSG_BOARD_GROUP-Count,X-Fantasy-Filter-TopicType-MSG_BOARD_MATCHUP-Count,X-Fantasy-Filter-TopicType-REMINDER_ACTIVATE-Count,X-Fantasy-Filter-TopicType-REMINDER_SCHEDULE-Count,X-Fantasy-Filter-TopicType-CHAT_ALL_MEMBERS-Count,X-Fantasy-Filter-TopicType-CHAT_DIRECT_MESSAGE-Count,Polling-Interval', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 16beacaf8cf9058094c22f0750f306ee.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'HEL51-P1', 'X-Amz-Cf-Id': 'NGX94f8PkwxK_pB7IUpVsX6sfDGHaQQg92f8COWaS_T_LclhbMGIhA=='}
+2024-12-25 15:48:24 - INFO - Данные успешно получены и распарсены
+2024-12-25 15:48:24 - INFO - Структура данных:
+2024-12-25 15:48:24 - INFO - - players: список из 50 элементов
+2024-12-25 15:48:24 - INFO -   Пример первого элемента: ['draftAuctionValue', 'id', 'keeperValue', 'keeperValueFuture', 'lineupLocked', 'onTeamId', 'player', 'ratings', 'rosterLocked', 'status', 'tradeLocked', 'waiverProcessDate']
+2024-12-25 15:48:24 - INFO - Начинаю обработку данных игроков
+2024-12-25 15:48:24 - INFO - Найдено 50 игроков в данных
+2024-12-25 15:48:24 - INFO - Обрабатываю статистику за период: 83
+2024-12-25 15:48:24 - DEBUG - Обрабатываю игрока Nick Abruzzese (4588746)
+2024-12-25 15:48:24 - DEBUG - Позиции игрока Nick Abruzzese: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:24 - DEBUG - Позиция игрока Nick Abruzzese: C
+2024-12-25 15:48:24 - DEBUG - Статистика игрока Nick Abruzzese: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:24 - DEBUG - Пропускаю игрока Nick Abruzzese - нет очков
+2024-12-25 15:48:24 - DEBUG - Обрабатываю игрока Noel Acciari (3096237)
+2024-12-25 15:48:24 - DEBUG - Позиции игрока Noel Acciari: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:24 - DEBUG - Позиция игрока Noel Acciari: C
+2024-12-25 15:48:24 - DEBUG - Статистика игрока Noel Acciari: [{'appliedAverage': 2.997272727272727, 'appliedTotal': 164.85, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 4.0, '14': 3.0, '15': -7.0, '16': 7.0, '17': 10.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 1.0, '23': 313.0, '24': 261.0, '25': 1072.0, '26': 42804.0, '27': 778.25454545, '29': 59.0, '30': 55.0, '31': 113.0, '32': 85.0, '34': 55.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.7458333333333336, 'appliedTotal': 98.85, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 3.0, '14': 4.0, '15': -11.0, '16': 7.0, '17': 10.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 1.0, '22': 0.0, '23': 149.0, '24': 147.0, '25': 706.0, '26': 29802.0, '27': 827.83333333, '29': 34.0, '30': 36.0, '31': 78.0, '32': 44.0, '34': 36.0, '35': 0.0, '36': 1.0, '37': 1.0, '38': 0.0, '39': 1.0}}, {'appliedAverage': 2.266666666666667, 'appliedTotal': 6.8, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': -1.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 17.0, '24': 10.0, '25': 64.0, '26': 2811.0, '27': 937.0, '29': 0.0, '30': 3.0, '31': 7.0, '32': 5.0, '34': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.207692307692308, 'appliedTotal': 28.7, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 1.0, '14': 1.0, '15': -2.0, '16': 2.0, '17': 2.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 52.0, '24': 47.0, '25': 253.0, '26': 10304.0, '27': 792.61538462, '29': 4.0, '30': 13.0, '31': 21.0, '32': 14.0, '34': 13.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 3.407142857142857, 'appliedTotal': 23.85, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 1.0, '14': 1.0, '15': 1.0, '16': 2.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 24.0, '24': 22.0, '25': 135.0, '26': 5804.0, '27': 829.14285714, '29': 3.0, '30': 7.0, '31': 16.0, '32': 7.0, '34': 7.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 164.85
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 98.85
+2024-12-25 15:48:24 - DEBUG - Период: 0, Очки: 6.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 28.7
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 23.85
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Noel Acciari - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Calen Addison (4378684)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Calen Addison: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Calen Addison: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Calen Addison: [{'appliedAverage': 1.4416666666666669, 'appliedTotal': 103.8, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 1.0, '14': 16.0, '15': -38.0, '16': 17.0, '17': 72.0, '18': 0.0, '19': 9.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 1506.0, '26': 74583.0, '27': 1035.875, '29': 93.0, '30': 72.0, '31': 42.0, '32': 83.0, '33': 17.0, '34': 72.0, '35': 0.0, '36': 9.0, '37': 9.0, '38': 9.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 103.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Calen Addison - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Egor Afanasyev (4565268)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Egor Afanasyev: defaultPositionId=2, eligibleSlots=[3, 1, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Egor Afanasyev - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Andrew Agozzino (5393)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Andrew Agozzino: defaultPositionId=2, eligibleSlots=[3, 1, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Andrew Agozzino - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Jack Ahcan (4316979)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Jack Ahcan: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Jack Ahcan: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Jack Ahcan: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Jack Ahcan - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Sebastian Aho (4272688)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Sebastian Aho: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Sebastian Aho: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Sebastian Aho: [{'appliedAverage': 1.735344827586207, 'appliedTotal': 100.65, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 2.0, '14': 7.0, '15': -7.0, '16': 9.0, '17': 12.0, '18': 0.0, '19': 2.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 1293.0, '26': 57042.0, '27': 983.48275862, '29': 48.0, '30': 58.0, '31': 36.0, '32': 72.0, '33': 9.0, '34': 58.0, '35': 0.0, '36': 2.0, '37': 2.0, '38': 2.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 100.65
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Sebastian Aho - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Sebastian Aho (3904173)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Sebastian Aho: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Sebastian Aho: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Sebastian Aho: [{'appliedAverage': 6.716666666666668, 'appliedTotal': 523.9, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 36.0, '14': 53.0, '15': 34.0, '16': 89.0, '17': 36.0, '18': 11.0, '19': 21.0, '20': 1.0, '21': 1.0, '22': 10.0, '23': 571.0, '24': 484.0, '25': 1814.0, '26': 91857.0, '27': 1177.65384615, '28': 1.0, '29': 216.0, '30': 78.0, '31': 46.0, '32': 18.0, '34': 78.0, '35': 12.0, '36': 22.0, '37': 34.0, '38': 32.0, '39': 2.0}}, {'appliedAverage': 5.679411764705883, 'appliedTotal': 193.1, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 11.0, '14': 25.0, '15': -6.0, '16': 36.0, '17': 24.0, '18': 2.0, '19': 12.0, '20': 1.0, '21': 1.0, '22': 3.0, '23': 273.0, '24': 222.0, '25': 755.0, '26': 40569.0, '27': 1193.20588235, '29': 88.0, '30': 34.0, '31': 27.0, '32': 15.0, '34': 34.0, '35': 3.0, '36': 13.0, '37': 16.0, '38': 14.0, '39': 2.0}}, {'appliedAverage': 5.933333333333333, 'appliedTotal': 17.8, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 2.0, '14': 1.0, '15': -2.0, '16': 3.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 26.0, '24': 23.0, '25': 69.0, '26': 3610.0, '27': 1203.33333333, '29': 5.0, '30': 3.0, '31': 3.0, '32': 4.0, '34': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.092857142857142, 'appliedTotal': 85.3, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 5.0, '14': 12.0, '15': -5.0, '16': 17.0, '17': 8.0, '18': 0.0, '19': 7.0, '20': 1.0, '21': 1.0, '22': 0.0, '23': 120.0, '24': 99.0, '25': 304.0, '26': 16813.0, '27': 1200.92857143, '29': 34.0, '30': 14.0, '31': 11.0, '32': 6.0, '34': 14.0, '35': 1.0, '36': 8.0, '37': 9.0, '38': 7.0, '39': 2.0}}, {'appliedAverage': 6.3357142857142845, 'appliedTotal': 44.35, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 4.0, '14': 3.0, '15': 0.0, '16': 7.0, '17': 2.0, '18': 0.0, '19': 1.0, '20': 1.0, '21': 0.0, '22': 0.0, '23': 62.0, '24': 52.0, '25': 150.0, '26': 8184.0, '27': 1169.14285714, '29': 17.0, '30': 7.0, '31': 3.0, '32': 6.0, '34': 7.0, '35': 1.0, '36': 1.0, '37': 2.0, '38': 1.0, '39': 1.0}}, {'appliedAverage': 5.712820512820513, 'appliedTotal': 445.6, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'13': 36.0, '14': 45.0, '15': 22.0, '16': 81.0, '17': 40.0, '18': 9.0, '19': 15.0, '20': 2.0, '21': 2.0, '26': 91260.0, '27': 1170.0, '29': 220.0, '30': 78.0, '31': 52.0, '32': 20.0, '34': 78.0, '35': 11.0, '36': 17.0, '37': 28.0, '38': 24.0, '39': 4.0}}, {'appliedAverage': 5.38525641025641, 'appliedTotal': 420.05, 'externalId': '2024', 'id': '102024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'13': 36.0, '14': 36.0, '15': 16.0, '16': 72.0, '17': 40.0, '18': 9.0, '19': 12.0, '20': 2.0, '21': 1.0, '26': 91260.0, '27': 1170.0, '29': 220.0, '30': 78.0, '31': 67.0, '32': 22.0, '34': 78.0, '35': 11.0, '36': 13.0, '37': 24.0, '38': 21.0, '39': 3.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 523.9
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 193.1
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 17.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 85.3
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 44.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 445.6
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 420.05
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Sebastian Aho - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Beau Akey (5149243)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Beau Akey: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Beau Akey: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Beau Akey: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Beau Akey - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Jett Alexander (4908881)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Jett Alexander: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Jett Alexander: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Jett Alexander: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Jett Alexander - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Nikita Alexandrov (4565284)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Nikita Alexandrov: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Nikita Alexandrov: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Nikita Alexandrov: [{'appliedAverage': 1.0630434782608698, 'appliedTotal': 24.45, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 2.0, '15': -4.0, '16': 2.0, '17': 4.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 37.0, '24': 54.0, '25': 262.0, '26': 11766.0, '27': 511.56521739, '29': 15.0, '30': 23.0, '31': 26.0, '32': 7.0, '34': 23.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 24.45
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Nikita Alexandrov - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Alexander Alexeyev (4352805)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Alexander Alexeyev: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Alexander Alexeyev: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Alexander Alexeyev: [{'appliedAverage': 1.7153846153846155, 'appliedTotal': 66.9, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 1.0, '14': 2.0, '15': -8.0, '16': 3.0, '17': 6.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 685.0, '26': 32049.0, '27': 821.76923077, '29': 20.0, '30': 39.0, '31': 46.0, '32': 59.0, '33': 3.0, '34': 39.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.8, 'appliedTotal': 14.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': 4.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 93.0, '26': 3966.0, '27': 793.2, '29': 4.0, '30': 5.0, '31': 6.0, '32': 10.0, '33': 0.0, '34': 5.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 2.25, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 16.0, '26': 763.0, '27': 763.0, '29': 2.0, '30': 1.0, '31': 3.0, '32': 0.0, '33': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 2.25, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 16.0, '26': 763.0, '27': 763.0, '29': 2.0, '30': 1.0, '31': 3.0, '32': 0.0, '33': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 2.25, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 16.0, '26': 763.0, '27': 763.0, '29': 2.0, '30': 1.0, '31': 3.0, '32': 0.0, '33': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 66.9
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 14.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 2.25
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 2.25
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 2.25
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Alexander Alexeyev - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Nolan Allan (4874749)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Nolan Allan: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Nolan Allan: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Nolan Allan: [{'appliedAverage': 1.8803571428571428, 'appliedTotal': 52.65, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 1.0, '14': 5.0, '15': -2.0, '16': 6.0, '17': 12.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 545.0, '26': 25094.0, '27': 896.21428571, '29': 10.0, '30': 28.0, '31': 32.0, '32': 25.0, '33': 6.0, '34': 28.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 3.7000000000000006, 'appliedTotal': 11.1, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 1.0, '14': 0.0, '15': 1.0, '16': 1.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 67.0, '26': 3366.0, '27': 1122.0, '29': 2.0, '30': 3.0, '31': 5.0, '32': 2.0, '33': 1.0, '34': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.5272727272727273, 'appliedTotal': 27.8, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 1.0, '14': 1.0, '15': 2.0, '16': 2.0, '17': 2.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 235.0, '26': 11082.0, '27': 1007.45454545, '29': 2.0, '30': 11.0, '31': 17.0, '32': 13.0, '33': 2.0, '34': 11.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 3.264285714285714, 'appliedTotal': 22.85, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 1.0, '14': 1.0, '15': 2.0, '16': 2.0, '17': 2.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 157.0, '26': 7327.0, '27': 1046.71428571, '29': 2.0, '30': 7.0, '31': 12.0, '32': 9.0, '33': 2.0, '34': 7.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 52.65
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 11.1
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 27.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 22.85
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Nolan Allan - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Frederic Allard (4063399)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Frederic Allard: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Frederic Allard: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Frederic Allard: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Frederic Allard - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Jake Allen (5111)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Jake Allen: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Jake Allen: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Jake Allen: [{'appliedAverage': 5.8249999999999975, 'appliedTotal': 198.05, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 33.0, '1': 12.0, '2': 18.0, '3': 1087.0, '4': 114.0, '6': 973.0, '7': 0.0, '8': 119213.0, '9': 4.0, '10': 3.44257757, '11': 0.8951242, '12': 0.35294118, '30': 34.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 7.027272727272728, 'appliedTotal': 77.3, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 11.0, '1': 5.0, '2': 5.0, '3': 289.0, '4': 30.0, '6': 260.0, '7': 2.0, '8': 38733.0, '9': 1.0, '10': 2.78832004, '11': 0.89965398, '12': 0.45454545, '30': 11.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.6999999999999993, 'appliedTotal': 0.7, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 1.0, '1': 0.0, '2': 1.0, '3': 19.0, '4': 3.0, '6': 16.0, '7': 0.0, '8': 3276.0, '9': 0.0, '10': 3.2967033, '11': 0.84210526, '12': 0.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.5333333333333327, 'appliedTotal': 1.6, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 3.0, '1': 0.0, '2': 3.0, '3': 74.0, '4': 12.0, '6': 62.0, '7': 0.0, '8': 10096.0, '9': 0.0, '10': 4.27892235, '11': 0.83783784, '12': 0.0, '30': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.6999999999999993, 'appliedTotal': 0.7, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 1.0, '1': 0.0, '2': 1.0, '3': 19.0, '4': 3.0, '6': 16.0, '7': 0.0, '8': 3276.0, '9': 0.0, '10': 3.2967033, '11': 0.84210526, '12': 0.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 198.05
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 77.3
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.7
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 1.6
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.7
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Jake Allen - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Wade Allison (4392158)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Wade Allison: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Wade Allison - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Hugo Alnefelt (4894857)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Hugo Alnefelt: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Hugo Alnefelt: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Hugo Alnefelt: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Hugo Alnefelt - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Olle Alsing (4832877)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Olle Alsing: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Olle Alsing: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Olle Alsing: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Olle Alsing - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Michael Amadio (3149829)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Michael Amadio: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Michael Amadio - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Nils Aman (4697579)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Nils Aman: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Nils Aman: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Nils Aman: [{'appliedAverage': 1.3790697674418606, 'appliedTotal': 59.3, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 3.0, '14': 4.0, '15': -3.0, '16': 7.0, '17': 8.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 72.0, '24': 86.0, '25': 681.0, '26': 26662.0, '27': 620.04651163, '29': 28.0, '30': 43.0, '31': 26.0, '32': 22.0, '34': 43.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 1.67, 'appliedTotal': 8.35, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 2.0, '15': -3.0, '16': 2.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 10.0, '24': 13.0, '25': 79.0, '26': 3210.0, '27': 642.0, '29': 2.0, '30': 5.0, '31': 8.0, '32': 0.0, '34': 5.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': -0.25, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': -2.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 1.0, '24': 0.0, '25': 15.0, '26': 699.0, '27': 699.0, '29': 0.0, '30': 1.0, '31': 3.0, '32': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': -0.25, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 0.0, '14': 0.0, '15': -2.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 1.0, '24': 0.0, '25': 15.0, '26': 699.0, '27': 699.0, '29': 0.0, '30': 1.0, '31': 3.0, '32': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': -0.25, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 0.0, '14': 0.0, '15': -2.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 1.0, '24': 0.0, '25': 15.0, '26': 699.0, '27': 699.0, '29': 0.0, '30': 1.0, '31': 3.0, '32': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 59.3
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 8.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: -0.25
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: -0.25
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: -0.25
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Nils Aman - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Frederik Andersen (2517899)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Frederik Andersen: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Frederik Andersen: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Frederik Andersen: [{'appliedAverage': 10.112499999999999, 'appliedTotal': 161.8, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 16.0, '1': 13.0, '2': 2.0, '3': 410.0, '4': 28.0, '6': 382.0, '7': 3.0, '8': 54773.0, '9': 0.0, '10': 1.84032279, '11': 0.93170732, '12': 0.86666667, '30': 16.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 8.7375, 'appliedTotal': 34.95, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 4.0, '1': 3.0, '2': 1.0, '3': 101.0, '4': 6.0, '6': 95.0, '7': 0.0, '8': 14546.0, '9': 0.0, '10': 1.48494431, '11': 0.94059406, '12': 0.75, '30': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 8.5, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 19.0, '4': 1.0, '6': 18.0, '7': 0.0, '8': 3600.0, '9': 0.0, '10': 1.0, '11': 0.94736842, '12': 1.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 8.5, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 19.0, '4': 1.0, '6': 18.0, '7': 0.0, '8': 3600.0, '9': 0.0, '10': 1.0, '11': 0.94736842, '12': 1.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 8.5, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 19.0, '4': 1.0, '6': 18.0, '7': 0.0, '8': 3600.0, '9': 0.0, '10': 1.0, '11': 0.94736842, '12': 1.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 9.103191489361702, 'appliedTotal': 427.85, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'0': 47.0, '1': 29.0, '2': 11.0, '3': 1487.0, '4': 118.0, '6': 1369.0, '7': 3.0, '8': 167292.0, '9': 7.0, '10': 2.539272649, '11': 0.920645595, '12': 0.617021277, '14': 1.0, '16': 1.0, '30': 47.0}}, {'appliedAverage': 7.37613636363636, 'appliedTotal': 324.55, 'externalId': '2024', 'id': '102024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'0': 44.0, '1': 27.0, '2': 14.0, '3': 1145.0, '4': 104.0, '6': 1041.0, '7': 3.0, '8': 156614.0, '9': 3.0, '10': 2.39, '11': 0.909, '12': 0.61, '14': 1.0, '16': 1.0, '30': 44.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 161.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 34.95
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 8.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 8.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 8.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 427.85
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 324.55
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Frederik Andersen - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Craig Anderson (1929)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Craig Anderson: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Craig Anderson: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Craig Anderson: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Craig Anderson - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Joey Anderson (4197161)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Joey Anderson: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Joey Anderson - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Josh Anderson (3069687)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Josh Anderson: defaultPositionId=3, eligibleSlots=[3, 1, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Josh Anderson - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Mikey Anderson (4588178)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Mikey Anderson: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Mikey Anderson: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Mikey Anderson: [{'appliedAverage': 3.3986486486486482, 'appliedTotal': 251.5, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 2.0, '14': 16.0, '15': 22.0, '16': 18.0, '17': 18.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 1.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 1630.0, '26': 91603.0, '27': 1237.87837838, '29': 89.0, '30': 74.0, '31': 121.0, '32': 129.0, '33': 18.0, '34': 74.0, '35': 0.0, '36': 1.0, '37': 1.0, '38': 0.0, '39': 1.0}}, {'appliedAverage': 3.579411764705883, 'appliedTotal': 121.7, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 4.0, '14': 6.0, '15': 12.0, '16': 10.0, '17': 16.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 869.0, '26': 46327.0, '27': 1362.55882353, '29': 39.0, '30': 34.0, '31': 51.0, '32': 55.0, '33': 10.0, '34': 34.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.25, 'appliedTotal': 6.75, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': 2.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 81.0, '26': 4349.0, '27': 1449.66666667, '29': 3.0, '30': 3.0, '31': 4.0, '32': 3.0, '33': 0.0, '34': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.707692307692308, 'appliedTotal': 35.2, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 1.0, '14': 2.0, '15': 2.0, '16': 3.0, '17': 6.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 346.0, '26': 18650.0, '27': 1434.61538462, '29': 13.0, '30': 13.0, '31': 19.0, '32': 14.0, '33': 3.0, '34': 13.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 3.0428571428571436, 'appliedTotal': 21.3, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 1.0, '14': 1.0, '15': 2.0, '16': 2.0, '17': 4.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 193.0, '26': 9857.0, '27': 1408.14285714, '29': 8.0, '30': 7.0, '31': 8.0, '32': 8.0, '33': 2.0, '34': 7.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 3.3256578947368425, 'appliedTotal': 252.75, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'13': 2.0, '14': 14.0, '15': 23.0, '16': 16.0, '17': 28.0, '26': 94392.0, '27': 1242.0, '29': 78.0, '30': 76.0, '31': 148.0, '32': 129.0, '33': 16.0, '34': 76.0}}, {'appliedAverage': 2.7560344827586216, 'appliedTotal': 159.85, 'externalId': '2024', 'id': '102024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'13': 1.0, '14': 6.0, '15': 11.0, '16': 7.0, '17': 34.0, '26': 73428.0, '27': 1266.0, '29': 61.0, '30': 58.0, '31': 136.0, '32': 71.0, '33': 6.0, '34': 58.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 251.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 121.7
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 6.75
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 35.2
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 21.3
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 252.75
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 159.85
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Mikey Anderson - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Jaret Anderson-Dolan (4232871)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Jaret Anderson-Dolan: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Jaret Anderson-Dolan: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Jaret Anderson-Dolan: [{'appliedAverage': 1.8580645161290323, 'appliedTotal': 57.6, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 1.0, '14': 3.0, '15': -5.0, '16': 4.0, '17': 6.0, '18': 0.0, '19': 0.0, '20': 1.0, '21': 0.0, '22': 0.0, '23': 20.0, '24': 28.0, '25': 451.0, '26': 20553.0, '27': 663.0, '29': 31.0, '30': 31.0, '31': 48.0, '32': 22.0, '34': 31.0, '35': 1.0, '36': 0.0, '37': 1.0, '38': 0.0, '39': 1.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 57.6
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Jaret Anderson-Dolan - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Lias Andersson (4232875)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Lias Andersson: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Lias Andersson: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Lias Andersson: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Lias Andersson - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Rasmus Andersson (3904186)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Rasmus Andersson: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Rasmus Andersson: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Rasmus Andersson: [{'appliedAverage': 3.9916666666666663, 'appliedTotal': 311.35, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 9.0, '14': 30.0, '15': -11.0, '16': 39.0, '17': 47.0, '18': 0.0, '19': 8.0, '20': 1.0, '21': 0.0, '22': 3.0, '23': 0.0, '24': 0.0, '25': 2409.0, '26': 111507.0, '27': 1429.57692308, '29': 159.0, '30': 78.0, '31': 34.0, '32': 186.0, '33': 39.0, '34': 78.0, '35': 1.0, '36': 8.0, '37': 9.0, '38': 8.0, '39': 1.0}}, {'appliedAverage': 3.963235294117647, 'appliedTotal': 134.75, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 6.0, '14': 9.0, '15': -6.0, '16': 15.0, '17': 26.0, '18': 2.0, '19': 1.0, '20': 0.0, '21': 0.0, '22': 1.0, '23': 0.0, '24': 0.0, '25': 1096.0, '26': 50162.0, '27': 1475.35294118, '29': 67.0, '30': 34.0, '31': 17.0, '32': 91.0, '33': 15.0, '34': 34.0, '35': 2.0, '36': 1.0, '37': 3.0, '38': 3.0, '39': 0.0}}, {'appliedAverage': 1.325, 'appliedTotal': 2.65, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': -1.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 66.0, '26': 2955.0, '27': 1477.5, '29': 3.0, '30': 2.0, '31': 1.0, '32': 4.0, '33': 0.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 1.8192307692307694, 'appliedTotal': 23.65, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 1.0, '14': 1.0, '15': -7.0, '16': 2.0, '17': 16.0, '18': 1.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 1.0, '23': 0.0, '24': 0.0, '25': 427.0, '26': 18767.0, '27': 1443.61538462, '29': 29.0, '30': 13.0, '31': 6.0, '32': 23.0, '33': 2.0, '34': 13.0, '35': 1.0, '36': 0.0, '37': 1.0, '38': 1.0, '39': 0.0}}, {'appliedAverage': 1.1250000000000002, 'appliedTotal': 6.75, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 0.0, '14': 0.0, '15': -4.0, '16': 0.0, '17': 2.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 196.0, '26': 8569.0, '27': 1428.16666667, '29': 14.0, '30': 6.0, '31': 3.0, '32': 10.0, '33': 0.0, '34': 6.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 4.405063291139241, 'appliedTotal': 348.0, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'13': 9.0, '14': 41.0, '15': -8.0, '16': 50.0, '17': 32.0, '18': 1.0, '19': 17.0, '26': 113286.0, '27': 1434.0, '29': 154.0, '30': 79.0, '31': 52.0, '32': 154.0, '33': 50.0, '34': 79.0, '35': 1.0, '36': 17.0, '37': 18.0, '38': 18.0}}, {'appliedAverage': 4.643827160493828, 'appliedTotal': 376.15, 'externalId': '2024', 'id': '102024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'13': 9.0, '14': 44.0, '15': 14.0, '16': 53.0, '17': 28.0, '18': 2.0, '19': 19.0, '21': 1.0, '26': 116640.0, '27': 1440.0, '29': 163.0, '30': 81.0, '31': 60.0, '32': 137.0, '33': 44.0, '34': 81.0, '35': 2.0, '36': 20.0, '37': 22.0, '38': 21.0, '39': 1.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 311.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 134.75
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 2.65
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 23.65
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 6.75
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 348.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 376.15
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Rasmus Andersson - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Emil Andrae (4697457)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Emil Andrae: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Emil Andrae: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Emil Andrae: [{'appliedAverage': 0.8500000000000001, 'appliedTotal': 3.4, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': -1.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 76.0, '26': 3120.0, '27': 780.0, '29': 0.0, '30': 4.0, '31': 2.0, '32': 6.0, '33': 0.0, '34': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.7625, 'appliedTotal': 55.25, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 1.0, '14': 4.0, '15': 3.0, '16': 5.0, '17': 12.0, '18': 0.0, '19': 2.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 499.0, '26': 23168.0, '27': 1158.4, '29': 25.0, '30': 20.0, '31': 22.0, '32': 28.0, '33': 5.0, '34': 20.0, '35': 0.0, '36': 2.0, '37': 2.0, '38': 2.0, '39': 0.0}}, {'appliedAverage': 1.7000000000000002, 'appliedTotal': 1.7, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 20.0, '26': 1005.0, '27': 1005.0, '29': 2.0, '30': 1.0, '31': 1.0, '32': 1.0, '33': 0.0, '34': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.7722222222222226, 'appliedTotal': 24.95, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 1.0, '14': 1.0, '15': 2.0, '16': 2.0, '17': 4.0, '18': 0.0, '19': 1.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 234.0, '26': 10653.0, '27': 1183.66666667, '29': 10.0, '30': 9.0, '31': 6.0, '32': 15.0, '33': 2.0, '34': 9.0, '35': 0.0, '36': 1.0, '37': 1.0, '38': 1.0, '39': 0.0}}, {'appliedAverage': 0.95, 'appliedTotal': 1.9, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 0.0, '14': 0.0, '15': -2.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 49.0, '26': 2293.0, '27': 1146.5, '29': 2.0, '30': 2.0, '31': 1.0, '32': 5.0, '33': 0.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 3.4
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 55.25
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 1.7
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 24.95
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 1.9
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Emil Andrae - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Andy Andreoff (2563016)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Andy Andreoff: defaultPositionId=2, eligibleSlots=[3, 1, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Andy Andreoff - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Tyler Angle (4589526)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Tyler Angle: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Tyler Angle: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Tyler Angle: [{'appliedAverage': 1.15, 'appliedTotal': 2.3, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': -1.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 3.0, '24': 6.0, '25': 24.0, '26': 1000.0, '27': 500.0, '29': 0.0, '30': 2.0, '31': 5.0, '32': 1.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 2.3
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Tyler Angle - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Justus Annunen (4393408)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Justus Annunen: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Justus Annunen: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Justus Annunen: [{'appliedAverage': 9.335714285714285, 'appliedTotal': 130.7, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 12.0, '1': 8.0, '2': 4.0, '3': 414.0, '4': 30.0, '6': 384.0, '7': 2.0, '8': 48065.0, '9': 1.0, '10': 2.24695725, '11': 0.92753623, '12': 0.61538462, '30': 14.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 4.964285714285713, 'appliedTotal': 69.5, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 12.0, '1': 8.0, '2': 5.0, '3': 307.0, '4': 33.0, '6': 274.0, '7': 0.0, '8': 41997.0, '9': 0.0, '10': 2.82877348, '11': 0.89250814, '12': 0.61538462, '30': 14.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 8.1, 'appliedTotal': 8.1, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 24.0, '4': 2.0, '6': 22.0, '7': 0.0, '8': 3663.0, '9': 0.0, '10': 1.96560197, '11': 0.91666667, '12': 1.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.0625, 'appliedTotal': 24.25, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 4.0, '1': 2.0, '2': 2.0, '3': 105.0, '4': 10.0, '6': 95.0, '7': 0.0, '8': 12550.0, '9': 0.0, '10': 2.8685259, '11': 0.9047619, '12': 0.5, '30': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 11.274999999999999, 'appliedTotal': 22.55, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 2.0, '1': 2.0, '2': 0.0, '3': 60.0, '4': 3.0, '6': 57.0, '7': 0.0, '8': 7263.0, '9': 0.0, '10': 1.48698885, '11': 0.95, '12': 1.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 130.7
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 69.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 8.1
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 24.25
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 22.55
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Justus Annunen - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Victor Antipin (4227208)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Victor Antipin: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Victor Antipin: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Victor Antipin: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Victor Antipin - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Kenneth Appleby (3942747)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Kenneth Appleby: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Kenneth Appleby: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Kenneth Appleby: [{'appliedAverage': -1.5000000000000004, 'appliedTotal': -1.5, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 0.0, '1': 0.0, '2': 0.0, '3': 8.0, '4': 2.0, '6': 6.0, '7': 0.0, '8': 1200.0, '9': 0.0, '10': 6.0, '11': 0.75, '12': 0.0, '30': 1.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: -1.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Kenneth Appleby - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Mason Appleton (3942043)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Mason Appleton: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Mason Appleton - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Darren Archibald (2486993)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Darren Archibald: defaultPositionId=2, eligibleSlots=[3, 1, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Darren Archibald - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Josh Archibald (2591154)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Josh Archibald: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Josh Archibald - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Joel Armia (2562596)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Joel Armia: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Joel Armia - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Nikita Artamonov (5216925)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Nikita Artamonov: defaultPositionId=2, eligibleSlots=[3, 1, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Nikita Artamonov - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Viktor Arvidsson (3120307)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Viktor Arvidsson: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Viktor Arvidsson - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Yaroslav Askarov (4697394)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Yaroslav Askarov: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Yaroslav Askarov: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Yaroslav Askarov: [{'appliedAverage': 5.975, 'appliedTotal': 11.95, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 1.0, '1': 1.0, '2': 0.0, '3': 35.0, '4': 2.0, '6': 33.0, '7': 0.0, '8': 4900.0, '9': 0.0, '10': 1.46938776, '11': 0.94285714, '12': 1.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.7, 'appliedTotal': 26.8, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'0': 4.0, '1': 1.0, '2': 1.0, '3': 121.0, '4': 11.0, '6': 110.0, '7': 0.0, '8': 14406.0, '9': 2.0, '10': 2.74885464, '11': 0.90909091, '12': 0.25, '30': 4.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 5.175, 'appliedTotal': 10.35, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'0': 2.0, '1': 0.0, '2': 1.0, '3': 66.0, '4': 7.0, '6': 59.0, '7': 0.0, '8': 7065.0, '9': 1.0, '10': 3.56687898, '11': 0.89393939, '12': 0.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 6.149999999999998, 'appliedTotal': 18.45, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'0': 3.0, '1': 1.0, '2': 1.0, '3': 90.0, '4': 9.0, '6': 81.0, '7': 0.0, '8': 10665.0, '9': 1.0, '10': 3.03797468, '11': 0.9, '12': 0.33333333, '30': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 5.175, 'appliedTotal': 10.35, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'0': 2.0, '1': 0.0, '2': 1.0, '3': 66.0, '4': 7.0, '6': 59.0, '7': 0.0, '8': 7065.0, '9': 1.0, '10': 3.56687898, '11': 0.89393939, '12': 0.0, '30': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 9.3325, 'appliedTotal': 373.3, 'externalId': '2025', 'id': '102025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 1, 'statSplitTypeId': 0, 'stats': {'0': 40.0, '1': 15.0, '2': 20.0, '3': 1605.0, '4': 143.0, '6': 1462.0, '7': 5.0, '8': 142320.0, '9': 5.0, '10': 3.617200675, '11': 0.910903427, '12': 0.375, '30': 40.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 11.95
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 26.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 10.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 18.45
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 10.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 373.3
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Yaroslav Askarov - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Rasmus Asplund (4027020)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Rasmus Asplund: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Rasmus Asplund: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Rasmus Asplund: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.4, 'appliedTotal': 0.8, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 1.0, '25': 26.0, '26': 903.0, '27': 451.5, '29': 1.0, '30': 2.0, '31': 1.0, '32': 0.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.4, 'appliedTotal': 0.8, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 1.0, '25': 26.0, '26': 903.0, '27': 451.5, '29': 1.0, '30': 2.0, '31': 1.0, '32': 0.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.4, 'appliedTotal': 0.8, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 1.0, '25': 26.0, '26': 903.0, '27': 451.5, '29': 1.0, '30': 2.0, '31': 1.0, '32': 0.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.4, 'appliedTotal': 0.8, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 0.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 1.0, '25': 26.0, '26': 903.0, '27': 451.5, '29': 1.0, '30': 2.0, '31': 1.0, '32': 0.0, '34': 2.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.8
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.8
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Rasmus Asplund - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Zachary Aston-Reese (3988830)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Zachary Aston-Reese: defaultPositionId=1, eligibleSlots=[3, 0, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Zachary Aston-Reese: C
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Zachary Aston-Reese: [{'appliedAverage': 0.45, 'appliedTotal': 1.35, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 0.0, '15': 0.0, '16': 0.0, '17': 2.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 29.0, '26': 928.0, '27': 309.33333333, '29': 1.0, '30': 3.0, '31': 3.0, '32': 0.0, '34': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 3.138235294117647, 'appliedTotal': 106.7, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 4.0, '14': 7.0, '15': -3.0, '16': 11.0, '17': 15.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 1.0, '23': 2.0, '24': 4.0, '25': 574.0, '26': 25855.0, '27': 760.44117647, '29': 50.0, '30': 34.0, '31': 79.0, '32': 25.0, '34': 34.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 1.7666666666666668, 'appliedTotal': 5.3, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {'13': 0.0, '14': 1.0, '15': -1.0, '16': 1.0, '17': 4.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 59.0, '26': 2404.0, '27': 801.33333333, '29': 4.0, '30': 3.0, '31': 3.0, '32': 3.0, '34': 3.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.4233333333333333, 'appliedTotal': 36.35, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {'13': 0.0, '14': 4.0, '15': -4.0, '16': 4.0, '17': 15.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 1.0, '25': 271.0, '26': 12406.0, '27': 827.06666667, '29': 18.0, '30': 15.0, '31': 37.0, '32': 13.0, '34': 15.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 2.0749999999999997, 'appliedTotal': 16.6, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {'13': 0.0, '14': 2.0, '15': -4.0, '16': 2.0, '17': 6.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 1.0, '25': 148.0, '26': 6823.0, '27': 852.875, '29': 9.0, '30': 8.0, '31': 17.0, '32': 8.0, '34': 8.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 1.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 106.7
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 5.3
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 36.35
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 16.6
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Zachary Aston-Reese - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Andreas Athanasiou (3068035)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Andreas Athanasiou: defaultPositionId=2, eligibleSlots=[3, 1, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Andreas Athanasiou - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Cam Atkinson (2501107)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Cam Atkinson: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Cam Atkinson - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Ronnie Attard (4996077)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Ronnie Attard: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Ronnie Attard: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Ronnie Attard: [{'appliedAverage': 2.541666666666667, 'appliedTotal': 30.5, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {'13': 0.0, '14': 2.0, '15': 1.0, '16': 2.0, '17': 6.0, '18': 0.0, '19': 0.0, '20': 0.0, '21': 0.0, '22': 0.0, '23': 0.0, '24': 0.0, '25': 258.0, '26': 11077.0, '27': 923.08333333, '29': 14.0, '30': 12.0, '31': 22.0, '32': 14.0, '33': 2.0, '34': 12.0, '35': 0.0, '36': 0.0, '37': 0.0, '38': 0.0, '39': 0.0}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 30.5
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Ronnie Attard - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Nicolas Aube-Kubel (3115014)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Nicolas Aube-Kubel: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Nicolas Aube-Kubel - не определена позиция
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Trey Augustine (5149228)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Trey Augustine: defaultPositionId=5, eligibleSlots=[5, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Trey Augustine: G
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Trey Augustine: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Trey Augustine - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Yohann Auvitu (4018583)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Yohann Auvitu: defaultPositionId=4, eligibleSlots=[4, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Позиция игрока Yohann Auvitu: D
+2024-12-25 15:48:25 - DEBUG - Статистика игрока Yohann Auvitu: [{'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2024', 'id': '002024', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2024, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '002025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 0, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '012025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 1, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '032025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 3, 'stats': {}}, {'appliedAverage': 0.0, 'appliedTotal': 0.0, 'externalId': '2025', 'id': '022025', 'proTeamId': 0, 'scoringPeriodId': 0, 'seasonId': 2025, 'statSourceId': 0, 'statSplitTypeId': 2, 'stats': {}}]
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Период: 0, Очки: 0.0
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Yohann Auvitu - нет очков
+2024-12-25 15:48:25 - DEBUG - Обрабатываю игрока Oskar Back (4894398)
+2024-12-25 15:48:25 - DEBUG - Позиции игрока Oskar Back: defaultPositionId=3, eligibleSlots=[3, 2, 6, 7, 8]
+2024-12-25 15:48:25 - DEBUG - Пропускаю игрока Oskar Back - не определена позиция
+2024-12-25 15:48:25 - INFO - Обработано 0 игроков
+2024-12-25 15:48:25 - ERROR - Не удалось обработать статистику игроков
+2024-12-25 16:28:35 - DEBUG - Using selector: EpollSelector
+2024-12-25 16:28:35 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-25 16:28:35 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-25 16:28:35 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-25 16:28:35 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-25 16:28:35 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-25 16:28:35 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-25 16:28:35 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-25 16:28:35 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562632.png&w=130&h=100 HTTP/1.1" 200 17880
+2024-12-25 16:28:35 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-25 16:28:35 - DEBUG - STREAM b'IDAT' 41 17823
+2024-12-25 16:28:35 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-25 16:28:35 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-25 16:28:35 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587910.png&w=130&h=100 HTTP/1.1" 200 17643
+2024-12-25 16:28:35 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-25 16:28:35 - DEBUG - STREAM b'IDAT' 41 17586
+2024-12-25 16:28:35 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-25 16:28:35 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-25 16:28:35 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2591155.png&w=130&h=100 HTTP/1.1" 200 14219
+2024-12-25 16:28:35 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-25 16:28:35 - DEBUG - STREAM b'IDAT' 41 14162
+2024-12-25 16:28:35 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-25 16:28:35 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-25 16:28:36 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233563.png&w=130&h=100 HTTP/1.1" 200 19472
+2024-12-25 16:28:36 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-25 16:28:36 - DEBUG - STREAM b'IDAT' 41 19415
+2024-12-25 16:28:36 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-25 16:28:36 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-25 16:28:36 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4294163.png&w=130&h=100 HTTP/1.1" 200 16394
+2024-12-25 16:28:36 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-25 16:28:36 - DEBUG - STREAM b'IDAT' 41 16337
+2024-12-25 16:28:36 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-25 16:28:36 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-25 16:28:36 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3115546.png&w=130&h=100 HTTP/1.1" 200 15547
+2024-12-25 16:28:36 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-25 16:28:36 - DEBUG - STREAM b'IDAT' 41 15490
+2024-12-25 16:28:36 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-25 16:28:36 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-25 16:28:36 - DEBUG - Entering: send_photo
+2024-12-25 16:28:36 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-25 16:28:36 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7dcd173faea0>
+2024-12-25 16:28:36 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7dcd1731f250> server_hostname='api.telegram.org' timeout=5.0
+2024-12-25 16:28:36 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7dcd1748fe00>
+2024-12-25 16:28:36 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-25 16:28:36 - DEBUG - send_request_headers.complete
+2024-12-25 16:28:36 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-25 16:28:36 - DEBUG - send_request_body.complete
+2024-12-25 16:28:36 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-25 16:28:36 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Wed, 25 Dec 2024 13:28:35 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'990'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-25 16:28:36 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-25 16:28:36 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-25 16:28:36 - DEBUG - receive_response_body.complete
+2024-12-25 16:28:36 - DEBUG - response_closed.started
+2024-12-25 16:28:36 - DEBUG - response_closed.complete
+2024-12-25 16:28:36 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 25, 13, 28, 35, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1029, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3MAAzYE', file_size=979, file_unique_id='AQAD3O4xG9rKYEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA20AAzYE', file_size=9933, file_unique_id='AQAD3O4xG9rKYEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3gAAzYE', file_size=37300, file_unique_id='AQAD3O4xG9rKYEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3kAAzYE', file_size=39710, file_unique_id='AQAD3O4xG9rKYEt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-25 16:28:36 - DEBUG - Exiting: send_photo
+2024-12-25 16:28:36 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
