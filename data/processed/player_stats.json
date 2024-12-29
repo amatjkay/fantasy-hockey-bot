@@ -1,927 +1,9 @@
 {
+    "current_week": {
+        "start_date": "2024-12-23",
+        "end_date": "2024-12-29"
+    },
     "weeks": {
-        "2024-12-16_2024-12-22": {
-            "players": {
-                "3042111": {
-                    "name": "Nick Paul",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-17"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-17": {
-                            "points": 14.45,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.45,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "3899952": {
-                    "name": "Kyle Connor",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
-                    "team_of_the_day_dates": [
-                        "2024-12-17",
-                        "2024-12-23"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-17": {
-                            "points": 13.2,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        },
-                        "2024-12-23": {
-                            "points": 20.7,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 33.9,
-                    "position_appearances": {
-                        "LW": 2
-                    }
-                },
-                "4024820": {
-                    "name": "Patrik Laine",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-17"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-17": {
-                            "points": 22.2,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 22.2,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "2554903": {
-                    "name": "Brenden Dillon",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-17"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-17": {
-                            "points": 10.8,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 10.8,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4697765": {
-                    "name": "Adam Wilsby",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-17"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-17": {
-                            "points": 10.25,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 10.25,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4565259": {
-                    "name": "Pyotr Kochetkov",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-17"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-17": {
-                            "points": 23.2,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 23.2,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "5048894": {
-                    "name": "Bobby McMann",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-18"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-18": {
-                            "points": 10.7,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 10.7,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4874741": {
-                    "name": "Mackie Samoskevich",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-18"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-18": {
-                            "points": 14.5,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.5,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3527554": {
-                    "name": "Frank Vatrano",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-18"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-18": {
-                            "points": 17.6,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 17.6,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "3114717": {
-                    "name": "Aaron Ekblad",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-18"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-18": {
-                            "points": 16.7,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.7,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3942354": {
-                    "name": "Niko Mikkola",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-18"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-18": {
-                            "points": 12.6,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.6,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "5571": {
-                    "name": "Sergei Bobrovsky",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-18"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-18": {
-                            "points": 11.3,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.3,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "3114": {
-                    "name": "Sidney Crosby",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-19"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-19": {
-                            "points": 19.75,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 19.75,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4587910": {
-                    "name": "Joel Kiviranta",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
-                    "team_of_the_day_dates": [
-                        "2024-12-19",
-                        "2024-12-22"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-19": {
-                            "points": 15.2,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        },
-                        "2024-12-22": {
-                            "points": 25.15,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 40.349999999999994,
-                    "position_appearances": {
-                        "LW": 2
-                    }
-                },
-                "2591155": {
-                    "name": "Bryan Rust",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-19"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-19": {
-                            "points": 22.35,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 22.35,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "5164": {
-                    "name": "Erik Karlsson",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-19"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-19": {
-                            "points": 12.75,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.75,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4588190": {
-                    "name": "Jordan Spence",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-19"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-19": {
-                            "points": 11.8,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.8,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3151038": {
-                    "name": "Elvis Merzlikins",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-19"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-19": {
-                            "points": 14.4,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.4,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "2563036": {
-                    "name": "Vincent Trocheck",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-20"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-20": {
-                            "points": 18.75,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 18.75,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4697447": {
-                    "name": "Emil Heineman",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-20"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-20": {
-                            "points": 11.15,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.15,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3114736": {
-                    "name": "William Nylander",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-20"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-20": {
-                            "points": 14.15,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.15,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4233563": {
-                    "name": "Cale Makar",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
-                    "team_of_the_day_dates": [
-                        "2024-12-20",
-                        "2024-12-22"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-20": {
-                            "points": 18.1,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        },
-                        "2024-12-22": {
-                            "points": 18.65,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 36.75,
-                    "position_appearances": {
-                        "D": 2
-                    }
-                },
-                "4781556": {
-                    "name": "Owen Power",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-20"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-20": {
-                            "points": 12.85,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.85,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3151297": {
-                    "name": "Igor Shesterkin",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-20"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-20": {
-                            "points": 16.55,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.55,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "4233555": {
-                    "name": "Nico Hischier",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-21"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-21": {
-                            "points": 17.2,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 17.2,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4024989": {
-                    "name": "Brett Howden",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-21"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-21": {
-                            "points": 14.65,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.65,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "4392072": {
-                    "name": "Owen Tippett",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-21"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-21": {
-                            "points": 19.0,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 19.0,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4697386": {
-                    "name": "Jake Sanderson",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-21"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-21": {
-                            "points": 19.05,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 19.05,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4320548": {
-                    "name": "Quinn Hughes",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-21"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-21": {
-                            "points": 15.45,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 15.45,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3020225": {
-                    "name": "Connor Hellebuyck",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-21"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-21": {
-                            "points": 18.65,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 18.65,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "4587943": {
-                    "name": "Aliaksei Protas",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-22"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-22": {
-                            "points": 13.2,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 13.2,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "3114722": {
-                    "name": "Sam Reinhart",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-22"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-22": {
-                            "points": 14.0,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.0,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4024868": {
-                    "name": "Mikhail Sergachev",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-22"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-22": {
-                            "points": 12.2,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.2,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4272888": {
-                    "name": "Logan Thompson",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-22"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-22": {
-                            "points": 10.95,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 10.95,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "2562632": {
-                    "name": "Mark Scheifele",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-23"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-23": {
-                            "points": 28.2,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 28.2,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "2967072": {
-                    "name": "Jonathan Marchessault",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-23"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-23": {
-                            "points": 16.75,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.75,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4294163": {
-                    "name": "Rasmus Dahlin",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-23"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-23": {
-                            "points": 20.3,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.3,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3899972": {
-                    "name": "Zach Werenski",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-23"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-23": {
-                            "points": 16.0,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.0,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3115546": {
-                    "name": "Jonas Johansson",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-23"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-23": {
-                            "points": 24.6,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 24.6,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                }
-            }
-        },
         "2024-10-07_2024-10-13": {
             "players": {
                 "3114732": {
@@ -1140,11 +222,10 @@
                 },
                 "3904186": {
                     "name": "Rasmus Andersson",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
                     "team_of_the_day_dates": [
-                        "2024-10-09",
-                        "2024-10-13"
+                        "2024-10-09"
                     ],
                     "positions": [
                         "D"
@@ -1155,17 +236,11 @@
                             "position": "D",
                             "team_of_the_day": true,
                             "collage_sent": true
-                        },
-                        "2024-10-13": {
-                            "points": 19.75,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
                         }
                     },
-                    "total_points": 34.25,
+                    "total_points": 14.5,
                     "position_appearances": {
-                        "D": 2
+                        "D": 1
                     }
                 },
                 "2976839": {
@@ -1601,121 +676,6 @@
                         }
                     },
                     "total_points": 26.7,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "2976844": {
-                    "name": "Tomas Hertl",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-13"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-10-13": {
-                            "points": 11.0,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.0,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "3899952": {
-                    "name": "Kyle Connor",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-13"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-10-13": {
-                            "points": 9.45,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 9.45,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3941546": {
-                    "name": "Keegan Kolesar",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-13"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-10-13": {
-                            "points": 9.05,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 9.05,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "3149839": {
-                    "name": "Jake Middleton",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-13"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-10-13": {
-                            "points": 10.55,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 10.55,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3025540": {
-                    "name": "Casey DeSmith",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-13"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-10-13": {
-                            "points": 20.75,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.75,
                     "position_appearances": {
                         "G": 1
                     }
@@ -2377,11 +1337,10 @@
                 },
                 "3042016": {
                     "name": "Josh Morrissey",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
                     "team_of_the_day_dates": [
-                        "2024-10-18",
-                        "2024-10-20"
+                        "2024-10-18"
                     ],
                     "positions": [
                         "D"
@@ -2392,17 +1351,11 @@
                             "position": "D",
                             "team_of_the_day": true,
                             "collage_sent": true
-                        },
-                        "2024-10-20": {
-                            "points": 12.9,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
                         }
                     },
-                    "total_points": 21.5,
+                    "total_points": 8.6,
                     "position_appearances": {
-                        "D": 2
+                        "D": 1
                     }
                 },
                 "2517899": {
@@ -2562,121 +1515,6 @@
                         }
                     },
                     "total_points": 21.1,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "3946": {
-                    "name": "Lars Eller",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-20"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-10-20": {
-                            "points": 13.0,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 13.0,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4392471": {
-                    "name": "Ross Colton",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-20"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-10-20": {
-                            "points": 15.25,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 15.25,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3942043": {
-                    "name": "Mason Appleton",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-20"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-10-20": {
-                            "points": 13.65,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 13.65,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4233563": {
-                    "name": "Cale Makar",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-20"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-10-20": {
-                            "points": 16.95,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.95,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3042057": {
-                    "name": "Eric Comrie",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-20"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-10-20": {
-                            "points": 12.25,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.25,
                     "position_appearances": {
                         "G": 1
                     }
@@ -3490,144 +2328,6 @@
                         "G": 1
                     }
                 },
-                "3114727": {
-                    "name": "Leon Draisaitl",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-27"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-10-27": {
-                            "points": 17.8,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 17.8,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "2562623": {
-                    "name": "Stefan Noesen",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-27"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-10-27": {
-                            "points": 15.05,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 15.05,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3775": {
-                    "name": "Claude Giroux",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-27"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-10-27": {
-                            "points": 12.4,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.4,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "3114757": {
-                    "name": "Travis Sanheim",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-27"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-10-27": {
-                            "points": 18.4,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 18.4,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4352722": {
-                    "name": "Evan Bouchard",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-27"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-10-27": {
-                            "points": 15.4,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 15.4,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "5452": {
-                    "name": "Jacob Markstrom",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-10-27"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-10-27": {
-                            "points": 8.8,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 8.8,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
                 "5160": {
                     "name": "John Tavares",
                     "team_of_the_day_count": 1,
@@ -4048,11 +2748,10 @@
                 },
                 "3114727": {
                     "name": "Leon Draisaitl",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
                     "team_of_the_day_dates": [
-                        "2024-10-31",
-                        "2024-11-03"
+                        "2024-10-31"
                     ],
                     "positions": [
                         "C"
@@ -4063,17 +2762,11 @@
                             "position": "C",
                             "team_of_the_day": true,
                             "collage_sent": true
-                        },
-                        "2024-11-03": {
-                            "points": 15.2,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
                         }
                     },
-                    "total_points": 32.05,
+                    "total_points": 16.85,
                     "position_appearances": {
-                        "C": 2
+                        "C": 1
                     }
                 },
                 "4352683": {
@@ -4101,11 +2794,10 @@
                 },
                 "4233586": {
                     "name": "Martin Necas",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
                     "team_of_the_day_dates": [
-                        "2024-10-31",
-                        "2024-11-03"
+                        "2024-10-31"
                     ],
                     "positions": [
                         "RW"
@@ -4116,26 +2808,19 @@
                             "position": "RW",
                             "team_of_the_day": true,
                             "collage_sent": true
-                        },
-                        "2024-11-03": {
-                            "points": 14.45,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
                         }
                     },
-                    "total_points": 33.25,
+                    "total_points": 18.8,
                     "position_appearances": {
-                        "RW": 2
+                        "RW": 1
                     }
                 },
                 "3041997": {
                     "name": "Darnell Nurse",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
                     "team_of_the_day_dates": [
-                        "2024-10-31",
-                        "2024-11-03"
+                        "2024-10-31"
                     ],
                     "positions": [
                         "D"
@@ -4146,17 +2831,11 @@
                             "position": "D",
                             "team_of_the_day": true,
                             "collage_sent": true
-                        },
-                        "2024-11-03": {
-                            "points": 10.8,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
                         }
                     },
-                    "total_points": 21.200000000000003,
+                    "total_points": 10.4,
                     "position_appearances": {
-                        "D": 2
+                        "D": 1
                     }
                 },
                 "3025524": {
@@ -4477,75 +3156,6 @@
                         }
                     },
                     "total_points": 19.7,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "3891952": {
-                    "name": "Artemi Panarin",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-03"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-03": {
-                            "points": 14.0,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.0,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "5646": {
-                    "name": "Dmitry Orlov",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-03"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-03": {
-                            "points": 16.2,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.2,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4712036": {
-                    "name": "Jeremy Swayman",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-03"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-11-03": {
-                            "points": 20.05,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.05,
                     "position_appearances": {
                         "G": 1
                     }
@@ -5346,144 +3956,6 @@
                         }
                     },
                     "total_points": 24.95,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "4352775": {
-                    "name": "Isac Lundestrom",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-10"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-11-10": {
-                            "points": 8.1,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 8.1,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4587996": {
-                    "name": "Kirill Marchenko",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-10"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-10": {
-                            "points": 10.9,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 10.9,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3527554": {
-                    "name": "Frank Vatrano",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-10"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-10": {
-                            "points": 9.75,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 9.75,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "5502": {
-                    "name": "Radko Gudas",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-10"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-10": {
-                            "points": 8.8,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 8.8,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4565262": {
-                    "name": "Jackson LaCombe",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-10"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-10": {
-                            "points": 8.65,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 8.65,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3904177": {
-                    "name": "Mackenzie Blackwood",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-10"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-11-10": {
-                            "points": 27.4,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 27.4,
                     "position_appearances": {
                         "G": 1
                     }
@@ -6304,151 +4776,6 @@
                         "G": 1
                     }
                 },
-                "5037": {
-                    "name": "Steven Stamkos",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-17"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-11-17": {
-                            "points": 13.2,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 13.2,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "3101": {
-                    "name": "Alex Ovechkin",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
-                    "team_of_the_day_dates": [
-                        "2024-11-17",
-                        "2024-11-18"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-17": {
-                            "points": 24.5,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        },
-                        "2024-11-18": {
-                            "points": 14.35,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 38.85,
-                    "position_appearances": {
-                        "LW": 2
-                    }
-                },
-                "4233586": {
-                    "name": "Martin Necas",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-17"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-17": {
-                            "points": 20.3,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.3,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "5436": {
-                    "name": "Roman Josi",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-17"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-17": {
-                            "points": 12.3,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.3,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4024950": {
-                    "name": "Jakob Chychrun",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-17"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-17": {
-                            "points": 9.0,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 9.0,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3634": {
-                    "name": "Jonathan Quick",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-17"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-11-17": {
-                            "points": 20.4,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.4,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
                 "3899933": {
                     "name": "Dylan Strome",
                     "team_of_the_day_count": 1,
@@ -6470,6 +4797,29 @@
                     "total_points": 11.6,
                     "position_appearances": {
                         "C": 1
+                    }
+                },
+                "3101": {
+                    "name": "Alex Ovechkin",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-11-18"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-11-18": {
+                            "points": 14.35,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.35,
+                    "position_appearances": {
+                        "LW": 1
                     }
                 },
                 "4565278": {
@@ -6823,11 +5173,10 @@
                 },
                 "4271575": {
                     "name": "Joseph Woll",
-                    "team_of_the_day_count": 2,
-                    "grade": "uncommon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
                     "team_of_the_day_dates": [
-                        "2024-11-20",
-                        "2024-11-24"
+                        "2024-11-20"
                     ],
                     "positions": [
                         "G"
@@ -6838,17 +5187,11 @@
                             "position": "G",
                             "team_of_the_day": true,
                             "collage_sent": true
-                        },
-                        "2024-11-24": {
-                            "points": 8.8,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
                         }
                     },
-                    "total_points": 31.650000000000002,
+                    "total_points": 22.85,
                     "position_appearances": {
-                        "G": 2
+                        "G": 1
                     }
                 },
                 "3041996": {
@@ -7270,121 +5613,6 @@
                     "total_points": 11.65,
                     "position_appearances": {
                         "G": 1
-                    }
-                },
-                "5080143": {
-                    "name": "Logan Cooley",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-24"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-11-24": {
-                            "points": 11.15,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.15,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4024861": {
-                    "name": "Alexander Nylander",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-24"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-24": {
-                            "points": 1.7,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 1.7,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3899937": {
-                    "name": "Mitch Marner",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-24"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-11-24": {
-                            "points": 12.65,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.65,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4331604": {
-                    "name": "Michael Kesselring",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-24"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-24": {
-                            "points": 6.95,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 6.95,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "5592": {
-                    "name": "Chris Tanev",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-11-24"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-11-24": {
-                            "points": 5.75,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 5.75,
-                    "position_appearances": {
-                        "D": 1
                     }
                 },
                 "4233555": {
@@ -8038,144 +6266,6 @@
                         }
                     },
                     "total_points": 22.15,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
-                "3041996": {
-                    "name": "Sean Monahan",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-01"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-01": {
-                            "points": 14.75,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.75,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4319858": {
-                    "name": "Brady Tkachuk",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-01"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-01": {
-                            "points": 16.95,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 16.95,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3900240": {
-                    "name": "Jake DeBrusk",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-01"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-01": {
-                            "points": 27.7,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 27.7,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "3988803": {
-                    "name": "Charlie McAvoy",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-01"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-01": {
-                            "points": 22.25,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 22.25,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3068087": {
-                    "name": "Damon Severson",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-01"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-01": {
-                            "points": 14.55,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.55,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4196914": {
-                    "name": "Jake Oettinger",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-01"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-01": {
-                            "points": 11.3,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.3,
                     "position_appearances": {
                         "G": 1
                     }
@@ -8964,144 +7054,6 @@
                         "G": 1
                     }
                 },
-                "3151187": {
-                    "name": "Brayden Point",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-08"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-08": {
-                            "points": 19.0,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 19.0,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "4233720": {
-                    "name": "Eeli Tolvanen",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-08"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-08": {
-                            "points": 15.95,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 15.95,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "3042095": {
-                    "name": "Oliver Bjorkstrand",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-08"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-08": {
-                            "points": 20.4,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.4,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4565239": {
-                    "name": "Thomas Harley",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-08"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-08": {
-                            "points": 14.3,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.3,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "4352770": {
-                    "name": "K'Andre Miller",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-08"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-08": {
-                            "points": 12.05,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.05,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "5622": {
-                    "name": "Scott Wedgewood",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-08"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-08": {
-                            "points": 20.75,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 20.75,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
                 "3942905": {
                     "name": "Troy Terry",
                     "team_of_the_day_count": 1,
@@ -9886,144 +7838,6 @@
                         "G": 1
                     }
                 },
-                "5160": {
-                    "name": "John Tavares",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-15"
-                    ],
-                    "positions": [
-                        "C"
-                    ],
-                    "daily_stats": {
-                        "2024-12-15": {
-                            "points": 25.55,
-                            "position": "C",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 25.55,
-                    "position_appearances": {
-                        "C": 1
-                    }
-                },
-                "3942335": {
-                    "name": "Kirill Kaprizov",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-15"
-                    ],
-                    "positions": [
-                        "LW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-15": {
-                            "points": 13.35,
-                            "position": "LW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 13.35,
-                    "position_appearances": {
-                        "LW": 1
-                    }
-                },
-                "2592095": {
-                    "name": "Teuvo Teravainen",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-15"
-                    ],
-                    "positions": [
-                        "RW"
-                    ],
-                    "daily_stats": {
-                        "2024-12-15": {
-                            "points": 14.35,
-                            "position": "RW",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 14.35,
-                    "position_appearances": {
-                        "RW": 1
-                    }
-                },
-                "4565266": {
-                    "name": "Alex Vlasic",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-15"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-15": {
-                            "points": 13.95,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 13.95,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "3042055": {
-                    "name": "Shea Theodore",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-15"
-                    ],
-                    "positions": [
-                        "D"
-                    ],
-                    "daily_stats": {
-                        "2024-12-15": {
-                            "points": 12.15,
-                            "position": "D",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 12.15,
-                    "position_appearances": {
-                        "D": 1
-                    }
-                },
-                "5382": {
-                    "name": "Dustin Tokarski",
-                    "team_of_the_day_count": 1,
-                    "grade": "common",
-                    "team_of_the_day_dates": [
-                        "2024-12-15"
-                    ],
-                    "positions": [
-                        "G"
-                    ],
-                    "daily_stats": {
-                        "2024-12-15": {
-                            "points": 11.65,
-                            "position": "G",
-                            "team_of_the_day": true,
-                            "collage_sent": true
-                        }
-                    },
-                    "total_points": 11.65,
-                    "position_appearances": {
-                        "G": 1
-                    }
-                },
                 "3904183": {
                     "name": "Roope Hintz",
                     "team_of_the_day_count": 1,
@@ -10158,6 +7972,822 @@
                         }
                     },
                     "total_points": 12.7,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                }
+            }
+        },
+        "2024-12-16_2024-12-22": {
+            "players": {
+                "3042111": {
+                    "name": "Nick Paul",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-17"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-17": {
+                            "points": 14.45,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.45,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "3899952": {
+                    "name": "Kyle Connor",
+                    "team_of_the_day_count": 2,
+                    "grade": "uncommon",
+                    "team_of_the_day_dates": [
+                        "2024-12-17",
+                        "2024-12-23"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-17": {
+                            "points": 13.2,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        },
+                        "2024-12-23": {
+                            "points": 20.7,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 33.9,
+                    "position_appearances": {
+                        "LW": 2
+                    }
+                },
+                "4024820": {
+                    "name": "Patrik Laine",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-17"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-17": {
+                            "points": 22.2,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 22.2,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "2554903": {
+                    "name": "Brenden Dillon",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-17"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-17": {
+                            "points": 10.8,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 10.8,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4697765": {
+                    "name": "Adam Wilsby",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-17"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-17": {
+                            "points": 10.25,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 10.25,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4565259": {
+                    "name": "Pyotr Kochetkov",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-17"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-17": {
+                            "points": 23.2,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 23.2,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                },
+                "5048894": {
+                    "name": "Bobby McMann",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-18"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-18": {
+                            "points": 10.7,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 10.7,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "4874741": {
+                    "name": "Mackie Samoskevich",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-18"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-18": {
+                            "points": 14.5,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.5,
+                    "position_appearances": {
+                        "LW": 1
+                    }
+                },
+                "3527554": {
+                    "name": "Frank Vatrano",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-18"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-18": {
+                            "points": 17.6,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 17.6,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "3114717": {
+                    "name": "Aaron Ekblad",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-18"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-18": {
+                            "points": 16.7,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 16.7,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3942354": {
+                    "name": "Niko Mikkola",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-18"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-18": {
+                            "points": 12.6,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 12.6,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "5571": {
+                    "name": "Sergei Bobrovsky",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-18"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-18": {
+                            "points": 11.3,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 11.3,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                },
+                "3114": {
+                    "name": "Sidney Crosby",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-19"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-19": {
+                            "points": 19.75,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 19.75,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "4587910": {
+                    "name": "Joel Kiviranta",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-19"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-19": {
+                            "points": 15.2,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 15.2,
+                    "position_appearances": {
+                        "LW": 1
+                    }
+                },
+                "2591155": {
+                    "name": "Bryan Rust",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-19"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-19": {
+                            "points": 22.35,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 22.35,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "5164": {
+                    "name": "Erik Karlsson",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-19"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-19": {
+                            "points": 12.75,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 12.75,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4588190": {
+                    "name": "Jordan Spence",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-19"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-19": {
+                            "points": 11.8,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 11.8,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3151038": {
+                    "name": "Elvis Merzlikins",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-19"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-19": {
+                            "points": 14.4,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.4,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                },
+                "2563036": {
+                    "name": "Vincent Trocheck",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-20"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-20": {
+                            "points": 18.75,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 18.75,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "4697447": {
+                    "name": "Emil Heineman",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-20"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-20": {
+                            "points": 11.15,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 11.15,
+                    "position_appearances": {
+                        "LW": 1
+                    }
+                },
+                "3114736": {
+                    "name": "William Nylander",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-20"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-20": {
+                            "points": 14.15,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.15,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "4233563": {
+                    "name": "Cale Makar",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-20"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-20": {
+                            "points": 18.1,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 18.1,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4781556": {
+                    "name": "Owen Power",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-20"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-20": {
+                            "points": 12.85,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 12.85,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3151297": {
+                    "name": "Igor Shesterkin",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-20"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-20": {
+                            "points": 16.55,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 16.55,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                },
+                "4233555": {
+                    "name": "Nico Hischier",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-21"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-21": {
+                            "points": 17.2,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 17.2,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "4024989": {
+                    "name": "Brett Howden",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-21"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-21": {
+                            "points": 14.65,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.65,
+                    "position_appearances": {
+                        "LW": 1
+                    }
+                },
+                "4392072": {
+                    "name": "Owen Tippett",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-21"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-21": {
+                            "points": 19.0,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 19.0,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "4697386": {
+                    "name": "Jake Sanderson",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-21"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-21": {
+                            "points": 19.05,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 19.05,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4320548": {
+                    "name": "Quinn Hughes",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-21"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-21": {
+                            "points": 15.45,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 15.45,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3020225": {
+                    "name": "Connor Hellebuyck",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-21"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-21": {
+                            "points": 18.65,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 18.65,
+                    "position_appearances": {
+                        "G": 1
+                    }
+                },
+                "2562632": {
+                    "name": "Mark Scheifele",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-23"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 28.2,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 28.2,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "2967072": {
+                    "name": "Jonathan Marchessault",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-23"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 16.75,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 16.75,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "4294163": {
+                    "name": "Rasmus Dahlin",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-23"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 20.3,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 20.3,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3899972": {
+                    "name": "Zach Werenski",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-23"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 16.0,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 16.0,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3115546": {
+                    "name": "Jonas Johansson",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-23"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-23": {
+                            "points": 24.6,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 24.6,
                     "position_appearances": {
                         "G": 1
                     }
@@ -10444,14 +9074,5 @@
                 }
             }
         }
-    },
-    "league_settings": {
-        "name": "",
-        "scoring": {},
-        "roster": {}
-    },
-    "current_week": {
-        "start_date": "2024-12-23",
-        "end_date": "2024-12-29"
     }
 }

@@ -1351,3 +1351,515 @@
 2024-12-30 00:05:29,285 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
 2024-12-30 00:05:30,115 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
 2024-12-30 00:05:30,116 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 01:13:55,282 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 01:13:55,335 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 01:13:55,813 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 01:13:56,191 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-30 01:13:56,662 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 01:14:06,697 - WARNING - Ошибка загрузки изображения для Cale Makar: HTTPSConnectionPool(host='a.espncdn.com', port=443): Read timed out. (read timeout=10)
+2024-12-30 01:14:07,101 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 01:14:07,409 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 01:14:07,414 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:14:08,156 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:14:08,157 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:16:04,919 - INFO - Текущий период подсчета очков: 87
+2024-12-30 01:16:04,920 - ERROR - Ошибка при выполнении скрипта: 'LEAGUE_ID'
+2024-12-30 01:19:59,075 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 01:19:59,121 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 01:19:59,527 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 01:19:59,941 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-30 01:20:00,305 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 01:20:01,327 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-30 01:20:01,667 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 01:20:01,939 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 01:20:01,944 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:20:02,523 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:20:02,524 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:21:27,624 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 01:21:27,674 - INFO - Начинаем обработку всех недель (12 недель)
+2024-12-30 01:21:27,674 - INFO - Обработка команды недели: 2024-10-07_2024-10-13
+2024-12-30 01:21:28,120 - INFO - Изображение игрока Anze Kopitar успешно добавлено в коллаж
+2024-12-30 01:21:28,565 - INFO - Изображение игрока Ivan Barbashev успешно добавлено в коллаж
+2024-12-30 01:21:28,852 - INFO - Изображение игрока Nikita Kucherov успешно добавлено в коллаж
+2024-12-30 01:21:29,166 - INFO - Изображение игрока Rasmus Andersson успешно добавлено в коллаж
+2024-12-30 01:21:29,492 - INFO - Изображение игрока Seth Jones успешно добавлено в коллаж
+2024-12-30 01:21:29,802 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 01:21:29,808 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 01:21:30,379 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:21:30,380 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 01:21:32,383 - INFO - Обработка команды недели: 2024-10-14_2024-10-20
+2024-12-30 01:21:32,670 - INFO - Изображение игрока Scott Laughton успешно добавлено в коллаж
+2024-12-30 01:21:33,154 - INFO - Изображение игрока Artemi Panarin успешно добавлено в коллаж
+2024-12-30 01:21:36,077 - INFO - Изображение игрока Tom Wilson успешно добавлено в коллаж
+2024-12-30 01:21:37,620 - INFO - Изображение игрока Neal Pionk успешно добавлено в коллаж
+2024-12-30 01:21:37,902 - INFO - Изображение игрока Josh Morrissey успешно добавлено в коллаж
+2024-12-30 01:21:38,253 - INFO - Изображение игрока Joel Hofer успешно добавлено в коллаж
+2024-12-30 01:21:38,257 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 01:21:38,829 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:21:38,829 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 01:21:40,832 - INFO - Обработка команды недели: 2024-10-21_2024-10-27
+2024-12-30 01:21:41,201 - INFO - Изображение игрока Sean Couturier успешно добавлено в коллаж
+2024-12-30 01:21:41,589 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 01:21:42,007 - INFO - Изображение игрока Travis Konecny успешно добавлено в коллаж
+2024-12-30 01:21:42,246 - WARNING - Ошибка загрузки изображения для Janis Moser: HTTPSConnectionPool(host='a.espncdn.com', port=443): Max retries exceeded with url: /combiner/i?img=/i/headshots/nhl/players/full/4874929.png&w=130&h=100 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2024-12-30 01:21:52,284 - WARNING - Ошибка загрузки изображения для Alex Pietrangelo: HTTPSConnectionPool(host='a.espncdn.com', port=443): Read timed out. (read timeout=10)
+2024-12-30 01:21:53,199 - INFO - Изображение игрока Juuse Saros успешно добавлено в коллаж
+2024-12-30 01:21:53,204 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 01:21:53,796 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:21:53,797 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 01:21:55,803 - INFO - Обработка команды недели: 2024-10-28_2024-11-03
+2024-12-30 01:21:56,288 - INFO - Изображение игрока Leon Draisaitl успешно добавлено в коллаж
+2024-12-30 01:21:56,585 - INFO - Изображение игрока Nikolaj Ehlers успешно добавлено в коллаж
+2024-12-30 01:21:58,999 - WARNING - Ошибка загрузки изображения для Martin Necas: HTTPSConnectionPool(host='a.espncdn.com', port=443): Max retries exceeded with url: /combiner/i?img=/i/headshots/nhl/players/full/4233586.png&w=130&h=100 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+2024-12-30 01:21:59,415 - INFO - Изображение игрока Brandon Montour успешно добавлено в коллаж
+2024-12-30 01:21:59,962 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 01:22:00,308 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-30 01:22:00,313 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 01:22:00,962 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:00,962 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 01:22:02,966 - INFO - Обработка команды недели: 2024-11-04_2024-11-10
+2024-12-30 01:22:03,905 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 01:22:13,938 - WARNING - Ошибка загрузки изображения для Mason Marchment: HTTPSConnectionPool(host='a.espncdn.com', port=443): Read timed out. (read timeout=10)
+2024-12-30 01:22:15,134 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:22:15,560 - INFO - Изображение игрока Quinn Hughes успешно добавлено в коллаж
+2024-12-30 01:22:15,944 - INFO - Изображение игрока Miro Heiskanen успешно добавлено в коллаж
+2024-12-30 01:22:16,380 - INFO - Изображение игрока Mackenzie Blackwood успешно добавлено в коллаж
+2024-12-30 01:22:16,385 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 01:22:17,059 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:17,059 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 01:22:19,065 - INFO - Обработка команды недели: 2024-11-11_2024-11-17
+2024-12-30 01:22:19,595 - INFO - Изображение игрока Aleksander Barkov успешно добавлено в коллаж
+2024-12-30 01:22:20,099 - INFO - Изображение игрока Alex Ovechkin успешно добавлено в коллаж
+2024-12-30 01:22:20,390 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:22:21,325 - INFO - Изображение игрока Travis Sanheim успешно добавлено в коллаж
+2024-12-30 01:22:21,642 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 01:22:21,965 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 01:22:21,970 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 01:22:22,058 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:22,058 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 01:22:24,061 - INFO - Обработка команды недели: 2024-11-18_2024-11-24
+2024-12-30 01:22:24,950 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 01:22:25,228 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 01:22:25,720 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:22:26,117 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 01:22:27,089 - INFO - Изображение игрока Jakob Chychrun успешно добавлено в коллаж
+2024-12-30 01:22:27,534 - INFO - Изображение игрока Joseph Woll успешно добавлено в коллаж
+2024-12-30 01:22:27,539 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 01:22:28,095 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:28,096 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 01:22:30,098 - INFO - Обработка команды недели: 2024-11-25_2024-12-01
+2024-12-30 01:22:30,508 - INFO - Изображение игрока Brayden Point успешно добавлено в коллаж
+2024-12-30 01:22:30,897 - INFO - Изображение игрока Taylor Hall успешно добавлено в коллаж
+2024-12-30 01:22:32,085 - INFO - Изображение игрока Jake DeBrusk успешно добавлено в коллаж
+2024-12-30 01:22:32,450 - INFO - Изображение игрока Jared Spurgeon успешно добавлено в коллаж
+2024-12-30 01:22:32,783 - INFO - Изображение игрока Charlie McAvoy успешно добавлено в коллаж
+2024-12-30 01:22:33,142 - INFO - Изображение игрока Filip Gustavsson успешно добавлено в коллаж
+2024-12-30 01:22:33,148 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 01:22:33,795 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:33,797 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 01:22:35,800 - INFO - Обработка команды недели: 2024-12-02_2024-12-08
+2024-12-30 01:22:36,115 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 01:22:36,459 - INFO - Изображение игрока Andrei Svechnikov успешно добавлено в коллаж
+2024-12-30 01:22:36,737 - INFO - Изображение игрока Matthew Tkachuk успешно добавлено в коллаж
+2024-12-30 01:22:37,020 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 01:22:37,441 - INFO - Изображение игрока Adam Larsson успешно добавлено в коллаж
+2024-12-30 01:22:37,811 - INFO - Изображение игрока Adin Hill успешно добавлено в коллаж
+2024-12-30 01:22:37,816 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 01:22:37,912 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:37,913 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 01:22:39,921 - INFO - Обработка команды недели: 2024-12-09_2024-12-15
+2024-12-30 01:22:40,244 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 01:22:40,683 - INFO - Изображение игрока Kiefer Sherwood успешно добавлено в коллаж
+2024-12-30 01:22:40,974 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:22:41,586 - INFO - Изображение игрока Adam Fox успешно добавлено в коллаж
+2024-12-30 01:22:44,498 - INFO - Изображение игрока Jeff Petry успешно добавлено в коллаж
+2024-12-30 01:22:44,905 - INFO - Изображение игрока Linus Ullmark успешно добавлено в коллаж
+2024-12-30 01:22:44,912 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 01:22:45,510 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:45,511 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 01:22:47,515 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 01:22:47,858 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 01:22:49,379 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-30 01:22:49,782 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 01:22:50,292 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-30 01:22:50,642 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 01:22:51,147 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 01:22:51,152 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:22:51,739 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:51,741 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:22:53,743 - INFO - Обработка команды недели: 2024-12-23_2024-12-29
+2024-12-30 01:22:54,067 - INFO - Изображение игрока Quinton Byfield успешно добавлено в коллаж
+2024-12-30 01:22:54,475 - INFO - Изображение игрока Artturi Lehkonen успешно добавлено в коллаж
+2024-12-30 01:22:54,843 - INFO - Изображение игрока Mitch Marner успешно добавлено в коллаж
+2024-12-30 01:22:55,160 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 01:22:55,500 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 01:22:56,104 - INFO - Изображение игрока Jeremy Swayman успешно добавлено в коллаж
+2024-12-30 01:22:56,109 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 01:22:56,219 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:22:56,220 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 01:48:00,867 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 01:48:00,903 - INFO - Начинаем обработку всех недель (12 недель)
+2024-12-30 01:48:00,903 - INFO - Обработка команды недели: 2024-10-07_2024-10-13
+2024-12-30 01:48:01,366 - INFO - Изображение игрока Anze Kopitar успешно добавлено в коллаж
+2024-12-30 01:48:01,741 - INFO - Изображение игрока Ivan Barbashev успешно добавлено в коллаж
+2024-12-30 01:48:02,079 - INFO - Изображение игрока Nikita Kucherov успешно добавлено в коллаж
+2024-12-30 01:48:03,203 - INFO - Изображение игрока Seth Jones успешно добавлено в коллаж
+2024-12-30 01:48:04,079 - INFO - Изображение игрока MacKenzie Weegar успешно добавлено в коллаж
+2024-12-30 01:48:04,401 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 01:48:04,406 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 01:48:05,007 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:05,008 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 01:48:07,013 - INFO - Обработка команды недели: 2024-10-14_2024-10-20
+2024-12-30 01:48:08,101 - INFO - Изображение игрока Scott Laughton успешно добавлено в коллаж
+2024-12-30 01:48:08,452 - INFO - Изображение игрока Artemi Panarin успешно добавлено в коллаж
+2024-12-30 01:48:08,772 - INFO - Изображение игрока Tom Wilson успешно добавлено в коллаж
+2024-12-30 01:48:09,290 - INFO - Изображение игрока Neal Pionk успешно добавлено в коллаж
+2024-12-30 01:48:09,787 - INFO - Изображение игрока Jake Sanderson успешно добавлено в коллаж
+2024-12-30 01:48:10,109 - INFO - Изображение игрока Joel Hofer успешно добавлено в коллаж
+2024-12-30 01:48:10,115 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 01:48:10,919 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:10,920 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 01:48:12,923 - INFO - Обработка команды недели: 2024-10-21_2024-10-27
+2024-12-30 01:48:13,265 - INFO - Изображение игрока Sean Couturier успешно добавлено в коллаж
+2024-12-30 01:48:13,711 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 01:48:13,995 - INFO - Изображение игрока Travis Konecny успешно добавлено в коллаж
+2024-12-30 01:48:14,438 - INFO - Изображение игрока Janis Moser успешно добавлено в коллаж
+2024-12-30 01:48:15,615 - INFO - Изображение игрока Alex Pietrangelo успешно добавлено в коллаж
+2024-12-30 01:48:16,251 - INFO - Изображение игрока Juuse Saros успешно добавлено в коллаж
+2024-12-30 01:48:16,256 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 01:48:16,851 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:16,852 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 01:48:18,855 - INFO - Обработка команды недели: 2024-10-28_2024-11-03
+2024-12-30 01:48:20,290 - INFO - Изображение игрока Tim Stutzle успешно добавлено в коллаж
+2024-12-30 01:48:20,593 - INFO - Изображение игрока Nikolaj Ehlers успешно добавлено в коллаж
+2024-12-30 01:48:20,961 - INFO - Изображение игрока Sam Reinhart успешно добавлено в коллаж
+2024-12-30 01:48:21,270 - INFO - Изображение игрока Brandon Montour успешно добавлено в коллаж
+2024-12-30 01:48:21,591 - INFO - Изображение игрока Colton Parayko успешно добавлено в коллаж
+2024-12-30 01:48:22,010 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-30 01:48:22,014 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 01:48:23,087 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:23,088 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 01:48:25,091 - INFO - Обработка команды недели: 2024-11-04_2024-11-10
+2024-12-30 01:48:25,963 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 01:48:26,313 - INFO - Изображение игрока Mason Marchment успешно добавлено в коллаж
+2024-12-30 01:48:28,340 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:48:28,882 - INFO - Изображение игрока Quinn Hughes успешно добавлено в коллаж
+2024-12-30 01:48:29,210 - INFO - Изображение игрока Miro Heiskanen успешно добавлено в коллаж
+2024-12-30 01:48:29,524 - INFO - Изображение игрока Jonathan Quick успешно добавлено в коллаж
+2024-12-30 01:48:29,530 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 01:48:30,108 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:30,109 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 01:48:32,112 - INFO - Обработка команды недели: 2024-11-11_2024-11-17
+2024-12-30 01:48:32,485 - INFO - Изображение игрока Aleksander Barkov успешно добавлено в коллаж
+2024-12-30 01:48:32,848 - INFO - Изображение игрока Kyle Connor успешно добавлено в коллаж
+2024-12-30 01:48:33,138 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:48:33,457 - INFO - Изображение игрока Travis Sanheim успешно добавлено в коллаж
+2024-12-30 01:48:33,826 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 01:48:34,161 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 01:48:34,165 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 01:48:34,391 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:34,392 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 01:48:36,395 - INFO - Обработка команды недели: 2024-11-18_2024-11-24
+2024-12-30 01:48:36,779 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 01:48:37,096 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 01:48:37,420 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:48:37,820 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 01:48:38,177 - INFO - Изображение игрока Jakob Chychrun успешно добавлено в коллаж
+2024-12-30 01:48:38,802 - INFO - Изображение игрока Connor Hellebuyck успешно добавлено в коллаж
+2024-12-30 01:48:38,807 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 01:48:39,650 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:39,651 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 01:48:41,653 - INFO - Обработка команды недели: 2024-11-25_2024-12-01
+2024-12-30 01:48:41,953 - INFO - Изображение игрока Brayden Point успешно добавлено в коллаж
+2024-12-30 01:48:48,849 - INFO - Изображение игрока Taylor Hall успешно добавлено в коллаж
+2024-12-30 01:48:49,995 - INFO - Изображение игрока Jesper Bratt успешно добавлено в коллаж
+2024-12-30 01:48:50,346 - INFO - Изображение игрока Jared Spurgeon успешно добавлено в коллаж
+2024-12-30 01:48:52,611 - INFO - Изображение игрока Kris Letang успешно добавлено в коллаж
+2024-12-30 01:48:53,261 - INFO - Изображение игрока Filip Gustavsson успешно добавлено в коллаж
+2024-12-30 01:48:53,266 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 01:48:53,923 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:48:53,924 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 01:48:55,927 - INFO - Обработка команды недели: 2024-12-02_2024-12-08
+2024-12-30 01:48:56,547 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 01:48:56,992 - INFO - Изображение игрока Andrei Svechnikov успешно добавлено в коллаж
+2024-12-30 01:48:57,342 - INFO - Изображение игрока Matthew Tkachuk успешно добавлено в коллаж
+2024-12-30 01:48:58,030 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 01:48:58,584 - INFO - Изображение игрока Adam Larsson успешно добавлено в коллаж
+2024-12-30 01:48:59,886 - INFO - Изображение игрока Adin Hill успешно добавлено в коллаж
+2024-12-30 01:48:59,893 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 01:49:00,447 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:49:00,450 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 01:49:02,452 - INFO - Обработка команды недели: 2024-12-09_2024-12-15
+2024-12-30 01:49:03,377 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 01:49:04,408 - INFO - Изображение игрока Kiefer Sherwood успешно добавлено в коллаж
+2024-12-30 01:49:05,238 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 01:49:05,583 - INFO - Изображение игрока Adam Fox успешно добавлено в коллаж
+2024-12-30 01:49:05,940 - INFO - Изображение игрока Jeff Petry успешно добавлено в коллаж
+2024-12-30 01:49:06,925 - INFO - Изображение игрока Linus Ullmark успешно добавлено в коллаж
+2024-12-30 01:49:06,939 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 01:49:09,052 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:49:09,052 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 01:49:11,055 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 01:49:12,856 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 01:49:13,190 - INFO - Изображение игрока Kyle Connor успешно добавлено в коллаж
+2024-12-30 01:49:13,557 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 01:49:13,865 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 01:49:14,218 - INFO - Изображение игрока Jake Sanderson успешно добавлено в коллаж
+2024-12-30 01:49:14,644 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 01:49:14,650 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:49:16,169 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:49:16,170 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 01:49:18,172 - INFO - Обработка команды недели: 2024-12-23_2024-12-29
+2024-12-30 01:49:18,607 - INFO - Изображение игрока Quinton Byfield успешно добавлено в коллаж
+2024-12-30 01:49:19,833 - INFO - Изображение игрока Artturi Lehkonen успешно добавлено в коллаж
+2024-12-30 01:49:20,540 - INFO - Изображение игрока Mitch Marner успешно добавлено в коллаж
+2024-12-30 01:49:21,281 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 01:49:21,557 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 01:49:21,850 - INFO - Изображение игрока Jeremy Swayman успешно добавлено в коллаж
+2024-12-30 01:49:21,854 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 01:49:22,405 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 01:49:22,406 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 02:01:24,317 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 02:01:24,368 - INFO - Начинаем обработку всех недель (12 недель)
+2024-12-30 02:01:24,368 - INFO - Обработка команды недели: 2024-10-07_2024-10-13
+2024-12-30 02:01:24,844 - INFO - Изображение игрока Anze Kopitar успешно добавлено в коллаж
+2024-12-30 02:01:25,216 - INFO - Изображение игрока Ivan Barbashev успешно добавлено в коллаж
+2024-12-30 02:01:25,790 - INFO - Изображение игрока Nikita Kucherov успешно добавлено в коллаж
+2024-12-30 02:01:26,145 - INFO - Изображение игрока Seth Jones успешно добавлено в коллаж
+2024-12-30 02:01:26,438 - INFO - Изображение игрока MacKenzie Weegar успешно добавлено в коллаж
+2024-12-30 02:01:28,657 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 02:01:28,664 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 02:01:29,184 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:01:29,186 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 02:01:31,188 - INFO - Обработка команды недели: 2024-10-14_2024-10-20
+2024-12-30 02:01:32,254 - INFO - Изображение игрока Scott Laughton успешно добавлено в коллаж
+2024-12-30 02:01:32,607 - INFO - Изображение игрока Artemi Panarin успешно добавлено в коллаж
+2024-12-30 02:01:32,908 - INFO - Изображение игрока Tom Wilson успешно добавлено в коллаж
+2024-12-30 02:01:33,384 - INFO - Изображение игрока Neal Pionk успешно добавлено в коллаж
+2024-12-30 02:01:33,806 - INFO - Изображение игрока Jake Sanderson успешно добавлено в коллаж
+2024-12-30 02:01:34,321 - INFO - Изображение игрока Joel Hofer успешно добавлено в коллаж
+2024-12-30 02:01:34,326 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 02:01:35,626 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:01:35,627 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 02:01:37,630 - INFO - Обработка команды недели: 2024-10-21_2024-10-27
+2024-12-30 02:01:38,048 - INFO - Изображение игрока Sean Couturier успешно добавлено в коллаж
+2024-12-30 02:01:39,490 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 02:01:40,369 - INFO - Изображение игрока Travis Konecny успешно добавлено в коллаж
+2024-12-30 02:01:40,872 - INFO - Изображение игрока Janis Moser успешно добавлено в коллаж
+2024-12-30 02:01:41,324 - INFO - Изображение игрока Alex Pietrangelo успешно добавлено в коллаж
+2024-12-30 02:01:41,831 - INFO - Изображение игрока Juuse Saros успешно добавлено в коллаж
+2024-12-30 02:01:41,836 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 02:01:42,404 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:01:42,405 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 02:01:44,407 - INFO - Обработка команды недели: 2024-10-28_2024-11-03
+2024-12-30 02:01:45,379 - INFO - Изображение игрока Tim Stutzle успешно добавлено в коллаж
+2024-12-30 02:01:46,214 - INFO - Изображение игрока Nikolaj Ehlers успешно добавлено в коллаж
+2024-12-30 02:01:47,421 - INFO - Изображение игрока Sam Reinhart успешно добавлено в коллаж
+2024-12-30 02:01:48,583 - INFO - Изображение игрока Brandon Montour успешно добавлено в коллаж
+2024-12-30 02:01:49,327 - INFO - Изображение игрока Colton Parayko успешно добавлено в коллаж
+2024-12-30 02:01:49,683 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-30 02:01:49,688 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 02:01:50,364 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:01:50,365 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 02:01:52,368 - INFO - Обработка команды недели: 2024-11-04_2024-11-10
+2024-12-30 02:01:53,153 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 02:01:53,811 - INFO - Изображение игрока Mason Marchment успешно добавлено в коллаж
+2024-12-30 02:01:55,112 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:01:56,424 - INFO - Изображение игрока Quinn Hughes успешно добавлено в коллаж
+2024-12-30 02:01:56,744 - INFO - Изображение игрока Miro Heiskanen успешно добавлено в коллаж
+2024-12-30 02:01:57,067 - INFO - Изображение игрока Jonathan Quick успешно добавлено в коллаж
+2024-12-30 02:01:57,072 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 02:01:57,676 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:01:57,678 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 02:01:59,682 - INFO - Обработка команды недели: 2024-11-11_2024-11-17
+2024-12-30 02:02:00,632 - INFO - Изображение игрока Aleksander Barkov успешно добавлено в коллаж
+2024-12-30 02:02:01,515 - INFO - Изображение игрока Kyle Connor успешно добавлено в коллаж
+2024-12-30 02:02:01,810 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:02:02,131 - INFO - Изображение игрока Travis Sanheim успешно добавлено в коллаж
+2024-12-30 02:02:03,250 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 02:02:05,997 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 02:02:06,001 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 02:02:09,750 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:02:09,751 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 02:02:11,754 - INFO - Обработка команды недели: 2024-11-18_2024-11-24
+2024-12-30 02:02:13,986 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 02:02:14,296 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 02:02:16,241 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:02:17,415 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 02:02:18,226 - INFO - Изображение игрока Jakob Chychrun успешно добавлено в коллаж
+2024-12-30 02:02:20,874 - INFO - Изображение игрока Connor Hellebuyck успешно добавлено в коллаж
+2024-12-30 02:02:20,879 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 02:02:21,396 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:02:21,397 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 02:02:23,400 - INFO - Обработка команды недели: 2024-11-25_2024-12-01
+2024-12-30 02:02:25,603 - INFO - Изображение игрока Brayden Point успешно добавлено в коллаж
+2024-12-30 02:02:26,011 - INFO - Изображение игрока Taylor Hall успешно добавлено в коллаж
+2024-12-30 02:02:26,339 - INFO - Изображение игрока Jesper Bratt успешно добавлено в коллаж
+2024-12-30 02:02:29,924 - INFO - Изображение игрока Jared Spurgeon успешно добавлено в коллаж
+2024-12-30 02:02:30,308 - INFO - Изображение игрока Kris Letang успешно добавлено в коллаж
+2024-12-30 02:02:33,363 - INFO - Изображение игрока Filip Gustavsson успешно добавлено в коллаж
+2024-12-30 02:02:33,367 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 02:02:34,006 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:02:34,006 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 02:02:36,007 - INFO - Обработка команды недели: 2024-12-02_2024-12-08
+2024-12-30 02:02:37,749 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 02:02:40,170 - INFO - Изображение игрока Andrei Svechnikov успешно добавлено в коллаж
+2024-12-30 02:02:45,631 - INFO - Изображение игрока Matthew Tkachuk успешно добавлено в коллаж
+2024-12-30 02:02:48,338 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 02:02:51,833 - INFO - Изображение игрока Adam Larsson успешно добавлено в коллаж
+2024-12-30 02:02:55,038 - INFO - Изображение игрока Adin Hill успешно добавлено в коллаж
+2024-12-30 02:02:55,045 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 02:02:57,916 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:02:57,917 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 02:02:59,919 - INFO - Обработка команды недели: 2024-12-09_2024-12-15
+2024-12-30 02:03:01,704 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 02:03:02,211 - INFO - Изображение игрока Kiefer Sherwood успешно добавлено в коллаж
+2024-12-30 02:03:04,634 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:03:05,280 - INFO - Изображение игрока Adam Fox успешно добавлено в коллаж
+2024-12-30 02:03:05,628 - INFO - Изображение игрока Jeff Petry успешно добавлено в коллаж
+2024-12-30 02:03:05,956 - INFO - Изображение игрока Linus Ullmark успешно добавлено в коллаж
+2024-12-30 02:03:05,962 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 02:03:07,740 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:03:07,741 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 02:03:09,743 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 02:03:10,040 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 02:03:10,346 - INFO - Изображение игрока Kyle Connor успешно добавлено в коллаж
+2024-12-30 02:03:11,997 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 02:03:12,368 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 02:03:12,739 - INFO - Изображение игрока Jake Sanderson успешно добавлено в коллаж
+2024-12-30 02:03:13,039 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 02:03:13,052 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 02:03:13,594 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:03:13,595 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 02:03:15,597 - INFO - Обработка команды недели: 2024-12-23_2024-12-29
+2024-12-30 02:03:15,909 - INFO - Изображение игрока Quinton Byfield успешно добавлено в коллаж
+2024-12-30 02:03:16,232 - INFO - Изображение игрока Artturi Lehkonen успешно добавлено в коллаж
+2024-12-30 02:03:16,696 - INFO - Изображение игрока Mitch Marner успешно добавлено в коллаж
+2024-12-30 02:03:17,087 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 02:03:17,595 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 02:03:17,989 - INFO - Изображение игрока Jeremy Swayman успешно добавлено в коллаж
+2024-12-30 02:03:17,994 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 02:03:18,162 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:03:18,163 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 02:04:14,631 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 02:04:14,683 - INFO - Начинаем обработку всех недель (12 недель)
+2024-12-30 02:04:14,684 - INFO - Обработка команды недели: 2024-10-07_2024-10-13
+2024-12-30 02:04:16,281 - INFO - Изображение игрока Anze Kopitar успешно добавлено в коллаж
+2024-12-30 02:04:16,658 - INFO - Изображение игрока Ivan Barbashev успешно добавлено в коллаж
+2024-12-30 02:04:17,249 - INFO - Изображение игрока Nikita Kucherov успешно добавлено в коллаж
+2024-12-30 02:04:17,589 - INFO - Изображение игрока Seth Jones успешно добавлено в коллаж
+2024-12-30 02:04:17,928 - INFO - Изображение игрока MacKenzie Weegar успешно добавлено в коллаж
+2024-12-30 02:04:18,212 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 02:04:18,217 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 02:04:19,702 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:19,704 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 02:04:21,707 - INFO - Обработка команды недели: 2024-10-14_2024-10-20
+2024-12-30 02:04:22,102 - INFO - Изображение игрока Scott Laughton успешно добавлено в коллаж
+2024-12-30 02:04:22,540 - INFO - Изображение игрока Artemi Panarin успешно добавлено в коллаж
+2024-12-30 02:04:23,565 - INFO - Изображение игрока Tom Wilson успешно добавлено в коллаж
+2024-12-30 02:04:24,331 - INFO - Изображение игрока Neal Pionk успешно добавлено в коллаж
+2024-12-30 02:04:24,676 - INFO - Изображение игрока Jake Sanderson успешно добавлено в коллаж
+2024-12-30 02:04:24,996 - INFO - Изображение игрока Joel Hofer успешно добавлено в коллаж
+2024-12-30 02:04:25,002 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 02:04:25,514 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:25,515 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 02:04:27,519 - INFO - Обработка команды недели: 2024-10-21_2024-10-27
+2024-12-30 02:04:27,885 - INFO - Изображение игрока Sean Couturier успешно добавлено в коллаж
+2024-12-30 02:04:28,242 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 02:04:28,575 - INFO - Изображение игрока Travis Konecny успешно добавлено в коллаж
+2024-12-30 02:04:28,859 - INFO - Изображение игрока Janis Moser успешно добавлено в коллаж
+2024-12-30 02:04:29,311 - INFO - Изображение игрока Alex Pietrangelo успешно добавлено в коллаж
+2024-12-30 02:04:29,643 - INFO - Изображение игрока Juuse Saros успешно добавлено в коллаж
+2024-12-30 02:04:29,648 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 02:04:29,736 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:29,736 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 02:04:31,740 - INFO - Обработка команды недели: 2024-10-28_2024-11-03
+2024-12-30 02:04:32,179 - INFO - Изображение игрока Tim Stutzle успешно добавлено в коллаж
+2024-12-30 02:04:32,487 - INFO - Изображение игрока Nikolaj Ehlers успешно добавлено в коллаж
+2024-12-30 02:04:33,141 - INFO - Изображение игрока Sam Reinhart успешно добавлено в коллаж
+2024-12-30 02:04:33,455 - INFO - Изображение игрока Brandon Montour успешно добавлено в коллаж
+2024-12-30 02:04:33,827 - INFO - Изображение игрока Colton Parayko успешно добавлено в коллаж
+2024-12-30 02:04:34,126 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-30 02:04:34,131 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 02:04:34,214 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:34,215 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 02:04:36,218 - INFO - Обработка команды недели: 2024-11-04_2024-11-10
+2024-12-30 02:04:36,608 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 02:04:36,899 - INFO - Изображение игрока Mason Marchment успешно добавлено в коллаж
+2024-12-30 02:04:37,216 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:04:37,552 - INFO - Изображение игрока Quinn Hughes успешно добавлено в коллаж
+2024-12-30 02:04:37,881 - INFO - Изображение игрока Miro Heiskanen успешно добавлено в коллаж
+2024-12-30 02:04:38,187 - INFO - Изображение игрока Jonathan Quick успешно добавлено в коллаж
+2024-12-30 02:04:38,192 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 02:04:38,283 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:38,284 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 02:04:40,286 - INFO - Обработка команды недели: 2024-11-11_2024-11-17
+2024-12-30 02:04:40,905 - INFO - Изображение игрока Aleksander Barkov успешно добавлено в коллаж
+2024-12-30 02:04:41,240 - INFO - Изображение игрока Kyle Connor успешно добавлено в коллаж
+2024-12-30 02:04:41,569 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:04:41,886 - INFO - Изображение игрока Travis Sanheim успешно добавлено в коллаж
+2024-12-30 02:04:42,180 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 02:04:42,610 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 02:04:42,615 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 02:04:42,930 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:42,931 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 02:04:44,934 - INFO - Обработка команды недели: 2024-11-18_2024-11-24
+2024-12-30 02:04:45,247 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 02:04:45,584 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 02:04:45,870 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:04:46,157 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 02:04:46,696 - INFO - Изображение игрока Jakob Chychrun успешно добавлено в коллаж
+2024-12-30 02:04:48,582 - INFO - Изображение игрока Connor Hellebuyck успешно добавлено в коллаж
+2024-12-30 02:04:48,588 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 02:04:49,262 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:49,262 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 02:04:51,265 - INFO - Обработка команды недели: 2024-11-25_2024-12-01
+2024-12-30 02:04:52,518 - INFO - Изображение игрока Brayden Point успешно добавлено в коллаж
+2024-12-30 02:04:52,866 - INFO - Изображение игрока Taylor Hall успешно добавлено в коллаж
+2024-12-30 02:04:53,363 - INFO - Изображение игрока Jesper Bratt успешно добавлено в коллаж
+2024-12-30 02:04:53,700 - INFO - Изображение игрока Jared Spurgeon успешно добавлено в коллаж
+2024-12-30 02:04:54,018 - INFO - Изображение игрока Kris Letang успешно добавлено в коллаж
+2024-12-30 02:04:54,990 - INFO - Изображение игрока Filip Gustavsson успешно добавлено в коллаж
+2024-12-30 02:04:54,994 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 02:04:56,512 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:04:56,513 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 02:04:58,516 - INFO - Обработка команды недели: 2024-12-02_2024-12-08
+2024-12-30 02:05:01,256 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 02:05:01,714 - INFO - Изображение игрока Andrei Svechnikov успешно добавлено в коллаж
+2024-12-30 02:05:02,030 - INFO - Изображение игрока Matthew Tkachuk успешно добавлено в коллаж
+2024-12-30 02:05:02,337 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 02:05:04,817 - INFO - Изображение игрока Adam Larsson успешно добавлено в коллаж
+2024-12-30 02:05:05,514 - INFO - Изображение игрока Adin Hill успешно добавлено в коллаж
+2024-12-30 02:05:05,519 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 02:05:06,062 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:05:06,063 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 02:05:08,066 - INFO - Обработка команды недели: 2024-12-09_2024-12-15
+2024-12-30 02:05:09,461 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 02:05:09,830 - INFO - Изображение игрока Kiefer Sherwood успешно добавлено в коллаж
+2024-12-30 02:05:10,131 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 02:05:11,386 - INFO - Изображение игрока Adam Fox успешно добавлено в коллаж
+2024-12-30 02:05:13,530 - INFO - Изображение игрока Jeff Petry успешно добавлено в коллаж
+2024-12-30 02:05:13,820 - INFO - Изображение игрока Linus Ullmark успешно добавлено в коллаж
+2024-12-30 02:05:13,826 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 02:05:14,760 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:05:14,761 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 02:05:16,764 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 02:05:17,049 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 02:05:17,334 - INFO - Изображение игрока Kyle Connor успешно добавлено в коллаж
+2024-12-30 02:05:17,690 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 02:05:17,985 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 02:05:18,326 - INFO - Изображение игрока Jake Sanderson успешно добавлено в коллаж
+2024-12-30 02:05:19,564 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 02:05:19,568 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 02:05:20,316 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:05:20,316 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 02:05:22,320 - INFO - Обработка команды недели: 2024-12-23_2024-12-29
+2024-12-30 02:05:24,375 - INFO - Изображение игрока Quinton Byfield успешно добавлено в коллаж
+2024-12-30 02:05:24,669 - INFO - Изображение игрока Artturi Lehkonen успешно добавлено в коллаж
+2024-12-30 02:05:24,951 - INFO - Изображение игрока Mitch Marner успешно добавлено в коллаж
+2024-12-30 02:05:25,233 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 02:05:25,782 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 02:05:26,111 - INFO - Изображение игрока Jeremy Swayman успешно добавлено в коллаж
+2024-12-30 02:05:26,116 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 02:05:28,207 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 02:05:28,208 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
