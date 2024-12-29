@@ -214,7 +214,6 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
         stats["name"] = name
 
         # Проверяем, не обрабатывали ли мы уже эту дату для этого игрока
-        date_position_key = f"{position}:{date_str}"
         if date_str in stats["daily_stats"]:
             logging.info(f"Статистика за {date_str} уже существует, пропускаем обновление")
             return stats.get("grade", "common")  # Возвращаем grade или "common" по умолчанию
@@ -242,12 +241,21 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
         stats["total_points"] = sum(day["points"] for day in stats["daily_stats"].values())
         logging.info(f"Общее количество очков: {stats['total_points']}")
 
-        # Проверяем уникальность даты перед добавлением
-        if team_of_the_day and date_position_key not in stats["team_of_the_day_dates"]:
-            stats["team_of_the_day_dates"].append(date_position_key)
-            stats["team_of_the_day_count"] = len(stats["team_of_the_day_dates"])
-            stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
-            logging.info(f"Обновление грейда для игрока {name}: {stats['grade']} ({stats['team_of_the_day_count']} раз)")
+        # Проверяем уникальность даты и соответствие позиции
+        if team_of_the_day:
+            # Проверяем, был ли игрок уже в команде дня на этой позиции в эту дату
+            date_position_exists = False
+            for date in stats["team_of_the_day_dates"]:
+                if date_str == date and stats["daily_stats"][date]["position"] == position:
+                    date_position_exists = True
+                    break
+            
+            if not date_position_exists:
+                stats["team_of_the_day_dates"].append(date_str)
+                stats["team_of_the_day_count"] = len(stats["team_of_the_day_dates"])
+                stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
+                logging.info(f"Обновление грейда для игрока {name}: {stats['grade']} ({stats['team_of_the_day_count']} раз)")
+                logging.info(f"Даты попадания в команду дня: {', '.join(stats['team_of_the_day_dates'])}")
 
         # Обновляем информацию о текущей неделе
         current_date = datetime.now(ESPN_TIMEZONE)
