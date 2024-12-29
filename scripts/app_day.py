@@ -76,31 +76,41 @@ bot = Bot(token=TELEGRAM_TOKEN)
 def get_current_week_dates():
     """Получение дат текущей недели по времени ESPN"""
     espn_now = datetime.now(ESPN_TIMEZONE)
+    day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
+    
+    # Корректируем дату, если время меньше 4 утра
+    if espn_now.hour < day_start_hour:
+        espn_now = espn_now - timedelta(days=1)
     
     # Находим вторник текущей недели
     days_since_tuesday = (espn_now.weekday() - 1) % 7
     tuesday = espn_now - timedelta(days=days_since_tuesday)
-    tuesday = tuesday.replace(hour=0, minute=0, second=0, microsecond=0)
+    tuesday = tuesday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
     # Находим следующий понедельник
     next_monday = tuesday + timedelta(days=6)
-    next_monday = next_monday.replace(hour=23, minute=59, second=59, microsecond=999999)
+    next_monday = next_monday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
     
     return tuesday, next_monday
 
 def get_previous_week_dates():
     """Получение дат предыдущей недели по времени ESPN"""
     espn_now = datetime.now(ESPN_TIMEZONE)
+    day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
+    
+    # Корректируем дату, если время меньше 4 утра
+    if espn_now.hour < day_start_hour:
+        espn_now = espn_now - timedelta(days=1)
     
     # Находим вторник текущей недели
     days_since_tuesday = (espn_now.weekday() - 1) % 7
     current_tuesday = espn_now - timedelta(days=days_since_tuesday)
-    current_tuesday = current_tuesday.replace(hour=0, minute=0, second=0, microsecond=0)
+    current_tuesday = current_tuesday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
     # Получаем вторник предыдущей недели
     previous_tuesday = current_tuesday - timedelta(days=7)
     previous_monday = previous_tuesday + timedelta(days=6)
-    previous_monday = previous_monday.replace(hour=23, minute=59, second=59, microsecond=999999)
+    previous_monday = previous_monday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
     
     return previous_tuesday, previous_monday
 
@@ -154,13 +164,29 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
             with open(PLAYER_STATS_FILE, 'r') as f:
                 player_stats = json.load(f)
         else:
-            player_stats = {"current_week": {}, "weeks": {}}
+            player_stats = {
+                "current_week": {},
+                "weeks": {},
+                "league_settings": {
+                    "name": "",
+                    "scoring": {},
+                    "roster": {}
+                }
+            }
 
         # Определяем к какой неделе относится дата
         date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ESPN_TIMEZONE)
+        day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
+        
+        # Корректируем дату, если время меньше 4 утра
+        if date.hour < day_start_hour:
+            date = date - timedelta(days=1)
+            
         days_since_tuesday = (date.weekday() - 1) % 7
         week_start = date - timedelta(days=days_since_tuesday)
+        week_start = week_start.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
         week_end = week_start + timedelta(days=6)
+        week_end = week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
         week_key = f"{week_start.strftime('%Y-%m-%d')}_{week_end.strftime('%Y-%m-%d')}"
         
         logging.info(f"Неделя: {week_key}")
@@ -225,9 +251,14 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
 
         # Обновляем информацию о текущей неделе
         current_date = datetime.now(ESPN_TIMEZONE)
+        if current_date.hour < day_start_hour:
+            current_date = current_date - timedelta(days=1)
+            
         current_days_since_tuesday = (current_date.weekday() - 1) % 7
         current_week_start = current_date - timedelta(days=current_days_since_tuesday)
+        current_week_start = current_week_start.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
         current_week_end = current_week_start + timedelta(days=6)
+        current_week_end = current_week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
         
         player_stats["current_week"] = {
             "start_date": current_week_start.strftime("%Y-%m-%d"),
@@ -355,6 +386,14 @@ def parse_player_data(data, scoring_period_id, target_date):
             valid_stats = False
             for stat in player.get('stats', []):
                 if stat.get('scoringPeriodId') == scoring_period_id:
+                    # Проверяем, что статистика относится к нужной дате
+                    stat_date = stat.get('date')
+                    if stat_date:
+                        stat_date = datetime.strptime(stat_date, "%Y-%m-%d").replace(tzinfo=ESPN_TIMEZONE)
+                        if stat_date.date() != target_date.date():
+                            logging.warning(f"Статистика игрока {name} относится к другой дате: {stat_date.strftime('%Y-%m-%d')}, ожидалась: {target_date.strftime('%Y-%m-%d')}")
+                            continue
+                    
                     applied_total = round(stat.get('appliedTotal', 0), 2)
                     if applied_total > 0:  # Учитываем только положительные очки
                         valid_stats = True
@@ -520,7 +559,13 @@ async def process_dates_range(start_date, end_date):
         try:
             logging.info(f"=== Начало обработки даты: {current_date.strftime('%Y-%m-%d')} ===")
             
-            scoring_period_id = (current_date.date() - SEASON_START_DATE.date()).days + SEASON_START_SCORING_PERIOD_ID
+            # Учитываем время начала дня при расчете scoring_period_id
+            day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
+            adjusted_date = current_date
+            if current_date.hour < day_start_hour:
+                adjusted_date = current_date - timedelta(days=1)
+            
+            scoring_period_id = (adjusted_date.date() - SEASON_START_DATE.date()).days + SEASON_START_SCORING_PERIOD_ID
             logging.info(f"Расчетный scoring_period_id: {scoring_period_id}")
 
             data = fetch_player_data(scoring_period_id, LEAGUE_ID)
@@ -529,7 +574,16 @@ async def process_dates_range(start_date, end_date):
                 current_date += timedelta(days=1)
                 continue
 
-            positions = parse_player_data(data, scoring_period_id, current_date)
+            # Проверяем, что данные относятся к нужной дате
+            game_date = data.get('gameDate')
+            if game_date:
+                game_date = datetime.strptime(game_date, "%Y-%m-%d").replace(tzinfo=ESPN_TIMEZONE)
+                if game_date.date() != adjusted_date.date():
+                    logging.warning(f"Данные относятся к другой дате: {game_date.strftime('%Y-%m-%d')}, ожидалась: {adjusted_date.strftime('%Y-%m-%d')}")
+                    current_date += timedelta(days=1)
+                    continue
+
+            positions = parse_player_data(data, scoring_period_id, adjusted_date)
             
             # Проверяем наличие игроков на каждой позиции
             empty_positions = [pos for pos, players in positions.items() if not players]
@@ -548,7 +602,7 @@ async def process_dates_range(start_date, end_date):
                 'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
             }
 
-            date_str = current_date.strftime("%Y-%m-%d")
+            date_str = adjusted_date.strftime("%Y-%m-%d")
             
             # Проверяем, есть ли хотя бы один игрок в команде
             has_players = any(players for players in team.values())
@@ -618,29 +672,37 @@ def get_all_weeks_dates():
 async def main():
     import sys
     
-    if len(sys.argv) > 1:
-        if sys.argv[1] == '--previous-week':
-            # Обработка предыдущей недели
-            previous_tuesday, previous_monday = get_previous_week_dates()
-            logging.info(f"Обработка данных за предыдущую неделю: {previous_tuesday.strftime('%Y-%m-%d')} - {previous_monday.strftime('%Y-%m-%d')}")
-            await process_dates_range(previous_tuesday, previous_monday)
-        elif sys.argv[1] == '--all-weeks':
-            # Обработка всех недель с начала сезона
-            weeks = get_all_weeks_dates()
-            total_weeks = len(weeks)
-            
-            logging.info(f"Начинаем обработку всех недель с начала сезона ({total_weeks} недель)")
-            for i, (week_start, week_end) in enumerate(weeks, 1):
-                logging.info(f"Обработка недели {i}/{total_weeks}: {week_start.strftime('%Y-%m-%d')} - {week_end.strftime('%Y-%m-%d')}")
-                await process_dates_range(week_start, week_end)
-                # Небольшая пауза между неделями чтобы не перегружать API
-                if i < total_weeks:
-                    await asyncio.sleep(2)
-    else:
-        # Обработка текущей недели
-        tuesday, next_monday = update_week_period()
-        logging.info(f"Обработка данных за текущую неделю: {tuesday.strftime('%Y-%m-%d')} - {next_monday.strftime('%Y-%m-%d')}")
-        await process_dates_range(tuesday, next_monday)
+    try:
+        if len(sys.argv) > 1:
+            if sys.argv[1] == '--previous-week':
+                # Обработка предыдущей недели
+                previous_tuesday, previous_monday = get_previous_week_dates()
+                logging.info(f"Обработка данных за предыдущую неделю: {previous_tuesday.strftime('%Y-%m-%d')} - {previous_monday.strftime('%Y-%m-%d')}")
+                await process_dates_range(previous_tuesday, previous_monday)
+            elif sys.argv[1] == '--all-weeks':
+                # Обработка всех недель с начала сезона
+                weeks = get_all_weeks_dates()
+                total_weeks = len(weeks)
+                
+                logging.info(f"Начинаем обработку всех недель с начала сезона ({total_weeks} недель)")
+                for i, (week_start, week_end) in enumerate(weeks, 1):
+                    logging.info(f"Обработка недели {i}/{total_weeks}: {week_start.strftime('%Y-%m-%d')} - {week_end.strftime('%Y-%m-%d')}")
+                    await process_dates_range(week_start, week_end)
+                    # Небольшая пауза между неделями чтобы не перегружать API
+                    if i < total_weeks:
+                        await asyncio.sleep(2)
+        else:
+            # Обработка текущей недели
+            tuesday, next_monday = update_week_period()
+            logging.info(f"Обработка данных за текущую неделю: {tuesday.strftime('%Y-%m-%d')} - {next_monday.strftime('%Y-%m-%d')}")
+            await process_dates_range(tuesday, next_monday)
+    except KeyboardInterrupt:
+        logging.info("Скрипт был прерван пользователем")
+        sys.exit(0)
+    except Exception as e:
+        logging.error(f"Произошла ошибка: {str(e)}")
+        traceback.print_exc()
+        sys.exit(1)
 
 if __name__ == "__main__":
     asyncio.run(main())
