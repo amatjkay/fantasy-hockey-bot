@@ -191,7 +191,7 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
         date_position_key = f"{position}:{date_str}"
         if date_str in stats["daily_stats"]:
             logging.info(f"Статистика за {date_str} уже существует, пропускаем обновление")
-            return stats["grade"]
+            return stats.get("grade", "common")  # Возвращаем grade или "common" по умолчанию
         
         # Добавляем позицию, если её еще нет
         if position not in stats["positions"]:
@@ -239,9 +239,9 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
             json.dump(player_stats, f, indent=4)
         logging.info(f"Данные успешно сохранены в {PLAYER_STATS_FILE}")
         
-        return stats["grade"]
+        return stats.get("grade", "common")  # Возвращаем grade или "common" по умолчанию
     except Exception as e:
-        logging.error(f"Ошибка при обновлении статистики ��грока {name}: {str(e)}")
+        logging.error(f"Ошибка при обновлении статистики игрока {name}: {str(e)}")
         traceback.print_exc()
         return "common"
 
@@ -356,7 +356,7 @@ def parse_player_data(data, scoring_period_id, target_date):
             for stat in player.get('stats', []):
                 if stat.get('scoringPeriodId') == scoring_period_id:
                     applied_total = round(stat.get('appliedTotal', 0), 2)
-                    if applied_total > 0:  # Учитываем только положител��ные очки
+                    if applied_total > 0:  # Учитываем только положительные очки
                         valid_stats = True
                     break
 
@@ -419,7 +419,7 @@ def create_collage(team, date_str):
         if font is None:
             # Если не нашли ни один шрифт, используем дефолтный
             font = ImageFont.load_default()
-            logging.warning("Используется дефолтный шрифт, так как не найдены системные шр��фты")
+            logging.warning("Используется дефолтный шрифт, так как не найдены системные шрифты")
     except Exception as e:
         logging.error(f"Ошибка при загрузке шрифта: {str(e)}")
         font = ImageFont.load_default()
@@ -574,7 +574,7 @@ async def process_dates_range(start_date, end_date):
                     player['grade'] = grade
 
             # Отправляем коллаж
-            logging.info(f"Отправка коллажа для даты {date_str} (попытк�� 1/3)")
+            logging.info(f"Отправка коллажа для даты {date_str} (попытка 1/3)")
             await send_collage(team, date_str)
             logging.info(f"=== Завершена обработка даты: {date_str} ===\n")
 
