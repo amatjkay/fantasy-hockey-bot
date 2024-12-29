@@ -931,3 +931,60 @@
 2024-12-25 16:28:36 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 25, 13, 28, 35, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1029, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3MAAzYE', file_size=979, file_unique_id='AQAD3O4xG9rKYEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA20AAzYE', file_size=9933, file_unique_id='AQAD3O4xG9rKYEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3gAAzYE', file_size=37300, file_unique_id='AQAD3O4xG9rKYEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3kAAzYE', file_size=39710, file_unique_id='AQAD3O4xG9rKYEt-', height=1000, width=500)), supergroup_chat_created=False)
 2024-12-25 16:28:36 - DEBUG - Exiting: send_photo
 2024-12-25 16:28:36 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-29 19:18:53 - DEBUG - Using selector: EpollSelector
+2024-12-29 19:18:53 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 19:18:53 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 19:18:53 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 19:18:53 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 19:18:53 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 19:18:53 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-29 19:18:53 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 19:18:54 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562632.png&w=130&h=100 HTTP/1.1" 200 17880
+2024-12-29 19:18:54 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 19:18:54 - DEBUG - STREAM b'IDAT' 41 17823
+2024-12-29 19:18:54 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-29 19:18:54 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 19:18:54 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587910.png&w=130&h=100 HTTP/1.1" 200 17643
+2024-12-29 19:18:54 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 19:18:54 - DEBUG - STREAM b'IDAT' 41 17586
+2024-12-29 19:18:54 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-29 19:18:54 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 19:18:55 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2591155.png&w=130&h=100 HTTP/1.1" 200 14219
+2024-12-29 19:18:55 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 19:18:55 - DEBUG - STREAM b'IDAT' 41 14162
+2024-12-29 19:18:55 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-29 19:18:55 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 19:18:57 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233563.png&w=130&h=100 HTTP/1.1" 200 19472
+2024-12-29 19:18:57 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 19:18:57 - DEBUG - STREAM b'IDAT' 41 19415
+2024-12-29 19:18:57 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-29 19:18:57 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 19:18:57 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4294163.png&w=130&h=100 HTTP/1.1" 200 16394
+2024-12-29 19:18:57 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 19:18:57 - DEBUG - STREAM b'IDAT' 41 16337
+2024-12-29 19:18:57 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-29 19:18:57 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 19:18:58 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3115546.png&w=130&h=100 HTTP/1.1" 200 15547
+2024-12-29 19:18:58 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 19:18:58 - DEBUG - STREAM b'IDAT' 41 15490
+2024-12-29 19:18:58 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-29 19:18:58 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-29 19:18:58 - DEBUG - Entering: send_photo
+2024-12-29 19:18:58 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-29 19:18:58 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x725e5a30ff20>
+2024-12-29 19:18:58 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x725e5a42f2d0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-29 19:18:58 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x725e5a64b620>
+2024-12-29 19:18:58 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-29 19:18:58 - DEBUG - send_request_headers.complete
+2024-12-29 19:18:58 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-29 19:18:58 - DEBUG - send_request_body.complete
+2024-12-29 19:18:58 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-29 19:18:59 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sun, 29 Dec 2024 16:19:01 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'990'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-29 19:18:59 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-29 19:18:59 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-29 19:18:59 - DEBUG - receive_response_body.complete
+2024-12-29 19:18:59 - DEBUG - response_closed.started
+2024-12-29 19:18:59 - DEBUG - response_closed.complete
+2024-12-29 19:18:59 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 29, 16, 19, 1, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1113, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3MAAzYE', file_size=979, file_unique_id='AQAD3O4xG9rKYEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA20AAzYE', file_size=9933, file_unique_id='AQAD3O4xG9rKYEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3gAAzYE', file_size=37300, file_unique_id='AQAD3O4xG9rKYEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3kAAzYE', file_size=39710, file_unique_id='AQAD3O4xG9rKYEt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-29 19:18:59 - DEBUG - Exiting: send_photo
+2024-12-29 19:18:59 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
