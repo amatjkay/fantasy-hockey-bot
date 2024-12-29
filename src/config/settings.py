@@ -20,14 +20,6 @@ LOG_DIR = BASE_DIR / "logs"
 for dir_path in [TEMP_DIR, CACHE_DIR, RAW_DATA_DIR, PROCESSED_DATA_DIR, LOG_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
-# Настройки ESPN API
-ESPN_API = {
-    'swid': os.getenv('ESPN_SWID'),
-    's2': os.getenv('ESPN_S2'),
-    'season_id': os.getenv('SEASON_ID', '2025'),
-    'league_id': os.getenv('LEAGUE_ID')
-}
-
 # Настройки временной зоны
 ESPN_TIMEZONE = pytz.timezone(os.getenv('TIMEZONE', 'US/Eastern'))
 DAY_START_HOUR = int(os.getenv('DAY_START_HOUR', '4'))
@@ -35,6 +27,24 @@ DAY_START_HOUR = int(os.getenv('DAY_START_HOUR', '4'))
 # Настройки сезона
 SEASON_START_DATE = datetime.strptime(os.getenv('SEASON_START', '2024-10-04'), '%Y-%m-%d').replace(tzinfo=ESPN_TIMEZONE)
 SEASON_START_SCORING_PERIOD = int(os.getenv('SEASON_START_SCORING_PERIOD', '1'))
+
+# Настройки ESPN API
+ESPN_API = {
+    'swid': os.getenv('ESPN_SWID'),
+    's2': os.getenv('ESPN_S2'),
+    'season_id': os.getenv('SEASON_ID', '2025'),
+    'league_id': os.getenv('LEAGUE_ID'),
+    'HEADERS': {
+        'User-Agent': 'Mozilla/5.0',
+        'Accept': 'application/json'
+    },
+    'TIMEOUT': 30,
+    'SEASON_START_DATE': SEASON_START_DATE,
+    'SEASON_START_SCORING_PERIOD_ID': SEASON_START_SCORING_PERIOD
+}
+
+# URL шаблон для ESPN API
+API_URL_TEMPLATE = "https://fantasy.espn.com/apis/v3/games/fhl/seasons/{season_id}/segments/0/leagues/{league_id}?view=mRoster&scoringPeriodId={scoring_period_id}"
 
 # Пути к файлам данных
 PLAYER_STATS_FILE = PROCESSED_DATA_DIR / "player_stats.json"

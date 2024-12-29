@@ -14,6 +14,12 @@ import pytz
 import time
 import sys
 import traceback
+from pathlib import Path
+import argparse
+
+# Добавляем корневую директорию проекта в PYTHONPATH
+project_root = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_root))
 
 # Конфигурация
 LOG_FILE = "logs/app/log.txt"
@@ -51,14 +57,16 @@ session = requests.Session()
 session.mount("https://", adapter)
 session.mount("http://", adapter)
 
-TIMEOUT = 10  # таймаут в секундах
+TIMEOUT = 30  # таймаут в секундах
 
 # Логирование
 logging.basicConfig(
-    filename=LOG_FILE,
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    encoding='utf-8'
+    handlers=[
+        logging.FileHandler(LOG_FILE, encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)  # Добавляем вывод в консоль
+    ]
 )
 
 # Загрузка переменных окружения
@@ -71,7 +79,9 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
     logging.error("TELEGRAM_TOKEN или CHAT_ID не установлены в файле .env.")
     exit(1)
 
+logging.info("Инициализация бота...")
 bot = Bot(token=TELEGRAM_TOKEN)
+logging.info("Бот успешно инициализирован")
 
 def get_current_week_dates():
     """Получение дат текущей недели по времени ESPN"""
@@ -421,6 +431,10 @@ def parse_player_data(data, scoring_period_id, target_date):
 
 def create_collage(team, date_str):
     """Создание коллажа с учетом грейдов игроков"""
+    # Создаем директорию для кэша если её нет
+    cache_dir = "data/cache/player_images"
+    os.makedirs(cache_dir, exist_ok=True)
+    
     player_img_width, player_img_height = 130, 100
     padding = 20
     text_padding = 10
@@ -435,7 +449,6 @@ def create_collage(team, date_str):
 
     # Поиск доступного шрифта в системе
     try:
-        # Пробуем разные пути к шрифтам в Linux
         font_paths = [
             "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
             "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
@@ -451,7 +464,6 @@ def create_collage(team, date_str):
                 break
         
         if font is None:
-            # Если не нашли ни один шрифт, используем дефолтный
             font = ImageFont.load_default()
             logging.warning("Используется дефолтный шрифт, так как не найдены системные шрифты")
     except Exception as e:
@@ -465,7 +477,6 @@ def create_collage(team, date_str):
     try:
         title_width = draw.textlength(title, font=font)
     except AttributeError:
-        # Для старых версий Pillow
         title_width = font.getlength(title)
     draw.text(((width - title_width) // 2, y_offset), title, fill="black", font=font)
     y_offset += 40
@@ -478,39 +489,55 @@ def create_collage(team, date_str):
             grade = player['grade']
             color = GRADE_COLORS.get(grade, "black")
 
-            # Добавляем повторные попытки загрузки изображения
-            max_retries = 3
-            retry_count = 0
-            player_image = None
-
-            while retry_count < max_retries:
+            # Проверяем кэш
+            player_id = player['id']
+            cache_file = os.path.join(cache_dir, f"{player_id}.jpg")
+            
+            if os.path.exists(cache_file):
                 try:
-                    response = requests.get(image_url, stream=True, timeout=10)
-                    response.raise_for_status()
-                    player_image = Image.open(response.raw).convert("RGBA")
-                    bg = Image.new("RGBA", player_image.size, (255, 255, 255, 255))
-                    combined_image = Image.alpha_composite(bg, player_image)
-                    player_image = combined_image.convert("RGB").resize((player_img_width, player_img_height), Image.LANCZOS)
-                    image_x = (width - player_img_width) // 2
-                    image.paste(player_image, (image_x, y_offset))
-                    logging.info(f"Изображение для {name} успешно загружено (попытка {retry_count + 1})")
-                    break
+                    player_image = Image.open(cache_file).convert("RGB")
+                    logging.info(f"Изображение для {name} загружено из кэша")
                 except Exception as e:
-                    retry_count += 1
-                    if retry_count < max_retries:
-                        logging.warning(f"Ошибка загрузки изображения для {name} (попытка {retry_count}/{max_retries}): {e}")
-                        time.sleep(1)  # Пауза перед следующей попыткой
-                    else:
-                        logging.error(f"Не удалось загрузить изображение для {name} после {max_retries} попыток: {e}")
-                        empty_img = Image.new("RGB", (player_img_width, player_img_height), "gray")
-                        image_x = (width - player_img_width) // 2
-                        image.paste(empty_img, (image_x, y_offset))
+                    logging.warning(f"Ошибка загрузки из кэша для {name}: {e}")
+                    os.remove(cache_file)  # Удаляем поврежденный файл
+                    player_image = None
+            else:
+                player_image = None
+
+            if player_image is None:
+                max_retries = 3
+                retry_count = 0
+                while retry_count < max_retries:
+                    try:
+                        response = requests.get(image_url, stream=True, timeout=30)
+                        response.raise_for_status()
+                        player_image = Image.open(response.raw).convert("RGBA")
+                        bg = Image.new("RGBA", player_image.size, (255, 255, 255, 255))
+                        combined_image = Image.alpha_composite(bg, player_image)
+                        player_image = combined_image.convert("RGB")
+                        
+                        # Сохраняем в кэш
+                        player_image.save(cache_file)
+                        logging.info(f"Изображение для {name} успешно загружено и сохранено в кэш (попытка {retry_count + 1})")
+                        break
+                    except Exception as e:
+                        retry_count += 1
+                        if retry_count < max_retries:
+                            logging.warning(f"Ошибка загрузки изображения для {name} (попытка {retry_count}/{max_retries}): {e}")
+                            time.sleep(2 ** retry_count)  # Экспоненциальная задержка
+                        else:
+                            logging.error(f"Не удалось загрузить изображение для {name} после {max_retries} попыток: {e}")
+                            player_image = Image.new("RGB", (player_img_width, player_img_height), "gray")
+
+            # Изменяем размер изображения
+            player_image = player_image.resize((player_img_width, player_img_height), Image.LANCZOS)
+            image_x = (width - player_img_width) // 2
+            image.paste(player_image, (image_x, y_offset))
 
             text = f"{position}: {name} ({points:.2f} ftps)"
             try:
                 text_width = draw.textlength(text, font=font)
             except AttributeError:
-                # Для старых версий Pillow
                 text_width = font.getlength(text)
             text_x = (width - text_width) // 2
             draw.text((text_x, y_offset + player_img_height + text_padding), text, fill=color, font=font)
@@ -585,13 +612,39 @@ async def send_text_message(team, date_str):
     except Exception as e:
         logging.error(f"Не удалось отправить даже текстовое сообщение: {str(e)}")
 
-async def process_dates_range(start_date, end_date):
+async def process_dates_range(start_date, end_date, force=False):
     """Обработка данных за указанный диапазон дат"""
     current_date = start_date
+    total_days = (end_date - start_date).days + 1
+    processed_days = 0
+    
+    logging.info(f"Начинаем обработку периода с {start_date.strftime('%Y-%m-%d')} по {end_date.strftime('%Y-%m-%d')}")
+    logging.info(f"Всего дней для обработки: {total_days}")
+    
     while current_date <= min(datetime.now(ESPN_TIMEZONE), end_date):
         try:
-            logging.info(f"=== Начало обработки даты: {current_date.strftime('%Y-%m-%d')} ===")
+            processed_days += 1
+            date_str = current_date.strftime('%Y-%m-%d')
+            logging.info(f"=== Обработка дня {processed_days}/{total_days}: {date_str} ===")
             
+            # Проверяем, был ли уже отправлен коллаж за эту дату
+            if not force and os.path.exists(PLAYER_STATS_FILE):
+                with open(PLAYER_STATS_FILE, 'r') as f:
+                    data = json.load(f)
+                    skip_date = False
+                    for week_data in data.get("weeks", {}).values():
+                        for player_data in week_data.get("players", {}).values():
+                            if date_str in player_data.get("daily_stats", {}) and \
+                               player_data["daily_stats"][date_str].get("collage_sent", False):
+                                logging.info(f"Пропуск даты {date_str} - коллаж уже был отправлен (используйте --force для повторной отправки)")
+                                skip_date = True
+                                break
+                        if skip_date:
+                            break
+                    if skip_date:
+                        current_date += timedelta(days=1)
+                        continue
+
             # Учитываем время начала дня при расчете scoring_period_id
             day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
             adjusted_date = current_date
@@ -599,11 +652,11 @@ async def process_dates_range(start_date, end_date):
                 adjusted_date = current_date - timedelta(days=1)
             
             scoring_period_id = (adjusted_date.date() - SEASON_START_DATE.date()).days + SEASON_START_SCORING_PERIOD_ID
-            logging.info(f"Расчетный scoring_period_id: {scoring_period_id}")
+            logging.info(f"Запрашиваем данные для scoring_period_id: {scoring_period_id}")
 
             data = fetch_player_data(scoring_period_id, LEAGUE_ID)
             if not data:
-                logging.error(f"Пропуск даты {current_date.strftime('%Y-%m-%d')} из-за ошибки получения данных")
+                logging.error(f"Пропуск даты {date_str} - не удалось получить данные")
                 current_date += timedelta(days=1)
                 continue
 
@@ -616,14 +669,15 @@ async def process_dates_range(start_date, end_date):
                     current_date += timedelta(days=1)
                     continue
 
+            logging.info(f"Обрабатываем статистику игроков за {date_str}")
             positions = parse_player_data(data, scoring_period_id, adjusted_date)
             
             # Проверяем наличие игроков на каждой позиции
             empty_positions = [pos for pos, players in positions.items() if not players]
             if empty_positions:
-                logging.warning(f"Нет игроков на позициях: {empty_positions}")
+                logging.warning(f"Нет игроков на позициях: {', '.join(empty_positions)}")
                 if len(empty_positions) == len(positions):
-                    logging.info(f"Пропуск даты {current_date.strftime('%Y-%m-%d')} - нет игр")
+                    logging.info(f"Пропуск даты {date_str} - нет игр")
                     current_date += timedelta(days=1)
                     continue
             
@@ -635,8 +689,6 @@ async def process_dates_range(start_date, end_date):
                 'G': sorted(positions['G'], key=lambda x: x['appliedTotal'], reverse=True)[:1]
             }
 
-            date_str = adjusted_date.strftime("%Y-%m-%d")
-            
             # Проверяем, есть ли хотя бы один игрок в команде
             has_players = any(players for players in team.values())
             if not has_players:
@@ -661,42 +713,54 @@ async def process_dates_range(start_date, end_date):
                     player['grade'] = grade
 
             # Отправляем коллаж
-            logging.info(f"Отправка коллажа для даты {date_str} (попытка 1/3)")
-            await send_collage(team, date_str)
+            logging.info(f"Отправка коллажа для даты {date_str}")
+            try:
+                await send_collage(team, date_str)
+            except Exception as e:
+                logging.error(f"Ошибка при отправке коллажа: {str(e)}")
+                logging.info("Пробуем отправить текстовое сообщение...")
+                await send_text_message(team, date_str)
+
             logging.info(f"=== Завершена обработка даты: {date_str} ===\n")
 
             # Пауза между датами
             await asyncio.sleep(2)
 
             current_date += timedelta(days=1)
-            current_date = current_date.replace(hour=0, minute=0, second=0, microsecond=0)
+            
         except Exception as e:
             logging.error(f"Критическая ошибка при обработке даты {current_date.strftime('%Y-%m-%d')}: {str(e)}")
-            traceback.print_exc()
+            logging.error(traceback.format_exc())
             current_date += timedelta(days=1)
             continue
+    
+    logging.info(f"Завершена обработка периода. Обработано дней: {processed_days}")
 
 def get_all_weeks_dates():
     """Получение списка всех недель с начала сезона"""
     weeks = []
     current_date = SEASON_START_DATE
+    day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
     
     # Находим первый понедельник после начала сезона
-    days_until_monday = (1 - current_date.weekday()) % 7  # 1 = понедельник
+    days_until_monday = (0 - current_date.weekday()) % 7  # 0 = понедельник
     first_monday = current_date + timedelta(days=days_until_monday)
-    first_monday = first_monday.replace(hour=0, minute=0, second=0, microsecond=0)
+    first_monday = first_monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
     # Получаем текущий понедельник
     now = datetime.now(ESPN_TIMEZONE)
-    days_since_monday = (now.weekday() - 1) % 7
+    if now.hour < day_start_hour:
+        now = now - timedelta(days=1)
+    
+    days_since_monday = now.weekday()
     current_monday = now - timedelta(days=days_since_monday)
-    current_monday = current_monday.replace(hour=0, minute=0, second=0, microsecond=0)
+    current_monday = current_monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
     # Генерируем все недели
     week_start = first_monday
     while week_start <= current_monday:
         week_end = week_start + timedelta(days=6)
-        week_end = week_end.replace(hour=23, minute=59, second=59, microsecond=999999)
+        week_end = week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
         weeks.append((week_start, week_end))
         week_start = week_start + timedelta(days=7)
     
@@ -706,29 +770,36 @@ async def main():
     import sys
     
     try:
-        if len(sys.argv) > 1:
-            if sys.argv[1] == '--previous-week':
-                # Обработка предыдущей недели
-                previous_monday, previous_sunday = get_previous_week_dates()
-                logging.info(f"Обработка данных за предыдущую неделю: {previous_monday.strftime('%Y-%m-%d')} - {previous_sunday.strftime('%Y-%m-%d')}")
-                await process_dates_range(previous_monday, previous_sunday)
-            elif sys.argv[1] == '--all-weeks':
-                # Обработка всех недель с начала сезона
-                weeks = get_all_weeks_dates()
-                total_weeks = len(weeks)
-                
-                logging.info(f"Начинаем обработку всех недель с начала сезона ({total_weeks} недель)")
-                for i, (week_start, week_end) in enumerate(weeks, 1):
-                    logging.info(f"Обработка недели {i}/{total_weeks}: {week_start.strftime('%Y-%m-%d')} - {week_end.strftime('%Y-%m-%d')}")
-                    await process_dates_range(week_start, week_end)
-                    # Небольшая пауза между неделями чтобы не перегружать API
-                    if i < total_weeks:
-                        await asyncio.sleep(2)
+        # Создаем парсер аргументов
+        parser = argparse.ArgumentParser(description='Скрипт для создания команды дня')
+        parser.add_argument('--all-weeks', action='store_true', help='Обработать все недели с начала сезона')
+        parser.add_argument('--force', action='store_true', help='Принудительная обработка всех дней, даже если они уже были обработаны')
+        args = parser.parse_args()
+
+        # Если используется --force, очищаем файл статистики
+        if args.force and os.path.exists(PLAYER_STATS_FILE):
+            logging.info("Очищаем существующую статистику из-за флага --force")
+            with open(PLAYER_STATS_FILE, 'w') as f:
+                json.dump({"current_week": {}, "weeks": {}}, f, indent=4)
+
+        if args.all_weeks:
+            # Обработка всех недель с начала сезона
+            weeks = get_all_weeks_dates()
+            total_weeks = len(weeks)
+            
+            logging.info(f"Начинаем обработку всех недель с начала сезона ({total_weeks} недель)")
+            for i, (week_start, week_end) in enumerate(weeks, 1):
+                logging.info(f"Обработка недели {i}/{total_weeks}: {week_start.strftime('%Y-%m-%d')} - {week_end.strftime('%Y-%m-%d')}")
+                await process_dates_range(week_start, week_end, force=args.force)
+                # Небольшая пауза между неделями чтобы не перегружать API
+                if i < total_weeks:
+                    await asyncio.sleep(2)
         else:
             # Обработка текущей недели
             monday, sunday = update_week_period()
             logging.info(f"Обработка данных за текущую неделю: {monday.strftime('%Y-%m-%d')} - {sunday.strftime('%Y-%m-%d')}")
-            await process_dates_range(monday, sunday)
+            await process_dates_range(monday, sunday, force=args.force)
+
     except KeyboardInterrupt:
         logging.info("Скрипт был прерван пользователем")
         sys.exit(0)

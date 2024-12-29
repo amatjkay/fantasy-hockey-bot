@@ -8,15 +8,18 @@ def get_previous_week_dates():
         tuple: (начало_недели, конец_недели) в формате datetime с timezone
     """
     espn_now = datetime.now(ESPN_TIMEZONE)
-    days_since_tuesday = (espn_now.weekday() - 1) % 7
-    current_tuesday = espn_now - timedelta(days=days_since_tuesday)
-    current_tuesday = current_tuesday.replace(hour=0, minute=0, second=0, microsecond=0)
     
-    previous_tuesday = current_tuesday - timedelta(days=7)
-    previous_monday = previous_tuesday + timedelta(days=6)
-    previous_monday = previous_monday.replace(hour=23, minute=59, second=59, microsecond=999999)
+    # Находим понедельник текущей недели
+    days_since_monday = espn_now.weekday()
+    current_monday = espn_now - timedelta(days=days_since_monday)
+    current_monday = current_monday.replace(hour=0, minute=0, second=0, microsecond=0)
     
-    return previous_tuesday, previous_monday
+    # Получаем даты предыдущей недели
+    previous_monday = current_monday - timedelta(days=7)
+    previous_sunday = previous_monday + timedelta(days=6)
+    previous_sunday = previous_sunday.replace(hour=23, minute=59, second=59, microsecond=999999)
+    
+    return previous_monday, previous_sunday
 
 def get_week_key(start_date, end_date):
     """Создание ключа недели из дат
