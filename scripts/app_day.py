@@ -795,10 +795,18 @@ async def main():
                 if i < total_weeks:
                     await asyncio.sleep(2)
         else:
-            # Обработка текущей недели
-            monday, sunday = update_week_period()
-            logging.info(f"Обработка данных за текущую неделю: {monday.strftime('%Y-%m-%d')} - {sunday.strftime('%Y-%m-%d')}")
-            await process_dates_range(monday, sunday, force=args.force)
+            # Обработка только последнего дня
+            espn_now = datetime.now(ESPN_TIMEZONE)
+            day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
+            
+            # Корректируем дату, если время меньше 4 утра
+            if espn_now.hour < day_start_hour:
+                espn_now = espn_now - timedelta(days=1)
+            
+            # Устанавливаем время начала дня
+            last_day = espn_now.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
+            logging.info(f"Обработка данных за последний день: {last_day.strftime('%Y-%m-%d')}")
+            await process_dates_range(last_day, last_day, force=args.force)
 
     except KeyboardInterrupt:
         logging.info("Скрипт был прерван пользователем")

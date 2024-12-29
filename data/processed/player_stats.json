@@ -9071,6 +9071,144 @@
                     "position_appearances": {
                         "G": 1
                     }
+                },
+                "3114727": {
+                    "name": "Leon Draisaitl",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-29"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-29": {
+                            "points": 12.5,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 12.5,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "4063433": {
+                    "name": "Alex DeBrincat",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-29"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-29": {
+                            "points": 13.15,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 13.15,
+                    "position_appearances": {
+                        "LW": 1
+                    }
+                },
+                "3735": {
+                    "name": "Patrick Kane",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-29"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-29": {
+                            "points": 11.1,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 11.1,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "4352722": {
+                    "name": "Evan Bouchard",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-29"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-29": {
+                            "points": 12.05,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 12.05,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3069341": {
+                    "name": "Colton Parayko",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-29"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-29": {
+                            "points": 10.85,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 10.85,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "4233889": {
+                    "name": "Ukko-Pekka Luukkonen",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-29"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-29": {
+                            "points": 12.65,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 12.65,
+                    "position_appearances": {
+                        "G": 1
+                    }
                 }
             }
         }

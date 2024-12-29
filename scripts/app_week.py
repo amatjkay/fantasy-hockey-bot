@@ -190,32 +190,41 @@ async def process_week(week_start, week_end, image_service, telegram_service):
 async def main():
     """Основная функция скрипта"""
     try:
-        # Парсим аргументы командной строки
-        parser = argparse.ArgumentParser(description='Скрипт для создания команд недели')
+        # Создаем парсер аргументов
+        parser = argparse.ArgumentParser(description='Скрипт для создания команды недели')
         parser.add_argument('--all-weeks', action='store_true', help='Обработать все недели с начала сезона')
         args = parser.parse_args()
-        
-        # Проверяем переменные окружения
-        env_vars = load_env_vars()
-        
-        # Инициализация сервисов
+
+        # Загружаем переменные окружения
+        load_env_vars()
+
+        # Инициализируем сервисы
         image_service = ImageService()
         telegram_service = TelegramService()
-        
+
         if args.all_weeks:
-            # Получаем все недели
+            # Обработка всех недель с начала сезона
             weeks = get_all_weeks()
-            logging.info(f"Начинаем обработку всех недель ({len(weeks)} недель)")
+            total_weeks = len(weeks)
+            logging.info(f"Начинаем обработку всех недель ({total_weeks} недель)")
             
-            for week_start, week_end in weeks:
+            for i, (week_start, week_end) in enumerate(weeks, 1):
+                week_key = get_week_key(week_start, week_end)
+                logging.info(f"Обработка недели {i}/{total_weeks}: {week_key}")
                 await process_week(week_start, week_end, image_service, telegram_service)
+                
+                # Пауза между неделями
+                if i < total_weeks:
+                    await asyncio.sleep(2)
         else:
-            # Обрабатываем только предыдущую неделю
-            previous_monday, previous_sunday = get_previous_week_dates()
-            await process_week(previous_monday, previous_sunday, image_service, telegram_service)
-            
+            # Обработка только последней недели
+            start_date, end_date = get_previous_week_dates()
+            week_key = get_week_key(start_date, end_date)
+            logging.info(f"Обработка последней недели: {week_key}")
+            await process_week(start_date, end_date, image_service, telegram_service)
+
     except Exception as e:
-        logging.error(f"Ошибка при выполнении скрипта: {str(e)}")
+        logging.error(f"Произошла ошибка: {str(e)}")
         raise
 
 if __name__ == "__main__":
