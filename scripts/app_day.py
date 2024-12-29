@@ -82,16 +82,16 @@ def get_current_week_dates():
     if espn_now.hour < day_start_hour:
         espn_now = espn_now - timedelta(days=1)
     
-    # Находим вторник текущей недели
-    days_since_tuesday = (espn_now.weekday() - 1) % 7
-    tuesday = espn_now - timedelta(days=days_since_tuesday)
-    tuesday = tuesday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
+    # Находим понедельник текущей недели
+    days_since_monday = espn_now.weekday()
+    monday = espn_now - timedelta(days=days_since_monday)
+    monday = monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
-    # Находим следующий понедельник
-    next_monday = tuesday + timedelta(days=6)
-    next_monday = next_monday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
+    # Находим следующее воскресенье
+    sunday = monday + timedelta(days=6)
+    sunday = sunday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
     
-    return tuesday, next_monday
+    return monday, sunday
 
 def get_previous_week_dates():
     """Получение дат предыдущей недели по времени ESPN"""
@@ -102,17 +102,17 @@ def get_previous_week_dates():
     if espn_now.hour < day_start_hour:
         espn_now = espn_now - timedelta(days=1)
     
-    # Находим вторник текущей недели
-    days_since_tuesday = (espn_now.weekday() - 1) % 7
-    current_tuesday = espn_now - timedelta(days=days_since_tuesday)
-    current_tuesday = current_tuesday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
+    # Находим понедельник текущей недели
+    days_since_monday = espn_now.weekday()
+    current_monday = espn_now - timedelta(days=days_since_monday)
+    current_monday = current_monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
-    # Получаем вторник предыдущей недели
-    previous_tuesday = current_tuesday - timedelta(days=7)
-    previous_monday = previous_tuesday + timedelta(days=6)
-    previous_monday = previous_monday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
+    # Получаем понедельник предыдущей недели
+    previous_monday = current_monday - timedelta(days=7)
+    previous_sunday = previous_monday + timedelta(days=6)
+    previous_sunday = previous_sunday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
     
-    return previous_tuesday, previous_monday
+    return previous_monday, previous_sunday
 
 def update_week_period():
     """Обновление периода недели и проверка на новую неделю"""
@@ -182,8 +182,9 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
         if date.hour < day_start_hour:
             date = date - timedelta(days=1)
             
-        days_since_tuesday = (date.weekday() - 1) % 7
-        week_start = date - timedelta(days=days_since_tuesday)
+        # Находим понедельник текущей недели
+        days_since_monday = date.weekday()
+        week_start = date - timedelta(days=days_since_monday)
         week_start = week_start.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
         week_end = week_start + timedelta(days=6)
         week_end = week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
@@ -197,8 +198,8 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
 
         week_stats = player_stats["weeks"][week_key]["players"]
         
+        # Создаем или получаем запись игрока для текущей недели
         if str(player_id) not in week_stats:
-            logging.info(f"Создание новой записи для игрока {name}")
             week_stats[str(player_id)] = {
                 "name": name,
                 "team_of_the_day_count": 0,
@@ -213,45 +214,31 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
         stats = week_stats[str(player_id)]
         stats["name"] = name
 
-        # Проверяем, не обрабатывали ли мы уже эту дату для этого игрока
-        if date_str in stats["daily_stats"]:
-            logging.info(f"Статистика за {date_str} уже существует, пропускаем обновление")
-            return stats.get("grade", "common")  # Возвращаем grade или "common" по умолчанию
-        
-        # Добавляем позицию, если её еще нет
+        # Обновляем позиции
         if position not in stats["positions"]:
-            logging.info(f"Добавление новой позиции {position} для игрока {name}")
             stats["positions"].append(position)
-        
+
         # Обновляем счетчик появлений для позиции
         if position not in stats["position_appearances"]:
             stats["position_appearances"][position] = 0
         stats["position_appearances"][position] += 1
-        logging.info(f"Появлений на позиции {position}: {stats['position_appearances'][position]}")
 
-        # Сохраняем статистику за день
+        # Обновляем статистику за день
         stats["daily_stats"][date_str] = {
             "points": applied_total,
             "position": position,
-            "team_of_the_day": team_of_the_day
+            "team_of_the_day": team_of_the_day,
+            "collage_sent": False
         }
-        logging.info(f"Сохранена статистика за {date_str}: {applied_total} очков")
 
         # Обновляем общее количество очков
         stats["total_points"] = sum(day["points"] for day in stats["daily_stats"].values())
-        logging.info(f"Общее количество очков: {stats['total_points']}")
 
-        # Проверяем уникальность даты и соответствие позиции
+        # Обновляем даты появления в команде дня и грейд
         if team_of_the_day:
-            # Проверяем, был ли игрок уже в команде дня на этой позиции в эту дату
-            date_position_exists = False
-            for date in stats["team_of_the_day_dates"]:
-                if date_str == date and stats["daily_stats"][date]["position"] == position:
-                    date_position_exists = True
-                    break
-            
-            if not date_position_exists:
+            if date_str not in stats["team_of_the_day_dates"]:
                 stats["team_of_the_day_dates"].append(date_str)
+                stats["team_of_the_day_dates"].sort()
                 stats["team_of_the_day_count"] = len(stats["team_of_the_day_dates"])
                 stats["grade"] = calculate_grade(stats["team_of_the_day_count"])
                 logging.info(f"Обновление грейда для игрока {name}: {stats['grade']} ({stats['team_of_the_day_count']} раз)")
@@ -262,8 +249,8 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
         if current_date.hour < day_start_hour:
             current_date = current_date - timedelta(days=1)
             
-        current_days_since_tuesday = (current_date.weekday() - 1) % 7
-        current_week_start = current_date - timedelta(days=current_days_since_tuesday)
+        current_days_since_monday = current_date.weekday()
+        current_week_start = current_date - timedelta(days=current_days_since_monday)
         current_week_start = current_week_start.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
         current_week_end = current_week_start + timedelta(days=6)
         current_week_end = current_week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
@@ -278,7 +265,7 @@ def update_player_stats(player_id, name, date_str, applied_total, position, team
             json.dump(player_stats, f, indent=4)
         logging.info(f"Данные успешно сохранены в {PLAYER_STATS_FILE}")
         
-        return stats.get("grade", "common")  # Возвращаем grade или "common" по умолчанию
+        return stats.get("grade", "common")
     except Exception as e:
         logging.error(f"Ошибка при обновлении статистики игрока {name}: {str(e)}")
         traceback.print_exc()
@@ -357,8 +344,8 @@ def parse_player_data(data, scoring_period_id, target_date):
             player_stats = json.load(f)
             
         # Определяем неделю для целевой даты
-        days_since_tuesday = (target_date.weekday() - 1) % 7
-        week_start = target_date - timedelta(days=days_since_tuesday)
+        days_since_monday = (target_date.weekday() - 1) % 7
+        week_start = target_date - timedelta(days=days_since_monday)
         week_end = week_start + timedelta(days=6)
         week_key = f"{week_start.strftime('%Y-%m-%d')}_{week_end.strftime('%Y-%m-%d')}"
         
@@ -491,20 +478,33 @@ def create_collage(team, date_str):
             grade = player['grade']
             color = GRADE_COLORS.get(grade, "black")
 
-            try:
-                response = requests.get(image_url, stream=True, timeout=10)
-                response.raise_for_status()
-                player_image = Image.open(response.raw).convert("RGBA")
-                bg = Image.new("RGBA", player_image.size, (255, 255, 255, 255))
-                combined_image = Image.alpha_composite(bg, player_image)
-                player_image = combined_image.convert("RGB").resize((player_img_width, player_img_height), Image.LANCZOS)
-                image_x = (width - player_img_width) // 2
-                image.paste(player_image, (image_x, y_offset))
-            except Exception as e:
-                logging.warning(f"Ошибка загрузки изображения для {name}: {e}")
-                empty_img = Image.new("RGB", (player_img_width, player_img_height), "gray")
-                image_x = (width - player_img_width) // 2
-                image.paste(empty_img, (image_x, y_offset))
+            # Добавляем повторные попытки загрузки изображения
+            max_retries = 3
+            retry_count = 0
+            player_image = None
+
+            while retry_count < max_retries:
+                try:
+                    response = requests.get(image_url, stream=True, timeout=10)
+                    response.raise_for_status()
+                    player_image = Image.open(response.raw).convert("RGBA")
+                    bg = Image.new("RGBA", player_image.size, (255, 255, 255, 255))
+                    combined_image = Image.alpha_composite(bg, player_image)
+                    player_image = combined_image.convert("RGB").resize((player_img_width, player_img_height), Image.LANCZOS)
+                    image_x = (width - player_img_width) // 2
+                    image.paste(player_image, (image_x, y_offset))
+                    logging.info(f"Изображение для {name} успешно загружено (попытка {retry_count + 1})")
+                    break
+                except Exception as e:
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        logging.warning(f"Ошибка загрузки изображения для {name} (попытка {retry_count}/{max_retries}): {e}")
+                        time.sleep(1)  # Пауза перед следующей попыткой
+                    else:
+                        logging.error(f"Не удалось загрузить изображение для {name} после {max_retries} попыток: {e}")
+                        empty_img = Image.new("RGB", (player_img_width, player_img_height), "gray")
+                        image_x = (width - player_img_width) // 2
+                        image.paste(empty_img, (image_x, y_offset))
 
             text = f"{position}: {name} ({points:.2f} ftps)"
             try:
@@ -523,6 +523,16 @@ def create_collage(team, date_str):
 async def send_collage(team, date_str):
     """Отправка коллажа команды дня в Telegram"""
     try:
+        # Проверяем, был ли уже отправлен коллаж за эту дату
+        if os.path.exists(PLAYER_STATS_FILE):
+            with open(PLAYER_STATS_FILE, 'r') as f:
+                data = json.load(f)
+                for week_key, week_data in data.get("weeks", {}).items():
+                    for player_id, player_data in week_data.get("players", {}).items():
+                        if date_str in player_data.get("daily_stats", {}) and player_data["daily_stats"][date_str].get("collage_sent", False):
+                            logging.info(f"Коллаж для даты {date_str} уже был отправлен ранее, пропускаем")
+                            return
+
         # Создание коллажа
         file_path = create_collage(team, date_str)
         
@@ -533,6 +543,21 @@ async def send_collage(team, date_str):
                 with open(file_path, 'rb') as photo:
                     await bot.send_photo(chat_id=CHAT_ID, photo=photo, parse_mode=ParseMode.HTML)
                 logging.info(f"Коллаж успешно отправлен для даты {date_str}")
+                
+                # Отмечаем, что коллаж был отправлен
+                if os.path.exists(PLAYER_STATS_FILE):
+                    with open(PLAYER_STATS_FILE, 'r') as f:
+                        data = json.load(f)
+                    
+                    # Находим нужную неделю и обновляем статус отправки коллажа
+                    for week_key, week_data in data.get("weeks", {}).items():
+                        for player_id, player_data in week_data.get("players", {}).items():
+                            if date_str in player_data.get("daily_stats", {}):
+                                player_data["daily_stats"][date_str]["collage_sent"] = True
+                    
+                    with open(PLAYER_STATS_FILE, 'w') as f:
+                        json.dump(data, f, indent=4)
+                
                 break
             except Exception as e:
                 if attempt < max_attempts:
@@ -656,20 +681,20 @@ def get_all_weeks_dates():
     weeks = []
     current_date = SEASON_START_DATE
     
-    # Находим первый вторник после начала сезона
-    days_until_tuesday = (1 - current_date.weekday()) % 7  # 1 = вторник
-    first_tuesday = current_date + timedelta(days=days_until_tuesday)
-    first_tuesday = first_tuesday.replace(hour=0, minute=0, second=0, microsecond=0)
+    # Находим первый понедельник после начала сезона
+    days_until_monday = (1 - current_date.weekday()) % 7  # 1 = понедельник
+    first_monday = current_date + timedelta(days=days_until_monday)
+    first_monday = first_monday.replace(hour=0, minute=0, second=0, microsecond=0)
     
-    # Получаем текущий вторник
+    # Получаем текущий понедельник
     now = datetime.now(ESPN_TIMEZONE)
-    days_since_tuesday = (now.weekday() - 1) % 7
-    current_tuesday = now - timedelta(days=days_since_tuesday)
-    current_tuesday = current_tuesday.replace(hour=0, minute=0, second=0, microsecond=0)
+    days_since_monday = (now.weekday() - 1) % 7
+    current_monday = now - timedelta(days=days_since_monday)
+    current_monday = current_monday.replace(hour=0, minute=0, second=0, microsecond=0)
     
     # Генерируем все недели
-    week_start = first_tuesday
-    while week_start <= current_tuesday:
+    week_start = first_monday
+    while week_start <= current_monday:
         week_end = week_start + timedelta(days=6)
         week_end = week_end.replace(hour=23, minute=59, second=59, microsecond=999999)
         weeks.append((week_start, week_end))
@@ -684,9 +709,9 @@ async def main():
         if len(sys.argv) > 1:
             if sys.argv[1] == '--previous-week':
                 # Обработка предыдущей недели
-                previous_tuesday, previous_monday = get_previous_week_dates()
-                logging.info(f"Обработка данных за предыдущую неделю: {previous_tuesday.strftime('%Y-%m-%d')} - {previous_monday.strftime('%Y-%m-%d')}")
-                await process_dates_range(previous_tuesday, previous_monday)
+                previous_monday, previous_sunday = get_previous_week_dates()
+                logging.info(f"Обработка данных за предыдущую неделю: {previous_monday.strftime('%Y-%m-%d')} - {previous_sunday.strftime('%Y-%m-%d')}")
+                await process_dates_range(previous_monday, previous_sunday)
             elif sys.argv[1] == '--all-weeks':
                 # Обработка всех недель с начала сезона
                 weeks = get_all_weeks_dates()
@@ -701,9 +726,9 @@ async def main():
                         await asyncio.sleep(2)
         else:
             # Обработка текущей недели
-            tuesday, next_monday = update_week_period()
-            logging.info(f"Обработка данных за текущую неделю: {tuesday.strftime('%Y-%m-%d')} - {next_monday.strftime('%Y-%m-%d')}")
-            await process_dates_range(tuesday, next_monday)
+            monday, sunday = update_week_period()
+            logging.info(f"Обработка данных за текущую неделю: {monday.strftime('%Y-%m-%d')} - {sunday.strftime('%Y-%m-%d')}")
+            await process_dates_range(monday, sunday)
     except KeyboardInterrupt:
         logging.info("Скрипт был прерван пользователем")
         sys.exit(0)
