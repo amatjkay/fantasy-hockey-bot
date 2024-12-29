@@ -1,83 +1,64 @@
 import os
-import pytz
 from pathlib import Path
+import pytz
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Загрузка переменных окружения
+load_dotenv()
 
 # Базовые пути
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-LOGS_DIR = BASE_DIR / "logs"
 DATA_DIR = BASE_DIR / "data"
-TEMP_DIR = DATA_DIR / "temp"  # Директория для временных файлов
-CACHE_DIR = DATA_DIR / "cache"  # Директория для кэша
-RAW_DIR = DATA_DIR / "raw"  # Директория для сырых данных
-PROCESSED_DIR = DATA_DIR / "processed"  # Директория для обработанных данных
+TEMP_DIR = DATA_DIR / "temp"
+CACHE_DIR = DATA_DIR / "cache"
+RAW_DATA_DIR = DATA_DIR / "raw"
+PROCESSED_DATA_DIR = DATA_DIR / "processed"
+LOG_DIR = BASE_DIR / "logs"
 
-# Файлы
-LOG_FILE = LOGS_DIR / "app.log"
-PLAYER_STATS_FILE = PROCESSED_DIR / "player_stats.json"
-LAST_RUN_FILE = LOGS_DIR / "last_run.log"
-WEEK_LOG_FILE = LOGS_DIR / "week_log.txt"
-DAY_LOG_FILE = LOGS_DIR / "day_log.txt"
+# Создаем директории, если они не существуют
+for dir_path in [TEMP_DIR, CACHE_DIR, RAW_DATA_DIR, PROCESSED_DATA_DIR, LOG_DIR]:
+    dir_path.mkdir(parents=True, exist_ok=True)
 
-# Временная зона
-try:
-    ESPN_TIMEZONE = pytz.timezone('US/Eastern')
-except pytz.exceptions.UnknownTimeZoneError:
-    ESPN_TIMEZONE = pytz.timezone('America/New_York')
-
-# ESPN API
+# Настройки ESPN API
 ESPN_API = {
-    'SEASON_START_DATE': datetime(2024, 10, 4, tzinfo=ESPN_TIMEZONE),
-    'SEASON_START_SCORING_PERIOD_ID': 1,
-    'LEAGUE_ID': 484910394,
-    'BASE_URL': 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl',
-    'SEASON': '2025',
-    'HEADERS': {
-        'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0',
-    },
-    'TIMEOUT': 10,
-    'MAX_RETRIES': 3,
-    'RETRY_DELAY': 2,
+    'swid': os.getenv('ESPN_SWID'),
+    's2': os.getenv('ESPN_S2'),
+    'season_id': os.getenv('SEASON_ID', '2025'),
+    'league_id': os.getenv('LEAGUE_ID')
 }
 
-# Формируем URL для API
-API_URL_TEMPLATE = f"{ESPN_API['BASE_URL']}/seasons/{ESPN_API['SEASON']}/segments/0/leagues/{{league_id}}?view=kona_player_info&scoringPeriodId={{scoring_period_id}}"
+# Настройки временной зоны
+ESPN_TIMEZONE = pytz.timezone(os.getenv('TIMEZONE', 'US/Eastern'))
+DAY_START_HOUR = int(os.getenv('DAY_START_HOUR', '4'))
 
-# Позиции игроков и их лимиты
+# Настройки сезона
+SEASON_START_DATE = datetime.strptime(os.getenv('SEASON_START', '2024-10-04'), '%Y-%m-%d').replace(tzinfo=ESPN_TIMEZONE)
+SEASON_START_SCORING_PERIOD = int(os.getenv('SEASON_START_SCORING_PERIOD', '1'))
+
+# Пути к файлам данных
+PLAYER_STATS_FILE = PROCESSED_DATA_DIR / "player_stats.json"
+WEEKLY_TEAM_STATS_FILE = PROCESSED_DATA_DIR / "weekly_team_stats.json"
+SCHEDULE_FILE = RAW_DATA_DIR / "TeamSchedules.json"
+LEAGUE_SETTINGS_FILE = RAW_DATA_DIR / "LeagueSettings.json"
+
+# Настройки позиций
 POSITION_MAP = {
-    'C': 1,   # Центральный нападающий
-    'LW': 1,  # Левый крайний нападающий
-    'RW': 1,  # Правый крайний нападающий
-    'D': 2,   # Защитники
-    'G': 1    # Вратарь
+    'C': 1,
+    'LW': 1,
+    'RW': 1,
+    'D': 2,
+    'G': 1
 }
 
-# Цвета и грейды
-GRADES = {
-    "common": {
-        "color": "black",
-        "min_appearances": 1
-    },
-    "uncommon": {
-        "color": "green",
-        "min_appearances": 2
-    },
-    "rare": {
-        "color": "blue",
-        "min_appearances": 3
-    },
-    "epic": {
-        "color": "purple",
-        "min_appearances": 4
-    },
-    "legend": {
-        "color": "orange",
-        "min_appearances": 5
-    }
+# Настройки грейдов
+GRADE_COLORS = {
+    "common": "black",     # обычный
+    "uncommon": "green",   # необычный
+    "rare": "blue",        # редкий
+    "epic": "purple",      # эпический
+    "legend": "orange"     # легендарный
 }
-
-GRADE_COLORS = {grade: info["color"] for grade, info in GRADES.items()}
 
 # Настройки изображений
 IMAGE_SETTINGS = {
@@ -88,30 +69,32 @@ IMAGE_SETTINGS = {
     'PADDING': 20,
     'TEXT_PADDING': 10,
     'COLLAGE_WIDTH': 500,
+    'FONT_SIZE': 20,
+    'TITLE_FONT_SIZE': 24,
+    'LINE_HEIGHT': 150,  # Высота строки с учетом изображения и текста
+    'BACKGROUND_COLOR': 'white',
+    'TEXT_COLOR': 'black',
+    'FONT_PATHS': [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+        "/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf",
+        "/usr/share/fonts/TTF/DejaVuSans.ttf"
+    ]
 }
 
-# Создание необходимых директорий
-for directory in [LOGS_DIR, DATA_DIR, TEMP_DIR, CACHE_DIR, RAW_DIR, PROCESSED_DIR]:
-    directory.mkdir(parents=True, exist_ok=True)
-
 def load_env_vars():
-    """Загрузка и проверка переменных окружения
-    
-    Returns:
-        dict: Словарь с переменными окружения
-        
-    Raises:
-        ValueError: Если отсутствуют обязательные переменные окружения
-    """
+    """Загрузка и проверка переменных окружения"""
     required_vars = {
         'TELEGRAM_TOKEN': os.getenv('TELEGRAM_TOKEN'),
         'CHAT_ID': os.getenv('CHAT_ID'),
-        'ESPN_SWID': os.getenv('ESPN_SWID'),
-        'ESPN_S2': os.getenv('ESPN_S2')
+        'ESPN_SWID': ESPN_API['swid'],
+        'ESPN_S2': ESPN_API['s2'],
+        'LEAGUE_ID': ESPN_API['league_id']
     }
     
     missing_vars = [var for var, value in required_vars.items() if not value]
+    
     if missing_vars:
         raise ValueError(f"Отсутствуют обязательные переменные окружения: {', '.join(missing_vars)}")
-    
+        
     return required_vars

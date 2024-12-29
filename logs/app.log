@@ -988,3 +988,366 @@
 2024-12-29 19:18:59 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 29, 16, 19, 1, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1113, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3MAAzYE', file_size=979, file_unique_id='AQAD3O4xG9rKYEt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA20AAzYE', file_size=9933, file_unique_id='AQAD3O4xG9rKYEty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3gAAzYE', file_size=37300, file_unique_id='AQAD3O4xG9rKYEt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIEBWdsCIOwh2AR61NFav9EGccfpGxgAALc7jEb2spgS3-IPQABxhbocwEAAwIAA3kAAzYE', file_size=39710, file_unique_id='AQAD3O4xG9rKYEt-', height=1000, width=500)), supergroup_chat_created=False)
 2024-12-29 19:18:59 - DEBUG - Exiting: send_photo
 2024-12-29 19:18:59 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-17_2024-12-23.jpg
+2024-12-29 23:15:46 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:15:46 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:15:46 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:15:46 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:15:46 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:15:46 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:15:46 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-29 23:15:46 - ERROR - Нет данных для недели 2024-12-17_2024-12-23
+2024-12-29 23:15:46 - ERROR - Не удалось получить команду недели
+2024-12-29 23:16:39 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:16:39 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:16:39 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:16:39 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:16:39 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:16:39 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:16:39 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-29 23:16:39 - ERROR - Нет данных для недели 2024-12-17_2024-12-23
+2024-12-29 23:16:39 - ERROR - Не удалось получить команду недели
+2024-12-29 23:16:39 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:16:39 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:16:39 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:16:39 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:16:39 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:16:39 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:16:39 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-29 23:16:39 - ERROR - Нет данных для недели 2024-12-17_2024-12-23
+2024-12-29 23:16:39 - ERROR - Не удалось получить команду недели
+2024-12-29 23:17:30 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:17:30 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:17:30 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:17:30 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:17:30 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:17:30 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:17:30 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-29 23:17:30 - ERROR - Нет данных для недели 2024-12-17_2024-12-23
+2024-12-29 23:17:30 - ERROR - Не удалось получить команду недели
+2024-12-29 23:17:30 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:17:30 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:17:30 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:17:30 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:17:30 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:17:30 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:17:30 - INFO - Обработка команды недели: 2024-12-17_2024-12-23
+2024-12-29 23:17:30 - ERROR - Нет данных для недели 2024-12-17_2024-12-23
+2024-12-29 23:17:30 - ERROR - Не удалось получить команду недели
+2024-12-29 23:18:14 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:18:14 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:18:14 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:18:14 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:18:14 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:18:14 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:18:14 - ERROR - Ошибка при выполнении скрипта: name 'ESPN_TIMEZONE' is not defined
+2024-12-29 23:19:27 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:19:27 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:19:27 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:19:27 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:19:27 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:19:27 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:19:27 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-29 23:19:27 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:33 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562632.png&w=130&h=100 HTTP/1.1" 200 17880
+2024-12-29 23:19:33 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:33 - DEBUG - STREAM b'IDAT' 41 17823
+2024-12-29 23:19:33 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-29 23:19:33 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:33 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587910.png&w=130&h=100 HTTP/1.1" 200 17643
+2024-12-29 23:19:33 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:33 - DEBUG - STREAM b'IDAT' 41 17586
+2024-12-29 23:19:33 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-29 23:19:33 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:34 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2591155.png&w=130&h=100 HTTP/1.1" 200 14219
+2024-12-29 23:19:34 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:34 - DEBUG - STREAM b'IDAT' 41 14162
+2024-12-29 23:19:34 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-29 23:19:34 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:35 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233563.png&w=130&h=100 HTTP/1.1" 200 19472
+2024-12-29 23:19:35 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:35 - DEBUG - STREAM b'IDAT' 41 19415
+2024-12-29 23:19:35 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-29 23:19:35 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:37 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4294163.png&w=130&h=100 HTTP/1.1" 200 16394
+2024-12-29 23:19:37 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:37 - DEBUG - STREAM b'IDAT' 41 16337
+2024-12-29 23:19:37 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-29 23:19:37 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:37 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3115546.png&w=130&h=100 HTTP/1.1" 200 15547
+2024-12-29 23:19:37 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:37 - DEBUG - STREAM b'IDAT' 41 15490
+2024-12-29 23:19:37 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-29 23:19:37 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-29 23:19:37 - DEBUG - Entering: send_photo
+2024-12-29 23:19:37 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-29 23:19:37 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7bfa4cb71670>
+2024-12-29 23:19:37 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7bfa4cd434d0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-29 23:19:37 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7bfa4d033620>
+2024-12-29 23:19:37 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-29 23:19:37 - DEBUG - send_request_headers.complete
+2024-12-29 23:19:37 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-29 23:19:37 - DEBUG - send_request_body.complete
+2024-12-29 23:19:37 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-29 23:19:38 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sun, 29 Dec 2024 20:19:38 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'986'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-29 23:19:38 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-29 23:19:38 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-29 23:19:38 - DEBUG - receive_response_body.complete
+2024-12-29 23:19:38 - DEBUG - response_closed.started
+2024-12-29 23:19:38 - DEBUG - response_closed.complete
+2024-12-29 23:19:38 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 29, 20, 19, 38, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1813, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADcwADNgQ', file_size=978, file_unique_id='AQAD8e8xG_ogiUt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADbQADNgQ', file_size=9934, file_unique_id='AQAD8e8xG_ogiUty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADeAADNgQ', file_size=37308, file_unique_id='AQAD8e8xG_ogiUt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADeQADNgQ', file_size=39725, file_unique_id='AQAD8e8xG_ogiUt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-29 23:19:38 - DEBUG - Exiting: send_photo
+2024-12-29 23:19:38 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-29 23:19:38 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:19:38 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:19:38 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:19:38 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:19:38 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:19:38 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:19:38 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-29 23:19:38 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:38 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562632.png&w=130&h=100 HTTP/1.1" 200 17880
+2024-12-29 23:19:38 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:38 - DEBUG - STREAM b'IDAT' 41 17823
+2024-12-29 23:19:38 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-29 23:19:38 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:39 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587910.png&w=130&h=100 HTTP/1.1" 200 17643
+2024-12-29 23:19:39 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:39 - DEBUG - STREAM b'IDAT' 41 17586
+2024-12-29 23:19:39 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-29 23:19:39 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:40 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2591155.png&w=130&h=100 HTTP/1.1" 200 14219
+2024-12-29 23:19:40 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:40 - DEBUG - STREAM b'IDAT' 41 14162
+2024-12-29 23:19:40 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-29 23:19:40 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:41 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233563.png&w=130&h=100 HTTP/1.1" 200 19472
+2024-12-29 23:19:41 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:41 - DEBUG - STREAM b'IDAT' 41 19415
+2024-12-29 23:19:41 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-29 23:19:41 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:43 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4294163.png&w=130&h=100 HTTP/1.1" 200 16394
+2024-12-29 23:19:43 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:43 - DEBUG - STREAM b'IDAT' 41 16337
+2024-12-29 23:19:43 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-29 23:19:43 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-29 23:19:43 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3115546.png&w=130&h=100 HTTP/1.1" 200 15547
+2024-12-29 23:19:43 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-29 23:19:43 - DEBUG - STREAM b'IDAT' 41 15490
+2024-12-29 23:19:43 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-29 23:19:43 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-29 23:19:43 - DEBUG - Entering: send_photo
+2024-12-29 23:19:43 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-29 23:19:44 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7b81872d1880>
+2024-12-29 23:19:44 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7b81874474d0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-29 23:19:44 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7b8187684bc0>
+2024-12-29 23:19:44 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-29 23:19:44 - DEBUG - send_request_headers.complete
+2024-12-29 23:19:44 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-29 23:19:44 - DEBUG - send_request_body.complete
+2024-12-29 23:19:44 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-29 23:19:45 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sun, 29 Dec 2024 20:19:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'986'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-29 23:19:45 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-29 23:19:45 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-29 23:19:45 - DEBUG - receive_response_body.complete
+2024-12-29 23:19:45 - DEBUG - response_closed.started
+2024-12-29 23:19:45 - DEBUG - response_closed.complete
+2024-12-29 23:19:45 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 29, 20, 19, 44, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1814, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADcwADNgQ', file_size=978, file_unique_id='AQAD8e8xG_ogiUt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADbQADNgQ', file_size=9934, file_unique_id='AQAD8e8xG_ogiUty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADeAADNgQ', file_size=37308, file_unique_id='AQAD8e8xG_ogiUt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADeQADNgQ', file_size=39725, file_unique_id='AQAD8e8xG_ogiUt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-29 23:19:45 - DEBUG - Exiting: send_photo
+2024-12-29 23:19:45 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-29 23:22:13 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:22:13 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:22:13 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:22:13 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:22:13 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:22:13 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:22:13 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-29 23:22:13 - ERROR - Нет данных для недели 2024-12-16_2024-12-22
+2024-12-29 23:22:13 - ERROR - Не удалось получить команду недели
+2024-12-29 23:22:13 - DEBUG - Using selector: EpollSelector
+2024-12-29 23:22:13 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-29 23:22:13 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:22:13 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:22:13 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-29 23:22:13 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-29 23:22:13 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-29 23:22:13 - ERROR - Нет данных для недели 2024-12-16_2024-12-22
+2024-12-29 23:22:13 - ERROR - Не удалось получить команду недели
+2024-12-30 00:00:48 - DEBUG - Using selector: EpollSelector
+2024-12-30 00:00:48 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 00:00:48 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-30 00:00:48 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-30 00:00:48 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-30 00:00:48 - DEBUG - load_verify_locations cafile='/home/tiki/dev/fantasy-hockey-bot/.venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-30 00:00:48 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 00:00:48 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-30 00:00:48 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2562632.png&w=130&h=100 HTTP/1.1" 200 17880
+2024-12-30 00:00:48 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-30 00:00:48 - DEBUG - STREAM b'IDAT' 41 17823
+2024-12-30 00:00:48 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 00:00:48 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-30 00:00:49 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4587910.png&w=130&h=100 HTTP/1.1" 200 17643
+2024-12-30 00:00:49 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-30 00:00:49 - DEBUG - STREAM b'IDAT' 41 17586
+2024-12-30 00:00:49 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-30 00:00:49 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-30 00:00:49 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/2591155.png&w=130&h=100 HTTP/1.1" 200 14219
+2024-12-30 00:00:49 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-30 00:00:49 - DEBUG - STREAM b'IDAT' 41 14162
+2024-12-30 00:00:49 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 00:00:49 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-30 00:00:49 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4233563.png&w=130&h=100 HTTP/1.1" 200 19472
+2024-12-30 00:00:49 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-30 00:00:49 - DEBUG - STREAM b'IDAT' 41 19415
+2024-12-30 00:00:49 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-30 00:00:49 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-30 00:00:50 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/4294163.png&w=130&h=100 HTTP/1.1" 200 16394
+2024-12-30 00:00:50 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-30 00:00:50 - DEBUG - STREAM b'IDAT' 41 16337
+2024-12-30 00:00:50 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 00:00:50 - DEBUG - Starting new HTTPS connection (1): a.espncdn.com:443
+2024-12-30 00:00:50 - DEBUG - https://a.espncdn.com:443 "GET /combiner/i?img=/i/headshots/nhl/players/full/3115546.png&w=130&h=100 HTTP/1.1" 200 15547
+2024-12-30 00:00:50 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-30 00:00:50 - DEBUG - STREAM b'IDAT' 41 15490
+2024-12-30 00:00:50 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 00:00:50 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 00:00:50 - DEBUG - Entering: send_photo
+2024-12-30 00:00:50 - DEBUG - connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-30 00:00:51 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x764dc2132b10>
+2024-12-30 00:00:51 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x764dc204b4d0> server_hostname='api.telegram.org' timeout=5.0
+2024-12-30 00:00:51 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x764dc22aa4e0>
+2024-12-30 00:00:51 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-30 00:00:51 - DEBUG - send_request_headers.complete
+2024-12-30 00:00:51 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-30 00:00:51 - DEBUG - send_request_body.complete
+2024-12-30 00:00:51 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-30 00:00:51 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sun, 29 Dec 2024 21:00:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'986'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+2024-12-30 00:00:51 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:00:51 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-30 00:00:51 - DEBUG - receive_response_body.complete
+2024-12-30 00:00:51 - DEBUG - response_closed.started
+2024-12-30 00:00:51 - DEBUG - response_closed.complete
+2024-12-30 00:00:51 - DEBUG - Message(channel_chat_created=False, chat=Chat(id=-1002440320281, is_forum=True, title='test', type=<ChatType.SUPERGROUP>), date=datetime.datetime(2024, 12, 29, 21, 0, 51, tzinfo=<UTC>), delete_chat_photo=False, from_user=User(first_name='fantasyhockey_bot', id=7384303864, is_bot=True, username='shadow_hockeybot'), group_chat_created=False, message_id=1893, photo=(PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADcwADNgQ', file_size=978, file_unique_id='AQAD8e8xG_ogiUt4', height=90, width=45), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADbQADNgQ', file_size=9934, file_unique_id='AQAD8e8xG_ogiUty', height=320, width=160), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADeAADNgQ', file_size=37308, file_unique_id='AQAD8e8xG_ogiUt9', height=800, width=400), PhotoSize(file_id='AgACAgIAAyEGAASRdFUZAAIHFWdxrtmK0zy2PcmtBZOPuyVe5M2FAALx7zEb-iCJS5FA_6z7QDOvAQADAgADeQADNgQ', file_size=39725, file_unique_id='AQAD8e8xG_ogiUt-', height=1000, width=500)), supergroup_chat_created=False)
+2024-12-30 00:00:51 - DEBUG - Exiting: send_photo
+2024-12-30 00:00:51 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 00:04:11,511 - INFO - Используется шрифт: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+2024-12-30 00:04:11,554 - INFO - Начинаем обработку всех недель (12 недель)
+2024-12-30 00:04:11,555 - INFO - Обработка команды недели: 2024-10-07_2024-10-13
+2024-12-30 00:04:12,162 - INFO - Изображение игрока Anze Kopitar успешно добавлено в коллаж
+2024-12-30 00:04:13,781 - INFO - Изображение игрока Ivan Barbashev успешно добавлено в коллаж
+2024-12-30 00:04:17,480 - INFO - Изображение игрока Nikita Kucherov успешно добавлено в коллаж
+2024-12-30 00:04:17,832 - INFO - Изображение игрока Rasmus Andersson успешно добавлено в коллаж
+2024-12-30 00:04:18,362 - INFO - Изображение игрока Seth Jones успешно добавлено в коллаж
+2024-12-30 00:04:18,805 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 00:04:18,810 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 00:04:19,438 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:19,439 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-07_2024-10-13.jpg
+2024-12-30 00:04:21,442 - INFO - Обработка команды недели: 2024-10-14_2024-10-20
+2024-12-30 00:04:22,051 - INFO - Изображение игрока Scott Laughton успешно добавлено в коллаж
+2024-12-30 00:04:22,513 - INFO - Изображение игрока Artemi Panarin успешно добавлено в коллаж
+2024-12-30 00:04:23,220 - INFO - Изображение игрока Tom Wilson успешно добавлено в коллаж
+2024-12-30 00:04:23,763 - INFO - Изображение игрока Neal Pionk успешно добавлено в коллаж
+2024-12-30 00:04:24,280 - INFO - Изображение игрока Josh Morrissey успешно добавлено в коллаж
+2024-12-30 00:04:24,595 - INFO - Изображение игрока Joel Hofer успешно добавлено в коллаж
+2024-12-30 00:04:24,599 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 00:04:25,299 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:25,299 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-14_2024-10-20.jpg
+2024-12-30 00:04:27,302 - INFO - Обработка команды недели: 2024-10-21_2024-10-27
+2024-12-30 00:04:28,481 - INFO - Изображение игрока Sean Couturier успешно добавлено в коллаж
+2024-12-30 00:04:28,951 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 00:04:29,534 - INFO - Изображение игрока Travis Konecny успешно добавлено в коллаж
+2024-12-30 00:04:29,924 - INFO - Изображение игрока Janis Moser успешно добавлено в коллаж
+2024-12-30 00:04:30,314 - INFO - Изображение игрока Alex Pietrangelo успешно добавлено в коллаж
+2024-12-30 00:04:30,688 - INFO - Изображение игрока Juuse Saros успешно добавлено в коллаж
+2024-12-30 00:04:30,693 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 00:04:31,318 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:31,319 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-21_2024-10-27.jpg
+2024-12-30 00:04:33,321 - INFO - Обработка команды недели: 2024-10-28_2024-11-03
+2024-12-30 00:04:33,696 - INFO - Изображение игрока Leon Draisaitl успешно добавлено в коллаж
+2024-12-30 00:04:34,074 - INFO - Изображение игрока Nikolaj Ehlers успешно добавлено в коллаж
+2024-12-30 00:04:34,469 - INFO - Изображение игрока Martin Necas успешно добавлено в коллаж
+2024-12-30 00:04:34,972 - INFO - Изображение игрока Brandon Montour успешно добавлено в коллаж
+2024-12-30 00:04:35,288 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 00:04:36,022 - INFO - Изображение игрока Jake Allen успешно добавлено в коллаж
+2024-12-30 00:04:36,027 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 00:04:36,194 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:36,195 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-10-28_2024-11-03.jpg
+2024-12-30 00:04:38,198 - INFO - Обработка команды недели: 2024-11-04_2024-11-10
+2024-12-30 00:04:38,604 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 00:04:38,954 - INFO - Изображение игрока Mason Marchment успешно добавлено в коллаж
+2024-12-30 00:04:39,396 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 00:04:40,315 - INFO - Изображение игрока Quinn Hughes успешно добавлено в коллаж
+2024-12-30 00:04:40,884 - INFO - Изображение игрока Miro Heiskanen успешно добавлено в коллаж
+2024-12-30 00:04:41,699 - INFO - Изображение игрока Mackenzie Blackwood успешно добавлено в коллаж
+2024-12-30 00:04:41,704 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 00:04:42,535 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:42,536 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-04_2024-11-10.jpg
+2024-12-30 00:04:44,539 - INFO - Обработка команды недели: 2024-11-11_2024-11-17
+2024-12-30 00:04:45,392 - INFO - Изображение игрока Aleksander Barkov успешно добавлено в коллаж
+2024-12-30 00:04:45,825 - INFO - Изображение игрока Alex Ovechkin успешно добавлено в коллаж
+2024-12-30 00:04:46,241 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 00:04:46,562 - INFO - Изображение игрока Travis Sanheim успешно добавлено в коллаж
+2024-12-30 00:04:47,069 - INFO - Изображение игрока Darnell Nurse успешно добавлено в коллаж
+2024-12-30 00:04:47,387 - INFO - Изображение игрока Sam Montembeault успешно добавлено в коллаж
+2024-12-30 00:04:47,394 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 00:04:47,676 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:47,677 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-11_2024-11-17.jpg
+2024-12-30 00:04:49,679 - INFO - Обработка команды недели: 2024-11-18_2024-11-24
+2024-12-30 00:04:50,018 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 00:04:50,329 - INFO - Изображение игрока Brandon Hagel успешно добавлено в коллаж
+2024-12-30 00:04:50,639 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 00:04:51,143 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 00:04:51,490 - INFO - Изображение игрока Jakob Chychrun успешно добавлено в коллаж
+2024-12-30 00:04:52,770 - INFO - Изображение игрока Joseph Woll успешно добавлено в коллаж
+2024-12-30 00:04:52,775 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 00:04:53,339 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:53,340 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-18_2024-11-24.jpg
+2024-12-30 00:04:55,343 - INFO - Обработка команды недели: 2024-11-25_2024-12-01
+2024-12-30 00:04:55,827 - INFO - Изображение игрока Brayden Point успешно добавлено в коллаж
+2024-12-30 00:04:56,885 - INFO - Изображение игрока Taylor Hall успешно добавлено в коллаж
+2024-12-30 00:04:57,272 - INFO - Изображение игрока Jake DeBrusk успешно добавлено в коллаж
+2024-12-30 00:04:57,722 - INFO - Изображение игрока Jared Spurgeon успешно добавлено в коллаж
+2024-12-30 00:04:58,110 - INFO - Изображение игрока Charlie McAvoy успешно добавлено в коллаж
+2024-12-30 00:04:58,770 - INFO - Изображение игрока Filip Gustavsson успешно добавлено в коллаж
+2024-12-30 00:04:58,775 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 00:04:59,385 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:04:59,387 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-11-25_2024-12-01.jpg
+2024-12-30 00:05:01,389 - INFO - Обработка команды недели: 2024-12-02_2024-12-08
+2024-12-30 00:05:01,755 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 00:05:02,136 - INFO - Изображение игрока Andrei Svechnikov успешно добавлено в коллаж
+2024-12-30 00:05:02,489 - INFO - Изображение игрока Matthew Tkachuk успешно добавлено в коллаж
+2024-12-30 00:05:02,808 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 00:05:03,679 - INFO - Изображение игрока Adam Larsson успешно добавлено в коллаж
+2024-12-30 00:05:09,493 - INFO - Изображение игрока Adin Hill успешно добавлено в коллаж
+2024-12-30 00:05:09,497 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 00:05:10,102 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:05:10,103 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-02_2024-12-08.jpg
+2024-12-30 00:05:12,107 - INFO - Обработка команды недели: 2024-12-09_2024-12-15
+2024-12-30 00:05:12,433 - INFO - Изображение игрока Nathan MacKinnon успешно добавлено в коллаж
+2024-12-30 00:05:12,814 - INFO - Изображение игрока Kiefer Sherwood успешно добавлено в коллаж
+2024-12-30 00:05:13,101 - INFO - Изображение игрока Mikko Rantanen успешно добавлено в коллаж
+2024-12-30 00:05:13,424 - INFO - Изображение игрока Adam Fox успешно добавлено в коллаж
+2024-12-30 00:05:14,003 - INFO - Изображение игрока Jeff Petry успешно добавлено в коллаж
+2024-12-30 00:05:14,329 - INFO - Изображение игрока Linus Ullmark успешно добавлено в коллаж
+2024-12-30 00:05:14,335 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 00:05:14,648 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:05:14,649 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-09_2024-12-15.jpg
+2024-12-30 00:05:16,652 - INFO - Обработка команды недели: 2024-12-16_2024-12-22
+2024-12-30 00:05:16,995 - INFO - Изображение игрока Mark Scheifele успешно добавлено в коллаж
+2024-12-30 00:05:17,354 - INFO - Изображение игрока Joel Kiviranta успешно добавлено в коллаж
+2024-12-30 00:05:17,646 - INFO - Изображение игрока Bryan Rust успешно добавлено в коллаж
+2024-12-30 00:05:17,995 - INFO - Изображение игрока Cale Makar успешно добавлено в коллаж
+2024-12-30 00:05:18,672 - INFO - Изображение игрока Rasmus Dahlin успешно добавлено в коллаж
+2024-12-30 00:05:19,233 - INFO - Изображение игрока Jonas Johansson успешно добавлено в коллаж
+2024-12-30 00:05:19,238 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 00:05:19,598 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:05:19,599 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-16_2024-12-22.jpg
+2024-12-30 00:05:21,601 - INFO - Обработка команды недели: 2024-12-23_2024-12-29
+2024-12-30 00:05:26,996 - INFO - Изображение игрока Quinton Byfield успешно добавлено в коллаж
+2024-12-30 00:05:27,370 - INFO - Изображение игрока Artturi Lehkonen успешно добавлено в коллаж
+2024-12-30 00:05:27,661 - INFO - Изображение игрока Mitch Marner успешно добавлено в коллаж
+2024-12-30 00:05:28,304 - INFO - Изображение игрока Vince Dunn успешно добавлено в коллаж
+2024-12-30 00:05:28,591 - INFO - Изображение игрока Zach Werenski успешно добавлено в коллаж
+2024-12-30 00:05:29,279 - INFO - Изображение игрока Jeremy Swayman успешно добавлено в коллаж
+2024-12-30 00:05:29,285 - INFO - Коллаж сохранен: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
+2024-12-30 00:05:30,115 - INFO - HTTP Request: POST https://api.telegram.org/bot7384303864:AAHPos9lUAx1ILfzz18KUNW5XZerSbHa2-s/sendPhoto "HTTP/1.1 200 OK"
+2024-12-30 00:05:30,116 - INFO - Фото успешно отправлено: /home/tiki/dev/fantasy-hockey-bot/data/temp/team_week_collage_2024-12-23_2024-12-29.jpg
