@@ -747,33 +747,36 @@ def get_all_weeks_dates():
     first_monday = current_date + timedelta(days=days_until_monday)
     first_monday = first_monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
     
-    # Получаем текущий понедельник
+    # Получаем текущую дату
     now = datetime.now(ESPN_TIMEZONE)
     if now.hour < day_start_hour:
         now = now - timedelta(days=1)
     
-    days_since_monday = now.weekday()
-    current_monday = now - timedelta(days=days_since_monday)
-    current_monday = current_monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
+    # Находим конец текущей недели (воскресенье)
+    days_until_sunday = 6 - now.weekday()  # 6 = воскресенье
+    current_sunday = now + timedelta(days=days_until_sunday)
+    current_sunday = current_sunday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
     
     # Генерируем все недели
     week_start = first_monday
-    while week_start <= current_monday:
+    while week_start <= current_sunday:
         week_end = week_start + timedelta(days=6)
         week_end = week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
+        # Если это последняя неделя, ограничиваем конец текущей датой
+        if week_end > current_sunday:
+            week_end = current_sunday
         weeks.append((week_start, week_end))
         week_start = week_start + timedelta(days=7)
     
     return weeks
 
 async def main():
-    import sys
-    
     try:
         # Создаем парсер аргументов
         parser = argparse.ArgumentParser(description='Скрипт для создания команды дня')
         parser.add_argument('--all-weeks', action='store_true', help='Обработать все недели с начала сезона')
         parser.add_argument('--force', action='store_true', help='Принудительная обработка всех дней, даже если они уже были обработаны')
+        parser.add_argument('--date', help='Обработать конкретную дату в формате YYYY-MM-DD')
         args = parser.parse_args()
 
         # Если используется --force, очищаем файл статистики
@@ -782,7 +785,19 @@ async def main():
             with open(PLAYER_STATS_FILE, 'w') as f:
                 json.dump({"current_week": {}, "weeks": {}}, f, indent=4)
 
-        if args.all_weeks:
+        if args.date:
+            # Обработка конкретной даты
+            try:
+                target_date = datetime.strptime(args.date, '%Y-%m-%d')
+                target_date = target_date.replace(hour=int(os.getenv('DAY_START_HOUR', '4')), 
+                                               minute=0, second=0, microsecond=0,
+                                               tzinfo=ESPN_TIMEZONE)
+                logging.info(f"Обработка данных за указанную дату: {args.date}")
+                await process_dates_range(target_date, target_date, force=True)
+            except ValueError:
+                logging.error("Неверный формат даты. Используйте YYYY-MM-DD")
+                sys.exit(1)
+        elif args.all_weeks:
             # Обработка всех недель с начала сезона
             weeks = get_all_weeks_dates()
             total_weeks = len(weeks)
@@ -791,19 +806,29 @@ async def main():
             for i, (week_start, week_end) in enumerate(weeks, 1):
                 logging.info(f"Обработка недели {i}/{total_weeks}: {week_start.strftime('%Y-%m-%d')} - {week_end.strftime('%Y-%m-%d')}")
                 await process_dates_range(week_start, week_end, force=args.force)
-                # Небольшая пауза между неделями чтобы не перегружать API
                 if i < total_weeks:
                     await asyncio.sleep(2)
+            
+            # Дополнительно обрабатываем текущую дату, если она не попала в недели
+            now = datetime.now(ESPN_TIMEZONE)
+            day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
+            if now.hour < day_start_hour:
+                now = now - timedelta(days=1)
+            current_date = now.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
+            
+            # Проверяем, не была ли эта дата уже обработана
+            last_week_end = weeks[-1][1] if weeks else None
+            if last_week_end and current_date > last_week_end:
+                logging.info(f"Дополнительная обработка текущей даты: {current_date.strftime('%Y-%m-%d')}")
+                await process_dates_range(current_date, current_date, force=args.force)
         else:
             # Обработка только последнего дня
             espn_now = datetime.now(ESPN_TIMEZONE)
             day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
             
-            # Корректируем дату, если время меньше 4 утра
             if espn_now.hour < day_start_hour:
                 espn_now = espn_now - timedelta(days=1)
             
-            # Устанавливаем время начала дня
             last_day = espn_now.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
             logging.info(f"Обработка данных за последний день: {last_day.strftime('%Y-%m-%d')}")
             await process_dates_range(last_day, last_day, force=args.force)
@@ -818,3 +843,32 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+def process_day_stats(data, date):
+    """Обработка статистики за день"""
+    logger.info(f"\n=== Начало обработки статистики за {date.strftime('%Y-%m-%d')} ===")
+    
+    try:
+        logger.info("Получены данные от ESPN API:")
+        logger.info(f"Размер данных: {len(str(data))} байт")
+        logger.info("Анализ полученных данных...")
+        
+        # Обработка данных и формирование команды дня
+        team_of_day = create_team_of_day(data)
+        
+        logger.info("\nСформирована команда дня:")
+        for pos, player in team_of_day.items():
+            logger.info(f"{pos}: {player['name']} ({player['points']} очков)")
+            
+        # Сохранение статистики
+        update_player_stats(team_of_day, date)
+        
+        logger.info("\nСтатистика успешно обновлена")
+        logger.info("=== Завершение обработки статистики ===\n")
+        
+        return team_of_day
+        
+    except Exception as e:
+        logger.error(f"Ошибка при обработке статистики: {str(e)}")
+        traceback.print_exc()
+        return None

@@ -30,6 +30,10 @@ from dotenv import load_dotenv
 # Загружаем переменные окружения
 load_dotenv()
 
+# Инициализируем logger
+setup_logging()
+logger = logging.getLogger('app_week')
+
 def get_all_weeks():
     """Получение списка всех недель с начала сезона"""
     weeks = []
@@ -160,17 +164,17 @@ def get_week_team(week_key):
 async def process_week(week_start, week_end, image_service, telegram_service):
     """Обработка одной недели"""
     week_key = get_week_key(week_start, week_end)
-    logging.info(f"Обработка команды недели: {week_key}")
+    logger.info(f"Обработка команды недели: {week_key}")
     
     # Получаем команду недели
     team = get_week_team(week_key)
     if not team:
-        logging.error(f"Не удалось получить команду недели для {week_key}")
+        logger.error(f"Не удалось получить команду недели для {week_key}")
         return
         
     # Проверяем, есть ли игроки в команде
     if not any(team.values()):
-        logging.error(f"В команде недели нет игроков для {week_key}")
+        logger.error(f"В команде недели нет игроков для {week_key}")
         return
         
     # Создаем временный файл для коллажа
@@ -193,10 +197,18 @@ async def main():
         # Создаем парсер аргументов
         parser = argparse.ArgumentParser(description='Скрипт для создания команды недели')
         parser.add_argument('--all-weeks', action='store_true', help='Обработать все недели с начала сезона')
+        parser.add_argument('--force', action='store_true', help='Принудительная обработка всех недель, даже если они уже были обработаны')
         args = parser.parse_args()
 
         # Загружаем переменные окружения
         load_env_vars()
+
+        # Если используется --force, очищаем файл статистики
+        if args.force:
+            logger.info("Очищаем существующую статистику из-за флага --force")
+            if os.path.exists(PLAYER_STATS_FILE):
+                with open(PLAYER_STATS_FILE, 'w') as f:
+                    json.dump({"current_week": {}, "weeks": {}}, f, indent=4)
 
         # Инициализируем сервисы
         image_service = ImageService()
@@ -206,25 +218,33 @@ async def main():
             # Обработка всех недель с начала сезона
             weeks = get_all_weeks()
             total_weeks = len(weeks)
-            logging.info(f"Начинаем обработку всех недель ({total_weeks} недель)")
+            logger.info(f"Начинаем обработку всех недель ({total_weeks} недель)")
             
             for i, (week_start, week_end) in enumerate(weeks, 1):
                 week_key = get_week_key(week_start, week_end)
-                logging.info(f"Обработка недели {i}/{total_weeks}: {week_key}")
+                logger.info(f"Обработка недели {i}/{total_weeks}: {week_key}")
                 await process_week(week_start, week_end, image_service, telegram_service)
                 
                 # Пауза между неделями
                 if i < total_weeks:
                     await asyncio.sleep(2)
         else:
-            # Обработка только последней недели
-            start_date, end_date = get_previous_week_dates()
-            week_key = get_week_key(start_date, end_date)
-            logging.info(f"Обработка последней недели: {week_key}")
-            await process_week(start_date, end_date, image_service, telegram_service)
+            # Получаем даты предыдущей недели
+            today = datetime.now(ESPN_TIMEZONE)
+            days_since_monday = today.weekday()
+            last_monday = today - timedelta(days=days_since_monday + 7)
+            last_sunday = last_monday + timedelta(days=6)
+            
+            # Формируем ключ недели
+            week_key = f"{last_monday.strftime('%Y-%m-%d')}_{last_sunday.strftime('%Y-%m-%d')}"
+            
+            logger.info(f"Обработка последней недели: {week_key}")
+            
+            # Обрабатываем команду недели
+            await process_week(last_monday, last_sunday, image_service, telegram_service)
 
     except Exception as e:
-        logging.error(f"Произошла ошибка: {str(e)}")
+        logger.error(f"Произошла ошибка: {str(e)}")
         raise
 
 if __name__ == "__main__":

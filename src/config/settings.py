@@ -92,6 +92,20 @@ IMAGE_SETTINGS = {
     ]
 }
 
+# Настройки для формирования команд
+TEAM_SETTINGS = {
+    'players_in_team': 5,  # Количество игроков в команде
+    'min_minutes_played': 10,  # Минимальное количество сыгранных минут
+    'stats_weights': {
+        'points': 1.0,
+        'rebounds': 0.7,
+        'assists': 0.7,
+        'steals': 1.2,
+        'blocks': 1.2,
+        'turnovers': -0.5
+    }
+}
+
 def load_env_vars():
     """Загрузка и проверка переменных окружения"""
     required_vars = {
