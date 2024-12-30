@@ -3,6 +3,7 @@ import requests
 from PIL import Image, ImageDraw
 from src.config.fonts import get_system_font
 from src.config.settings import GRADE_COLORS, IMAGE_SETTINGS
+import os
 
 class ImageService:
     def __init__(self):
@@ -69,31 +70,53 @@ class ImageService:
             int: Новое смещение по вертикали
         """
         name = player['name']
-        points = player['total_points']
-        image_url = player['image_url']
         grade = player['grade']
         color = GRADE_COLORS.get(grade, "black")
+        cache_dir = "data/cache/player_images"
 
-        try:
-            response = requests.get(image_url, stream=True, timeout=10)
-            response.raise_for_status()
-            player_image = Image.open(response.raw).convert("RGBA")
-            bg = Image.new("RGBA", player_image.size, (255, 255, 255, 255))
-            combined_image = Image.alpha_composite(bg, player_image)
-            player_image = combined_image.convert("RGB").resize(
-                (self.player_img_width, self.player_img_height), 
-                Image.LANCZOS
-            )
-            image_x = (self.width - self.player_img_width) // 2
-            image.paste(player_image, (image_x, y_offset))
-            logging.info(f"Изображение игрока {name} успешно добавлено в коллаж")
-        except Exception as e:
-            logging.warning(f"Ошибка загрузки изображения для {name}: {e}")
-            empty_img = Image.new("RGB", (self.player_img_width, self.player_img_height), "gray")
-            image_x = (self.width - self.player_img_width) // 2
-            image.paste(empty_img, (image_x, y_offset))
+        # Проверяем кэш
+        player_id = player['id']
+        cache_file = os.path.join(cache_dir, f"{player_id}.jpg")
+        
+        if os.path.exists(cache_file):
+            try:
+                player_image = Image.open(cache_file).convert("RGB")
+                logging.info(f"Изображение для {name} загружено из кэша")
+            except Exception as e:
+                logging.warning(f"Ошибка загрузки из кэша для {name}: {e}")
+                os.remove(cache_file)  # Удаляем поврежденный файл
+                player_image = None
+        else:
+            player_image = None
 
-        text = f"{position}: {name} ({points:.2f} ftps)"
+        if player_image is None:
+            try:
+                image_url = f"https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/{player_id}.png&w=130&h=100"
+                response = requests.get(image_url, stream=True, timeout=10)
+                response.raise_for_status()
+                player_image = Image.open(response.raw).convert("RGBA")
+                bg = Image.new("RGBA", player_image.size, (255, 255, 255, 255))
+                combined_image = Image.alpha_composite(bg, player_image)
+                player_image = combined_image.convert("RGB")
+                
+                # Сохраняем в кэш
+                os.makedirs(cache_dir, exist_ok=True)
+                player_image.save(cache_file)
+                logging.info(f"Изображение для {name} успешно загружено и сохранено в кэш")
+            except Exception as e:
+                logging.warning(f"Ошибка загрузки изображения для {name}: {e}")
+                player_image = Image.new("RGB", (self.player_img_width, self.player_img_height), "gray")
+
+        # Изменяем размер изображения
+        player_image = player_image.resize(
+            (self.player_img_width, self.player_img_height), 
+            Image.LANCZOS
+        )
+        image_x = (self.width - self.player_img_width) // 2
+        image.paste(player_image, (image_x, y_offset))
+
+        # Формируем текст без total_points
+        text = f"{position}: {name}"
         try:
             text_width = draw.textlength(text, font=self.font)
         except AttributeError:

@@ -615,17 +615,19 @@ async def send_text_message(team, date_str):
 async def process_dates_range(start_date, end_date, force=False):
     """Обработка данных за указанный диапазон дат"""
     current_date = start_date
+    # Считаем количество дней включительно: конец - начало + 1
     total_days = (end_date - start_date).days + 1
     processed_days = 0
     
     logging.info(f"Начинаем обработку периода с {start_date.strftime('%Y-%m-%d')} по {end_date.strftime('%Y-%m-%d')}")
-    logging.info(f"Всего дней для обработки: {total_days}")
+    logging.info(f"Всего дней для обработки: {total_days} (с {start_date.strftime('%A')} по {end_date.strftime('%A')})")
     
     while current_date <= min(datetime.now(ESPN_TIMEZONE), end_date):
         try:
             processed_days += 1
             date_str = current_date.strftime('%Y-%m-%d')
-            logging.info(f"=== Обработка дня {processed_days}/{total_days}: {date_str} ===")
+            day_name = current_date.strftime('%A')
+            logging.info(f"=== Обработка дня {processed_days}/{total_days}: {date_str} ({day_name}) ===")
             
             # Проверяем, был ли уже отправлен коллаж за эту дату
             if not force and os.path.exists(PLAYER_STATS_FILE):
@@ -760,12 +762,14 @@ def get_all_weeks_dates():
     # Генерируем все недели
     week_start = first_monday
     while week_start <= current_sunday:
+        # Конец недели - это воскресенье (через 6 дней после понедельника)
         week_end = week_start + timedelta(days=6)
         week_end = week_end.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
         # Если это последняя неделя, ограничиваем конец текущей датой
         if week_end > current_sunday:
             week_end = current_sunday
         weeks.append((week_start, week_end))
+        # Следующая неделя начинается через 7 дней
         week_start = week_start + timedelta(days=7)
     
     return weeks

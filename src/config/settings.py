@@ -74,38 +74,14 @@ GRADE_COLORS = {
 IMAGE_SETTINGS = {
     'PLAYER': {
         'WIDTH': 130,
-        'HEIGHT': 100,
+        'HEIGHT': 100
     },
     'PADDING': 20,
     'TEXT_PADDING': 10,
-    'COLLAGE_WIDTH': 500,
-    'FONT_SIZE': 20,
-    'TITLE_FONT_SIZE': 24,
-    'LINE_HEIGHT': 150,  # Высота строки с учетом изображения и текста
-    'BACKGROUND_COLOR': 'white',
-    'TEXT_COLOR': 'black',
-    'FONT_PATHS': [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
-        "/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf",
-        "/usr/share/fonts/TTF/DejaVuSans.ttf"
-    ]
+    'COLLAGE_WIDTH': 500
 }
 
 # Настройки для формирования команд
-TEAM_SETTINGS = {
-    'players_in_team': 5,  # Количество игроков в команде
-    'min_minutes_played': 10,  # Минимальное количество сыгранных минут
-    'stats_weights': {
-        'points': 1.0,
-        'rebounds': 0.7,
-        'assists': 0.7,
-        'steals': 1.2,
-        'blocks': 1.2,
-        'turnovers': -0.5
-    }
-}
-
 def load_env_vars():
     """Загрузка и проверка переменных окружения"""
     required_vars = {
