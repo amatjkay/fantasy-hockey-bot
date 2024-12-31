@@ -9209,6 +9209,144 @@
                     "position_appearances": {
                         "G": 1
                     }
+                },
+                "4233872": {
+                    "name": "Jesper Boqvist",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-30"
+                    ],
+                    "positions": [
+                        "C"
+                    ],
+                    "daily_stats": {
+                        "2024-12-30": {
+                            "points": 14.95,
+                            "position": "C",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 14.95,
+                    "position_appearances": {
+                        "C": 1
+                    }
+                },
+                "5835": {
+                    "name": "Jaden Schwartz",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-30"
+                    ],
+                    "positions": [
+                        "LW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-30": {
+                            "points": 16.45,
+                            "position": "LW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 16.45,
+                    "position_appearances": {
+                        "LW": 1
+                    }
+                },
+                "4565223": {
+                    "name": "Kaapo Kakko",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-30"
+                    ],
+                    "positions": [
+                        "RW"
+                    ],
+                    "daily_stats": {
+                        "2024-12-30": {
+                            "points": 9.15,
+                            "position": "RW",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 9.15,
+                    "position_appearances": {
+                        "RW": 1
+                    }
+                },
+                "2562610": {
+                    "name": "Adam Larsson",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-30"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-30": {
+                            "points": 10.75,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 10.75,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3151784": {
+                    "name": "Gustav Forsling",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-30"
+                    ],
+                    "positions": [
+                        "D"
+                    ],
+                    "daily_stats": {
+                        "2024-12-30": {
+                            "points": 10.65,
+                            "position": "D",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 10.65,
+                    "position_appearances": {
+                        "D": 1
+                    }
+                },
+                "3020225": {
+                    "name": "Connor Hellebuyck",
+                    "team_of_the_day_count": 1,
+                    "grade": "common",
+                    "team_of_the_day_dates": [
+                        "2024-12-30"
+                    ],
+                    "positions": [
+                        "G"
+                    ],
+                    "daily_stats": {
+                        "2024-12-30": {
+                            "points": 19.7,
+                            "position": "G",
+                            "team_of_the_day": true,
+                            "collage_sent": true
+                        }
+                    },
+                    "total_points": 19.7,
+                    "position_appearances": {
+                        "G": 1
+                    }
                 }
             }
         }
