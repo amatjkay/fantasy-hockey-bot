@@ -78,7 +78,13 @@ IMAGE_SETTINGS = {
     },
     'PADDING': 20,
     'TEXT_PADDING': 10,
-    'COLLAGE_WIDTH': 500
+    'COLLAGE_WIDTH': 500,
+    'FONTS': {
+        'TITLE': 36,
+        'POSITION': 24,
+        'PLAYER_NAME': 20,
+        'STATS': 18
+    }
 }
 
 # Настройки для формирования команд

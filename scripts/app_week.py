@@ -16,7 +16,7 @@ from src.config.settings import ESPN_TIMEZONE
 from src.utils.logger import setup_logging
 from src.utils.helpers import get_previous_week_dates, get_week_key
 from src.services.image_service import ImageService
-from src.telegram.bot import TelegramService
+from src.telegram_service.bot import TelegramService
 from src.config.settings import (
     PLAYER_STATS_FILE,
     POSITION_MAP,
@@ -121,10 +121,23 @@ def get_week_team(week_key):
             
         positions = {pos: [] for pos in POSITION_MAP.keys()}
         
+        def get_player_priority(player, position):
+            """Определение приоритета игрока на основе статистики"""
+            # Получаем только основные показатели
+            team_of_day_count = player.get("team_of_the_day_count", 0)
+            total_points = player.get("total_points", 0)
+            
+            # Для всех позиций используем одинаковые критерии
+            return (
+                team_of_day_count,  # Первый приоритет - количество появлений в команде дня
+                total_points        # Второй приоритет - общее количество очков
+            )
+        
         for player_id, player_info in week_data.items():
             total_points = player_info.get("total_points", 0)
             name = player_info.get("name", "Unknown")
             grade = player_info.get("grade", "common")
+            team_of_day_count = player_info.get("team_of_the_day_count", 0)
             
             for position in player_info.get("positions", []):
                 if position in positions:
@@ -133,30 +146,22 @@ def get_week_team(week_key):
                         'name': name,
                         'total_points': total_points,
                         'grade': grade,
-                        'image_url': f"https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/{player_id}.png&w=130&h=100"
+                        'team_of_day_count': team_of_day_count,
+                        'image_url': f"https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/{player_id}.png&w=130&h=100",
+                        'daily_stats': player_info.get("daily_stats", {})
                     })
-        
-        # Сортируем игроков по очкам и выбираем лучших для каждой позиции
+
+        # Сортируем игроков по позициям с учетом всех критериев
+        for position in positions:
+            positions[position].sort(key=lambda x: get_player_priority(x, position), reverse=True)
+
+        # Формируем команду недели
         team = {}
-        empty_positions = []
         for position, count in POSITION_MAP.items():
-            if positions[position]:
-                sorted_players = sorted(positions[position], key=lambda x: x['total_points'], reverse=True)
-                team[position] = sorted_players[:count]
-            else:
-                empty_positions.append(position)
-                team[position] = []
-        
-        if empty_positions:
-            logging.warning(f"Нет игроков на позициях: {', '.join(empty_positions)}")
-            
+            team[position] = positions[position][:count] if positions[position] else []
+
         return team
-    except FileNotFoundError:
-        logging.error(f"Файл статистики не найден: {PLAYER_STATS_FILE}")
-        return None
-    except json.JSONDecodeError:
-        logging.error(f"Ошибка чтения JSON из файла: {PLAYER_STATS_FILE}")
-        return None
+
     except Exception as e:
         logging.error(f"Ошибка при получении команды недели: {str(e)}")
         return None
