@@ -94,6 +94,7 @@ python3 scripts/app_week.py --all-weeks
 ```bash
 python3 scripts/app_week.py --force
 ```
+for d in $(seq 0 89); do date=$(date -d "2024-10-04 +$d days" +%Y-%m-%d); echo "Processing $date..."; ./scripts/app_day.py --date $date --force; done
 
 ## Система грейдов
 
