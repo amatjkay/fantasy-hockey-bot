@@ -18,7 +18,7 @@ for directory in [DATA_DIR, PROCESSED_DIR, PHOTOS_DIR, COLLAGES_DIR]:
     os.makedirs(directory, exist_ok=True)
 
 # Настройки ESPN API
-ESPN_BASE_URL = "https://fantasy.espn.com/apis/v3/games/fhl/seasons"
+ESPN_BASE_URL = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394"
 ESPN_HEADERS = {
     "User-Agent": "Mozilla/5.0",
     "Accept": "application/json",
@@ -33,6 +33,9 @@ LEAGUE_ID = os.getenv('LEAGUE_ID', '12345')
 # Настройки Telegram
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
+
+# Настройки времени
+TIMEZONE = 'America/New_York'
 
 # Маппинг позиций
 POSITION_MAPPING = {

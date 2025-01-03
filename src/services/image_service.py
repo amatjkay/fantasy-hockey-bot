@@ -28,8 +28,8 @@ class ImageService:
         self.COLLAGE_HEIGHT = 800
         
         # Размеры элементов
-        self.PLAYER_WIDTH = 200
-        self.PLAYER_HEIGHT = 200
+        self.player_img_width = 200
+        self.player_img_height = 200
         self.TITLE_FONT_SIZE = 36
         self.NAME_FONT_SIZE = 24
         self.STATS_FONT_SIZE = 20
@@ -94,56 +94,50 @@ class ImageService:
                 
                 # Добавляем фото игрока
                 player_id = player['id']
-                player_name = player['fullName']
+                player_name = player.get('fullName') or player.get('name', 'Unknown Player')
+                player_grade = player.get('grade', 'N/A')
                 
-                # Загружаем фото
-                photo_path = os.path.join(self.PHOTOS_DIR, f"{player_id}.png")
-                if not os.path.exists(photo_path):
-                    self.logger.warning(f"Фото не найдено: {photo_path}")
-                    continue
-                    
-                player_photo = Image.open(photo_path)
-                player_photo = player_photo.resize((self.PLAYER_WIDTH, self.PLAYER_HEIGHT))
-                collage.paste(player_photo, (x, y))
+                # Загружаем фото игрока
+                player_photo = self._get_player_photo(player_id)
+                if player_photo:
+                    collage.paste(player_photo, (x, y))
                 
                 # Добавляем имя игрока
                 name_font = ImageFont.truetype(self.font_path, self.NAME_FONT_SIZE)
                 name_bbox = draw.textbbox((0, 0), player_name, font=name_font)
                 name_width = name_bbox[2] - name_bbox[0]
-                name_x = x + (self.PLAYER_WIDTH - name_width) // 2
-                name_y = y + self.PLAYER_HEIGHT + 10
-                draw.text((name_x, name_y), player_name, font=name_font, fill='black')
-                
-                # Добавляем статистику
-                if player.get('stats'):
-                    stats = player['stats'][0]
-                    stats_text = self._format_stats(position, stats)
-                    stats_font = ImageFont.truetype(self.font_path, self.STATS_FONT_SIZE)
-                    stats_bbox = draw.textbbox((0, 0), stats_text, font=stats_font)
-                    stats_width = stats_bbox[2] - stats_bbox[0]
-                    stats_x = x + (self.PLAYER_WIDTH - stats_width) // 2
-                    stats_y = name_y + 30
-                    draw.text((stats_x, stats_y), stats_text, font=stats_font, fill='black')
+                name_x = x + (self.player_img_width - name_width) // 2
+                draw.text((name_x, y + self.player_img_height + 10), player_name, font=name_font, fill='black')
                 
                 # Добавляем грейд
-                grade = player.get('grade', 'common')
-                grade_color = self.GRADE_COLORS.get(grade, 'black')
                 grade_font = ImageFont.truetype(self.font_path, self.GRADE_FONT_SIZE)
-                grade_bbox = draw.textbbox((0, 0), grade, font=grade_font)
+                grade_bbox = draw.textbbox((0, 0), player_grade, font=grade_font)
                 grade_width = grade_bbox[2] - grade_bbox[0]
-                grade_x = x + (self.PLAYER_WIDTH - grade_width) // 2
-                grade_y = y - 30
-                draw.text((grade_x, grade_y), grade, font=grade_font, fill=grade_color)
+                grade_x = x + (self.player_img_width - grade_width) // 2
+                draw.text((grade_x, y + self.player_img_height + 40), player_grade, font=grade_font, fill='black')
             
             # Сохраняем коллаж
-            collage_path = os.path.join(self.COLLAGES_DIR, f"{title.lower().replace(' ', '_')}.png")
-            collage.save(collage_path)
-            
-            return collage_path
+            output_path = os.path.join(self.COLLAGES_DIR, f"{title.replace(' ', '_')}.jpg")
+            collage.save(output_path)
+            return output_path
             
         except Exception as e:
-            self.logger.error(f"Некорректный формат данных игроков: {e}")
-            raise
+            self.logger.error(f"Ошибка при создании коллажа: {str(e)}")
+            return None
+            
+    def create_week_collage(self, players: Dict[str, List[Dict]], week: str, output_path: str) -> str:
+        """Создание коллажа команды недели
+        
+        Args:
+            players (Dict[str, List[Dict]]): Словарь игроков по позициям
+            week (str): Неделя в формате YYYY-MM-DD_YYYY-MM-DD
+            output_path (str): Путь для сохранения коллажа
+            
+        Returns:
+            str: Путь к созданному коллажу
+        """
+        title = f"Team of the Week ({week})"
+        return self.create_team_collage(players, title)
             
     def _format_stats(self, position: str, stats: Dict) -> str:
         """Форматирование статистики игрока

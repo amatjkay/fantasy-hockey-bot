@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 from src.services.espn_service import ESPNService
 from src.utils.logging import setup_logging
@@ -42,6 +42,148 @@ class StatsService:
         self.teams_history = self._load_json(self.teams_history_file)
         self.weekly_stats = self._load_json(self.weekly_stats_file)
         
+    def collect_stats(self, date: datetime) -> Optional[Dict]:
+        """Сбор статистики за указанную дату
+        
+        Args:
+            date (datetime): Дата для сбора статистики
+            
+        Returns:
+            Optional[Dict]: Собранная статистика или None в случае ошибки
+        """
+        try:
+            # Получаем статистику от ESPN
+            stats = self.espn_service.get_daily_stats(date)
+            if not stats:
+                self.logger.error(f"Не удалось получить статистику за {date}")
+                return None
+                
+            # Обновляем статистику игроков
+            self.update_player_stats(stats['players'], date, self.player_stats_file)
+            
+            return stats
+            
+        except Exception as e:
+            self.logger.error(f"Ошибка при сборе статистики: {e}")
+            return None
+            
+    def collect_stats_range(self, start_date: datetime, end_date: datetime) -> Optional[Dict]:
+        """Сбор статистики за диапазон дат
+        
+        Args:
+            start_date (datetime): Начальная дата
+            end_date (datetime): Конечная дата
+            
+        Returns:
+            Optional[Dict]: Собранная статистика или None в случае ошибки
+        """
+        try:
+            all_stats = {'players': []}
+            current_date = start_date
+            
+            while current_date <= end_date:
+                stats = self.collect_stats(current_date)
+                if stats and 'players' in stats:
+                    all_stats['players'].extend(stats['players'])
+                current_date += timedelta(days=1)
+                
+            return all_stats if all_stats['players'] else None
+            
+        except Exception as e:
+            self.logger.error(f"Ошибка при сборе статистики за период: {e}")
+            return None
+            
+    def update_player_stats(self, players: List[Dict], date: datetime, stats_file: str) -> None:
+        """Обновление статистики игроков
+        
+        Args:
+            players (List[Dict]): Список игроков с их статистикой
+            date (datetime): Дата статистики
+            stats_file (str): Путь к файлу статистики
+        """
+        try:
+            # Загружаем текущую статистику
+            stats = self._load_json(stats_file)
+            
+            # Получаем ключ недели
+            week_start = date - timedelta(days=date.weekday())
+            week_end = week_start + timedelta(days=6)
+            week_key = f"{week_start.strftime('%Y-%m-%d')}_{week_end.strftime('%Y-%m-%d')}"
+            
+            # Создаем структуру для недели если её нет
+            if week_key not in stats['weeks']:
+                stats['weeks'][week_key] = {
+                    'start_date': week_start.strftime('%Y-%m-%d'),
+                    'end_date': week_end.strftime('%Y-%m-%d'),
+                    'players': []
+                }
+                
+            # Обновляем статистику игроков
+            for player in players:
+                player_id = str(player['id'])
+                player_stats = next(
+                    (p for p in stats['weeks'][week_key]['players'] if str(p['id']) == player_id),
+                    None
+                )
+                
+                if player_stats:
+                    # Обновляем существующую статистику
+                    player_stats['appearances'] += 1
+                    player_stats['total_points'] += player['stats'][0]['points']
+                else:
+                    # Добавляем нового игрока
+                    stats['weeks'][week_key]['players'].append({
+                        'id': player_id,
+                        'name': player['fullName'],
+                        'position': self._get_position_code(player['defaultPositionId']),
+                        'appearances': 1,
+                        'total_points': player['stats'][0]['points']
+                    })
+                    
+            # Обновляем грейды игроков
+            self.update_player_grades(stats['weeks'][week_key]['players'])
+            
+            # Сохраняем обновленную статистику
+            self._save_json(stats, stats_file)
+            
+        except Exception as e:
+            self.logger.error(f"Ошибка при обновлении статистики игроков: {e}")
+            
+    def update_player_grades(self, players: List[Dict]) -> None:
+        """Обновление грейдов игроков
+        
+        Args:
+            players (List[Dict]): Список игроков для обновления грейдов
+        """
+        try:
+            for player in players:
+                # Рассчитываем грейд на основе очков и появлений
+                avg_points = player['total_points'] / player['appearances']
+                
+                # Определяем грейд
+                if avg_points >= 20:
+                    player['grade'] = 'legendary'
+                elif avg_points >= 15:
+                    player['grade'] = 'epic'
+                elif avg_points >= 10:
+                    player['grade'] = 'rare'
+                else:
+                    player['grade'] = 'common'
+                    
+        except Exception as e:
+            self.logger.error(f"Ошибка при обновлении грейдов игроков: {e}")
+            
+    def _get_position_code(self, position_id: int) -> Optional[str]:
+        """Получение кода позиции по ID
+        
+        Args:
+            position_id (int): ID позиции
+            
+        Returns:
+            Optional[str]: Код позиции или None
+        """
+        return POSITION_MAPPING.get(position_id)
+            
     def _load_json(self, file_path: str) -> Dict:
         """Загрузка данных из JSON файла
         
@@ -249,16 +391,10 @@ class StatsService:
             List[Dict]: Список лучших игроков
         """
         try:
-            # Фильтруем игроков без статистики
-            valid_players = [
-                p for p in players
-                if p.get('stats') and p['stats'][0].get('points') is not None
-            ]
-            
-            # Сортируем по очкам
+            # Сортируем игроков по очкам
             sorted_players = sorted(
-                valid_players,
-                key=lambda x: x['stats'][0].get('points', 0),
+                players,
+                key=lambda x: x['stats'][0]['points'] if x['stats'] else 0,
                 reverse=True
             )
             
@@ -268,96 +404,17 @@ class StatsService:
             self.logger.error(f"Ошибка при выборе лучших игроков: {e}")
             return []
             
-    def _get_position_code(self, position_id: int) -> Optional[str]:
-        """Преобразование ID позиции в код
-        
-        Args:
-            position_id (int): ID позиции
-            
-        Returns:
-            Optional[str]: Код позиции или None
-        """
-        position_map = {
-            1: 'C',
-            2: 'LW',
-            3: 'RW',
-            4: 'D',
-            5: 'G'
-        }
-        return position_map.get(position_id)
-        
-    def _save_team_to_history(self, team: Dict[str, List[Dict]], date: Optional[datetime] = None) -> None:
+    def _save_team_to_history(self, team: Dict[str, List[Dict]], date: datetime) -> None:
         """Сохранение команды в историю
         
         Args:
-            team (Dict[str, List[Dict]]): Команда дня
-            date (datetime, optional): Дата команды
+            team (Dict[str, List[Dict]]): Команда для сохранения
+            date (datetime): Дата команды
         """
         try:
-            if date is None:
-                date = datetime.now()
-            
             date_key = date.strftime('%Y-%m-%d')
-            
-            # Сохраняем в историю команд
-            self.teams_history['teams'][date_key] = team
+            self.teams_history[date_key] = team
             self._save_json(self.teams_history, self.teams_history_file)
-            
-            # Обновляем статистику игроков
-            if date_key not in self.player_stats['players']:
-                self.player_stats['players'][date_key] = {}
-            
-            for position_players in team.values():
-                for player in position_players:
-                    player_id = str(player['id'])
-                    self.player_stats['players'][date_key][player_id] = player
-            
-            self._save_json(self.player_stats, self.player_stats_file)
             
         except Exception as e:
             self.logger.error(f"Ошибка при сохранении команды в историю: {e}")
-            
-    def update_player_grades(self) -> None:
-        """Обновление грейдов игроков на основе статистики"""
-        try:
-            # Получаем текущую неделю
-            today = datetime.now()
-            start_of_week = today - timedelta(days=today.weekday())
-            end_of_week = start_of_week + timedelta(days=6)
-            
-            # Считаем появления в команде дня за неделю
-            appearances = {}
-            
-            for date_key, day_data in self.player_stats.get('players', {}).items():
-                try:
-                    date = datetime.strptime(date_key, '%Y-%m-%d')
-                    if start_of_week <= date <= end_of_week:
-                        for player_id, player_data in day_data.items():
-                            if player_id not in appearances:
-                                appearances[player_id] = 0
-                            appearances[player_id] += 1
-                except ValueError:
-                    continue
-            
-            # Обновляем грейды
-            for player_id, count in appearances.items():
-                grade = 'common'
-                if count >= 5:
-                    grade = 'legend'
-                elif count >= 4:
-                    grade = 'epic'
-                elif count >= 3:
-                    grade = 'rare'
-                elif count >= 2:
-                    grade = 'uncommon'
-                
-                # Обновляем грейд в статистике
-                for day_data in self.player_stats.get('players', {}).values():
-                    if player_id in day_data:
-                        day_data[player_id]['grade'] = grade
-            
-            # Сохраняем обновленные данные
-            self._save_json(self.player_stats, self.player_stats_file)
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при обновлении грейдов игроков: {e}")

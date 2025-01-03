@@ -1,18 +1,20 @@
 import json
 import logging
 import os
-import urllib3
-from datetime import datetime
-from typing import Dict, List, Optional
+from datetime import datetime, timedelta
+from typing import Dict, List, Optional, Tuple
 import requests
+import pytz
 from src.utils.logging import setup_logging
 from src.config import (
     ESPN_BASE_URL,
     ESPN_HEADERS,
     SEASON,
     LEAGUE_ID,
-    get_fantasy_filter
+    get_fantasy_filter,
+    TIMEZONE
 )
+from collections import defaultdict
 
 class ESPNService:
     """Сервис для работы с API ESPN"""
@@ -20,9 +22,13 @@ class ESPNService:
     def __init__(self):
         """Инициализация сервиса"""
         self.logger = logging.getLogger(__name__)
-        self.base_url = 'https://fantasy.espn.com/apis/v3/games/fhl/seasons/2024/segments/0/leagues/1'
-        self.default_headers = {
-            'Cookie': f'SWID={os.getenv("ESPN_SWID")}; espn_s2={os.getenv("ESPN_S2")}'
+        self.base_url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394"
+        self.headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Cookie': f'SWID={os.getenv("ESPN_SWID")}; espn_s2={os.getenv("ESPN_S2")}',
+            'x-fantasy-source': 'kona',
+            'x-fantasy-platform': 'kona-PROD-6daa0c838b3e2ff0192c0d7d1d24be52e5053a91'
         }
         
     def get_daily_stats(self, date: Optional[datetime] = None) -> Optional[Dict]:
@@ -88,6 +94,42 @@ class ESPNService:
             self.logger.error(f"Неожиданная ошибка при получении статистики: {e}")
             return None
             
+    def get_weekly_stats(self, date: datetime) -> Optional[Dict]:
+        """Получение статистики за неделю
+        
+        Args:
+            date (datetime): Дата начала недели
+            
+        Returns:
+            Optional[Dict]: Статистика игроков или None в случае ошибки
+        """
+        try:
+            # Получаем даты начала и конца недели
+            start_date = self._get_week_start_date(date)
+            end_date = start_date + timedelta(days=6)
+            
+            # Получаем фильтр для API
+            fantasy_filter = get_fantasy_filter(start_date, end_date)
+            
+            # Параметры запроса
+            params = {
+                'scoringPeriodId': 92,
+                'view': 'mStats,kona_player_info',
+                'startDate': start_date.strftime('%Y%m%d'),
+                'endDate': end_date.strftime('%Y%m%d')
+            }
+            
+            # Заголовки запроса
+            headers = self.headers.copy()
+            headers['X-Fantasy-Filter'] = json.dumps(fantasy_filter)
+            
+            # Выполняем запрос
+            return self._make_request(params, headers)
+            
+        except Exception as e:
+            self.logger.error(f"Неожиданная ошибка при получении недельной статистики: {e}")
+            return None
+            
     def _make_request(self, params: Dict, headers: Dict) -> Optional[Dict]:
         """Выполнение запроса к API
         
@@ -131,43 +173,77 @@ class ESPNService:
             self.logger.error(f"Ошибка при запросе к API: {e}")
             return None
 
-    def get_stats(self, date: datetime) -> Optional[Dict]:
-        """Получение статистики за указанную дату
+    def _get_scoring_period_id(self, date: datetime) -> Tuple[int, int]:
+        """Получение ID периода подсчета очков
         
         Args:
-            date (datetime): Дата, за которую нужно получить статистику
+            date (datetime): Дата для получения ID
             
         Returns:
-            Optional[Dict]: Статистика или None в случае ошибки
+            Tuple[int, int]: (ID периода, сезон)
         """
-        # Параметры запроса
-        params = {
-            'view': 'kona_player_info',
-            'scoringPeriodId': 92  # Фиксированное значение для всех запросов
-        }
+        # Начало сезона - 4 октября 2024
+        season_start = datetime(2024, 10, 4, tzinfo=pytz.timezone(TIMEZONE))
+        days_since_start = (date - season_start).days
         
-        # Заголовки запроса
-        headers = self.default_headers.copy()
-        headers.update({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            'x-fantasy-filter': json.dumps({
-                'players': {
-                    'filterStatsForExternalIds': {
-                        'value': [date.year]
-                    },
-                    'filterSlotIds': {
-                        'value': [0, 1, 2, 3, 4, 5, 6]  # ID слотов для всех позиций
-                    },
-                    'filterStatsForSourceIds': {
-                        'value': [0, 1]  # Источники статистики
-                    }
-                }
-            }),
-            'x-fantasy-platform': 'kona-PROD-6daa0c838b3e2ff0192c0d7d1d24be52e5053a91',
-            'x-fantasy-source': 'kona'
-        })
+        # ID периода - количество дней с начала сезона + 1
+        period_id = days_since_start + 1
         
-        # Выполняем запрос
-        return self._make_request(params, headers)
+        return period_id, 2025
+
+    def _get_week_start_date(self, date: Optional[datetime] = None) -> datetime:
+        """Получение даты начала недели
+        
+        Args:
+            date (datetime, optional): Дата для получения начала недели
+            
+        Returns:
+            datetime: Дата начала недели
+        """
+        if date is None:
+            date = datetime.now(pytz.timezone(TIMEZONE))
+            
+        # Получаем понедельник текущей недели
+        days_to_monday = date.weekday()
+        monday = date - timedelta(days=days_to_monday)
+        
+        return monday.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    def get_players_by_position(self, players: List[Dict]) -> Dict[str, List[Dict]]:
+        """Группировка игроков по позициям
+
+        Args:
+            players (List[Dict]): Список игроков
+
+        Returns:
+            Dict[str, List[Dict]]: Словарь игроков по позициям
+        """
+        result = defaultdict(list)
+        for player in players:
+            position_id = player.get('defaultPositionId')
+            if position_id in POSITION_MAPPING:
+                position = POSITION_MAPPING[position_id]
+                result[position].append(player)
+        return dict(result)
+
+    def get_scoring_period_id(self, date: datetime) -> int:
+        """Получение ID периода подсчета очков для указанной даты
+
+        Args:
+            date (datetime): Дата для которой нужно получить ID периода
+
+        Returns:
+            int: ID периода подсчета очков
+        """
+        return self._get_scoring_period_id(date)
+
+    def get_week_start_date(self, date: datetime) -> datetime:
+        """Получение даты начала недели для указанной даты
+
+        Args:
+            date (datetime): Дата для которой нужно получить начало недели
+
+        Returns:
+            datetime: Дата начала недели
+        """
+        return self._get_week_start_date(date)
