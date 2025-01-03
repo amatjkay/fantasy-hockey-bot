@@ -1,260 +1,93 @@
-import asyncio
-import logging
-import os
-import json
-from pathlib import Path
-import sys
-from datetime import datetime, timedelta
+#!/usr/bin/env python3
 import argparse
-
-# Добавляем корневую директорию проекта в PYTHONPATH
-root_dir = str(Path(__file__).parent.parent)
-if root_dir not in sys.path:
-    sys.path.append(root_dir)
-
-from src.config.settings import ESPN_TIMEZONE
-from src.utils.logger import setup_logging
-from src.utils.helpers import get_previous_week_dates, get_week_key
+from datetime import datetime, timedelta
+from src.services.stats_service import StatsService
 from src.services.image_service import ImageService
-from src.telegram_service.bot import TelegramService
-from src.config.settings import (
-    PLAYER_STATS_FILE,
-    POSITION_MAP,
-    TEMP_DIR,
-    ESPN_API,
-    load_env_vars,
-    SEASON_START_DATE
-)
-from dotenv import load_dotenv
+from src.services.telegram_service import TelegramService
+from src.utils.logging import setup_logging
 
-# Загружаем переменные окружения
-load_dotenv()
+def parse_args() -> argparse.Namespace:
+    """Разбор аргументов командной строки
+    
+    Returns:
+        argparse.Namespace: Аргументы командной строки
+    """
+    parser = argparse.ArgumentParser(description='Формирование команды недели')
+    
+    # Аргумент для даты
+    parser.add_argument(
+        '--week',
+        type=lambda s: datetime.strptime(s, '%Y-%m-%d'),
+        help='Дата в формате YYYY-MM-DD',
+        required=True
+    )
+    
+    # Флаг для отключения отправки в Telegram
+    parser.add_argument(
+        '--no-send',
+        action='store_true',
+        help='Не отправлять результаты в Telegram'
+    )
+    
+    return parser.parse_args()
 
-# Инициализируем logger
-setup_logging()
-logger = logging.getLogger('app_week')
-
-def get_all_weeks():
-    """Получение списка всех недель с начала сезона"""
-    weeks = []
-    current_date = SEASON_START_DATE
-    
-    # Находим первый понедельник после начала сезона
-    days_until_monday = (0 - current_date.weekday()) % 7
-    first_monday = current_date + timedelta(days=days_until_monday)
-    first_monday = first_monday.replace(hour=0, minute=0, second=0, microsecond=0)
-    
-    # Получаем текущий понедельник
-    now = datetime.now(ESPN_TIMEZONE)
-    days_since_monday = now.weekday()
-    current_monday = now - timedelta(days=days_since_monday)
-    current_monday = current_monday.replace(hour=0, minute=0, second=0, microsecond=0)
-    
-    # Генерируем все недели
-    week_start = first_monday
-    while week_start <= current_monday:
-        week_end = week_start + timedelta(days=6)
-        week_end = week_end.replace(hour=23, minute=59, second=59, microsecond=999999)
-        weeks.append((week_start, week_end))
-        week_start = week_start + timedelta(days=7)
-    
-    return weeks
-
-def get_current_week_dates():
-    """Получение дат текущей недели"""
-    espn_now = datetime.now(ESPN_TIMEZONE)
-    day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
-    
-    # Корректируем дату, если время меньше 4 утра
-    if espn_now.hour < day_start_hour:
-        espn_now = espn_now - timedelta(days=1)
-    
-    # Находим понедельник текущей недели
-    days_since_monday = espn_now.weekday()
-    monday = espn_now - timedelta(days=days_since_monday)
-    monday = monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
-    
-    # Находим воскресенье
-    sunday = monday + timedelta(days=6)
-    sunday = sunday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
-    
-    return monday, sunday
-
-def get_previous_week_dates():
-    """Получение дат предыдущей недели"""
-    espn_now = datetime.now(ESPN_TIMEZONE)
-    day_start_hour = int(os.getenv('DAY_START_HOUR', '4'))
-    
-    # Корректируем дату, если время меньше 4 утра
-    if espn_now.hour < day_start_hour:
-        espn_now = espn_now - timedelta(days=1)
-    
-    # Находим понедельник текущей недели
-    days_since_monday = espn_now.weekday()
-    current_monday = espn_now - timedelta(days=days_since_monday)
-    current_monday = current_monday.replace(hour=day_start_hour, minute=0, second=0, microsecond=0)
-    
-    # Получаем понедельник и воскресенье предыдущей недели
-    previous_monday = current_monday - timedelta(days=7)
-    previous_sunday = previous_monday + timedelta(days=6)
-    previous_sunday = previous_sunday.replace(hour=day_start_hour-1, minute=59, second=59, microsecond=999999)
-    
-    return previous_monday, previous_sunday
-
-def get_week_team(week_key):
-    """Получение лучшей команды за неделю
+def get_week_dates(date: datetime) -> tuple[datetime, datetime]:
+    """Получение дат начала и конца недели
     
     Args:
-        week_key (str): Ключ недели в формате 'YYYY-MM-DD_YYYY-MM-DD'
+        date (datetime): Дата
         
     Returns:
-        dict: Словарь с лучшими игроками по позициям или None в случае ошибки
+        tuple[datetime, datetime]: Даты начала и конца недели
     """
-    try:
-        with open(PLAYER_STATS_FILE, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            
-        week_data = data.get("weeks", {}).get(week_key, {}).get("players", {})
-        if not week_data:
-            logging.error(f"Нет данных для недели {week_key}")
-            return None
-            
-        positions = {pos: [] for pos in POSITION_MAP.keys()}
-        
-        def get_player_priority(player, position):
-            """Определение приоритета игрока на основе статистики"""
-            # Получаем только основные показатели
-            team_of_day_count = player.get("team_of_the_day_count", 0)
-            total_points = player.get("total_points", 0)
-            
-            # Для всех позиций используем одинаковые критерии
-            return (
-                team_of_day_count,  # Первый приоритет - количество появлений в команде дня
-                total_points        # Второй приоритет - общее количество очков
-            )
-        
-        for player_id, player_info in week_data.items():
-            total_points = player_info.get("total_points", 0)
-            name = player_info.get("name", "Unknown")
-            grade = player_info.get("grade", "common")
-            team_of_day_count = player_info.get("team_of_the_day_count", 0)
-            
-            for position in player_info.get("positions", []):
-                if position in positions:
-                    positions[position].append({
-                        'id': player_id,
-                        'name': name,
-                        'total_points': total_points,
-                        'grade': grade,
-                        'team_of_day_count': team_of_day_count,
-                        'image_url': f"https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/{player_id}.png&w=130&h=100",
-                        'daily_stats': player_info.get("daily_stats", {})
-                    })
-
-        # Сортируем игроков по позициям с учетом всех критериев
-        for position in positions:
-            positions[position].sort(key=lambda x: get_player_priority(x, position), reverse=True)
-
-        # Формируем команду недели
-        team = {}
-        for position, count in POSITION_MAP.items():
-            team[position] = positions[position][:count] if positions[position] else []
-
-        return team
-
-    except Exception as e:
-        logging.error(f"Ошибка при получении команды недели: {str(e)}")
-        return None
-
-async def process_week(week_start, week_end, image_service, telegram_service):
-    """Обработка одной недели"""
-    week_key = get_week_key(week_start, week_end)
-    logger.info(f"Обработка команды недели: {week_key}")
+    # Получаем начало недели (понедельник)
+    start_date = date - timedelta(days=date.weekday())
     
-    # Получаем команду недели
-    team = get_week_team(week_key)
-    if not team:
-        logger.error(f"Не удалось получить команду недели для {week_key}")
-        return
-        
-    # Проверяем, есть ли игроки в команде
-    if not any(team.values()):
-        logger.error(f"В команде недели нет игроков для {week_key}")
-        return
-        
-    # Создаем временный файл для коллажа
-    temp_file = TEMP_DIR / f"team_week_collage_{week_key}.jpg"
+    # Получаем конец недели (воскресенье)
+    end_date = start_date + timedelta(days=6)
     
+    return start_date, end_date
+
+def main():
+    """Основная функция"""
     try:
-        # Создаем и отправляем коллаж
-        photo_path = image_service.create_week_collage(team, week_key, temp_file)
-        await telegram_service.send_week_results(team, week_key, photo_path)
-        # Небольшая пауза между отправками
-        await asyncio.sleep(2)
-    finally:
-        # Удаляем временный файл
-        if os.path.exists(temp_file):
-            os.remove(temp_file)
-
-async def main():
-    """Основная функция скрипта"""
-    try:
-        # Создаем парсер аргументов
-        parser = argparse.ArgumentParser(description='Скрипт для создания команды недели')
-        parser.add_argument('--all-weeks', action='store_true', help='Обработать все недели с начала сезона')
-        parser.add_argument('--force', action='store_true', help='Принудительная обработка всех недель, даже если они уже были обработаны')
-        args = parser.parse_args()
-
-        # Загружаем переменные окружения
-        load_env_vars()
-
-        # Если используется --force, очищаем файл статистики
-        if args.force:
-            logger.info("Очищаем существующую статистику из-за флага --force")
-            if os.path.exists(PLAYER_STATS_FILE):
-                with open(PLAYER_STATS_FILE, 'w') as f:
-                    json.dump({"current_week": {}, "weeks": {}}, f, indent=4)
-
-        # Инициализируем сервисы
+        # Инициализация логирования
+        logger = setup_logging('app_week')
+        logger.info("Запуск формирования команды недели")
+        
+        # Разбор аргументов
+        args = parse_args()
+        
+        # Получаем даты недели
+        start_date, end_date = get_week_dates(args.week)
+        
+        # Инициализация сервисов
+        stats_service = StatsService()
         image_service = ImageService()
         telegram_service = TelegramService()
-
-        if args.all_weeks:
-            # Обработка всех недель с начала сезона
-            weeks = get_all_weeks()
-            total_weeks = len(weeks)
-            logger.info(f"Начинаем обработку всех недель ({total_weeks} недель)")
+        
+        # Получаем команду недели
+        team = stats_service.get_team_of_the_week(start_date, end_date)
+        if not team:
+            logger.error("Не удалось получить команду недели")
+            return
             
-            for i, (week_start, week_end) in enumerate(weeks, 1):
-                week_key = get_week_key(week_start, week_end)
-                logger.info(f"Обработка недели {i}/{total_weeks}: {week_key}")
-                await process_week(week_start, week_end, image_service, telegram_service)
-                
-                # Пауза между неделями
-                if i < total_weeks:
-                    await asyncio.sleep(2)
-        else:
-            # Получаем даты предыдущей недели
-            today = datetime.now(ESPN_TIMEZONE)
-            days_since_monday = today.weekday()
-            last_monday = today - timedelta(days=days_since_monday + 7)
-            last_sunday = last_monday + timedelta(days=6)
+        # Формируем заголовок
+        title = f"Команда недели {start_date.strftime('%d.%m.%Y')} - {end_date.strftime('%d.%m.%Y')}"
             
-            # Формируем ключ недели
-            week_key = f"{last_monday.strftime('%Y-%m-%d')}_{last_sunday.strftime('%Y-%m-%d')}"
+        # Создаем коллаж
+        collage_path = image_service.create_team_collage(team, title)
+        if not collage_path:
+            logger.error("Не удалось создать коллаж")
+            return
             
-            logger.info(f"Обработка последней недели: {week_key}")
+        # Отправляем в Telegram если нужно
+        if not args.no_send:
+            telegram_service.send_team_of_the_week(collage_path)
             
-            # Обрабатываем команду недели
-            await process_week(last_monday, last_sunday, image_service, telegram_service)
-
     except Exception as e:
-        logger.error(f"Произошла ошибка: {str(e)}")
+        logger.error(f"Неожиданная ошибка: {e}")
         raise
 
-if __name__ == "__main__":
-    # Настраиваем логирование
-    setup_logging()
-    
-    # Запускаем основную функцию
-    asyncio.run(main()) 
+if __name__ == '__main__':
+    main() 

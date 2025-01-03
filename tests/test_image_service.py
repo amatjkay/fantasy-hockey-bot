@@ -57,28 +57,34 @@ def test_create_week_collage(mock_get, image_service, test_team_data, tmp_path, 
 
 @patch('requests.get')
 def test_player_image_caching(mock_get, image_service, test_team_data, tmp_path, mock_image):
+    # Создаем временную директорию для кэша
+    cache_dir = tmp_path / "cache/player_images"
+    os.makedirs(cache_dir, exist_ok=True)
+
     # Настраиваем мок для requests.get
     mock_response = requests.Response()
     mock_response.raw = mock_image
     mock_response.status_code = 200
     mock_get.return_value = mock_response
 
+    # Устанавливаем путь к кэшу в сервисе
+    image_service.cache_dir = cache_dir
+
     # Проверяем, что изображения кэшируются
-    cache_dir = "data/cache/player_images"
     player_id = test_team_data["C"][0]["id"]
     cache_file = os.path.join(cache_dir, f"{player_id}.jpg")
-    
+
     # Удаляем кэш если существует
     if os.path.exists(cache_file):
         os.remove(cache_file)
-    
+
     output_path = tmp_path / "test_collage.jpg"
     image_service.create_week_collage(
         test_team_data,
         "2024-01-01_2024-01-07",
         output_path
     )
-    
+
     assert os.path.exists(cache_file)
     
     # Проверяем, что второй запрос использует кэш

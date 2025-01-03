@@ -1,6 +1,11 @@
-python-telegram-bot==20.7
-requests==2.31.0
 python-dotenv==1.0.0
+requests==2.31.0
 Pillow==10.1.0
-pytz==2024.1
-pytest==7.4.3 
+python-telegram-bot==20.7
+pytz==2023.3
+pytest==7.4.3
+pytest-mock==3.12.0
+pytest-cov==4.1.0
+black==23.11.0
+isort==5.12.0
+mypy==1.7.0 
