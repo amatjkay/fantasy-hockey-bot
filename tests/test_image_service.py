@@ -1,93 +1,112 @@
-import os
-import json
 import pytest
-import requests
-from datetime import datetime
-from unittest.mock import patch, Mock
+import os
 from PIL import Image
-from io import BytesIO
-
+import requests
 from src.services.image_service import ImageService
+from src.config import settings
+from .fixtures.test_data import TEST_TEAM_OF_DAY
 
 @pytest.fixture
 def image_service():
     return ImageService()
 
-@pytest.fixture
-def test_team_data():
-    return {
-        'C': [{
-            'id': '12345',
-            'fullName': 'Test Player',
-            'grade': 'A+'
-        }]
-    }
+def test_image_service_initialization(image_service):
+    """Тест инициализации сервиса"""
+    assert os.path.exists(image_service.cache_dir)
+    assert os.path.exists(image_service.collage_dir)
 
-@pytest.fixture
-def mock_image():
-    # Создаем тестовое изображение
-    img = Image.new('RGB', (100, 100), color='white')
-    img_byte_arr = BytesIO()
-    img.save(img_byte_arr, format='PNG')
-    img_byte_arr.seek(0)
-    return img_byte_arr
+def test_get_player_photo_caching(image_service, mocker):
+    """Тест кэширования фото игроков"""
+    player_id = "test123"
+    player_name = "Test Player"
+    cache_path = os.path.join(image_service.cache_dir, f"{player_id}.png")
+    
+    # Создаем тестовое фото в кэше
+    with open(cache_path, 'wb') as f:
+        f.write(b'test')
+        
+    # Проверяем что фото берется из кэша
+    photo_path = image_service.get_player_photo(player_id, player_name)
+    assert photo_path == cache_path
+    
+    # Очищаем после теста
+    os.remove(cache_path)
 
-@patch('requests.get')
-def test_create_week_collage(mock_get, image_service, test_team_data, tmp_path, mock_image):
-    # Настраиваем мок для requests.get
-    mock_response = requests.Response()
-    mock_response.raw = mock_image
+@pytest.mark.vcr()
+def test_get_player_photo_download(image_service, mocker):
+    """Тест загрузки фото игроков"""
+    player_id = "test123"
+    player_name = "Test Player"
+    
+    # Мокаем запрос к API
+    mock_response = mocker.Mock()
+    mock_response.content = b'test'
     mock_response.status_code = 200
-    mock_get.return_value = mock_response
+    mocker.patch.object(requests, 'get', return_value=mock_response)
+    
+    photo_path = image_service.get_player_photo(player_id, player_name)
+    assert photo_path is not None
+    assert os.path.exists(photo_path)
+    
+    # Очищаем после теста
+    os.remove(photo_path)
 
-    output_path = tmp_path / "test_collage.jpg"
-    result_path = image_service.create_week_collage(
-        test_team_data,
-        "2024-01-01_2024-01-07",
-        str(output_path)
+def test_get_photo_positions(image_service):
+    """Тест получения позиций для фото"""
+    width = 800
+    height = 600
+    positions = image_service._get_photo_positions(width, height)
+    
+    assert len(positions) == 6  # 6 игроков
+    assert all(isinstance(pos, tuple) and len(pos) == 2 for pos in positions)
+    assert all(0 <= x <= width and 0 <= y <= height for x, y in positions)
+
+@pytest.mark.vcr()
+def test_create_collage(image_service):
+    """Тест создания коллажа"""
+    # Создаем тестовые фото
+    player_photos = {}
+    for player_id in TEST_TEAM_OF_DAY["players"]:
+        photo_path = os.path.join(image_service.cache_dir, f"{player_id}.png")
+        # Создаем тестовое изображение
+        img = Image.new('RGB', (130, 100), color='white')
+        img.save(photo_path)
+        player_photos[player_id] = photo_path
+        
+    # Создаем коллаж
+    collage_path = image_service.create_collage(
+        player_photos,
+        TEST_TEAM_OF_DAY["players"],
+        TEST_TEAM_OF_DAY["date"],
+        TEST_TEAM_OF_DAY["total_points"]
     )
+    
+    assert collage_path is not None
+    assert os.path.exists(collage_path)
+    
+    # Проверяем размеры коллажа
+    with Image.open(collage_path) as img:
+        assert img.size == (800, 600)
+        
+    # Очищаем после теста
+    for photo_path in player_photos.values():
+        os.remove(photo_path)
+    os.remove(collage_path)
 
-    assert result_path is not None
-    assert os.path.exists(result_path)
+def test_photo_url_generation(image_service):
+    """Тест генерации URL для фото"""
+    player_id = "123456"
+    url = image_service._get_player_photo_url(player_id)
+    assert url == f"https://a.espncdn.com/i/headshots/nhl/players/full/{player_id}.png"
 
-@patch('requests.get')
-def test_player_image_caching(mock_get, image_service, test_team_data, tmp_path, mock_image):
-    # Создаем временную директорию для кэша
-    cache_dir = tmp_path / "cache/player_images"
-    os.makedirs(cache_dir, exist_ok=True)
-
-    # Настраиваем мок для requests.get
-    mock_response = requests.Response()
-    mock_response.raw = mock_image
-    mock_response.status_code = 200
-    mock_get.return_value = mock_response
-
-    # Устанавливаем путь к кэшу в сервисе
-    image_service.cache_dir = str(cache_dir)
-
-    # Проверяем, что изображения кэшируются
-    player_id = test_team_data["C"][0]["id"]
-    cache_file = os.path.join(cache_dir, f"{player_id}.jpg")
-
-    # Удаляем кэш если существует
-    if os.path.exists(cache_file):
-        os.remove(cache_file)
-
-    output_path = tmp_path / "test_collage.jpg"
-    image_service.create_week_collage(
-        test_team_data,
-        "2024-01-01_2024-01-07",
-        str(output_path)
-    )
-
-    # Проверяем, что файл был закэширован
-    assert os.path.exists(cache_file)
-
-    # Проверяем, что при повторном запросе используется кэш
-    mock_get.reset_mock()
-    image_service.create_week_collage(
-        test_team_data,
-        "2024-01-01_2024-01-07",
-        str(output_path)
-    )
-    mock_get.assert_not_called() 
+@pytest.mark.vcr()
+def test_error_handling(image_service, mocker):
+    """Тест обработки ошибок"""
+    player_id = "test123"
+    player_name = "Test Player"
+    
+    # Мокаем ошибку сети
+    mocker.patch.object(requests, 'get', side_effect=requests.RequestException)
+    
+    photo_path = image_service.get_player_photo(player_id, player_name)
+    assert photo_path is None 

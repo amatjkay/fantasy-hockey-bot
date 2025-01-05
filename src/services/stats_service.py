@@ -1,420 +1,203 @@
-import json
-import os
+from typing import Dict, Optional, List
 from datetime import datetime, timedelta
-from typing import Dict, List, Optional
-from src.services.espn_service import ESPNService
-from src.utils.logging import setup_logging
-from src.config import (
-    DATA_DIR,
-    PROCESSED_DIR,
-    TEAMS_HISTORY_FILE,
-    PLAYER_GRADES_FILE,
-    POSITION_MAPPING,
-    GRADE_MAPPING
-)
+import logging
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+from ..config import settings
+import time
+import json
+
+logger = logging.getLogger(__name__)
 
 class StatsService:
-    """Сервис для работы со статистикой игроков и команд"""
-    
     def __init__(self):
-        """Инициализация сервиса"""
-        self.logger = setup_logging('stats')
-        self.espn_service = ESPNService()
+        self.session = self._create_session()
+        self.base_url = settings.ESPN_API['BASE_URL']
         
-        # Количество игроков на каждой позиции
-        self.positions = {
-            'C': 1,   # Центральный нападающий
-            'LW': 1,  # Левый нападающий
-            'RW': 1,  # Правый нападающий
-            'D': 2,   # Защитники
-            'G': 1    # Вратарь
+    def _create_session(self) -> requests.Session:
+        """Создает сессию с настроенным механизмом повторных попыток"""
+        session = requests.Session()
+        
+        retry_strategy = Retry(
+            total=settings.MAX_RETRIES,
+            backoff_factor=settings.RETRY_DELAY,
+            status_forcelist=[429, 500, 502, 503, 504]
+        )
+        
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        session.mount("https://", adapter)
+        session.mount("http://", adapter)
+        
+        return session
+    
+    def _get_auth_headers(self) -> Dict:
+        """Формирует заголовки для авторизации"""
+        headers = settings.ESPN_API['HEADERS'].copy()
+        headers.update({
+            "x-fantasy-filter": self._build_fantasy_filter()
+        })
+        return headers
+        
+    def _build_fantasy_filter(self, scoring_period_id: Optional[int] = None) -> str:
+        """Формирует фильтр для API ESPN"""
+        filter_data = {
+            "players": {
+                "filterSlotIds": {
+                    "value": [0,1,2,3,4,5,6]
+                },
+                "filterStatsForCurrentSeasonScoringPeriodId": {
+                    "value": [scoring_period_id] if scoring_period_id else []
+                },
+                "sortPercOwned": {
+                    "sortPriority": 3,
+                    "sortAsc": False
+                },
+                "limit": 50,
+                "offset": 0,
+                "sortAppliedStatTotalForScoringPeriodId": {
+                    "sortAsc": False,
+                    "sortPriority": 1,
+                    "value": scoring_period_id
+                } if scoring_period_id else None,
+                "filterRanksForScoringPeriodIds": {
+                    "value": [scoring_period_id]
+                } if scoring_period_id else None,
+                "filterRanksForRankTypes": {
+                    "value": ["STANDARD"]
+                }
+            }
+        }
+            
+        return json.dumps(filter_data)
+    
+    def get_daily_stats(self, date: datetime) -> Optional[Dict]:
+        """Получает статистику за день"""
+        scoring_period_id = self._get_scoring_period_id(date)
+        if not scoring_period_id:
+            return None
+
+        url = settings.ESPN_API['BASE_URL']
+        headers = self._get_auth_headers()
+        params = settings.ESPN_API['PARAMS'].copy()
+        params['scoringPeriodId'] = scoring_period_id
+        
+        for _ in range(settings.ESPN_API['RETRY_COUNT']):
+            try:
+                response = requests.get(
+                    url,
+                    headers=headers,
+                    params=params,
+                    timeout=settings.ESPN_API['TIMEOUT']
+                )
+                response.raise_for_status()
+                logger.info(f"Получен ответ от API: {response.text[:500]}...")  # Логируем первые 500 символов ответа
+                data = response.json()
+                return self._process_daily_stats(data, date)
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Ошибка при получении данных: {str(e)}")
+                time.sleep(settings.ESPN_API['RETRY_DELAY'])
+            except json.JSONDecodeError as e:
+                logger.error(f"Ошибка при парсинге JSON: {str(e)}")
+                logger.error(f"Полученный ответ: {response.text[:500]}...")  # Логируем ответ при ошибке парсинга
+                time.sleep(settings.ESPN_API['RETRY_DELAY'])
+        
+        return None
+        
+    def _process_daily_stats(self, data: Dict, date: datetime) -> Dict:
+        """Обрабатывает статистику за день"""
+        logger.info(f"Обработка данных: {json.dumps(data)[:500]}...")
+        
+        processed_data = {
+            "date": date.strftime("%Y-%m-%d"),
+            "players": []
         }
         
-        # Пути к файлам данных
-        self.player_stats_file = os.path.join(PROCESSED_DIR, 'player_stats.json')
-        self.season_stats_file = os.path.join(PROCESSED_DIR, 'season_stats.json')
-        self.teams_history_file = TEAMS_HISTORY_FILE
-        self.weekly_stats_file = os.path.join(PROCESSED_DIR, 'weekly_team_stats.json')
-        
-        # Загружаем существующие данные
-        self.player_stats = self._load_json(self.player_stats_file)
-        self.season_stats = self._load_json(self.season_stats_file)
-        self.teams_history = self._load_json(self.teams_history_file)
-        self.weekly_stats = self._load_json(self.weekly_stats_file)
-        
-    def collect_stats(self, date: datetime) -> Optional[Dict]:
-        """Сбор статистики за указанную дату
-        
-        Args:
-            date (datetime): Дата для сбора статистики
+        for player_data in data.get("players", []):
+            logger.info(f"Обработка игрока: {json.dumps(player_data)[:500]}...")
+            player = player_data.get("player", {})
             
-        Returns:
-            Optional[Dict]: Собранная статистика или None в случае ошибки
-        """
-        try:
-            # Получаем статистику от ESPN
-            stats = self.espn_service.get_daily_stats(date)
-            if not stats:
-                self.logger.error(f"Не удалось получить статистику за {date}")
-                return None
-                
-            # Обновляем статистику игроков
-            self.update_player_stats(stats['players'], date, self.player_stats_file)
-            
-            return stats
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при сборе статистики: {e}")
-            return None
-            
-    def collect_stats_range(self, start_date: datetime, end_date: datetime) -> Optional[Dict]:
-        """Сбор статистики за диапазон дат
-        
-        Args:
-            start_date (datetime): Начальная дата
-            end_date (datetime): Конечная дата
-            
-        Returns:
-            Optional[Dict]: Собранная статистика или None в случае ошибки
-        """
-        try:
-            all_stats = {'players': []}
-            current_date = start_date
-            
-            while current_date <= end_date:
-                stats = self.collect_stats(current_date)
-                if stats and 'players' in stats:
-                    all_stats['players'].extend(stats['players'])
-                current_date += timedelta(days=1)
-                
-            return all_stats if all_stats['players'] else None
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при сборе статистики за период: {e}")
-            return None
-            
-    def update_player_stats(self, players: List[Dict], date: datetime, stats_file: str) -> None:
-        """Обновление статистики игроков
-        
-        Args:
-            players (List[Dict]): Список игроков с их статистикой
-            date (datetime): Дата статистики
-            stats_file (str): Путь к файлу статистики
-        """
-        try:
-            # Загружаем текущую статистику
-            stats = self._load_json(stats_file)
-            
-            # Получаем ключ недели
-            week_start = date - timedelta(days=date.weekday())
-            week_end = week_start + timedelta(days=6)
-            week_key = f"{week_start.strftime('%Y-%m-%d')}_{week_end.strftime('%Y-%m-%d')}"
-            
-            # Создаем структуру для недели если её нет
-            if week_key not in stats['weeks']:
-                stats['weeks'][week_key] = {
-                    'start_date': week_start.strftime('%Y-%m-%d'),
-                    'end_date': week_end.strftime('%Y-%m-%d'),
-                    'players': []
+            processed_player = {
+                "info": {
+                    "id": str(player_data.get("id")),
+                    "name": player.get("fullName", ""),
+                    "primary_position": player.get("defaultPositionId"),
+                    "team_id": str(player.get("proTeamId"))
+                },
+                "stats": {
+                    "total_points": 0,
+                    "goals": 0,
+                    "assists": 0,
+                    "shots": 0,
+                    "saves": 0,
+                    "goals_against": 0
                 }
-                
-            # Обновляем статистику игроков
-            for player in players:
-                player_id = str(player['id'])
-                player_stats = next(
-                    (p for p in stats['weeks'][week_key]['players'] if str(p['id']) == player_id),
-                    None
-                )
-                
-                if player_stats:
-                    # Обновляем существующую статистику
-                    player_stats['appearances'] += 1
-                    player_stats['total_points'] += player['stats'][0]['points']
-                else:
-                    # Добавляем нового игрока
-                    stats['weeks'][week_key]['players'].append({
-                        'id': player_id,
-                        'name': player['fullName'],
-                        'position': self._get_position_code(player['defaultPositionId']),
-                        'appearances': 1,
-                        'total_points': player['stats'][0]['points']
-                    })
-                    
-            # Обновляем грейды игроков
-            self.update_player_grades(stats['weeks'][week_key]['players'])
-            
-            # Сохраняем обновленную статистику
-            self._save_json(stats, stats_file)
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при обновлении статистики игроков: {e}")
-            
-    def update_player_grades(self, players: List[Dict]) -> None:
-        """Обновление грейдов игроков
-        
-        Args:
-            players (List[Dict]): Список игроков для обновления грейдов
-        """
-        try:
-            for player in players:
-                # Рассчитываем грейд на основе очков и появлений
-                avg_points = player['total_points'] / player['appearances']
-                
-                # Определяем грейд
-                if avg_points >= 20:
-                    player['grade'] = 'legendary'
-                elif avg_points >= 15:
-                    player['grade'] = 'epic'
-                elif avg_points >= 10:
-                    player['grade'] = 'rare'
-                else:
-                    player['grade'] = 'common'
-                    
-        except Exception as e:
-            self.logger.error(f"Ошибка при обновлении грейдов игроков: {e}")
-            
-    def _get_position_code(self, position_id: int) -> Optional[str]:
-        """Получение кода позиции по ID
-        
-        Args:
-            position_id (int): ID позиции
-            
-        Returns:
-            Optional[str]: Код позиции или None
-        """
-        return POSITION_MAPPING.get(position_id)
-            
-    def _load_json(self, file_path: str) -> Dict:
-        """Загрузка данных из JSON файла
-        
-        Args:
-            file_path (str): Путь к файлу
-            
-        Returns:
-            Dict: Загруженные данные или пустой словарь
-        """
-        try:
-            if os.path.exists(file_path):
-                with open(file_path, 'r') as f:
-                    return json.load(f)
-            
-            # Создаем базовую структуру файла
-            base_structure = {
-                'weeks': {},
-                'players': {},
-                'teams': {}
             }
-            self._save_json(base_structure, file_path)
-            return base_structure
             
-        except Exception as e:
-            self.logger.error(f"Ошибка при загрузке файла {file_path}: {e}")
-            return {}
+            # Получаем статистику за нужный период
+            if "stats" in player:
+                for stat_set in player.get("stats", []):
+                    if "appliedTotal" in stat_set:
+                        processed_player["stats"].update({
+                            "total_points": float(stat_set.get("appliedTotal", 0)),
+                            "goals": float(stat_set.get("stats", {}).get("6", 0)),
+                            "assists": float(stat_set.get("stats", {}).get("7", 0)),
+                            "shots": float(stat_set.get("stats", {}).get("13", 0)),
+                            "saves": float(stat_set.get("stats", {}).get("31", 0)),
+                            "goals_against": float(stat_set.get("stats", {}).get("32", 0))
+                        })
+                        break
             
-    def _save_json(self, data: Dict, file_path: str) -> bool:
-        """Сохранение данных в JSON файл
+            processed_data["players"].append(processed_player)
+            
+        return processed_data
         
-        Args:
-            data (Dict): Данные для сохранения
-            file_path (str): Путь к файлу
-            
-        Returns:
-            bool: True если сохранение успешно, False в случае ошибки
-        """
-        try:
-            os.makedirs(os.path.dirname(file_path), exist_ok=True)
-            with open(file_path, 'w') as f:
-                json.dump(data, f, indent=2)
-            return True
-        except Exception as e:
-            self.logger.error(f"Ошибка при сохранении файла {file_path}: {e}")
-            return False
-            
-    def get_team_of_the_day(self, date: Optional[datetime] = None) -> Dict[str, List[Dict]]:
-        """Получение команды дня
+    def _extract_player_stats(self, player: Dict) -> Dict:
+        """Извлекает статистику игрока"""
+        stats = {
+            "total_points": 0,
+            "goals": 0,
+            "assists": 0,
+            "shots": 0,
+            "saves": 0,
+            "goals_against": 0
+        }
         
-        Args:
-            date (datetime, optional): Дата для получения статистики
-            
-        Returns:
-            Dict[str, List[Dict]]: Словарь с игроками по позициям
-        """
-        try:
-            # Получаем статистику за день
-            stats = self.espn_service.get_daily_stats(date)
-            if not stats:
-                self.logger.error("Не удалось получить статистику")
-                return {}
-            
-            # Группируем игроков по позициям
-            players_by_position = self._group_players_by_position(stats)
-            
-            # Выбираем лучших игроков для каждой позиции
-            team = {}
-            for position, count in self.positions.items():
-                team[position] = self._get_best_players(
-                    players_by_position.get(position, []),
-                    count
-                )
-            
-            # Сохраняем команду в историю
-            self._save_team_to_history(team, date)
-            
-            return team
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при формировании команды дня: {e}")
-            return {}
-            
-    def get_team_of_the_week(self, start_date: Optional[datetime] = None) -> Dict[str, List[Dict]]:
-        """Получение команды недели
-        
-        Args:
-            start_date (datetime, optional): Дата начала недели
-            
-        Returns:
-            Dict[str, List[Dict]]: Словарь с игроками по позициям
-        """
-        try:
-            if start_date is None:
-                # Получаем начало текущей недели (понедельник)
-                start_date = datetime.now()
-                start_date = start_date - timedelta(days=start_date.weekday())
-            
-            # Получаем конец недели
-            end_date = start_date + timedelta(days=6)
-            
-            # Формируем ключ недели
-            week_key = f"{start_date.strftime('%Y-%m-%d')}_{end_date.strftime('%Y-%m-%d')}"
-            
-            # Проверяем, есть ли уже данные за эту неделю
-            if week_key in self.weekly_stats:
-                return self.weekly_stats[week_key]
-            
-            # Собираем статистику за всю неделю
-            weekly_stats = {}
-            current_date = start_date
-            while current_date <= end_date:
-                daily_team = self.get_team_of_the_day(current_date)
-                for position, players in daily_team.items():
-                    if position not in weekly_stats:
-                        weekly_stats[position] = {}
+        if "stats" in player:
+            for stat_set in player["stats"]:
+                if stat_set.get("scoringPeriodId") == self._get_current_scoring_period():
+                    stats.update({
+                        "total_points": stat_set.get("appliedTotal", 0),
+                        "goals": stat_set.get("stats", {}).get("6", 0),
+                        "assists": stat_set.get("stats", {}).get("7", 0),
+                        "shots": stat_set.get("stats", {}).get("13", 0),
+                        "saves": stat_set.get("stats", {}).get("31", 0),
+                        "goals_against": stat_set.get("stats", {}).get("32", 0)
+                    })
+                    break
                     
-                    for player in players:
-                        player_id = str(player['id'])
-                        if player_id not in weekly_stats[position]:
-                            weekly_stats[position][player_id] = {
-                                'id': player_id,
-                                'name': player['fullName'],
-                                'position': position,
-                                'appearances': 0,
-                                'total_points': 0
-                            }
-                        
-                        weekly_stats[position][player_id]['appearances'] += 1
-                        weekly_stats[position][player_id]['total_points'] += player['stats'][0]['points']
-                
-                current_date += timedelta(days=1)
-            
-            # Выбираем лучших игроков недели
-            team_of_the_week = {}
-            for position, count in self.positions.items():
-                players = list(weekly_stats.get(position, {}).values())
-                # Сортируем сначала по количеству появлений, потом по очкам
-                players.sort(key=lambda x: (x['appearances'], x['total_points']), reverse=True)
-                team_of_the_week[position] = players[:count]
-            
-            # Сохраняем результаты
-            self.weekly_stats[week_key] = team_of_the_week
-            self._save_json(self.weekly_stats, self.weekly_stats_file)
-            
-            return team_of_the_week
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при формировании команды недели: {e}")
-            return {}
-            
-    def _group_players_by_position(self, stats: Dict) -> Dict[str, List[Dict]]:
-        """Группировка игроков по позициям
+        return stats
         
-        Args:
-            stats (Dict): Статистика игроков
-            
-        Returns:
-            Dict[str, List[Dict]]: Словарь игроков по позициям
-        """
-        try:
-            result = {}
-            for player in stats.get('players', []):
-                if 'defaultPositionId' not in player:
-                    continue
-                
-                position = self._get_position_code(player['defaultPositionId'])
-                if not position:
-                    continue
-                
-                if position not in result:
-                    result[position] = []
-                
-                # Получаем статистику игрока
-                player_stats = next(
-                    (stat for stat in player.get('stats', [])
-                     if stat.get('statSourceId') == 0),  # Используем только официальную статистику
-                    {}
-                )
-                
-                # Формируем данные игрока
-                player_data = {
-                    'id': str(player['id']),
-                    'fullName': player['fullName'],
-                    'defaultPositionId': player['defaultPositionId'],
-                    'stats': [player_stats] if player_stats else [],
-                    'grade': 'common'  # Базовый грейд
-                }
-                
-                result[position].append(player_data)
-            
-            return result
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при группировке игроков: {e}")
-            return {}
-            
-    def _get_best_players(self, players: List[Dict], count: int) -> List[Dict]:
-        """Выбор лучших игроков на позиции
+    def _get_scoring_period_id(self, date: datetime) -> Optional[int]:
+        """Определяет scoring_period_id для даты"""
+        season_start = datetime.strptime(settings.SEASON_START, '%Y-%m-%d')
         
-        Args:
-            players (List[Dict]): Список игроков
-            count (int): Количество игроков для выбора
+        if date < season_start:
+            logger.error(f"Дата {date} раньше начала сезона {season_start}")
+            return None
             
-        Returns:
-            List[Dict]: Список лучших игроков
-        """
-        try:
-            # Сортируем игроков по очкам
-            sorted_players = sorted(
-                players,
-                key=lambda x: x['stats'][0]['points'] if x['stats'] else 0,
-                reverse=True
-            )
-            
-            return sorted_players[:count]
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при выборе лучших игроков: {e}")
-            return []
-            
-    def _save_team_to_history(self, team: Dict[str, List[Dict]], date: datetime) -> None:
-        """Сохранение команды в историю
+        # Вычисляем количество дней с начала сезона
+        days_since_start = (date - season_start).days
         
-        Args:
-            team (Dict[str, List[Dict]]): Команда для сохранения
-            date (datetime): Дата команды
-        """
-        try:
-            date_key = date.strftime('%Y-%m-%d')
-            self.teams_history[date_key] = team
-            self._save_json(self.teams_history, self.teams_history_file)
-            
-        except Exception as e:
-            self.logger.error(f"Ошибка при сохранении команды в историю: {e}")
+        # scoring_period_id начинается с SEASON_START_SCORING_PERIOD
+        scoring_period_id = settings.SEASON_START_SCORING_PERIOD + days_since_start
+        
+        return scoring_period_id
+        
+    def _get_current_scoring_period(self) -> int:
+        """Получает текущий scoring_period_id"""
+        return self._get_scoring_period_id(datetime.now())
+        
+    def _validate_response(self, data: Dict) -> bool:
+        """Проверяет корректность данных от API"""
+        return "players" in data and isinstance(data["players"], list)

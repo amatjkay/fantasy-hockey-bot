@@ -1,111 +1,75 @@
-import sys
+#!/usr/bin/env python3
 import os
+import sys
 import logging
 import argparse
 from datetime import datetime
-import shutil
-
-# Добавляем путь к корневой директории проекта
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from src.services.espn_service import ESPNService
+import pytz
+from src.services.stats_service import StatsService
+from src.config.settings import ESPN_TIMEZONE, PROCESSED_DATA_DIR
+from src.config import ESPNConfig
+import json
 
 def setup_logging():
     """Настройка логирования"""
-    log_dir = "logs"
-    os.makedirs(log_dir, exist_ok=True)
-    
-    # Настраиваем формат логов
-    log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    
-    # Создаем файл лога с текущей датой
-    log_file = os.path.join(log_dir, f"season_stats_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
-    
-    # Настраиваем логирование
     logging.basicConfig(
         level=logging.INFO,
-        format=log_format,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler(log_file),
-            logging.StreamHandler()
+            logging.StreamHandler(sys.stdout)
         ]
     )
 
-def clear_stats():
-    """Очистка текущих результатов"""
-    files_to_clear = [
-        'data/processed/player_stats.json',
-        'data/processed/season_stats.json',
-        'data/processed/teams_history.json',
-        'data/processed/weekly_team_stats.json'
-    ]
-    
-    for file_path in files_to_clear:
-        try:
-            if os.path.exists(file_path):
-                # Создаем бэкап файла
-                backup_path = f"{file_path}.bak"
-                shutil.copy2(file_path, backup_path)
-                # Удаляем файл
-                os.remove(file_path)
-                logging.info(f"Файл {file_path} очищен (создан бэкап)")
-        except Exception as e:
-            logging.error(f"Ошибка при очистке файла {file_path}: {e}")
-
-def parse_args():
-    """Парсинг аргументов командной строки"""
-    parser = argparse.ArgumentParser(description='Сбор статистики за сезон')
-    parser.add_argument('--date', type=str, help='Дата для сбора статистики (YYYY-MM-DD)')
-    parser.add_argument('--clear', action='store_true', help='Очистить текущие результаты')
-    return parser.parse_args()
+def parse_date(date_str: str) -> datetime:
+    """Преобразует строку даты в объект datetime"""
+    try:
+        date = datetime.strptime(date_str, '%Y-%m-%d')
+        return ESPN_TIMEZONE.localize(date)
+    except ValueError as e:
+        raise argparse.ArgumentTypeError(f"Неверный формат даты: {str(e)}")
 
 def main():
-    """Основная функция для сбора статистики за сезон"""
-    # Настраиваем логирование
+    """Основная функция"""
+    parser = argparse.ArgumentParser(description='Сбор статистики за период')
+    parser.add_argument('--start-date', type=str, help='Начальная дата (YYYY-MM-DD)', required=True)
+    parser.add_argument('--end-date', type=str, help='Конечная дата (YYYY-MM-DD)', required=True)
+    args = parser.parse_args()
+
     setup_logging()
     logger = logging.getLogger(__name__)
-    
+
     try:
-        # Парсим аргументы
-        args = parse_args()
+        # Создаем конфигурацию
+        config = ESPNConfig()
         
-        # Очищаем результаты если нужно
-        if args.clear:
-            logger.info("Очистка текущих результатов...")
-            clear_stats()
+        # Создаем сервис с конфигурацией
+        stats_service = StatsService(config)
         
-        logger.info("Начинаем сбор статистики за сезон")
+        # Преобразуем даты
+        start_date = parse_date(args.start_date)
+        end_date = parse_date(args.end_date)
         
-        # Инициализируем сервис ESPN
-        espn_service = ESPNService()
+        # Собираем статистику
+        stats = stats_service.collect_season_stats(
+            start_date=start_date,
+            end_date=end_date
+        )
         
-        # Подготавливаем дату если она указана
-        target_date = None
-        if args.date:
-            try:
-                target_date = datetime.strptime(args.date, '%Y-%m-%d')
-                logger.info(f"Сбор статистики за конкретную дату: {args.date}")
-            except ValueError as e:
-                logger.error(f"Неверный формат даты: {e}")
-                sys.exit(1)
-        
-        # Получаем статистику за сезон
-        stats = espn_service.get_season_stats(target_date)
-        
-        if stats:
-            logger.info("Статистика за сезон успешно собрана и сохранена")
+        if not stats:
+            logger.error("Не удалось собрать статистику")
+            sys.exit(1)
             
-            # Выводим краткую сводку
-            total_days = len(stats['days'])
-            total_players = len(stats['players'])
-            logger.info(f"Собрана статистика за {total_days} дней")
-            logger.info(f"Всего игроков: {total_players}")
-        else:
-            logger.error("Не удалось собрать статистику за сезон")
+        # Сохраняем результаты
+        output_file = os.path.join(PROCESSED_DATA_DIR, 'season_stats.json')
+        with open(output_file, 'w') as f:
+            json.dump(stats, f, indent=2)
+            
+        logger.info(f"Статистика успешно сохранена в {output_file}")
+        logger.info(f"Обработано дней: {stats['total_days']}")
         
     except Exception as e:
-        logger.error(f"Произошла ошибка при сборе статистики: {e}")
+        logger.error(f"Ошибка выполнения скрипта: {str(e)}")
         sys.exit(1)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main() 

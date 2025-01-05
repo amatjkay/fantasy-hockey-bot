@@ -2,6 +2,10 @@ import os
 import logging
 from dotenv import load_dotenv
 
+# Настройки логирования
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 # Загружаем переменные окружения
 load_dotenv()
 

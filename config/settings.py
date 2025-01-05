@@ -1,33 +1,50 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from datetime import datetime
 
-# Загрузка переменных окружения
+# Загружаем переменные окружения из .env
 load_dotenv()
 
 # Базовые пути
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / os.getenv('DATA_DIR', 'data/processed')
-CACHE_DIR = BASE_DIR / os.getenv('CACHE_DIR', 'data/cache')
-TEMP_DIR = BASE_DIR / os.getenv('TEMP_DIR', 'data/temp')
-OUTPUT_DIR = BASE_DIR / os.getenv('OUTPUT_DIR', 'data/output')
-LOGS_DIR = BASE_DIR / os.getenv('LOGS_DIR', 'logs')
+BASE_DIR = Path(__file__).parent.parent
+DATA_DIR = BASE_DIR / 'data'
+PROCESSED_DIR = DATA_DIR / 'processed'
+CACHE_DIR = DATA_DIR / 'cache'
+LOGS_DIR = BASE_DIR / 'logs'
 
-# Настройки сезона
-SEASON = os.getenv('SEASON', '2025')
-LEAGUE_ID = os.getenv('LEAGUE_ID', '484910394')
-TIMEZONE = os.getenv('TIMEZONE', 'US/Eastern')
+# Создаем необходимые директории
+for directory in [DATA_DIR, PROCESSED_DIR, CACHE_DIR, LOGS_DIR]:
+    directory.mkdir(parents=True, exist_ok=True)
 
-# Файлы данных
-PLAYER_STATS_FILE = DATA_DIR / 'player_stats.json'
-SEASON_STATS_FILE = DATA_DIR / 'season_stats.json'
-TEAMS_HISTORY_FILE = DATA_DIR / 'teams_history.json'
-WEEKLY_TEAM_STATS_FILE = DATA_DIR / 'weekly_team_stats.json'
+# Настройки ESPN API
+ESPN_API = {
+    'swid': os.getenv('ESPN_SWID'),
+    's2': os.getenv('ESPN_S2'),
+    'league_id': os.getenv('LEAGUE_ID'),
+    'season_id': os.getenv('SEASON_ID'),
+    'SEASON_START_DATE': datetime.strptime(os.getenv('SEASON_START', '2024-10-04'), '%Y-%m-%d'),
+    'SEASON_START_SCORING_PERIOD_ID': 1,
+    'TIMEOUT': 30,
+    'HEADERS': {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Accept': 'application/json',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'X-Fantasy-Source': 'kona',
+        'X-Fantasy-Platform': 'fantasy-hockey',
+        'X-Fantasy-Filter': '{"players":{"filterStatus":{"value":["FREEAGENT","WAIVERS","ONTEAM"]},"filterSlotIds":{"value":[0,1,2,3,4,5,6]}}}',
+        'Origin': 'https://fantasy.espn.com',
+        'Referer': 'https://fantasy.espn.com/hockey/team',
+        'Connection': 'keep-alive',
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+    }
+}
 
-# Настройки изображений
-PLAYER_IMAGE_SIZE = (130, 100)
-PLAYER_IMAGES_CACHE = CACHE_DIR / 'player_images'
+# Настройки временной зоны
+ESPN_TIMEZONE = 'America/New_York'
 
-# Создание директорий если они не существуют
-for directory in [DATA_DIR, CACHE_DIR, TEMP_DIR, OUTPUT_DIR, LOGS_DIR, PLAYER_IMAGES_CACHE]:
-    directory.mkdir(parents=True, exist_ok=True) 
+# Настройки Telegram
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+CHAT_ID = os.getenv('CHAT_ID') 

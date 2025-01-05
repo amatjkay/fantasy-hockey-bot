@@ -1,65 +1,45 @@
-import os
 import logging
-from datetime import datetime
+import os
 from pathlib import Path
-from .settings import LOGS_DIR
 
-def setup_logging(name: str) -> logging.Logger:
-    """
-    Настройка логгера для компонента
+def setup_logging(name: str = None) -> logging.Logger:
+    """Настройка логирования
     
     Args:
-        name: Имя компонента (app, api, scripts)
+        name (str, optional): Имя логгера. По умолчанию None.
         
     Returns:
         logging.Logger: Настроенный логгер
     """
-    # Создаем директорию для логов текущего месяца
-    current_month = datetime.now().strftime('%Y-%m')
-    log_dir = LOGS_DIR / name / current_month
-    log_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Пути к файлам логов
-    log_file = log_dir / f'{name}.log'
-    error_file = log_dir / 'error.log'
-    
-    # Создаем логгер
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)
-    
-    # Форматтер для логов
+    # Создаем директорию для логов если её нет
+    log_dir = Path(__file__).parent.parent / 'logs'
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    # Настраиваем формат
     formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
-    
-    # Обработчик для всех логов
-    file_handler = logging.FileHandler(log_file)
-    file_handler.setLevel(logging.INFO)
-    file_handler.setFormatter(formatter)
-    
-    # Обработчик для ошибок
-    error_handler = logging.FileHandler(error_file)
-    error_handler.setLevel(logging.ERROR)
-    error_handler.setFormatter(formatter)
-    
-    # Обработчик для консоли
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(formatter)
-    
-    # Добавляем обработчики к логгеру
-    logger.addHandler(file_handler)
-    logger.addHandler(error_handler)
-    logger.addHandler(console_handler)
-    
-    return logger
 
-def cleanup_old_logs(months_to_keep: int = 3) -> None:
-    """
-    Удаление старых логов
+    # Хендлер для файла
+    file_handler = logging.FileHandler(
+        os.path.join(log_dir, 'app.log'),
+        encoding='utf-8'
+    )
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.INFO)
+
+    # Хендлер для консоли
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    console_handler.setLevel(logging.INFO)
+
+    # Получаем логгер
+    logger = logging.getLogger(name if name else __name__)
+    logger.setLevel(logging.INFO)
     
-    Args:
-        months_to_keep: Количество месяцев, за которые сохранять логи
-    """
-    # TODO: Реализовать очистку старых логов
-    pass 
+    # Добавляем хендлеры
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    return logger 

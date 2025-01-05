@@ -80,12 +80,12 @@ fantasy-hockey-bot/
 ### ESPN API
 
 - Базовый URL: `https://fantasy.espn.com/apis/v3/games/fhl/seasons/2024/segments/0/leagues/1`
-- Используется фиксированный `scoringPeriodId=92`
+- Используется фиксированный `scoringPeriodId=92` (скорее всего он просто иекущий последний подгружается)
 - Необходимы заголовки:
   - Cookie с `SWID` и `espn_s2`
   - `x-fantasy-source: kona`
   - `x-fantasy-platform`
-  - `x-fantasy-filter` для фильтрации данных
+  - `x-fantasy-filter` для фильтрации данных, как раз таки для того чтобы получить статистику за нужный день
 
 ### Система грейдов
 

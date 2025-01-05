@@ -64,7 +64,7 @@ def main():
         # Инициализация сервисов
         stats_service = StatsService()
         image_service = ImageService()
-        telegram_service = TelegramService()
+        telegram_service = None  # Инициализируем только если нужно отправлять сообщения
         
         # Получаем команду недели
         team = stats_service.get_team_of_the_week(start_date, end_date)
@@ -83,6 +83,7 @@ def main():
             
         # Отправляем в Telegram если нужно
         if not args.no_send:
+            telegram_service = TelegramService()  # Создаем сервис только если нужно отправлять
             telegram_service.send_team_of_the_week(collage_path)
             
     except Exception as e:

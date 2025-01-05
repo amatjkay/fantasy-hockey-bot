@@ -4,23 +4,54 @@ __pycache__/
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
 .env
 venv/
 .venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # Logs
 logs/
 *.log
 
+# Cache
+.pytest_cache/
+cache/
+.coverage
+htmlcov/
+
 # Data
-data/
+data/raw/
+data/processed/
+data/temp/
+data/cache/
 *.json
 
-# IDE
-.idea/
-.vscode/
-
-# Temp files
+# Media
 *.jpg
 *.png
 *.gif
+*.mp4
+*.avi

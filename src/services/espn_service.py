@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 import requests
 import pytz
+from dotenv import load_dotenv
 from src.utils.logging import setup_logging
 from src.config import (
     ESPN_BASE_URL,
@@ -12,9 +13,13 @@ from src.config import (
     SEASON,
     LEAGUE_ID,
     get_fantasy_filter,
-    TIMEZONE
+    TIMEZONE,
+    POSITION_MAPPING
 )
 from collections import defaultdict
+
+# Загружаем переменные окружения
+load_dotenv()
 
 class ESPNService:
     """Сервис для работы с API ESPN"""
@@ -22,7 +27,19 @@ class ESPNService:
     def __init__(self):
         """Инициализация сервиса"""
         self.logger = logging.getLogger(__name__)
-        self.base_url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/2025/segments/0/leagues/484910394"
+        
+        # Загружаем настройки из .env
+        self.season = os.getenv('SEASON_ID', '2024')
+        self.league_id = os.getenv('LEAGUE_ID', '484910394')
+        self.season_start = datetime.strptime(
+            os.getenv('SEASON_START', '2024-10-04'),
+            '%Y-%m-%d'
+        ).replace(tzinfo=pytz.timezone(TIMEZONE))
+        
+        # Формируем базовый URL
+        self.base_url = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/{self.season}/segments/0/leagues/{self.league_id}"
+        
+        # Настраиваем заголовки
         self.headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -53,42 +70,24 @@ class ESPNService:
                 'view': 'kona_player_info'
             }
             
-            # Получаем статистику вратарей
-            goalie_filter = fantasy_filter.copy()
-            goalie_filter['players'].update({
-                'filterSlotIds': {'value': [5]},  # ID позиции вратаря
-                'limit': 50,
+            # Получаем статистику всех игроков
+            fantasy_filter['players'].update({
+                'filterSlotIds': {'value': [0,1,2,3,4,5,6]},  # ID всех позиций
+                'limit': 1000,
                 'offset': 0,
                 'sortPercOwned': {'sortPriority': 3, 'sortAsc': False},
                 'filterRanksForRankTypes': {'value': ['STANDARD']}
             })
             
             headers = self.headers.copy()
-            headers['X-Fantasy-Filter'] = json.dumps(goalie_filter)
+            headers['X-Fantasy-Filter'] = json.dumps(fantasy_filter)
             
-            goalie_data = self._make_request(params, headers)
-            all_players = []
+            data = self._make_request(params, headers)
+            if not data:
+                self.logger.error("Не удалось получить статистику")
+                return None
             
-            if goalie_data and 'players' in goalie_data:
-                all_players.extend(goalie_data['players'])
-            
-            # Получаем статистику полевых игроков
-            skater_filter = fantasy_filter.copy()
-            skater_filter['players'].update({
-                'filterSlotIds': {'value': [0,1,2,3,4,6]},  # ID позиций полевых игроков
-                'limit': 50,
-                'offset': 0,
-                'sortPercOwned': {'sortPriority': 3, 'sortAsc': False},
-                'filterRanksForRankTypes': {'value': ['STANDARD']}
-            })
-            
-            headers['X-Fantasy-Filter'] = json.dumps(skater_filter)
-            
-            skater_data = self._make_request(params, headers)
-            if skater_data and 'players' in skater_data:
-                all_players.extend(skater_data['players'])
-            
-            return {'players': all_players} if all_players else None
+            return {'players': data.get('players', [])}
             
         except Exception as e:
             self.logger.error(f"Неожиданная ошибка при получении статистики: {e}")
@@ -149,7 +148,8 @@ class ESPNService:
             urllib3.disable_warnings()
             
             # Выполняем запрос
-            response = requests.get(
+            response = requests.request(
+                'GET',
                 url,
                 headers=headers,
                 timeout=30,
@@ -182,14 +182,12 @@ class ESPNService:
         Returns:
             Tuple[int, int]: (ID периода, сезон)
         """
-        # Начало сезона - 4 октября 2024
-        season_start = datetime(2024, 10, 4, tzinfo=pytz.timezone(TIMEZONE))
-        days_since_start = (date - season_start).days
+        days_since_start = (date - self.season_start).days
         
         # ID периода - количество дней с начала сезона + 1
         period_id = days_since_start + 1
         
-        return period_id, 2025
+        return period_id, int(self.season)
 
     def _get_week_start_date(self, date: Optional[datetime] = None) -> datetime:
         """Получение даты начала недели
@@ -235,7 +233,8 @@ class ESPNService:
         Returns:
             int: ID периода подсчета очков
         """
-        return self._get_scoring_period_id(date)
+        period_id, _ = self._get_scoring_period_id(date)
+        return period_id
 
     def get_week_start_date(self, date: datetime) -> datetime:
         """Получение даты начала недели для указанной даты
