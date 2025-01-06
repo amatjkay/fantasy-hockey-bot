@@ -9,6 +9,8 @@
 - Создание коллажей с фотографиями игроков
 - Публикация результатов в Telegram
 - Хранение истории команд и статистики
+- Система грейдов игроков
+- Автоматическое обновление статистики
 
 ## Установка
 
@@ -33,8 +35,10 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ESPN_SWID={your-swid}
 ESPN_S2=your-s2-token
-SEASON=2024
+SEASON_ID=2025
 LEAGUE_ID=your_league_id
+SEASON_START_DATE=2024-10-04
+SEASON_END_DATE=2025-04-15
 ```
 
 ## Использование
@@ -42,22 +46,20 @@ LEAGUE_ID=your_league_id
 ### Сбор статистики за день
 
 ```bash
-python scripts/app_day.py --date YYYY-MM-DD [--no-send]
+python scripts/collect_and_send_stats.py --date YYYY-MM-DD [--no-send]
 ```
 
-Опции:
-- `--date`: Дата для сбора статистики (формат YYYY-MM-DD)
-- `--no-send`: Не отправлять результаты в Telegram (опционально)
-
-### Сбор статистики за неделю
+### Перезапись всей статистики
 
 ```bash
-python scripts/app_week.py --week YYYY-MM-DD [--no-send]
+python scripts/rewrite_all_stats.py
 ```
 
-Опции:
-- `--week`: Дата начала недели (формат YYYY-MM-DD)
-- `--no-send`: Не отправлять результаты в Telegram (опционально)
+### Формирование команды недели
+
+```bash
+python scripts/send_daily_teams.py --week YYYY-MM-DD [--no-send]
+```
 
 ## Структура проекта
 
@@ -78,13 +80,21 @@ fantasy-hockey-bot/
 
 ### ESPN API
 
-- Базовый URL: `https://fantasy.espn.com/apis/v3/games/fhl/seasons/2024/segments/0/leagues/1`
-- Используется фиксированный `scoringPeriodId=92`
+- Базовый URL: `https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/{season}/segments/0/leagues/{league_id}`
 - Необходимы заголовки:
   - Cookie с `SWID` и `espn_s2`
   - `x-fantasy-source: kona`
-  - `x-fantasy-platform`
   - `x-fantasy-filter` для фильтрации данных
+
+## Система грейдов
+
+- common (1 попадание в команду дня)
+- uncommon (2 попадания)
+- rare (3 попадания)
+- epic (4 попадания)
+- legend (5+ попаданий)
+
+Грейды сбрасываются каждую неделю (с понедельника по воскресенье).
 
 ## Советы для следующего ИИ
 
@@ -93,6 +103,8 @@ fantasy-hockey-bot/
 - Настроена работа с ESPN API
 - Реализовано формирование команд дня и недели
 - Настроено логирование
+- Добавлена система грейдов
+- Реализовано автоматическое обновление статистики
 
 2. Следующие шаги:
 - Улучшить обработку ошибок при работе с API
