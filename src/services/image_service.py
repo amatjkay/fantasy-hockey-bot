@@ -11,6 +11,7 @@ class ImageService:
     def __init__(self):
         self.cache_dir = os.path.join(settings.CACHE_DIR, "player_images")
         self.collage_dir = os.path.join("data", "collages")
+        self.font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"  # Стандартный системный шрифт
         self._ensure_dirs()
         
     def _ensure_dirs(self):
@@ -50,112 +51,66 @@ class ImageService:
         player_photos: Dict[str, str],
         player_data: Dict,
         date: str,
-        total_points: float
+        total_points: Optional[float]
     ) -> Optional[str]:
-        """Создает коллаж команды"""
+        """Создание коллажа из фотографий игроков"""
         try:
-            # Создаем базовое изображение с прозрачным фоном
-            width = 800
-            height = 600
-            collage = Image.new('RGBA', (width, height), (255, 255, 255, 0))
-            draw = ImageDraw.Draw(collage)
+            logger = logging.getLogger(__name__)
+            logger.info(f"Начинаем создание коллажа для даты {date}")
+            logger.info(f"Получено фотографий: {len(player_photos)}")
+            logger.info(f"Данные игроков: {list(player_data.keys())}")
             
-            # Загружаем шрифт
-            try:
-                font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 20)
-            except:
-                font = ImageFont.load_default()
+            # Размеры фото и коллажа
+            photo_size = (130, 100)  # Ширина больше высоты
+            padding = 10
+            collage_width = photo_size[0] * 3 + padding * 4
+            collage_height = photo_size[1] * 3 + padding * 4  # Увеличиваем высоту для вратаря
+            positions = self._get_photo_positions(collage_width, collage_height)
             
-            # Добавляем заголовок
-            draw.text(
-                (width//2, 30),
-                f"Команда дня - {date}",
-                font=font,
-                fill='black',
-                anchor='mm'
-            )
+            # Создаем новое изображение с прозрачным фоном
+            collage_size = (collage_width, collage_height)
+            collage = Image.new('RGBA', collage_size, (255, 255, 255, 0))
             
-            # Размещаем фото игроков
-            photo_size = (130, 100)
-            positions = self._get_photo_positions(width, height)
-            
-            # Сортируем игроков по позициям
-            positions_order = ['C', 'LW', 'RW', 'D', 'G']
-            sorted_players = []
-            for pos in positions_order:
-                for player_id, player in player_data.items():
-                    if settings.PLAYER_POSITIONS[player['info']['primary_position']] == pos:
-                        sorted_players.append((player_id, player))
-            
-            for (player_id, player), position in zip(sorted_players, positions):
-                if player_id not in player_photos:
-                    continue
-                    
-                # Добавляем фото с прозрачным фоном
+            # Добавляем фото игроков в порядке: LW, C, RW, D1, D2, G
+            for pos in ['LW', 'C', 'RW', 'D1', 'D2', 'G']:
                 try:
-                    photo = Image.open(player_photos[player_id])
-                    photo = photo.convert('RGBA')
-                    photo = photo.resize(photo_size)
+                    player = player_data[pos]
+                    player_id = str(player['info']['id'])
+                    if player_id not in player_photos:
+                        logger.warning(f"Нет фото для игрока {player['info']['name']} (ID: {player_id})")
+                        continue
+                        
+                    photo_path = player_photos[player_id]
+                    if not os.path.exists(photo_path):
+                        logger.warning(f"Файл фото не существует: {photo_path}")
+                        continue
+                        
+                    # Открываем и изменяем размер фото
+                    photo = Image.open(photo_path)
+                    photo = photo.resize(photo_size, Image.Resampling.LANCZOS)
                     
-                    # Создаем маску для прозрачности
-                    mask = Image.new('L', photo.size, 0)
-                    draw_mask = ImageDraw.Draw(mask)
-                    draw_mask.ellipse([0, 0, photo.size[0], photo.size[1]], fill=255)
+                    # Определяем позицию для фото
+                    position = positions.get(pos)
+                    if not position:
+                        logger.warning(f"Нет позиции для {pos}")
+                        continue
+                        
+                    logger.info(f"Добавляем фото игрока {player['info']['name']} на позицию {pos}")
                     
-                    # Создаем новое изображение с прозрачным фоном
-                    output = Image.new('RGBA', photo.size, (0, 0, 0, 0))
+                    # Вставляем фото
+                    collage.paste(photo, position)
                     
-                    # Для каждого пикселя
-                    for x in range(photo.size[0]):
-                        for y in range(photo.size[1]):
-                            r, g, b, a = photo.getpixel((x, y))
-                            # Если пиксель близок к черному или темно-серому, делаем его прозрачным
-                            if r < 50 and g < 50 and b < 50:
-                                output.putpixel((x, y), (0, 0, 0, 0))
-                            else:
-                                output.putpixel((x, y), (r, g, b, 255))
-                    
-                    # Применяем круглую маску
-                    output.putalpha(mask)
-                    
-                    # Вставляем фото с прозрачностью
-                    collage.paste(output, position, output)
-                    
-                    # Добавляем информацию об игроке
-                    text_position = (
-                        position[0] + photo_size[0]//2,
-                        position[1] + photo_size[1] + 10
-                    )
-                    
-                    # Получаем позицию игрока
-                    player_pos = player['info']['position']
-
-                    draw.text(
-                        text_position,
-                        f"{player['info']['name']}\n{player_pos} - {player['stats']['total_points']}",
-                        font=font,
-                        fill='black',
-                        anchor='mm'
-                    )
                 except Exception as e:
                     logger.error(f"Ошибка при добавлении фото игрока {player_id}: {e}")
                     continue
             
-            # Добавляем общие очки
-            draw.text(
-                (width//2, height - 30),
-                f"Общие очки: {total_points}",
-                font=font,
-                fill='black',
-                anchor='mm'
-            )
-            
-            # Сохраняем коллаж с прозрачным фоном
+            # Сохраняем коллаж
             output_path = os.path.join(
                 self.collage_dir,
                 f"team_of_day_{date}.png"
             )
             collage.save(output_path, "PNG")
+            logger.info(f"Коллаж сохранен: {output_path}")
             
             return output_path
             
@@ -163,30 +118,41 @@ class ImageService:
             logger.error(f"Ошибка при создании коллажа: {e}")
             return None
             
-    def _get_photo_positions(self, width: int, height: int) -> List[Tuple[int, int]]:
-        """Возвращает позиции для фото игроков"""
+    def _get_photo_positions(self, width: int, height: int) -> Dict[str, Tuple[int, int]]:
+        """Возвращает позиции для фото игроков
+        
+        Args:
+            width: Ширина коллажа
+            height: Высота коллажа
+            
+        Returns:
+            Dict[str, Tuple[int, int]]: Словарь позиций для каждой позиции игрока
+        """
         # Размер фото игрока
-        photo_size = (130, 100)
+        photo_size = (130, 100)  # Ширина больше высоты
+        padding = 10
         
-        # Позиции для 6 игроков (3-2-1)
-        # Первый ряд: C, LW, RW
-        row1_y = 100
-        row1_x = [width//4, width//2, 3*width//4]
+        # Первый ряд: LW, C, RW
+        row1_y = padding
+        row1_x = [padding, width//2, width - padding - photo_size[0]]  # LW слева, C по центру, RW справа
         
-        # Второй ряд: D, D
-        row2_y = 250
+        # Второй ряд: D1, D2
+        row2_y = photo_size[1] + padding * 2
         row2_x = [width//3, 2*width//3]
         
-        # Третий ряд: G
-        row3_y = 400
-        row3_x = [width//2]
+        # Третий ряд: G (значительно ниже)
+        row3_y = (photo_size[1] + padding) * 2
+        row3_x = width//2
         
-        positions = []
+        positions = {}
         
-        # Добавляем позиции в порядке: C, LW, RW, D, D, G
-        positions.extend([(x - photo_size[0]//2, row1_y) for x in row1_x])
-        positions.extend([(x - photo_size[0]//2, row2_y) for x in row2_x])
-        positions.extend([(x - photo_size[0]//2, row3_y) for x in row3_x])
+        # Добавляем позиции для каждой позиции игрока
+        positions['LW'] = (row1_x[0], row1_y)  # Левый нападающий слева
+        positions['C'] = (row1_x[1] - photo_size[0]//2, row1_y)  # Центральный по центру
+        positions['RW'] = (row1_x[2], row1_y)  # Правый нападающий справа
+        positions['D1'] = (row2_x[0] - photo_size[0]//2, row2_y)
+        positions['D2'] = (row2_x[1] - photo_size[0]//2, row2_y)
+        positions['G'] = (row3_x - photo_size[0]//2, row3_y)
         
         return positions
         

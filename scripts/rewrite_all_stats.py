@@ -1,51 +1,34 @@
 #!/usr/bin/env python3
 
-import sys
 import os
+import sys
 import logging
-from datetime import datetime, timedelta
+import asyncio
 import pytz
-from dotenv import load_dotenv
+from datetime import datetime, timedelta
 
 # Добавляем путь к корневой директории проекта
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.services.espn_service import ESPNService
+from src.services.image_service import ImageService
+from src.services.telegram_service import TelegramService
+from src.config import settings
 from scripts.send_daily_teams import (
     load_history,
-    save_history,
     get_best_players_by_position,
     update_history
 )
 
-def setup_logging():
-    """Настройка логирования"""
-    log_dir = "logs"
-    os.makedirs(log_dir, exist_ok=True)
-    
-    log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    log_file = os.path.join(log_dir, f"rewrite_stats_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
-    
-    logging.basicConfig(
-        level=logging.INFO,
-        format=log_format,
-        handlers=[
-            logging.FileHandler(log_file),
-            logging.StreamHandler()
-        ]
-    )
-
-def get_date_range():
-    """Получение диапазона дат для обработки"""
-    # Начало сезона - 4 октября 2024
-    start_date = datetime(2024, 10, 4, tzinfo=pytz.UTC)
-    # Конец - вчерашний день
-    end_date = datetime.now(pytz.UTC) - timedelta(days=1)
-    
-    return start_date, end_date
-
-def process_date(date, espn_service, history, logger):
-    """Обработка одной даты"""
+async def process_date(
+    date: datetime,
+    espn_service: ESPNService,
+    image_service: ImageService,
+    telegram_service: TelegramService,
+    history: dict,
+    logger: logging.Logger
+):
+    """Обработка статистики за указанную дату"""
     try:
         date_str = date.strftime('%Y-%m-%d')
         logger.info(f"Обработка даты: {date_str}")
@@ -56,50 +39,91 @@ def process_date(date, espn_service, history, logger):
         if not daily_stats:
             logger.warning(f"Нет статистики для даты {date_str}")
             return
-            
+
         # Формируем команду из лучших игроков
         team = get_best_players_by_position(daily_stats, date_str, history)
         
         if not team:
             logger.warning(f"Не удалось сформировать команду для даты {date_str}")
             return
-            
+
         # Обновляем историю
         update_history(team, date_str, history)
-        logger.info(f"Статистика успешно обновлена для даты {date_str}")
-        
-    except Exception as e:
-        logger.error(f"Ошибка при обработке даты {date_str}: {e}")
+        logger.info(f"История успешно обновлена для даты {date}")
 
-def main():
+        # Загружаем фотографии игроков
+        player_photos = {}
+        for pos, player in team.items():
+            player_id = str(player['info']['id'])
+            photo_path = image_service.get_player_photo(player_id, player['info']['name'])
+            if photo_path:
+                player_photos[player_id] = photo_path
+                logger.info(f"Фото для игрока {player['info']['name']} успешно загружено: {photo_path}")
+
+        logger.info(f"Загружено фотографий: {len(player_photos)}")
+
+        # Создаем коллаж
+        collage_path = image_service.create_collage(player_photos, team, date_str, None)
+        if not collage_path:
+            logger.error("Не удалось создать коллаж")
+            return
+
+        logger.info(f"Коллаж успешно создан: {collage_path}")
+        logger.info(f"Размер файла коллажа: {os.path.getsize(collage_path)} байт")
+
+        # Формируем сообщение в нужном порядке: LW, C, RW, D1, D2, G
+        message = f"🏒 Команда дня - {date_str}\n\n"
+        positions_order = ['LW', 'C', 'RW', 'D1', 'D2', 'G']
+        for pos in positions_order:
+            player = team[pos]
+            message += f"{pos}: {player['info']['name']} - {player['stats']['total_points']} очков\n"
+
+        # Отправляем в Telegram
+        await telegram_service.send_team_of_day(message, collage_path)
+        logger.info(f"Статистика успешно обновлена для даты {date}")
+
+    except Exception as e:
+        logger.error(f"Ошибка при обработке даты {date}: {e}")
+        return
+
+async def main():
     """Основная функция"""
-    setup_logging()
+    # Настраиваем логирование
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
     logger = logging.getLogger(__name__)
     
-    try:
-        # Загружаем переменные окружения
-        load_dotenv()
-        
-        # Инициализируем сервисы
-        espn_service = ESPNService()
-        
-        # Загружаем текущую историю
-        history = load_history()
-        
-        # Получаем диапазон дат
-        start_date, end_date = get_date_range()
-        
-        # Обрабатываем каждую дату
-        current_date = start_date
-        while current_date <= end_date:
-            process_date(current_date, espn_service, history, logger)
-            current_date += timedelta(days=1)
-            
-        logger.info("Обработка всех дат завершена")
-        
-    except Exception as e:
-        logger.error(f"Произошла ошибка: {e}")
-        sys.exit(1)
+    # Инициализируем сервисы
+    espn_service = ESPNService()
+    image_service = ImageService()
+    telegram_service = TelegramService()
+    
+    # Загружаем историю
+    history = load_history()
+    
+    # Получаем диапазон дат
+    start_date, end_date = get_date_range()
+    logger.info(f"Начинаем обработку дат с {start_date.strftime('%Y-%m-%d')} по {end_date.strftime('%Y-%m-%d')}")
+    
+    # Обрабатываем каждую дату
+    current_date = start_date
+    while current_date <= end_date:
+        logger.info(f"Обработка даты: {current_date.strftime('%Y-%m-%d')}")
+        await process_date(current_date, espn_service, image_service, telegram_service, history, logger)
+        current_date += timedelta(days=1)
+        await asyncio.sleep(5)  # Добавляем задержку между датами
+
+def get_date_range() -> tuple[datetime, datetime]:
+    """Получает диапазон дат для обработки"""
+    # Начало сезона
+    start_date = datetime(2024, 10, 4, tzinfo=pytz.UTC)
+    
+    # Текущая дата
+    end_date = datetime.now(pytz.UTC)
+    
+    return start_date, end_date
 
 if __name__ == "__main__":
-    main() 
+    asyncio.run(main()) 
