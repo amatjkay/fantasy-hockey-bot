@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 from datetime import datetime, timedelta
-from src.services.stats_service import StatsService
-from src.services.image_service import ImageService
+from src.services.team_week_service import TeamWeekService
 from src.services.telegram_service import TelegramService
 from src.utils.logging import setup_logging
 
@@ -48,7 +47,7 @@ def get_week_dates(date: datetime) -> tuple[datetime, datetime]:
     
     return start_date, end_date
 
-def main():
+async def main():
     """Основная функция"""
     try:
         # Инициализация логирования
@@ -60,23 +59,22 @@ def main():
         
         # Получаем даты недели
         start_date, end_date = get_week_dates(args.week)
+        logger.info(f"Обработка периода: {start_date.date()} - {end_date.date()}")
         
         # Инициализация сервисов
-        stats_service = StatsService()
-        image_service = ImageService()
+        team_service = TeamWeekService()
         telegram_service = None  # Инициализируем только если нужно отправлять сообщения
         
         # Получаем команду недели
-        team = stats_service.get_team_of_the_week(start_date, end_date)
+        logger.info("Получаем команду недели...")
+        team = team_service.get_team_of_week(start_date, end_date)
         if not team:
             logger.error("Не удалось получить команду недели")
             return
             
-        # Формируем заголовок
-        title = f"Команда недели {start_date.strftime('%d.%m.%Y')} - {end_date.strftime('%d.%m.%Y')}"
-            
         # Создаем коллаж
-        collage_path = image_service.create_team_collage(team, title)
+        logger.info(f"Создаем коллаж с заголовком: {team['date']}")
+        collage_path = team_service.create_team_collage(team)
         if not collage_path:
             logger.error("Не удалось создать коллаж")
             return
@@ -84,11 +82,16 @@ def main():
         # Отправляем в Telegram если нужно
         if not args.no_send:
             telegram_service = TelegramService()  # Создаем сервис только если нужно отправлять
-            telegram_service.send_team_of_the_week(collage_path)
+            message = f"*Команда недели {team['date']}*\n\n"
+            for pos, player in team["players"].items():
+                message += f"*{pos}*: {player['info']['name']} ({player['stats']['total_points']} очков)\n"
+            message += f"\nОбщие очки: {team['total_points']}"
+            await telegram_service.send_team_of_week(message, collage_path)
             
     except Exception as e:
         logger.error(f"Неожиданная ошибка: {e}")
         raise
 
 if __name__ == '__main__':
-    main() 
+    import asyncio
+    asyncio.run(main()) 

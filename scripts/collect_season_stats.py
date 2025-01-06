@@ -7,7 +7,6 @@ from datetime import datetime
 import pytz
 from src.services.stats_service import StatsService
 from src.config.settings import ESPN_TIMEZONE, PROCESSED_DATA_DIR
-from src.config import ESPNConfig
 import json
 
 def setup_logging():
@@ -39,11 +38,8 @@ def main():
     logger = logging.getLogger(__name__)
 
     try:
-        # Создаем конфигурацию
-        config = ESPNConfig()
-        
-        # Создаем сервис с конфигурацией
-        stats_service = StatsService(config)
+        # Создаем сервис
+        stats_service = StatsService()
         
         # Преобразуем даты
         start_date = parse_date(args.start_date)

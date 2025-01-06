@@ -7,15 +7,7 @@ import requests
 import pytz
 from dotenv import load_dotenv
 from src.utils.logging import setup_logging
-from src.config import (
-    ESPN_BASE_URL,
-    ESPN_HEADERS,
-    SEASON,
-    LEAGUE_ID,
-    get_fantasy_filter,
-    TIMEZONE,
-    POSITION_MAPPING
-)
+from src.config import settings
 from collections import defaultdict
 
 # Загружаем переменные окружения
@@ -29,24 +21,18 @@ class ESPNService:
         self.logger = logging.getLogger(__name__)
         
         # Загружаем настройки из .env
-        self.season = os.getenv('SEASON_ID', '2024')
-        self.league_id = os.getenv('LEAGUE_ID', '484910394')
+        self.season = settings.ESPN_API['season_id']
+        self.league_id = settings.ESPN_API['league_id']
         self.season_start = datetime.strptime(
-            os.getenv('SEASON_START', '2024-10-04'),
+            settings.SEASON_START,
             '%Y-%m-%d'
-        ).replace(tzinfo=pytz.timezone(TIMEZONE))
+        ).replace(tzinfo=settings.ESPN_TIMEZONE)
         
         # Формируем базовый URL
-        self.base_url = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/{self.season}/segments/0/leagues/{self.league_id}"
+        self.base_url = settings.ESPN_API['BASE_URL']
         
         # Настраиваем заголовки
-        self.headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Cookie': f'SWID={os.getenv("ESPN_SWID")}; espn_s2={os.getenv("ESPN_S2")}',
-            'x-fantasy-source': 'kona',
-            'x-fantasy-platform': 'kona-PROD-6daa0c838b3e2ff0192c0d7d1d24be52e5053a91'
-        }
+        self.headers = settings.ESPN_API['HEADERS'].copy()
         
     def get_daily_stats(self, date: Optional[datetime] = None) -> Optional[Dict]:
         """Получение статистики за день
@@ -61,33 +47,46 @@ class ESPNService:
             if date is None:
                 date = datetime.now()
             
-            # Получаем фильтр для API
-            fantasy_filter = get_fantasy_filter(date, date)
+            # Получаем scoring_period_id для следующего дня,
+            # так как статистика доступна только на следующий день
+            stats_date = date + timedelta(days=1)
+            scoring_period_id = self.get_scoring_period_id(stats_date)
             
             # Параметры запроса
             params = {
-                'scoringPeriodId': 92,  # Фиксированное значение
+                'scoringPeriodId': scoring_period_id,
                 'view': 'kona_player_info'
             }
             
             # Получаем статистику всех игроков
-            fantasy_filter['players'].update({
-                'filterSlotIds': {'value': [0,1,2,3,4,5,6]},  # ID всех позиций
-                'limit': 1000,
-                'offset': 0,
-                'sortPercOwned': {'sortPriority': 3, 'sortAsc': False},
-                'filterRanksForRankTypes': {'value': ['STANDARD']}
-            })
+            fantasy_filter = {
+                'players': {
+                    'filterSlotIds': {'value': [0,1,2,3,4,5,6]},  # ID всех позиций
+                    'filterStatsForCurrentSeasonScoringPeriodId': {'value': [scoring_period_id]},
+                    'limit': 1000,
+                    'offset': 0,
+                    'sortAppliedStatTotalForScoringPeriodId': {
+                        'sortAsc': False,
+                        'sortPriority': 1,
+                        'value': scoring_period_id
+                    }
+                }
+            }
             
             headers = self.headers.copy()
-            headers['X-Fantasy-Filter'] = json.dumps(fantasy_filter)
+            headers['x-fantasy-filter'] = json.dumps(fantasy_filter)
             
             data = self._make_request(params, headers)
             if not data:
                 self.logger.error("Не удалось получить статистику")
                 return None
+                
+            self.logger.info(f"Получены данные: {json.dumps(data)[:1000]}...")
             
-            return {'players': data.get('players', [])}
+            return {
+                'date': date.strftime('%Y-%m-%d'),  # Возвращаем исходную дату
+                'players': data.get('players', [])
+            }
             
         except Exception as e:
             self.logger.error(f"Неожиданная ошибка при получении статистики: {e}")
@@ -108,7 +107,7 @@ class ESPNService:
             end_date = start_date + timedelta(days=6)
             
             # Получаем фильтр для API
-            fantasy_filter = get_fantasy_filter(start_date, end_date)
+            fantasy_filter = self._get_fantasy_filter(start_date, end_date)
             
             # Параметры запроса
             params = {
@@ -199,7 +198,7 @@ class ESPNService:
             datetime: Дата начала недели
         """
         if date is None:
-            date = datetime.now(pytz.timezone(TIMEZONE))
+            date = datetime.now(pytz.timezone(settings.ESPN_TIMEZONE))
             
         # Получаем понедельник текущей недели
         days_to_monday = date.weekday()
@@ -219,8 +218,8 @@ class ESPNService:
         result = defaultdict(list)
         for player in players:
             position_id = player.get('defaultPositionId')
-            if position_id in POSITION_MAPPING:
-                position = POSITION_MAPPING[position_id]
+            if position_id in settings.PLAYER_POSITIONS:
+                position = settings.PLAYER_POSITIONS[position_id]
                 result[position].append(player)
         return dict(result)
 
@@ -246,3 +245,25 @@ class ESPNService:
             datetime: Дата начала недели
         """
         return self._get_week_start_date(date)
+
+    def _get_fantasy_filter(self, start_date: datetime, end_date: datetime) -> Dict:
+        """Создание фильтра для API ESPN
+
+        Args:
+            start_date (datetime): Начальная дата
+            end_date (datetime): Конечная дата
+
+        Returns:
+            Dict: Фильтр для API
+        """
+        return {
+            'players': {
+                'filterSlotIds': {'value': [0,1,2,3,4,5,6]},
+                'filterStatsForExternalIds': {
+                    'value': [f"{self.season}{start_date.strftime('%Y%m%d')}-{end_date.strftime('%Y%m%d')}"]
+                },
+                'limit': 1000,
+                'offset': 0,
+                'sortAppliedStatTotal': {'sortAsc': False, 'sortPriority': 1}
+            }
+        }

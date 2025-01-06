@@ -30,15 +30,20 @@ async def process_date(
 ):
     """Обработка статистики за указанную дату"""
     try:
-        date_str = date.strftime('%Y-%m-%d')
-        logger.info(f"Обработка даты: {date_str}")
-        
         # Получаем статистику за день
         daily_stats = espn_service.get_daily_stats(date)
         
         if not daily_stats:
-            logger.warning(f"Нет статистики для даты {date_str}")
+            logger.warning(f"Нет статистики для даты {date.strftime('%Y-%m-%d')}")
             return
+
+        # Используем дату из полученной статистики
+        date_str = daily_stats.get("date")
+        if not date_str:
+            logger.warning("В статистике отсутствует дата")
+            return
+
+        logger.info(f"Обработка статистики за {date_str}")
 
         # Формируем команду из лучших игроков
         team = get_best_players_by_position(daily_stats, date_str, history)
@@ -49,7 +54,7 @@ async def process_date(
 
         # Обновляем историю
         update_history(team, date_str, history)
-        logger.info(f"История успешно обновлена для даты {date}")
+        logger.info(f"История успешно обновлена для даты {date_str}")
 
         # Загружаем фотографии игроков
         player_photos = {}
@@ -80,7 +85,7 @@ async def process_date(
 
         # Отправляем в Telegram
         await telegram_service.send_team_of_day(message, collage_path)
-        logger.info(f"Статистика успешно обновлена для даты {date}")
+        logger.info(f"Статистика успешно обновлена для даты {date_str}")
 
     except Exception as e:
         logger.error(f"Ошибка при обработке даты {date}: {e}")
@@ -104,7 +109,9 @@ async def main():
     history = load_history()
     
     # Получаем диапазон дат
-    start_date, end_date = get_date_range()
+    start_date = datetime(2024, 10, 4, tzinfo=pytz.UTC)  # Начало сезона
+    end_date = datetime.now(pytz.UTC) - timedelta(days=1)  # Вчерашний день
+    
     logger.info(f"Начинаем обработку дат с {start_date.strftime('%Y-%m-%d')} по {end_date.strftime('%Y-%m-%d')}")
     
     # Обрабатываем каждую дату
@@ -114,16 +121,6 @@ async def main():
         await process_date(current_date, espn_service, image_service, telegram_service, history, logger)
         current_date += timedelta(days=1)
         await asyncio.sleep(5)  # Добавляем задержку между датами
-
-def get_date_range() -> tuple[datetime, datetime]:
-    """Получает диапазон дат для обработки"""
-    # Начало сезона
-    start_date = datetime(2024, 10, 4, tzinfo=pytz.UTC)
-    
-    # Текущая дата
-    end_date = datetime.now(pytz.UTC)
-    
-    return start_date, end_date
 
 if __name__ == "__main__":
     asyncio.run(main()) 

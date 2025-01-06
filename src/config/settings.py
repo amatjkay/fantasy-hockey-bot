@@ -18,6 +18,9 @@ LOG_DIR = BASE_DIR / "logs"
 for dir_path in [CACHE_DIR, PROCESSED_DATA_DIR, LOG_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
+# Файлы данных
+STATS_FILE = PROCESSED_DATA_DIR / "player_stats.json"
+
 # Настройки временной зоны
 ESPN_TIMEZONE = pytz.timezone(os.getenv("TIMEZONE", "US/Eastern"))
 DAY_START_HOUR = int(os.getenv("DAY_START_HOUR", "4"))
@@ -90,6 +93,10 @@ RETRY_DELAY = int(os.getenv("RETRY_DELAY", "5"))
 
 # Настройки кэширования
 CACHE_TTL = 3600  # 1 час в секундах
+
+# Пути к директориям
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'data')
+ASSETS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'assets')
 
 def load_env_vars():
     """Загрузка и проверка переменных окружения"""

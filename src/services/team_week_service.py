@@ -8,27 +8,24 @@ from collections import defaultdict
 
 logger = logging.getLogger(__name__)
 
-class TeamService:
+class TeamWeekService:
     def __init__(self):
         self.stats_service = StatsService()
         self.image_service = ImageService()
         
-    def get_team_of_day(self, date: datetime) -> Optional[Dict]:
-        """Формирует команду дня"""
-        daily_stats = self.stats_service.get_daily_stats(date)
-        if not daily_stats:
-            logger.error(f"Не удалось получить статистику за {date}")
+    def get_team_of_week(self, start_date: datetime, end_date: datetime) -> Optional[Dict]:
+        """Формирует команду недели"""
+        weekly_stats = self.stats_service.get_team_of_the_week(start_date, end_date)
+        if not weekly_stats:
+            logger.error(f"Не удалось получить статистику за период {start_date} - {end_date}")
             return None
             
-        logger.info(f"Получена статистика за {date}. Количество игроков: {len(daily_stats['players'])}")
-        
         # Группируем игроков по позициям
-        players_by_position = self._group_players_by_position(daily_stats["players"])
-        logger.info(f"Игроки сгруппированы по позициям: {', '.join(f'{pos}: {len(players)}' for pos, players in players_by_position.items())}")
+        players_by_position = self._group_players_by_position(weekly_stats["players"])
         
         # Формируем команду согласно требуемому составу
         team = {
-            "date": daily_stats["date"],
+            "date": weekly_stats["date"],
             "players": self._select_best_players(players_by_position),
             "total_points": 0
         }
@@ -38,11 +35,6 @@ class TeamService:
             player["stats"]["total_points"] 
             for player in team["players"].values()
         )
-        
-        logger.info(f"Команда дня сформирована. Общие очки: {team['total_points']}")
-        logger.info(f"Состав команды:")
-        for pos, player in team["players"].items():
-            logger.info(f"{pos}: {player['info']['name']} ({player['stats']['total_points']} очков)")
         
         return team
         
@@ -57,7 +49,6 @@ class TeamService:
                 # Добавляем только игроков с положительными очками
                 if player["stats"]["total_points"] > 0:
                     grouped_players[position].append(player)
-                    logger.debug(f"Игрок {player['info']['name']} добавлен в группу {position} с {player['stats']['total_points']} очками")
         
         # Сортируем игроков по очкам в каждой позиции
         for position in grouped_players:
@@ -65,13 +56,11 @@ class TeamService:
                 key=lambda x: x["stats"]["total_points"],
                 reverse=True
             )
-            if grouped_players[position]:
-                logger.debug(f"Лучший игрок в позиции {position}: {grouped_players[position][0]['info']['name']} ({grouped_players[position][0]['stats']['total_points']} очков)")
         
         return dict(grouped_players)
         
     def _select_best_players(self, players_by_position: Dict) -> Dict:
-        """Выбирает лучших игроков для команды дня"""
+        """Выбирает лучших игроков для команды недели"""
         selected = {}
         
         # Выбираем нужное количество игроков для каждой позиции
@@ -89,23 +78,22 @@ class TeamService:
         """Создает коллаж команды"""
         # Получаем фото всех игроков
         player_photos = {}
-        for player_id, player_data in team["players"].items():
+        for pos, player_data in team["players"].items():
             # Добавляем поле position на основе primary_position
             player_data["info"]["position"] = settings.PLAYER_POSITIONS[player_data["info"]["primary_position"]]
             photo = self.image_service.get_player_photo(
-                player_id,
+                str(player_data["info"]["id"]),
                 player_data["info"]["name"]
             )
             if photo:
-                player_photos[player_id] = photo
+                player_photos[str(player_data["info"]["id"])] = photo
                 
         if len(player_photos) != len(team["players"]):
             logger.warning("Не удалось получить фото всех игроков")
             
         # Создаем коллаж
-        return self.image_service.create_collage(
+        return self.image_service.create_team_collage(
             player_photos,
             team["players"],
-            team["date"],
-            team["total_points"]
+            team["date"]
         ) 
