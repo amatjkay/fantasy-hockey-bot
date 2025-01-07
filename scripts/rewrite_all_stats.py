@@ -6,6 +6,7 @@ import logging
 import asyncio
 import pytz
 from datetime import datetime, timedelta
+import argparse
 
 # Добавляем путь к корневой директории проекта
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -100,6 +101,11 @@ async def main():
     )
     logger = logging.getLogger(__name__)
     
+    # Добавляем парсер аргументов
+    parser = argparse.ArgumentParser(description='Перезапись статистики')
+    parser.add_argument('--date', help='Конкретная дата для обработки в формате YYYY-MM-DD')
+    args = parser.parse_args()
+    
     # Инициализируем сервисы
     espn_service = ESPNService()
     image_service = ImageService()
@@ -108,19 +114,29 @@ async def main():
     # Загружаем историю
     history = load_history()
     
-    # Получаем диапазон дат
-    start_date = datetime(2024, 10, 4, tzinfo=pytz.UTC)  # Начало сезона
-    end_date = datetime.now(pytz.UTC) - timedelta(days=1)  # Вчерашний день
-    
-    logger.info(f"Начинаем обработку дат с {start_date.strftime('%Y-%m-%d')} по {end_date.strftime('%Y-%m-%d')}")
-    
-    # Обрабатываем каждую дату
-    current_date = start_date
-    while current_date <= end_date:
-        logger.info(f"Обработка даты: {current_date.strftime('%Y-%m-%d')}")
-        await process_date(current_date, espn_service, image_service, telegram_service, history, logger)
-        current_date += timedelta(days=1)
-        await asyncio.sleep(5)  # Добавляем задержку между датами
+    if args.date:
+        # Обработка одной конкретной даты
+        try:
+            date = datetime.strptime(args.date, '%Y-%m-%d').replace(tzinfo=pytz.UTC)
+            logger.info(f"Обработка конкретной даты: {date.strftime('%Y-%m-%d')}")
+            await process_date(date, espn_service, image_service, telegram_service, history, logger)
+        except ValueError as e:
+            logger.error(f"Неверный формат даты: {e}")
+            return
+    else:
+        # Стандартная обработка всех дат
+        start_date = datetime(2024, 10, 4, tzinfo=pytz.UTC)  # Начало сезона
+        end_date = datetime.now(pytz.UTC) - timedelta(days=1)  # Вчерашний день
+        
+        logger.info(f"Начинаем обработку дат с {start_date.strftime('%Y-%m-%d')} по {end_date.strftime('%Y-%m-%d')}")
+        
+        # Обрабатываем каждую дату
+        current_date = start_date
+        while current_date <= end_date:
+            logger.info(f"Обработка даты: {current_date.strftime('%Y-%m-%d')}")
+            await process_date(current_date, espn_service, image_service, telegram_service, history, logger)
+            current_date += timedelta(days=1)
+            await asyncio.sleep(5)  # Добавляем задержку между датами
 
 if __name__ == "__main__":
     asyncio.run(main()) 
