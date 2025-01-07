@@ -221,14 +221,15 @@ async def main():
         
         current_date = start_date
         while current_date <= end_date:
-            # Находим начало и конец периода
-            week_start = current_date
-            week_end = week_start + timedelta(days=6)
+            # Находим начало и конец недели (понедельник-воскресенье)
+            week_start = current_date - timedelta(days=current_date.weekday())  # Получаем понедельник
+            week_end = week_start + timedelta(days=6)  # Получаем воскресенье
+            
             if week_end > end_date:
                 week_end = end_date
                 
             await process_week(week_start, week_end, espn_service, image_service, telegram_service, history, logger, args.no_send)
-            current_date += timedelta(days=7)
+            current_date = week_end + timedelta(days=1)  # Переходим к следующей неделе
             await asyncio.sleep(5)  # Задержка между неделями
             
     else:
