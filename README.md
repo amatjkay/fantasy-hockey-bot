@@ -49,10 +49,14 @@ SEASON_END_DATE=2025-04-15
 python scripts/collect_and_send_stats.py --date YYYY-MM-DD [--no-send]
 ```
 
-### Перезапись всей статистики
+### Перезапись статистики
 
 ```bash
+# Перезапись всей статистики с начала сезона
 python scripts/rewrite_all_stats.py
+
+# Перезапись статистики за конкретную дату
+python scripts/rewrite_all_stats.py --date YYYY-MM-DD
 ```
 
 ### Формирование команды недели

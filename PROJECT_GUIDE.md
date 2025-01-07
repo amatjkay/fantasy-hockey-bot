@@ -82,8 +82,9 @@ SEASON_END_DATE=2025-04-15
 # Сбор статистики за день
 python scripts/collect_and_send_stats.py --date YYYY-MM-DD
 
-# Перезапись всей статистики
-python scripts/rewrite_all_stats.py
+# Перезапись статистики
+python scripts/rewrite_all_stats.py  # вся статистика с начала сезона
+python scripts/rewrite_all_stats.py --date YYYY-MM-DD  # статистика за конкретную дату
 
 # Формирование команды недели
 python scripts/send_daily_teams.py --week YYYY-MM-DD
